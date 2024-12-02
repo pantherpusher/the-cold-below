@@ -13,6 +13,8 @@ using Content.Server.Carrying; // Frontier
 using Content.Shared.Actions; // Frontier
 using Robust.Shared.Prototypes; // Frontier
 using Content.Shared.Movement.Systems; // Frontier
+using Content.Server.FloofStation;
+using Content.Shared.FloofStation; // Floofstation
 
 namespace Content.Server.Resist;
 
@@ -28,6 +30,7 @@ public sealed class EscapeInventorySystem : EntitySystem
 
     // Frontier - cancel inventory escape
     private readonly EntProtoId _escapeCancelAction = "ActionCancelEscape";
+    [Dependency] private readonly VoreSystem _vore = default!;
 
     /// <summary>
     /// You can't escape the hands of an entity this many times more massive than you.
@@ -49,7 +52,8 @@ public sealed class EscapeInventorySystem : EntitySystem
         if (!args.HasDirectionalMovement)
             return;
 
-        if (!_containerSystem.TryGetContainingContainer((uid, null, null), out var container) || !_actionBlockerSystem.CanInteract(uid, container.Owner))
+        if (!_containerSystem.TryGetContainingContainer((uid, null, null), out var container)
+            || !_actionBlockerSystem.CanInteract(uid, container.Owner))
             return;
 
         if (args.OldMovement == MoveButtons.None || args.OldMovement == MoveButtons.Walk)
@@ -65,7 +69,15 @@ public sealed class EscapeInventorySystem : EntitySystem
         // Contested
         if (_handsSystem.IsHolding(container.Owner, uid, out _))
         {
-            AttemptEscape(uid, container.Owner, component);
+            var disadvantage = _contests.MassContest(container.Owner, uid, rangeFactor: 3f);
+            AttemptEscape(uid, container.Owner, component, disadvantage);
+            return;
+        }
+
+        // Vore - Floofstation
+        if (HasComp<VoredComponent>(uid))
+        {
+            AttemptEscape(uid, container.Owner, component, 5f);
             return;
         }
 
