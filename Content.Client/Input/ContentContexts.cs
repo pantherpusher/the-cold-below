@@ -75,6 +75,8 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.SmartEquipWallet); // Frontier
             human.AddFunction(ContentKeyFunctions.OpenBackpack);
             human.AddFunction(ContentKeyFunctions.OpenBelt);
+            human.AddFunction(ContentKeyFunctions.ToggleStanding); // EE
+            human.AddFunction(ContentKeyFunctions.ToggleCrawlingUnder); // EE
             human.AddFunction(ContentKeyFunctions.OpenWallet); // Frontier
             human.AddFunction(ContentKeyFunctions.MouseMiddle);
             human.AddFunction(ContentKeyFunctions.RotateObjectClockwise);
@@ -87,6 +89,7 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.Arcade1);
             human.AddFunction(ContentKeyFunctions.Arcade2);
             human.AddFunction(ContentKeyFunctions.Arcade3);
+            human.AddFunction(ContentKeyFunctions.LookUp); // EE
 
             // actions should be common (for ghosts, mobs, etc)
             common.AddFunction(ContentKeyFunctions.OpenActionsMenu);
