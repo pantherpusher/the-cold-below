@@ -81,6 +81,11 @@
     - MicroManipulatorStockPart
     - MatterBinStockPart
     - CapacitorStockPart
+  # Parts
+    - Beaker
+    - MicroManipulatorStockPart
+    - MatterBinStockPart
+    - CapacitorStockPart
 
 - type: latheRecipePack
   id: NFSalvageTechfabDeprecatedEmag
