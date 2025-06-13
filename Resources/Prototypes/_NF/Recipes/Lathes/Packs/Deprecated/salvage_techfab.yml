@@ -81,6 +81,7 @@
     - MicroManipulatorStockPart
     - MatterBinStockPart
     - CapacitorStockPart
+    - NFMetalShield
   # Parts
     - Beaker
     - MicroManipulatorStockPart
