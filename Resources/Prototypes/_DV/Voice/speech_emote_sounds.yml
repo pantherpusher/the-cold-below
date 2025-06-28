@@ -89,7 +89,7 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: MaleScreams
+      collection: VulpkaninScreams # Floofstation
     Laugh:
       collection: MaleLaugh
     Sneeze:
@@ -132,6 +132,10 @@
       collection: Belch # Frontier
     MonkeyScreeches: # Frontier
       collection: MonkeyScreeches # Frontier
+    Yap: # Floof
+      collection: VulpkaninYaps
+    Gekker: # Floof
+      collection: VulpkaninGekkers
 
 - type: emoteSounds
   id: FemaleVulpkanin
@@ -139,7 +143,7 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: FemaleScreams
+      collection: VulpkaninScreams # Floofstation
     Laugh:
       collection: FemaleLaugh
     Sneeze:
@@ -180,8 +184,6 @@
       collection: FemaleDeathGasp
     Belch: # Frontier
       collection: Belch # Frontier
-    MonkeyScreeches: # Frontier
-      collection: MonkeyScreeches # Frontier
 
 - type: emoteSounds
   id: MobDog
