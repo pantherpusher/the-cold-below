@@ -21,6 +21,11 @@
   text: "/ServerInfo/Guidebook/NewPlayer/Controls/Radio.xml"
 
 - type: guideEntry
+  id: Roleplay
+  name: guide-entry-roleplay
+  text: "/ServerInfo/Guidebook/NewPlayer/Controls/Roleplay.xml"
+
+- type: guideEntry
   id: CharacterCreation
   name: guide-entry-charactercreation
   text: "/ServerInfo/Guidebook/NewPlayer/CharacterCreation.xml"
