@@ -1,0 +1,7 @@
+- type: guideEntry
+  id: LoreMaster
+  name: guide-entry-loremaster
+  priority: 0
+  text: "/ServerInfo/Guidebook/Lore/LoreMaster.xml"
+  # children: # just for future reference for those that come after
+  # - Controls

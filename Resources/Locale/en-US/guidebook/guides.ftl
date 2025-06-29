@@ -96,6 +96,9 @@ guide-entry-species = Species
 guide-entry-yourfirstcharacter = Your First Character
 guide-entry-controls = Controls
 guide-entry-radio = Radio and Speech
+guide-entry-roleplay = Roleplaying
+
+guide-entry-loremaster = Lore
 
 guide-entry-references = Tables & References
 guide-entry-chemicals = Chemicals
