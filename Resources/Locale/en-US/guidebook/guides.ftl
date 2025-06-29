@@ -98,6 +98,8 @@ guide-entry-controls = Controls
 guide-entry-radio = Radio and Speech
 guide-entry-roleplay = Roleplaying
 
+guide-entry-loremaster = Lore
+
 guide-entry-references = Tables & References
 guide-entry-chemicals = Chemicals
 guide-entry-drinks = Drinks
