@@ -13,16 +13,10 @@ namespace Content.Shared.Humanoid.Markings
         HeadSide,
         Snout,
         Chest,
-        Underwear, // Floof, add underwear
-        Undershirt, // Floof, add underwear
-        RightArm,
-        RightHand,
-        LeftArm,
-        LeftHand,
-        RightLeg,
-        RightFoot,
-        LeftLeg,
-        LeftFoot,
+        UndergarmentTop,
+        UndergarmentBottom,
+        Arms,
+        Legs,
         Tail,
         Overlay
     }
@@ -41,16 +35,16 @@ namespace Content.Shared.Humanoid.Markings
                 HumanoidVisualLayers.HeadSide => MarkingCategories.HeadSide,
                 HumanoidVisualLayers.Snout => MarkingCategories.Snout,
                 HumanoidVisualLayers.Chest => MarkingCategories.Chest,
-                HumanoidVisualLayers.Underwear => MarkingCategories.Underwear, // Floof, add underwear
-                HumanoidVisualLayers.Undershirt => MarkingCategories.Undershirt, // Floof, add underwear
-                HumanoidVisualLayers.RArm => MarkingCategories.RightArm,
-                HumanoidVisualLayers.LArm => MarkingCategories.LeftArm,
-                HumanoidVisualLayers.RHand => MarkingCategories.RightHand,
-                HumanoidVisualLayers.LHand => MarkingCategories.LeftHand,
-                HumanoidVisualLayers.LLeg => MarkingCategories.LeftLeg,
-                HumanoidVisualLayers.RLeg => MarkingCategories.RightLeg,
-                HumanoidVisualLayers.LFoot => MarkingCategories.LeftFoot,
-                HumanoidVisualLayers.RFoot => MarkingCategories.RightFoot,
+                HumanoidVisualLayers.UndergarmentTop => MarkingCategories.UndergarmentTop,
+                HumanoidVisualLayers.UndergarmentBottom => MarkingCategories.UndergarmentBottom,
+                HumanoidVisualLayers.RArm => MarkingCategories.Arms,
+                HumanoidVisualLayers.LArm => MarkingCategories.Arms,
+                HumanoidVisualLayers.RHand => MarkingCategories.Arms,
+                HumanoidVisualLayers.LHand => MarkingCategories.Arms,
+                HumanoidVisualLayers.LLeg => MarkingCategories.Legs,
+                HumanoidVisualLayers.RLeg => MarkingCategories.Legs,
+                HumanoidVisualLayers.LFoot => MarkingCategories.Legs,
+                HumanoidVisualLayers.RFoot => MarkingCategories.Legs,
                 HumanoidVisualLayers.Tail => MarkingCategories.Tail,
                 HumanoidVisualLayers.RArmExtension => MarkingCategories.Arms, // Frontier: species-specific layer
                 HumanoidVisualLayers.LArmExtension => MarkingCategories.Arms, // Frontier: species-specific layer

@@ -22,8 +22,6 @@
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobVulpkaninTorso
-    Underwear: MobHumanoidAnyMarking
-    Undershirt: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
@@ -40,13 +38,6 @@
 - type: markingPoints
   id: MobVulpkaninMarkingLimits
   points:
-    Underwear:
-      points: 1
-      required: true
-      defaultMarkings: [ UnderwearBoxers ]
-    Undershirt:
-      points: 1
-      required: false
     Hair:
       points: 1
       required: false

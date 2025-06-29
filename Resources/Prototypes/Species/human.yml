@@ -25,8 +25,6 @@
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobHumanTorso
-    Underwear: MobHumanoidAnyMarking # Floof, add underwear
-    Undershirt: MobHumanoidAnyMarking # Floof, add underwear
     Eyes: MobHumanoidEyes
     HeadTop: MobHumanoidAnyMarking
     LArm: MobHumanLArm
@@ -43,13 +41,9 @@
 - type: markingPoints
   id: MobHumanMarkingLimits
   points:
-    Underwear:
-      points: 1
-      required: true
-      defaultMarkings: [ UnderwearBoxers ] # Floof, add underwear
-    Undershirt:
-      points: 1
-      required: false # Floof, add underwear
+    Special: # the cat ear joke
+      points: 0
+      required: false
     Hair:
       points: 1
       required: false
