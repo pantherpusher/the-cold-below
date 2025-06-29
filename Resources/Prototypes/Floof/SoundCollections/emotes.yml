@@ -15,3 +15,8 @@
   id: VulpkaninGekkers
   files:
   - /Audio/Floof/Voice/Vulpkanin/gekker.ogg
+
+- type: soundCollection
+  id: RodentiaScreams
+  files:
+  - /Audio/Floof/Voice/Rodentia/Rat_Scream_01.ogg
