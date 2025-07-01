@@ -366,7 +366,6 @@ ui-options-function-look-up = Look up/Take aim
 ui-options-function-auto-get-up = Automatically get up after falling
 ui-options-function-hold-look-up = Hold down the key to aim
 
-ui-options-chat-window-opacity = Chat window opacity
 ui-options-speech-bubble-text-opacity = Speech bubble text opacity
 ui-options-speech-bubble-speaker-opacity = Speech bubble speaker opacity
 ui-options-speech-bubble-background-opacity = Speech bubble background opacity
