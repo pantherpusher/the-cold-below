@@ -19,8 +19,7 @@
   idleState: paper0
   offset: 0, 0.2 # 0625
 
-
 - type: typingIndicator
   id: feroxi
-  spritePath: /Textures/DeltaV/Effects/speech.rsi
-  typingState: feroxi0
+  typingState: default0
+  idleState: default3
