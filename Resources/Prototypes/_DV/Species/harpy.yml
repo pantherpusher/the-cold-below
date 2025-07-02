@@ -6,7 +6,7 @@
   sprites: MobHarpySprites
   markingLimits: MobHarpyMarkingLimits
   dollPrototype: MobHarpyDummy
-  skinColoration: HumanToned
+  skinColoration: Hues # IDK about this one quite yet.
 
 - type: speciesBaseSprites
   id: MobHarpySprites
