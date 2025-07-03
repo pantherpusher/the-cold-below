@@ -13,7 +13,7 @@ If you want to host or create content for Coyote Sector, this is the repo you ne
 
 <div class="header" align="center">
 
-[Discord](https://discord.gg/tpuAT7d3zm/) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Patreon](https://www.patreon.com/frontierstation14) | [Wiki](https://frontierstation.wiki.gg/)
+[Discord]TBA | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Patreon]TBA | [Wiki](https://frontierstation.wiki.gg/)
 
 </div>
 
@@ -23,7 +23,7 @@ Our [wiki](https://frontierstation.wiki.gg/) has documentation on Frontier Stati
 
 ## Contributing
 
-We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of ideas](TBA) that can be done and anybody can pick them up. Don't be afraid to ask for help either!
+We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of ideas]TBA that can be done and anybody can pick them up. Don't be afraid to ask for help either!
 
 We are not currently accepting translations of the game on our main repository. If you would like to translate the game into another language, consider creating a fork or contributing to a fork.
 
