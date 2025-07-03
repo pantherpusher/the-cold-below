@@ -1,5 +1,5 @@
 <div class="header" align="center">
-<img alt="Frontier Station" height="308" src="https://github.com/coyote-frontier/blob/master/Resources/Textures/_CS/Logo/logo.png?raw=true" />
+<img alt="Frontier Station" height="308" src="https://github.com/ARF-SS13/coyote-frontier/blob/master/Resources/Textures/_CS/Logo/logo.png?raw=true" />
 </div>
 
 Coyote Sector is a fork of [Frontier Station](https://github.com/new-frontiers-14/frontier-station-14), which itself is a fork of [Space Station 14](https://github.com/space-wizards/space-station-14) that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox) engine written in C#.
