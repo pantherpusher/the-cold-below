@@ -11,6 +11,8 @@
   femaleFirstNames: NamesOniFemale
   lastNames: NamesOniLocation
   naming: LastNoFirst
+  kind:
+  - BasicHumanlike
 
 - type: markingPoints
   id: MobOniMarkingLimits

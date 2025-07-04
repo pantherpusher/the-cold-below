@@ -169,11 +169,28 @@ public sealed partial class MarkingSet
                     toRemove.Add((category, marking.MarkingId));
                 }
 
-                if (prototype.SpeciesRestrictions != null
-                    && !prototype.SpeciesRestrictions.Contains(species))
+                if (prototype.SpeciesRestrictions != null)
                 {
-                    toRemove.Add((category, marking.MarkingId));
+                    if (!prototype.SpeciesRestrictions.Contains(species))
+                    {
+                        var tinue = true;
+                        if (prototype.KindAllowance != null)
+                        {
+                            if (speciesProto.Kind != null)
+                            {
+                                if (prototype.KindAllowance.Any(kind => speciesProto.Kind.Contains(kind)))
+                                    tinue = false; // hi mom!
+                            }
+                        }
+
+                        if (tinue)
+                        {
+                            toRemove.Add((category, marking.MarkingId));
+                            continue;
+                        }
+                    }
                 }
+
             }
         }
 
@@ -189,7 +206,7 @@ public sealed partial class MarkingSet
             {
                 foreach (var marking in list)
                 {
-                    if (markingManager.TryGetMarking(marking, out var prototype)) // Frontier: modified this test to add forced marking test 
+                    if (markingManager.TryGetMarking(marking, out var prototype)) // Frontier: modified this test to add forced marking test
                     {
                         if (markingManager.MustMatchSkin(species, prototype.BodyPart, out var alpha, prototypeManager))
                             marking.SetColor(skinColor.Value.WithAlpha(alpha));

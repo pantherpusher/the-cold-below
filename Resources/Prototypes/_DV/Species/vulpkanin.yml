@@ -11,6 +11,9 @@
   maleFirstNames: NamesVulpkaninMale
   femaleFirstNames: NamesVulpkaninFemale
   lastNames: NamesVulpkaninLast
+  kind:
+  - BasicHumanlike
+  - BasicFurry
 
 - type: speciesBaseSprites
   id: MobVulpkaninSprites

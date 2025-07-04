@@ -11,6 +11,8 @@
   maleFirstNames: NamesReptilianMale
   femaleFirstNames: NamesReptilianFemale
   naming: FirstDashFirst
+  kind:
+  - BasicFurry
 
 - type: speciesBaseSprites
   id: MobReptilianSprites

@@ -13,6 +13,8 @@
   lastNames: NamesArachnidLast
   sexes:
   - Unsexed
+  kind:
+  - BasicHumanlike
 
 - type: speciesBaseSprites
   id: MobArachnidSprites

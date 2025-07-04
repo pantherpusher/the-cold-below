@@ -11,6 +11,8 @@
   maleFirstNames: NamesMothFirstMale
   femaleFirstNames: NamesMothFirstFemale
   lastNames: NamesMothLast
+  kind:
+  - BasicFurry
 
 - type: speciesBaseSprites
   id: MobMothSprites

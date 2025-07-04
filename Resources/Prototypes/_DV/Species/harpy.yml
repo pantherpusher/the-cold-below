@@ -7,6 +7,9 @@
   markingLimits: MobHarpyMarkingLimits
   dollPrototype: MobHarpyDummy
   skinColoration: Hues # IDK about this one quite yet.
+  kind:
+  - BasicHumanlike
+  - BasicFurry
 
 - type: speciesBaseSprites
   id: MobHarpySprites

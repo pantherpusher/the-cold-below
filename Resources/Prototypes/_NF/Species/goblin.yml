@@ -11,6 +11,9 @@
   maleFirstNames: NamesGoblinFirstMale
   femaleFirstNames: NamesGoblinFirstFemale
   lastNames: NamesGoblinLast
+  kind:
+  - BasicHumanlike
+  - BasicFurry
 
 - type: speciesBaseSprites
   id: MobGoblinSprites

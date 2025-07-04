@@ -12,6 +12,8 @@
   femaleFirstNames: NamesDionaFirst
   lastNames: NamesDionaLast
   naming: TheFirstofLast
+  kind:
+  - BasicHumanlike
 
 - type: speciesBaseSprites
   id: MobDionaSprites

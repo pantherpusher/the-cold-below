@@ -77,9 +77,23 @@ namespace Content.Shared.Humanoid.Markings
                     continue;
                 }
 
-                if (marking.SpeciesRestrictions != null && !marking.SpeciesRestrictions.Contains(species))
+                if (marking.SpeciesRestrictions != null)
                 {
-                    continue;
+                    if (!marking.SpeciesRestrictions.Contains(species))
+                    {
+                        var tinue = true;
+                        if (marking.KindAllowance != null)
+                        {
+                            if (speciesProto.Kind != null)
+                            {
+                                if (marking.KindAllowance.Any(kind => speciesProto.Kind.Contains(kind)))
+                                    tinue = false; // hi mom!
+                            }
+                        }
+
+                        if (tinue)
+                            continue;
+                    }
                 }
                 res.Add(key, marking);
             }
@@ -126,8 +140,11 @@ namespace Content.Shared.Humanoid.Markings
         ///     Please make a pull request if you find a use case for that behavior.
         /// </remarks>
         /// <returns></returns>
-        public IReadOnlyDictionary<string, MarkingPrototype> MarkingsByCategoryAndSpeciesAndSex(MarkingCategories category,
-            string species, Sex sex)
+        public IReadOnlyDictionary<string, MarkingPrototype> MarkingsByCategoryAndSpeciesAndSex(
+            MarkingCategories category,
+            string species,
+            Sex sex
+            )
         {
             var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
             var onlyWhitelisted = _prototypeManager.Index(speciesProto.MarkingPoints).OnlyWhitelisted;
@@ -140,9 +157,23 @@ namespace Content.Shared.Humanoid.Markings
                     continue;
                 }
 
-                if (marking.SpeciesRestrictions != null && !marking.SpeciesRestrictions.Contains(species))
+                if (marking.SpeciesRestrictions != null)
                 {
-                    continue;
+                    if (!marking.SpeciesRestrictions.Contains(species))
+                    {
+                        var tinue = true;
+                        if (marking.KindAllowance != null)
+                        {
+                            if (speciesProto.Kind != null)
+                            {
+                                if (marking.KindAllowance.Any(kind => speciesProto.Kind.Contains(kind)))
+                                    tinue = false; // hi mom!
+                            }
+                        }
+
+                        if (tinue)
+                            continue;
+                    }
                 }
 
                 if (marking.SexRestriction != null && marking.SexRestriction != sex)
@@ -176,9 +207,29 @@ namespace Content.Shared.Humanoid.Markings
                 return false;
             }
 
-            if (proto.MarkingCategory != category ||
-                proto.SpeciesRestrictions != null && !proto.SpeciesRestrictions.Contains(species) ||
-                proto.SexRestriction != null && proto.SexRestriction != sex)
+            if (proto.MarkingCategory != category)
+            {
+                return false;
+            }
+            if (proto.SpeciesRestrictions != null && !proto.SpeciesRestrictions.Contains(species))
+            {
+                var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
+                var isInvalid = true;
+                if (proto.KindAllowance != null)
+                {
+                    if (speciesProto.Kind != null)
+                    {
+                        if (proto.KindAllowance.Any(kind => speciesProto.Kind.Contains(kind)))
+                            isInvalid = false; // hi mom!
+                    }
+                }
+                if (isInvalid)
+                {
+                    return false;
+                }
+
+            }
+            if (proto.SexRestriction != null && proto.SexRestriction != sex)
             {
                 return false;
             }
