@@ -98,10 +98,10 @@ namespace Content.Shared.Preferences
         public int BankBalance { get; private set; } = DefaultBalance; // Frontier: Bank balance
 
         [DataField("height")]
-        public float Height { get; set; }
+        public float Height { get; set; } = 1f;
 
         [DataField("width")]
-        public float Width { get; set; }
+        public float Width { get; set; } = 1f;
 
         /// <summary>
         /// <see cref="Appearance"/>
