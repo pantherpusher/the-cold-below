@@ -1,18 +1,19 @@
 <div class="header" align="center">
-<img alt="Frontier Station" height="300" src="https://github.com/new-frontiers-14/frontier-station-14/blob/master/Resources/Textures/_NF/Logo/logo.png?raw=true" />
+<img alt="Frontier Station" height="308" src="https://github.com/ARF-SS13/coyote-frontier/blob/master/Resources/Textures/_CS/Logo/logo.png?raw=true" />
 </div>
 
-Frontier Station is a fork of [Space Station 14](https://github.com/space-wizards/space-station-14) that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox) engine written in C#.
+Coyote Sector is a fork of [Frontier Station](https://github.com/new-frontiers-14/frontier-station-14), which itself is a fork of [Space Station 14](https://github.com/space-wizards/space-station-14) that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox) engine written in C#.
 
-This is the primary repo for Frontier Station.
 
-If you want to host or create content for Frontier Station, this is the repo you need. It contains both RobustToolbox and the content pack for development of new content packs.
+This is the primary repo for Coyote Sector.
+
+If you want to host or create content for Coyote Sector, this is the repo you need. It contains both RobustToolbox and the content pack for development of new content packs.
 
 ## Links
 
 <div class="header" align="center">
 
-[Discord](https://discord.gg/tpuAT7d3zm/) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Patreon](https://www.patreon.com/frontierstation14) | [Wiki](https://frontierstation.wiki.gg/)
+[Discord]TBA | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Patreon]TBA | [Wiki](https://frontierstation.wiki.gg/)
 
 </div>
 
@@ -22,7 +23,7 @@ Our [wiki](https://frontierstation.wiki.gg/) has documentation on Frontier Stati
 
 ## Contributing
 
-We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of ideas](https://discord.com/channels/1123826877245694004/1127017858833068114) that can be done and anybody can pick them up. Don't be afraid to ask for help either!
+We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of ideas]TBA that can be done and anybody can pick them up. Don't be afraid to ask for help either!
 
 We are not currently accepting translations of the game on our main repository. If you would like to translate the game into another language, consider creating a fork or contributing to a fork.
 

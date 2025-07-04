@@ -6,10 +6,10 @@
   sprites: MobHumanSprites
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobDwarfDummy
-  skinColoration: HumanToned
   minHeight: 0.6
   defaultHeight: 0.8
   maxHeight: 0.8
   minWidth: 0.55
   defaultWidth: 0.8
   maxWidth: 0.85
+  skinColoration: Hues

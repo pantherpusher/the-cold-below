@@ -6,11 +6,11 @@
   sprites: MobHarpySprites
   markingLimits: MobHarpyMarkingLimits
   dollPrototype: MobHarpyDummy
-  skinColoration: HumanToned
   minHeight: 0.6
   defaultHeight: 0.8
   minWidth: 0.55
   defaultWidth: 0.8
+  skinColoration: Hues # IDK about this one quite yet.
 
 - type: speciesBaseSprites
   id: MobHarpySprites
