@@ -1,6 +1,21 @@
 <Document>
   # Reptilians
 
+ ### Homeworld
+  Moghes in the Beta Centaurus System
+
+  ### Temperment
+  People often assume that Reptillian crew come in one of two flavors.  The Cold, calculating, near mechanically minded - or - the skittery, gun-shy and devious.
+
+  ### Secondary Species of Interest
+  Rodentia - The Reptillian peoples have a history of eating small mammals in their society, a well known fact to the Rodentia - and while they would never do such a heinous thing many do revel in the fear it can create.
+
+  Shelegs - Many Reptillian crew distrust Shelegs, due to a belief that nothing that cold can be safe.
+
+  Goblins - Goblins are often seen as good companions for the more devious and skittery Reptillians, who often find their frantic attitudes align well with their shorter friends.
+
+
+
   <Box>
     <GuideEntityEmbed Entity="MobReptilian" Caption=""/>
   </Box>

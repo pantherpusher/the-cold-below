@@ -1,6 +1,19 @@
 <Document>
   # Shelegs
 
+ ### Homeworld
+  Unknown
+
+  ### Temperment
+  Sheleg tend to be stoic, reserved, and capable. Many see them as looking down their noses at other species, but they are just as prone to do that as anyone else.
+
+  ### Secondary Species of Interest
+  Oni - Sheleg see Oni as much like themselves, but find their fiery temperaments to be fascinating - if sometimes a bit too all consuming.
+
+  Harpy - Many shelegs find Harpy hard to get along with, finding their inquisitive and argumentative natures overbearing.
+
+  Vulpkanin - The Sheleg and Vulpkanin peoples have a long history of working together, with the Vulpkanin taking on a role of trader with Shelegs working as Guards.  Roles both find ammenable.
+
   <Box>
     <GuideEntityEmbed Entity="MobSheleg" Caption=""/>
   </Box>

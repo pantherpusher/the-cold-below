@@ -1,6 +1,15 @@
 <Document>
   # Humans
 
+  ### Homeworld
+  Sol; Under the Trans-Solar Federation
+
+  ### Temperment
+  Varies massively, so much so that most aliens never know what to even try to expect.
+
+  ### Secondary Species of Interest
+  Humans tend to be so varied in outlook that they can view any of the other inteligent species in any way, the only true outlier are the Arachnids - who many humans tend to show an aversion to due to their shared origins - even still they more often live and let live.
+
   <Box>
     <GuideEntityEmbed Entity="MobHumanDummy" Caption=""/>
   </Box>
@@ -8,4 +17,10 @@
   Depending on who you ask, humans are either unremarkable or the universal standard to which everything else is compared.
   They have no special mechanics or notable attributes.
 
+
+###  Note A:
+Human skin tones are unlocked entirely, this is due to a variety of reasons leading from gene modification to radiation mutation or evolution.
+
+###  Note B:
+Humans have access to the entire repitoir of anthro ears and tails, see above for why.
 </Document>

@@ -1,6 +1,23 @@
 <Document>
   # Slime People
 
+  ### Homeworld
+  Xarxis in the Delta Equuleus System
+
+
+  ### Temperment
+  Slime people tend to be a bit on the eccentric side, with a deep love of exploration.
+
+  ### Secondary Species of Interest
+  IPC - Slimepeople find IPCs fascinating, the amount of complexity and difference in their biologies being so wide only fuels the Slimes desire to understand.
+
+  Shelegs - Slime people are wary of the frigid Shelegs, finding them good companions but perhaps not the best to be in tight quarters with.
+
+  Rodentia - The small rodentia's natural curiosity and love of exploration fit in well with most slime peoples interests, the two are often seen as two peas in a pod.
+
+
+
+
   <Box>
     <GuideEntityEmbed Entity="MobSlimePerson" Caption=""/>
   </Box>

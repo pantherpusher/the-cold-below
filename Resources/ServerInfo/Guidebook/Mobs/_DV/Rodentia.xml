@@ -1,6 +1,20 @@
 <Document>
   # Rodentia
 
+  ### Homeworld
+  Unknown, assumed Sol
+
+  ### Temperment
+  Rodentia tend to trend towards the shy, the quiet, and the unassuming.  Many are seen as anxious, nervous, or just generally flighty.  Despite that they are - when comfortable - close kept friends who seem
+  to lack a real understanding of personal space or have tendencies to horde materials.
+
+  ### Secondary Species of Interest
+  Felinids - Most rodentia are scared of Felinids to a degree.  Feeling easily flustered by the larger - seemingly predatory - humanoids.  The rare exception occurs at times though where a Rodentia will be overly attentive to a Felinid - often causing confusion.
+
+  Resomi - A sort of kinship exists between the Resomi and Rodentia.  The two small and quiet species finding peace in each others presence - including a desire to hold onto everything they can.
+
+  Feroxi - Many Rodentia look up to the Feroxi they know, fascinated by the Feroxi's pride and attitudes.  Quietly they attempt to emulate them, hoping that they aren't noticed.
+
   <Box>
     <GuideEntityEmbed Entity="MobRodentiaDummy" Caption=""/>
   </Box>
