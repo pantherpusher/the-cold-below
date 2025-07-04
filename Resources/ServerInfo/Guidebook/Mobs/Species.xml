@@ -1,7 +1,16 @@
 <Document>
   # Species
 
-  Nanotrasen employs a variety of sapient species.
+  Our Species pages contain two sections.  Lore information for the species followed by mechanical functions.
+  The Lore blurb will include homeworld, general rough temperament that others expect, and particular secondary species of interest to them.
+
+  ###Temperament Note:
+  Temperament is a very rough example to build off of, you are free to build your characters to largely your own design.  They are listed more as a jumping off point.
+
+
+  ###Species of Interest Note:
+  The Secondary Species of Interest Lore is not there for you to create excuses for why you want to genocide felinids or any other race (fictional or otherwise), it's to create
+  a roleplay hook for this gigantic slew of otherwise not-locked-together species.
 
   <Box>
   <GuideEntityEmbed Entity="MobArachnid" Caption="Arachnid"/>
@@ -28,6 +37,7 @@
   <GuideEntityEmbed Entity="MobOni" Caption="Oni"/>
   <GuideEntityEmbed Entity="MobIPCDummy" Caption="I.P.C."/>
   <GuideEntityEmbed Entity="MobFeroxi" Caption="Feroxi"/>
+  <GuideEntityEmbed Entity="MobRodentia" Caption="Rodentia"/>
   </Box>
 
 </Document>

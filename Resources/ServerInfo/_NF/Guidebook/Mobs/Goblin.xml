@@ -1,6 +1,22 @@
 <Document>
   # Goblins
 
+  ### Homeworld
+  Unknown
+
+  ### Temperment
+  Goblins tend to lean towards the devious. They are often pranksters, and will make jokes with or about just about anyone. A few have been noted for their bent towards more scientific topics though.
+
+  ### Secondary Species of Interest
+  IPC - Goblins find themselves often underappreciated, but when it comes to IPC the two often revel in what can best be described as a deep desire to `F around and find out.`
+
+  Dwarves - Goblins and Dwarves often find a reason to come to blows - if almost never lethal ones.  Despite this Goblins are absolutely ride or dies for any Dwarf, just like Dwarves are for them. Even if sometimes it's Ride And Die.
+
+  Feroxi - Goblins tend to be heavily intimidated by Feroxi, even the tamest and gentlest of Feroxi have been known to make strong Goblins uneasy.  It's something to do with the teeth.
+
+
+
+
   <Box>
     <GuideEntityEmbed Entity="MobGoblin" Caption=""/>
   </Box>

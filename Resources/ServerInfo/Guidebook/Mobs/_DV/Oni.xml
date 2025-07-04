@@ -1,6 +1,19 @@
 <Document>
   # Onis
 
+  ### Homeworld
+  Unknown
+
+  ### Temperment
+  Boisterous, brash, brave - and sometimes buxom.
+
+  ### Secondary Species of Interest
+  Goblins - Oni and Goblins. Cheech and Chong. Bonnie and Clyde. We know how this ends.
+
+  Dwarves - Dwarves equally full of bravado mixing with Oni in a bar tend to be a quick recipe to find a new place to drink, before you have no place to drink at all.
+
+  Resomi - Oni are deeply terrified of Resomi generally. The very act of one crossing a room can make a grown Oni warrior near buckle - the fear such a small creature engenders into them being one of almost universally flight.
+
   <Box>
     <GuideEntityEmbed Entity="MobOniDummy" Caption=""/>
   </Box>

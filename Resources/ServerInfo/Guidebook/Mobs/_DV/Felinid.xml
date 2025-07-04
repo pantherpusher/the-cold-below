@@ -1,6 +1,20 @@
 <Document>
   # Felinids
 
+   ### Homeworld
+  Unknown
+
+  ### Temperment
+  Felinids vary almost as much as humans when it comes to how they are viewed, with two main assumptions aside.  Felinids are generally assumed to be more grumpy than the average human - or - much more affectionate than the average human.
+
+  ### Secondary Species of Interest
+  Harpy - Harpies have a tendency to become randomly infatuated with Felinids, neither species knows why - but one thing is for sure.  Felinids wish it would stop more often than not.
+
+  Vulpkanin - With both species being focused heavily on space trade the Felinids and their Vulpkanin 'friends' tend to be at arms length, even if the Vulpkanin seem to think this is some sort of 'happy game'.
+
+  Rodentia - The game of cat and mouse is ancient in human circles - and it is true here to a degree as well.  Most Felinids love teasing Rodentia, be that physically or verbally.
+
+
   <Box>
     <GuideEntityEmbed Entity="MobFelinidDummy" Caption=""/>
   </Box>
