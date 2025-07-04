@@ -167,30 +167,14 @@ public sealed partial class MarkingSet
                 if (onlyWhitelisted && prototype.SpeciesRestrictions == null)
                 {
                     toRemove.Add((category, marking.MarkingId));
+                    continue;
                 }
 
-                if (prototype.SpeciesRestrictions != null)
+                if (!IsAllowedBySpeciesOrKindAllowance(speciesProto, prototype))
                 {
-                    if (!prototype.SpeciesRestrictions.Contains(species))
-                    {
-                        var tinue = true;
-                        if (prototype.KindAllowance != null)
-                        {
-                            if (speciesProto.Kind != null)
-                            {
-                                if (prototype.KindAllowance.Any(kind => speciesProto.Kind.Contains(kind)))
-                                    tinue = false; // hi mom!
-                            }
-                        }
-
-                        if (tinue)
-                        {
-                            toRemove.Add((category, marking.MarkingId));
-                            continue;
-                        }
-                    }
+                    toRemove.Add((category, marking.MarkingId));
+                    continue; // look i know its redundant, blow me
                 }
-
             }
         }
 
@@ -217,6 +201,27 @@ public sealed partial class MarkingSet
             }
         }
     }
+
+    /// <summary>
+    /// Is the marking allowed by the kind allowance of the marking prototype?
+    /// </summary>
+    public static bool IsAllowedBySpeciesOrKindAllowance(SpeciesPrototype speciesProto, MarkingPrototype marking)
+    {
+        if (marking.SpeciesRestrictions == null)
+            return true; // no restrictions, so it's allowed
+        if (marking.SpeciesRestrictions.Contains(speciesProto.ID))
+            return true; // species is allowed
+        // okay at this point, there is restrictions, and the species is not allowed.
+        // check kinds!
+        if (marking.KindAllowance == null)
+            return false; // no kind allowance, so it's not allowed
+        if (speciesProto.Kind == null)
+            return false; // no kind, so it's not allowed
+        if (marking.KindAllowance.Any(kind => speciesProto.Kind.Contains(kind)))
+            return true; // kind is allowed, so it's allowed
+        return false; // screw off
+    }
+
 
     /// <summary>
     ///     Filters markings based on sex and it's restrictions in the marking's prototype from this marking set.

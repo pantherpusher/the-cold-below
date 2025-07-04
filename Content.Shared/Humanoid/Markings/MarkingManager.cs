@@ -77,23 +77,9 @@ namespace Content.Shared.Humanoid.Markings
                     continue;
                 }
 
-                if (marking.SpeciesRestrictions != null)
+                if (!IsAllowedBySpeciesOrKindAllowance(speciesProto, marking))
                 {
-                    if (!marking.SpeciesRestrictions.Contains(species))
-                    {
-                        var tinue = true;
-                        if (marking.KindAllowance != null)
-                        {
-                            if (speciesProto.Kind != null)
-                            {
-                                if (marking.KindAllowance.Any(kind => speciesProto.Kind.Contains(kind)))
-                                    tinue = false; // hi mom!
-                            }
-                        }
-
-                        if (tinue)
-                            continue;
-                    }
+                    continue;
                 }
                 res.Add(key, marking);
             }
@@ -157,23 +143,9 @@ namespace Content.Shared.Humanoid.Markings
                     continue;
                 }
 
-                if (marking.SpeciesRestrictions != null)
+                if (!IsAllowedBySpeciesOrKindAllowance(speciesProto, marking))
                 {
-                    if (!marking.SpeciesRestrictions.Contains(species))
-                    {
-                        var tinue = true;
-                        if (marking.KindAllowance != null)
-                        {
-                            if (speciesProto.Kind != null)
-                            {
-                                if (marking.KindAllowance.Any(kind => speciesProto.Kind.Contains(kind)))
-                                    tinue = false; // hi mom!
-                            }
-                        }
-
-                        if (tinue)
-                            continue;
-                    }
+                    continue;
                 }
 
                 if (marking.SexRestriction != null && marking.SexRestriction != sex)
@@ -190,6 +162,51 @@ namespace Content.Shared.Humanoid.Markings
         public bool TryGetMarking(Marking marking, [NotNullWhen(true)] out MarkingPrototype? markingResult)
         {
             return Markings.TryGetValue(marking.MarkingId, out markingResult);
+        }
+
+        /// <summary>
+        /// Is the marking allowed by the kind allowance of the marking prototype?
+        /// </summary>
+        public static bool IsAllowedBySpeciesOrKindAllowance(SpeciesPrototype speciesProto, MarkingPrototype marking)
+        {
+            if (marking.SpeciesRestrictions == null)
+                return true; // no restrictions, so it's allowed
+            if (marking.SpeciesRestrictions.Contains(speciesProto.ID))
+                return true; // species is allowed
+            // okay at this point, there is restrictions, and the species is not allowed.
+            // check kinds!
+            if (marking.KindAllowance == null)
+                return false; // no kind allowance, so it's not allowed
+            if (speciesProto.Kind == null)
+                return false; // no kind, so it's not allowed
+            if (marking.KindAllowance.Any(kind => speciesProto.Kind.Contains(kind)))
+                return true; // kind is allowed, so it's allowed
+            return false; // screw off
+        }
+        // overloaded version IsAllowedBySpeciesOrKindAllowance, in case its called with a string species ID
+        private bool IsAllowedBySpeciesOrKindAllowance(string species, MarkingPrototype marking)
+        {
+            var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
+            return IsAllowedBySpeciesOrKindAllowance(speciesProto, marking);
+        }
+        // overloaded version IsAllowedBySpeciesOrKindAllowance, in case its called with a string marking ID
+        public bool IsAllowedBySpeciesOrKindAllowance(SpeciesPrototype species, string markingId)
+        {
+            if (!Markings.TryGetValue(markingId, out var marking))
+            {
+                return false; // no such marking
+            }
+            return IsAllowedBySpeciesOrKindAllowance(species, marking);
+        }
+        // and just in case both are strings
+        public bool IsAllowedBySpeciesOrKindAllowance(string species, string markingId)
+        {
+            var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
+            if (!Markings.TryGetValue(markingId, out var marking))
+            {
+                return false; // no such marking
+            }
+            return IsAllowedBySpeciesOrKindAllowance(speciesProto, marking);
         }
 
         /// <summary>
