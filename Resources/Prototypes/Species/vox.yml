@@ -12,7 +12,9 @@
   femaleFirstNames: NamesVox
   naming: First
   sexes:
-  - Unsexed
+  - Unsexed # NO WAY MY VOX SEXES ALL THE TIME
+  kind:
+  - VoxLike
 
 - type: speciesBaseSprites
   id: MobVoxSprites
@@ -61,10 +63,10 @@
       required: true
       defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
     UndergarmentTop:
-      points: 1
+      points: 3
       required: false
     UndergarmentBottom:
-      points: 1
+      points: 3
       required: false
     Chest:
       points: 2

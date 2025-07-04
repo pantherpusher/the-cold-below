@@ -77,7 +77,7 @@ namespace Content.Shared.Humanoid.Markings
                     continue;
                 }
 
-                if (marking.SpeciesRestrictions != null && !marking.SpeciesRestrictions.Contains(species))
+                if (!IsAllowedBySpeciesOrKindAllowance(speciesProto, marking))
                 {
                     continue;
                 }
@@ -126,8 +126,11 @@ namespace Content.Shared.Humanoid.Markings
         ///     Please make a pull request if you find a use case for that behavior.
         /// </remarks>
         /// <returns></returns>
-        public IReadOnlyDictionary<string, MarkingPrototype> MarkingsByCategoryAndSpeciesAndSex(MarkingCategories category,
-            string species, Sex sex)
+        public IReadOnlyDictionary<string, MarkingPrototype> MarkingsByCategoryAndSpeciesAndSex(
+            MarkingCategories category,
+            string species,
+            Sex sex
+            )
         {
             var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
             var onlyWhitelisted = _prototypeManager.Index(speciesProto.MarkingPoints).OnlyWhitelisted;
@@ -140,7 +143,7 @@ namespace Content.Shared.Humanoid.Markings
                     continue;
                 }
 
-                if (marking.SpeciesRestrictions != null && !marking.SpeciesRestrictions.Contains(species))
+                if (!IsAllowedBySpeciesOrKindAllowance(speciesProto, marking))
                 {
                     continue;
                 }
@@ -162,6 +165,51 @@ namespace Content.Shared.Humanoid.Markings
         }
 
         /// <summary>
+        /// Is the marking allowed by the kind allowance of the marking prototype?
+        /// </summary>
+        public static bool IsAllowedBySpeciesOrKindAllowance(SpeciesPrototype speciesProto, MarkingPrototype marking)
+        {
+            if (marking.SpeciesRestrictions == null)
+                return true; // no restrictions, so it's allowed
+            if (marking.SpeciesRestrictions.Contains(speciesProto.ID))
+                return true; // species is allowed
+            // okay at this point, there is restrictions, and the species is not allowed.
+            // check kinds!
+            if (marking.KindAllowance == null)
+                return false; // no kind allowance, so it's not allowed
+            if (speciesProto.Kind == null)
+                return false; // no kind, so it's not allowed
+            if (marking.KindAllowance.Any(kind => speciesProto.Kind.Contains(kind)))
+                return true; // kind is allowed, so it's allowed
+            return false; // screw off
+        }
+        // overloaded version IsAllowedBySpeciesOrKindAllowance, in case its called with a string species ID
+        private bool IsAllowedBySpeciesOrKindAllowance(string species, MarkingPrototype marking)
+        {
+            var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
+            return IsAllowedBySpeciesOrKindAllowance(speciesProto, marking);
+        }
+        // overloaded version IsAllowedBySpeciesOrKindAllowance, in case its called with a string marking ID
+        public bool IsAllowedBySpeciesOrKindAllowance(SpeciesPrototype species, string markingId)
+        {
+            if (!Markings.TryGetValue(markingId, out var marking))
+            {
+                return false; // no such marking
+            }
+            return IsAllowedBySpeciesOrKindAllowance(species, marking);
+        }
+        // and just in case both are strings
+        public bool IsAllowedBySpeciesOrKindAllowance(string species, string markingId)
+        {
+            var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
+            if (!Markings.TryGetValue(markingId, out var marking))
+            {
+                return false; // no such marking
+            }
+            return IsAllowedBySpeciesOrKindAllowance(speciesProto, marking);
+        }
+
+        /// <summary>
         ///     Check if a marking is valid according to the category, species, and current data this marking has.
         /// </summary>
         /// <param name="marking"></param>
@@ -176,9 +224,29 @@ namespace Content.Shared.Humanoid.Markings
                 return false;
             }
 
-            if (proto.MarkingCategory != category ||
-                proto.SpeciesRestrictions != null && !proto.SpeciesRestrictions.Contains(species) ||
-                proto.SexRestriction != null && proto.SexRestriction != sex)
+            if (proto.MarkingCategory != category)
+            {
+                return false;
+            }
+            if (proto.SpeciesRestrictions != null && !proto.SpeciesRestrictions.Contains(species))
+            {
+                var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
+                var isInvalid = true;
+                if (proto.KindAllowance != null)
+                {
+                    if (speciesProto.Kind != null)
+                    {
+                        if (proto.KindAllowance.Any(kind => speciesProto.Kind.Contains(kind)))
+                            isInvalid = false; // hi mom!
+                    }
+                }
+                if (isInvalid)
+                {
+                    return false;
+                }
+
+            }
+            if (proto.SexRestriction != null && proto.SexRestriction != sex)
             {
                 return false;
             }

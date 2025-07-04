@@ -1,6 +1,20 @@
 <Document>
   # Vulpkanin
 
+  ### Homeworld
+  Altam, in the Vazzend System
+
+  ### Temperment
+  Vulpkanin are generally seen as one of the all around friendlier species in known space, their outgoing and kind natures pushing well with their desire for Industry and growth.  Not just of themselves, but of their companions and allies.
+
+  ### Secondary Species of Interest
+  Felinid - Vulpkanin have a mutual dislike with the Felinid peoples, both of which tending to trade in the same markets. Often the Vulpkanin themselves view this as more of a friendly rivalry though.
+
+  Moths - Much like the Felinids the Moth peoples are seen as friendly rivals - a group much like Felinids to help Vulpkanin merchants learn and grow to be better.
+
+  Rodentia - Many Vulpkanin adore their smaller mammalian companions, going out of their way to assist Rodentia even when it would be dangerous or unwise.
+
+
   <Box>
     <GuideEntityEmbed Entity="MobVulpkaninDummy" Caption=""/>
   </Box>

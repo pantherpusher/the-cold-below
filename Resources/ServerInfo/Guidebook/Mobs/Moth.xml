@@ -1,6 +1,21 @@
 <Document>
   # Moth People
 
+  ### Homeworld
+  Dõm, in the Garden System
+
+
+  ### Temperment
+  Most Moth people tend to be organized, careful and focused on mercantile interactions.
+
+  ### Secondary Species of Interest
+  Arachnids - Most Moth people are uncomfortable around Arachnids until they get to know them a bit better, while they largely accept the rumors of predation to be false the very build of the Arachnid form creates some stress.
+
+  Vulpkanin - Many of the Moth community have a friendly rivalry with their Vulpkanin crewmates when it comes to mercantilism and general productivity.
+
+  Rodentia - Rodentia are complicated for many in Moth society, while they find their short statures and generally mammalian forms pretty mundane or even adorable something about their rumored habits of making messes discomforts some.
+
+
   <Box>
     <GuideEntityEmbed Entity="MobMoth" Caption=""/>
   </Box>

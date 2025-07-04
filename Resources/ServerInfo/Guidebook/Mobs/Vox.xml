@@ -1,6 +1,23 @@
 <Document>
   # Vox
 
+  ### Homeworld
+  Unknown
+
+  ### Temperment
+  Vox are often expected to be rough- be that physical or vocally - and many people generally don't look much deeper than that.  Vox tend to be focused on Mercantile duties, but in round about way - preferably violent ones.
+
+  ### Secondary Species of Interest
+
+  Oni - The oni are one of the few species that truly accept the Vox as companions with little complaint. The two often in lock step for shutting down threats to their crewmates.
+
+  Resomi - Vox tend to have a soft spot for Resomi, seeing them as small - and physically incapable - Vox that need their protection.
+
+  Sheleg - The cold Sheleg are seen as friendly companions for many Vox, their preferred habitats being somewhat similar.
+
+  ###Note A:
+  We largely use the Paradise description for Vox, but all Vox are generally assumed to be renegades who have escaped their arkships.
+
   <Box>
     <GuideEntityEmbed Entity="MobVox" Caption=""/>
   </Box>

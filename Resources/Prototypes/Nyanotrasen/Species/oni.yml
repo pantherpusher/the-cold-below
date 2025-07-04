@@ -17,6 +17,8 @@
   minWidth: 0.85
   defaultWidth: 1.2
   maxWidth: 1.35
+  kind:
+  - BasicHumanlike
 
 - type: markingPoints
   id: MobOniMarkingLimits
@@ -45,9 +47,9 @@
       required: false
     # Frontier: apparently these don't exist on Delta
     UndergarmentTop:
-      points: 1
+      points: 3
       required: false
     UndergarmentBottom:
-      points: 1
+      points: 3
       required: false
     # End Frontier

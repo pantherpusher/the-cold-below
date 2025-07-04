@@ -1,6 +1,19 @@
 <Document>
   # Dwarves
 
+  ### Homeworld
+  Space-Bound Nomads - Homeworld Abandoned and purposefully forgotten.
+
+  ### Temperment
+  Surly. Cantankerous. Blunt.
+
+  ### Secondary Species of Interest
+  Goblins - Dwarves are, generally speaking, not on good terms with Goblins. With both parties looking for reasons to start throwing punches.  Ironically, both parties are just as quick to take up arms for one another as they are against.  It's a love hate sorta thing.
+
+  Oni - Dwarves and Oni get along like oil and sparks.  Stuff sure does happen, and both parties are usually having a great time, but it's usually over pretty fast and leaves a mess behind.
+
+  Humans - Dwarves find humans unsettling.  They're too tall, too lanky, too thin, and weird looking, though - They do often enjoy their company despite this.
+
   <Box>
     <GuideEntityEmbed Entity="MobDwarf" Caption=""/>
   </Box>

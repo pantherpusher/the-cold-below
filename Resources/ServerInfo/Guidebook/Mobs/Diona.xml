@@ -1,6 +1,20 @@
 <Document>
   # Diona
 
+ ### Homeworld
+  Unknown
+
+  ### Temperment
+  Diona are generally straight forward.  They are not fans of lying, deception, or chicanery.  Their species is especially long lived as well, so as such they tend to be patient and future looking.
+
+
+  ### Secondary Species of Interest
+  Moths - Diona tend to be a bit distrustful of Moths, understanding that it is unreasonable to do so but the deeper knowledge that their biology would allow them to break down a Diona's plant fibers is too unsettling to fully ignore.
+
+  Arachnids - Diona are generally aware of Arachnids fascination with them but find their friendships to be a bit difficult due to what most Diona assume is a misplaced instinct.
+
+  Harpy - The Harpies are generally appreciated by Diona as a whole, their ability to mimic sounds often being something that can entrance many Diona.
+
   <Box>
     <GuideEntityEmbed Entity="MobDiona" Caption=""/>
   </Box>

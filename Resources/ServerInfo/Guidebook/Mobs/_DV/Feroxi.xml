@@ -1,6 +1,22 @@
 <Document>
   # Feroxi
 
+  ### Homeworld
+  Jorhul
+
+  ### Temperment
+  Feroxi tend to be viewed as stern, strong willed and optimistic - with a strong view on duty and 'doing what's right' in any given scenario.
+
+  ### Secondary Species of Interest
+
+  Goblins - Feroxi tend to be aware of how Goblins tend to be made uncomfortable by them, and many will do everything they can to try and soothe the situation out. Often not making it better.
+
+  Oni - Feroxi often quietly hold themselves to the standards of other species, beleiving themselves capable of tasks they may not be able to achieve, but Oni.  Oni are the one species they truly wish to be peer with in combat.
+
+  Diona - The long living, well thought out Diona often fascinate many Feroxi - who find themselves gravitating to them to ask about deeper questions than may often times be reasonable.
+
+
+
   <Box>
     <GuideEntityEmbed Entity="MobFeroxiDummy" Caption=""/>
   </Box>

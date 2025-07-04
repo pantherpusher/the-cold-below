@@ -15,6 +15,9 @@
   youngAge: 80
   oldAge: 400
   maxAge: 800
+  kind:
+  - BasicHumanlike
+  - BasicFurry
 
 - type: speciesBaseSprites
   id: MobShelegSprites
@@ -60,10 +63,10 @@
       points: 1
       required: false
     UndergarmentTop:
-      points: 1
+      points: 3
       required: false
     UndergarmentBottom:
-      points: 1
+      points: 3
       required: false
     Chest:
       points: 4

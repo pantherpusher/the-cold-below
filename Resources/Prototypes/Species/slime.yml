@@ -8,6 +8,8 @@
   markingLimits: MobSlimeMarkingLimits
   dollPrototype: MobSlimePersonDummy
   skinColoration: Hues
+  kind:
+  - BasicHumanlike
 
 - type: speciesBaseSprites
   id: MobSlimeSprites
