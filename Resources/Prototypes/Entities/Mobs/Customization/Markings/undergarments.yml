@@ -2268,7 +2268,7 @@
         color: "#FFFFFF"
   sprites:
   - sprite: Floof/Mobs/Customization/honkers.rsi
-    state: bowbra_swimming-alt
+    state: bowbra_swimming_alt
 
 - type: marking
   id: UnderwearBraCow # moo
@@ -2604,21 +2604,6 @@
   sprites:
   - sprite: Floof/Mobs/Customization/honkers.rsi
     state: shapelyblt_girlish
-
-- type: marking
-  id: UndershirtShapelyBeltMassive
-  bodyPart: UndergarmentTop
-  markingCategory: UndergarmentTop
-  speciesRestriction: [Human]
-  kindAllowance: [BasicHumanlike, BasicFurry]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
-  sprites:
-  - sprite: Floof/Mobs/Customization/honkers.rsi
-    state: shapelyblt_massive
 
 - type: marking
   id: UndershirtShapelyBeltPetite
