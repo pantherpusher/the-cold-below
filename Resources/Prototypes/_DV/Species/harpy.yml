@@ -7,6 +7,9 @@
   markingLimits: MobHarpyMarkingLimits
   dollPrototype: MobHarpyDummy
   skinColoration: Hues # IDK about this one quite yet.
+  kind:
+  - BasicHumanlike
+  - BasicFurry
 
 - type: speciesBaseSprites
   id: MobHarpySprites
@@ -52,10 +55,10 @@
       defaultMarkings: [ HarpyEarsDefault ]
     # Frontier: apparently these don't exist on Delta
     UndergarmentTop:
-      points: 1
+      points: 3
       required: false
     UndergarmentBottom:
-      points: 1
+      points: 3
       required: false
     # End Frontier
     Chest:

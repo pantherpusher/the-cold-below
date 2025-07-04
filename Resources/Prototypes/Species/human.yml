@@ -7,6 +7,8 @@
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobHumanDummy
   skinColoration: Hues # In the future, humans can be any color!
+  kind:
+  - BasicHumanlike
 
 # The lack of a layer means that
 # this person cannot have round-start anything
@@ -60,10 +62,10 @@
       points: 1
       required: false
     UndergarmentTop:
-      points: 1
+      points: 3
       required: false
     UndergarmentBottom:
-      points: 1
+      points: 3
       required: false
     Chest:
       points: 2

@@ -7,6 +7,8 @@
   markingLimits: MobFelinidMarkingLimits
   dollPrototype: MobFelinidDummy
   skinColoration: Hues
+  kind:
+  - BasicFurry
 
 - type: markingPoints
   id: MobFelinidMarkingLimits
@@ -36,9 +38,9 @@
       required: false
     # Frontier: apparently these don't exist on Delta
     UndergarmentTop:
-      points: 1
+      points: 3
       required: false
     UndergarmentBottom:
-      points: 1
+      points: 3
       required: false
     # End Frontier
