@@ -51,12 +51,12 @@
       required: false
     Tail:
       points: 2
-      required: true
-      defaultMarkings: [ LizardTailSmooth ]
+      required: false
+#      defaultMarkings: [ LizardTailSmooth ]
     Snout:
       points: 2
-      required: true
-      defaultMarkings: [ LizardSnoutRound ]
+      required: false
+#      defaultMarkings: [ LizardSnoutRound ]
     HeadTop:
       points: 2
       required: false
