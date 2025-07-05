@@ -44,3 +44,9 @@
       points: 3
       required: false
     # End Frontier
+    Head:
+      points: 4
+      required: false
+    Snout:
+      points: 3
+      required: false

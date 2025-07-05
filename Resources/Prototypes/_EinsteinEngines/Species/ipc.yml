@@ -35,7 +35,7 @@
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
-    Hair: MobHumanoidMarkingMatchSkin
+    Hair: MobHumanoidAnyMarking
     Chest: MobIPCTorso
     LArm: MobIPCLArm
     RArm: MobIPCRArm
@@ -52,7 +52,7 @@
   id: MobIPCMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 4
       required: false
     Head:
       points: 3
@@ -74,10 +74,10 @@
       points: 3
       required: false
     Tail:
-      points: 1
+      points: 4
       required: false
     Snout:
-      points: 1
+      points: 4
       required: false
     # Frontier: apparently these don't exist on Delta
     UndergarmentTop:
@@ -88,7 +88,10 @@
       required: false
     # End Frontier
     HeadTop:
-      points: 1
+      points: 4
+      required: false
+    FacialHair:
+      points: 4
       required: false
 
 - type: humanoidBaseSprite

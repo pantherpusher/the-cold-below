@@ -44,26 +44,26 @@
   id: MobVulpkaninMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 4
       required: false
     FacialHair:
-      points: 1
+      points: 4
       required: false
     Tail:
-      points: 1
+      points: 4
       required: true
       defaultMarkings: [ VulpTail ]
     Head:
-      points: 3
+      points: 4
       required: false
     Legs:
-      points: 1
+      points: 4
       required: false
     Arms:
-      points: 1
+      points: 4
       required: false
     Snout:
-      points: 1
+      points: 3
       required: false
     # Frontier: apparently these don't exist on Delta
     UndergarmentTop:
@@ -74,7 +74,7 @@
       required: false
     # End Frontier
     HeadTop:
-      points: 1
+      points: 4
       required: true
       defaultMarkings: [ VulpEar ]
 
