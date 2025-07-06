@@ -1,3 +1,9 @@
+- type: consentToggle
+  id: Vore
+
+- type: consentToggle
+  id: Digestion
+
 # - type: consentToggle
 #   id: Example
 #   category: ExampleCategory
