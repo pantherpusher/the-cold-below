@@ -288,6 +288,7 @@
     alternateState: Standing
   - type: LayingDown
   - type: ModifyUndies  # FLOOF Add
+  - type: RoleplayIncentive  # COYOTE Add
 
 - type: entity
   save: false
