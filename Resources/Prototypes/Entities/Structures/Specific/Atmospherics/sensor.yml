@@ -25,7 +25,6 @@
       Ammonia: stationAmmonia
       NitrousOxide: stationNO
       Frezon: danger
-      Respiron: ignore # Frontier
   - type: Tag
     tags:
       - AirSensor
