@@ -47,6 +47,11 @@
     RFoot: MobIPCRFoot
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Eyes: MobHumanoidEyes
 
 - type: markingPoints
   id: MobIPCMarkingLimits
@@ -93,6 +98,9 @@
     FacialHair:
       points: 4
       required: false
+
+
+
 
 - type: humanoidBaseSprite
   id: MobIPCMarkingFollowSkin
