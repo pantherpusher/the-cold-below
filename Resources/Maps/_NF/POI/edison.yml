@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/02/2025 22:52:43
-  entityCount: 4420
+  time: 07/01/2025 14:32:03
+  entityCount: 4331
 maps: []
 grids:
 - 2
@@ -4573,14 +4573,14 @@ entities:
       parent: 2
 - proto: BookshelfFilled
   entities:
-  - uid: 3046
+  - uid: 2693
     components:
     - type: Transform
       pos: -2.5,7.5
       parent: 2
 - proto: BorgCharger
   entities:
-  - uid: 2693
+  - uid: 3862
     components:
     - type: Transform
       pos: 9.5,13.5
@@ -12619,13 +12619,6 @@ entities:
     components:
     - type: Transform
       pos: 0.5,9.5
-      parent: 2
-- proto: DogBed
-  entities:
-  - uid: 1680
-    components:
-    - type: Transform
-      pos: 20.5,19.5
       parent: 2
 - proto: DrinkMugMetal
   entities:
@@ -22682,13 +22675,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 11.5,44.5
       parent: 2
-- proto: RailingRound
-  entities:
-  - uid: 3041
-    components:
-    - type: Transform
-      pos: 20.5,19.5
-      parent: 2
 - proto: RandomPosterAny
   entities:
   - uid: 3969
@@ -24777,12 +24763,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: 13.5,9.5
       parent: 2
-- proto: SpawnMobCatCurie
+- proto: SpawnPointChiefEngineer
   entities:
-  - uid: 3052
+  - uid: 3930
     components:
     - type: Transform
-      pos: 20.5,19.5
+      pos: -6.5,6.5
       parent: 2
 - proto: SpawnPointLatejoin
   entities:
@@ -25229,6 +25215,11 @@ entities:
     components:
     - type: Transform
       pos: -1.5,37.5
+      parent: 2
+  - uid: 1680
+    components:
+    - type: Transform
+      pos: 20.5,19.5
       parent: 2
   - uid: 1681
     components:

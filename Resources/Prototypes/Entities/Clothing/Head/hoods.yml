@@ -172,7 +172,6 @@
     - Snout
     - HeadTop
     - HeadSide
-  - type: CatWearable # Frontier
 
 - type: entity
   parent: ClothingHeadBase
