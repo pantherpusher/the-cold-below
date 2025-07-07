@@ -22,7 +22,7 @@ internal sealed class BuckleSystem : SharedBuckleSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<BuckleComponent, AppearanceChangeEvent>(OnAppearanceChange);
+        // SubscribeLocalEvent<BuckleComponent, AppearanceChangeEvent>(OnAppearanceChange);
         SubscribeLocalEvent<StrapComponent, MoveEvent>(OnStrapMoveEvent);
 
         // Floof - brought those two back after upstream removed them for unknown reasons

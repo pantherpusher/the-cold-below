@@ -40,6 +40,7 @@
     RFoot: MobRodentiaRFoot
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
+    Special: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobRodentiaMarkingLimits
@@ -81,6 +82,9 @@
       points: 3
       required: false
     # End Frontier
+    Special: # the cat ear joke
+      points: 3
+      required: false
 
 - type: humanoidBaseSprite
   id: MobRodentiaHead
