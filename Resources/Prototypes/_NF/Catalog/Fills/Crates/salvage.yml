@@ -16,40 +16,40 @@
   table: !type:GroupSelector
     children:
     # Mats
-    - id: SheetSteelRandomReduced
+    - id: SheetSteel
       weight: 0.15
-    - id: SheetGlassRandomReduced
+    - id: SheetGlass
       weight: 0.15
-    - id: SheetPlasmaRandomLow
+    - id: SheetPlasma
       weight: 0.1
-    - id: IngotGoldRandomLow
+    - id: IngotGold
       weight: 0.1
-    - id: IngotSilverRandomLow
+    - id: IngotSilver
       weight: 0.1
-    - id: SheetPlasticRandomLow
+    - id: SheetPlastic
       weight: 0.1
-    - id: SheetUraniumRandomLow
+    - id: SheetUranium
       weight: 0.1
-    - id: SheetPlasteelRandomLow
+    - id: SheetPlasteel
       weight: 0.1
-    - id: MaterialWoodPlankRandomLow
+    - id: MaterialWoodPlank
       weight: 0.1
-    - id: MaterialClothRandomLow
+    - id: MaterialCloth
       weight: 0.1
-    - id: MaterialDurathreadRandomLow
+    - id: MaterialDurathread
       weight: 0.01
-    - id: MaterialCardboardRandomLow
+    - id: MaterialCardboard
       weight: 0.01
-    - id: SheetPaperRandomLow
+    - id: SheetPaper
       weight: 0.01
-    - id: SheetBrassRandomLow
+    - id: SheetBrass
       weight: 0.01
-    - id: MaterialBananiumRandomVeryLow
-      weight: 0.002
-    - id: MaterialDiamondRandomVeryLow
-      weight: 0.0001
-    - id: MaterialBluespaceRandomVeryLow
-      weight: 0.00001 # Yes I mean it
+    - id: MaterialBananium
+      weight: 0.00001
+    - id: MaterialDiamond
+      weight: 0.0000001
+    - id: MaterialBluespace
+      weight: 0.00000001 # Yes I mean it
       # Disk
     - id: ResearchDisk5000
       weight: 0.001

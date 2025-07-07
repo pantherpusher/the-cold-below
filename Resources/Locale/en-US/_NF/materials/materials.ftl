@@ -3,8 +3,7 @@ materials-scrap = scrap
 materials-bluespace = bluespace
 
 # Ores
-materials-raw-scrap = scrap
-materials-raw-scrap-tech = tech scrap
+materials-raw-scrap = unsorted scrap
 
 # Other
 materials-anomalite = anomalite
