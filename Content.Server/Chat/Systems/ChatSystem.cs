@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Content.Server._Coyote;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
@@ -595,10 +596,11 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("message", FormattedMessage.EscapeText(obfuscatedMessage)),
             ("chatColor", chatColor ?? Color.White.ToHex()));
 
-
+        var numHeard = 0;
         foreach (var (session, data) in GetRecipients(source, WhisperMuffledRange))
         {
             EntityUid listener;
+            numHeard++;
 
             if (session.AttachedEntity is not { Valid: true } playerEntity)
                 continue;
@@ -616,6 +618,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             else
                 _chatManager.ChatMessageToOne(ChatChannel.Whisper, obfuscatedMessage, wrappedUnknownMessage, source, false, session.Channel);
         }
+        SendRPIncentive(source, ChatChannel.Whisper, message, numHeard);
 
         _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
 
@@ -716,6 +719,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entity", ent),
             ("message", FormattedMessage.RemoveMarkup(action)),
             ("chatColor", chatColor ?? Color.White.ToHex())); // COYOTESTATION ADD - makes the your name color right
+        var numHeareded = 0;
         foreach (var (session, data) in GetRecipients(
                      source,
                      SubtleRange,
@@ -726,8 +730,11 @@ public sealed partial class ChatSystem : SharedChatSystem
                 continue;
             if (MessageRangeCheck(session, data, range) == MessageRangeCheckResult.Disallowed)
                 continue;
+            numHeareded++;
             _chatManager.ChatMessageToOne(ChatChannel.Emotes, action, wrappedMessage, source, false, session.Channel);
         }
+        SendRPIncentive(source, ChatChannel.Subtle, action, numHeareded);
+
         if (!hideLog)
             if (name != Name(source))
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Subtle from {ToPrettyString(source):user} as {name}: {action}");
@@ -852,8 +859,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         float voiceRange = 10f, // COYOTESTATION ADD - shouts go further
         string? occludedMessage = null)
     {
+        var numHeareded = 0;
         foreach (var (session, data) in GetRecipients(source, voiceRange, blockedByOcclusion, ensmallenedByOcclusion))
         {
+            numHeareded++;
             var entRange = MessageRangeCheck(session, data, range);
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;
@@ -861,6 +870,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             var text2Send = ensmallenedByOcclusion && data.Occluded ? occludedMessage ?? wrappedMessage : wrappedMessage;
             _chatManager.ChatMessageToOne(channel, message, text2Send, source, entHideChat, session.Channel, author: author);
         }
+        SendRPIncentive(source, channel, message, numHeareded);
 
         _replay.RecordServerMessage(new ChatMessage(channel, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
     }
@@ -1033,6 +1043,19 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool Occluded = false
         )
     {
+    }
+
+    /// <summary>
+    /// Do Roleplay Incentive for the given entity, channel and message.
+    /// </summary>
+    private void SendRPIncentive(EntityUid source, ChatChannel channel, string message, int numHeareded)
+    {
+        if (!HasComp<ActorComponent>(source))
+            return;
+        if (numHeareded <= 0)
+            return;
+        var ev = new RoleplayIncentiveEvent(source, channel, message, numHeareded);
+        RaiseLocalEvent(source, ev, true);
     }
 
     private string ObfuscateMessageReadability(string message, float chance)

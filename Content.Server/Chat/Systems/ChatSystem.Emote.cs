@@ -164,7 +164,7 @@ public partial class ChatSystem
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="textInput"></param>
-    private bool TryEmoteChatInput(EntityUid uid, string textInput) // Frontier: void<bool
+    public bool TryEmoteChatInput(EntityUid uid, string textInput) // Frontier: void<bool
     {
         var actionTrimmedLower = TrimPunctuation(textInput.ToLower());
         if (!_wordEmoteDict.TryGetValue(actionTrimmedLower, out var emotes)) // DeltaV, renames to emotes
