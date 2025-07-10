@@ -257,8 +257,11 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
                     break;
             }
             action.Judgement = judgement; // set the judgement on the action
-            // then we can remove the action from the list and DELETE it
-            incentive.ActionsTaken.Remove(action);
+            actionsToRemove.Add(action); // add the action to the removal list
+        }
+        foreach (var action in actionsToRemove)
+        {
+            incentive.ActionsTaken.Remove(action); // remove actions after iteration
         }
         var judgeAmount = (int) (bestSay + bestWhisper + bestEmote + bestQuickEmote + bestSubtle + bestRadio);
         var payFlat = judgeAmount switch
