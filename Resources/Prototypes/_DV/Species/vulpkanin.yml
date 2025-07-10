@@ -50,7 +50,7 @@
       points: 4
       required: false
     Tail:
-      points: 4
+      points: 1
       required: true
       defaultMarkings: [ VulpTail ]
     Head:
@@ -63,7 +63,7 @@
       points: 4
       required: false
     Snout:
-      points: 3
+      points: 1
       required: false
     # Frontier: apparently these don't exist on Delta
     UndergarmentTop:
@@ -74,7 +74,7 @@
       required: false
     # End Frontier
     HeadTop:
-      points: 4
+      points: 1
       required: true
       defaultMarkings: [ VulpEar ]
 

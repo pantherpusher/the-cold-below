@@ -20,11 +20,11 @@
       points: 1
       required: false
     Tail:
-      points: 3
+      points: 1
       required: true
       defaultMarkings: [ FelinidTailBasic ]
     HeadTop:
-      points: 3
+      points: 1
       required: true
       defaultMarkings: [ FelinidEarsBasic ]
     Chest:
@@ -48,5 +48,5 @@
       points: 4
       required: false
     Snout:
-      points: 3
+      points: 1
       required: false
