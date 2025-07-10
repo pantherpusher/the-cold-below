@@ -109,7 +109,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fhusky_primary
@@ -133,7 +133,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fwolf_primary
@@ -157,7 +157,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fwolfalt_primary
@@ -201,7 +201,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fscanidalt_primary
@@ -213,7 +213,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fscanidalt2_primary
@@ -223,7 +223,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fscanidalt3_primary
@@ -291,7 +291,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fbird_primary
@@ -319,7 +319,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fbigbeak_primary
@@ -339,7 +339,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fcorvidbeak_primary
@@ -349,7 +349,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_ftoucan_primary
@@ -449,7 +449,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fwah_primary
@@ -477,7 +477,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fwahalt_primary
@@ -501,7 +501,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fotie_primary
@@ -525,7 +525,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fotiesmile_primary
@@ -549,7 +549,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fpede_primary
@@ -573,7 +573,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_frodent_primary
@@ -593,7 +593,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fsergal_primary
@@ -605,7 +605,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_frhino_primary
@@ -631,7 +631,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fbovine_primary
@@ -659,7 +659,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_felephant_primary
@@ -683,7 +683,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fround
@@ -693,7 +693,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fsharplight
@@ -703,7 +703,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_froundlight
@@ -713,7 +713,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state:  snout_fshark_primary
@@ -757,7 +757,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  colorLinks:
 #    snout_fbug_FRONT_primary: snout_fbug_primary
 #  sprites:
@@ -879,7 +879,7 @@
 #  bodyPart: Snout
 #  markingCategory: Snout
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyratsnouts.rsi
 #    state: snout_fskulldog_primary

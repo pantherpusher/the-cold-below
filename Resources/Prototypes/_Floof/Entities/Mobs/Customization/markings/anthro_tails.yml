@@ -669,7 +669,7 @@
 #  bodyPart: Tail
 #  markingCategory: Tail
 #  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune]
-  kindAllowance: [BasicHumanlike, BasicFurry]
+#  kindAllowance: [BasicHumanlike, BasicFurry]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/skyrattails.rsi
 #    state: m_tail_fox_FRONT_primary

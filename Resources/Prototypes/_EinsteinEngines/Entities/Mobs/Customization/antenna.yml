@@ -20,7 +20,7 @@
 
 # - type: marking
 #   kindAllowance: [BasicHumanlike, BasicFurry]
-  speciesRestriction: [IPC]
+#  speciesRestriction: [IPC]
 #   id: RobotAntennaLightb
 #   bodyPart: HeadTop
 #   markingCategory: HeadTop
@@ -30,7 +30,7 @@
 
 # - type: marking
 #   kindAllowance: [BasicHumanlike, BasicFurry]
-  speciesRestriction: [IPC]
+#  speciesRestriction: [IPC]
 #   id: RobotAntennaLight
 #   bodyPart: HeadTop
 #   markingCategory: HeadTop
@@ -50,7 +50,7 @@
 
 # - type: marking
 #   kindAllowance: [BasicHumanlike, BasicFurry]
-  speciesRestriction: [IPC]
+#  speciesRestriction: [IPC]
 #   id: RobotAntennaSidelights
 #   bodyPart: HeadTop
 #   markingCategory: HeadTop
