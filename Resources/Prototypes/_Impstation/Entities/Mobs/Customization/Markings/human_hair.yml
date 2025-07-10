@@ -2,6 +2,7 @@
   id: HumanHairGatheredlow
   bodyPart: Hair
   markingCategory: Hair
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, SlimePerson, Oni, Goblin, Felinid, Vulpkanin] # Frontier: add Oni, Goblin, Felinid, Vulpkanin
   sprites:
     - sprite: _Impstation/Mobs/Customization/human_hair.rsi
@@ -11,6 +12,7 @@
   id: HumanHairLowpigtails
   bodyPart: Hair
   markingCategory: Hair
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, SlimePerson, Oni, Goblin, Felinid, Vulpkanin] # Frontier: add Oni, Goblin, Felinid, Vulpkanin
   sprites:
     - sprite: _Impstation/Mobs/Customization/human_hair.rsi
@@ -20,6 +22,7 @@
   id: HumanHairFrenchBraid
   bodyPart: Hair
   markingCategory: Hair
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, SlimePerson, Oni, Goblin, Felinid, Vulpkanin] # Frontier: add Oni, Goblin, Felinid, Vulpkanin
   sprites:
     - sprite: _Impstation/Mobs/Customization/human_hair.rsi

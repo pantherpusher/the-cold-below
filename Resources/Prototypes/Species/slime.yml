@@ -42,7 +42,7 @@
       points: 1
       required: false
     Tail:
-      points: 3
+      points: 1
       required: true
       defaultMarkings: [ VulpTail ]
     Head:

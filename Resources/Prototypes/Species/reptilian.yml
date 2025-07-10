@@ -50,11 +50,11 @@
       points: 3
       required: false
     Tail:
-      points: 3
+      points: 1
       required: true
       defaultMarkings: [ LizardTailLarge ]
     Snout:
-      points: 3
+      points: 1
       required: true
       defaultMarkings: [ LizardSnoutRound ]
     HeadTop:

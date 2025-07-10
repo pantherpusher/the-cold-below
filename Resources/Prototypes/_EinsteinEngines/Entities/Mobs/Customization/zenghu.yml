@@ -2,6 +2,7 @@
   id: CyberLimbsMarkingZenghuHead
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -13,6 +14,7 @@
   id: CyberLimbsMarkingZenghuChest
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -24,6 +26,7 @@
   id: CyberLimbsMarkingZenghuLArm
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -35,6 +38,7 @@
   id: CyberLimbsMarkingZenghuLHand
   bodyPart: LHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -46,6 +50,7 @@
   id: CyberLimbsMarkingZenghuLLeg
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -58,6 +63,7 @@
   id: CyberLimbsMarkingZenghuLFoot
   bodyPart: LFoot
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -71,6 +77,7 @@
   id: CyberLimbsMarkingZenghuRArm
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -84,6 +91,7 @@
   id: CyberLimbsMarkingZenghuRHand
   bodyPart: RHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -95,6 +103,7 @@
   id: CyberLimbsMarkingZenghuRLeg
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
@@ -107,6 +116,7 @@
   id: CyberLimbsMarkingZenghuRFoot
   bodyPart: RFoot
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi

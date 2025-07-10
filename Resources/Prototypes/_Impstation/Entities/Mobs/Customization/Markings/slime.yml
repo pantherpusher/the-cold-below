@@ -2,6 +2,7 @@
   id: SlimeNose
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   forcedColoring: true
   followSkinColor: true
@@ -13,6 +14,7 @@
   id: SlimeMouth
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: true
   sprites:
@@ -23,6 +25,7 @@
   id: SlimeBrain
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: true
   sprites:
@@ -33,6 +36,7 @@
   id: SlimeEyeglow
   bodyPart: Eyes
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   coloring:
     default:
@@ -48,6 +52,7 @@
   id: SlimeLungs
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: true
   sprites:
@@ -58,6 +63,7 @@
   id: SlimeCore
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: true
   sprites:
@@ -68,6 +74,7 @@
   id: SlimeBonehead
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: false
   coloring:
@@ -83,6 +90,7 @@
   id: SlimeBonechest
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: false
   coloring:
@@ -98,6 +106,7 @@
   id: SlimeBonearmleft
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: false
   coloring:
@@ -113,6 +122,7 @@
   id: SlimeBonearmright
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: false
   coloring:
@@ -128,6 +138,7 @@
   id: SlimeBonefootleft
   bodyPart: LFoot
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: false
   coloring:
@@ -143,6 +154,7 @@
   id: SlimeBonefootright
   bodyPart: RFoot
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: false
   coloring:
@@ -158,6 +170,7 @@
   id: SlimeBonehandleft
   bodyPart: LHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: false
   coloring:
@@ -173,6 +186,7 @@
   id: SlimeBonehandright
   bodyPart: RHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: false
   coloring:
@@ -188,6 +202,7 @@
   id: SlimeBonelegleft
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: false
   coloring:
@@ -203,6 +218,7 @@
   id: SlimeBonelegright
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   followSkinColor: false
   coloring:
