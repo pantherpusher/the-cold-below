@@ -726,11 +726,11 @@ public sealed partial class ChatSystem : SharedChatSystem
                      blockedByOcclusion: !SubtleGoesThroughWalls
                      ))
         {
-            numHeareded++;
             if (session.AttachedEntity is not { Valid: true } listener)
                 continue;
             if (MessageRangeCheck(session, data, range) == MessageRangeCheckResult.Disallowed)
                 continue;
+            numHeareded++;
             _chatManager.ChatMessageToOne(ChatChannel.Emotes, action, wrappedMessage, source, false, session.Channel);
         }
         SendRPIncentive(source, ChatChannel.Subtle, action, numHeareded);
