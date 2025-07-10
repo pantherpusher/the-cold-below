@@ -164,6 +164,8 @@
   - type: LayingDown
   - type: HumanoidAppearance
     species: IPC
+  - type: ModifyUndies  # FLOOF Add
+  - type: RoleplayIncentive  # COYOTE Add
 
 - type: entity
   save: false

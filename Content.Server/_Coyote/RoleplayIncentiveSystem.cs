@@ -166,7 +166,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         string message
         )
     {
-        if (_chatsys.TryEmoteChatInput(source, message))
+        if (_chatsys.TryEmoteChatInput(source, message, false))
         {
             // if the message is a valid emote, then its a quick emote
             return RoleplayActs.QuickEmoting;
