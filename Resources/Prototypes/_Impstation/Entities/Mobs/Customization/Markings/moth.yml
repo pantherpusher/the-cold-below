@@ -4,6 +4,7 @@
   id: MothBodyClaw
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -14,6 +15,7 @@
   id: MothBurnLeft
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -24,6 +26,7 @@
   id: MothBurnRight
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -34,6 +37,7 @@
   id: MothFaceClaw
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -44,6 +48,7 @@
   id: MothSlashLeft
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -54,6 +59,7 @@
   id: ChimeraArmLeftMoth
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -69,6 +75,7 @@
   id: ProstheticArmLeftMoth
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -84,6 +91,7 @@
   id: TwistingArmLeftMoth
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -94,6 +102,7 @@
   id: ProstheticArmRightMoth
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -109,6 +118,7 @@
   id: TwistingArmRightMoth
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -119,6 +129,7 @@
   id: WingsBackstabbed
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -129,6 +140,7 @@
   id: ChestChimeraFemaleMoth
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sexRestriction: [Female]
   followSkinColor: false
@@ -145,6 +157,7 @@
   id: ChestChimeraMaleMoth
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sexRestriction: [Male]
   followSkinColor: false
@@ -161,6 +174,7 @@
   id: ChestTwistingLeftFemaleMoth
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sexRestriction: [Female]
   followSkinColor: false
@@ -172,6 +186,7 @@
   id: ChestTwistingLeftMaleMoth
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sexRestriction: [Male]
   followSkinColor: false
@@ -183,6 +198,7 @@
   id: ChestTwistingRightFemaleMoth
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sexRestriction: [Female]
   followSkinColor: false
@@ -194,6 +210,7 @@
   id: ChestTwistingRightMaleMoth
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sexRestriction: [Male]
   followSkinColor: false
@@ -205,6 +222,7 @@
   id: ChestStarMoth
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -215,6 +233,7 @@
   id: HeterochromiaMoth
   bodyPart: Eyes
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -230,6 +249,7 @@
   id: FootChimeraLeftMoth
   bodyPart: LFoot
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -245,6 +265,7 @@
   id: FootProstheticLeftMoth
   bodyPart: LFoot
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -260,6 +281,7 @@
   id: FootProstheticRightMoth
   bodyPart: RFoot
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -275,6 +297,7 @@
   id: HandChimeraLeftMoth
   bodyPart: LHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -290,6 +313,7 @@
   id: HandProstheticLeftMoth
   bodyPart: LHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -305,6 +329,7 @@
   id: HandTwistingLeftMoth
   bodyPart: LHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -315,6 +340,7 @@
   id: HandProstheticRightMoth
   bodyPart: RHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -330,6 +356,7 @@
   id: HandTwistingRightMoth
   bodyPart: RHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -340,6 +367,7 @@
   id: BadmoltMoth
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -350,6 +378,7 @@
   id: HeadChimeraMoth
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -365,6 +394,7 @@
   id: EyebagsMoth
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -375,6 +405,7 @@
   id: HeadTwistingMoth
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -385,6 +416,7 @@
   id: LegChimeraLeftMoth
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -400,6 +432,7 @@
   id: LegProstheticLeftMoth
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -415,6 +448,7 @@
   id: LegTwistingLeftMoth
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -425,6 +459,7 @@
   id: LegProstheticRightMoth
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   coloring:
@@ -440,6 +475,7 @@
   id: LegTwistingRightMoth
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:
@@ -450,6 +486,7 @@
   id: TorsoIncisionMoth
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   followSkinColor: false
   sprites:

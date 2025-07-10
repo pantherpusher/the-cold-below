@@ -4,6 +4,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Oni, Sheleg] # Frontier: Oni, Sheleg
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
@@ -15,6 +16,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Oni, Sheleg] # Frontier: Oni, Sheleg
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
@@ -26,6 +28,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Oni, Sheleg] # Frontier: Oni, Sheleg
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
@@ -37,6 +40,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Oni, Sheleg] # Frontier: Oni, Sheleg
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
@@ -48,6 +52,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Oni, Sheleg] # Frontier: Oni, Sheleg
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi

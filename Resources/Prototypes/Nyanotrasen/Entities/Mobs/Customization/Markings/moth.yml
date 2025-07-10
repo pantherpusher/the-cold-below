@@ -4,6 +4,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -19,6 +20,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -34,6 +36,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -49,6 +52,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -64,6 +68,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -79,6 +84,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -94,6 +100,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -109,6 +116,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -124,6 +132,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -139,6 +148,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -154,6 +164,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -169,6 +180,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -184,6 +196,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -199,6 +212,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -214,6 +228,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -229,6 +244,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -244,6 +260,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -259,6 +276,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -274,6 +292,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -289,6 +308,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -304,6 +324,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -319,6 +340,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -335,6 +357,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -350,6 +373,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -365,6 +389,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -380,6 +405,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -395,6 +421,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -410,6 +437,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -425,6 +453,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -440,6 +469,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -455,6 +485,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -470,6 +501,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -485,6 +517,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -500,6 +533,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -515,6 +549,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -530,6 +565,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -545,6 +581,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -560,6 +597,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -575,6 +613,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -590,6 +629,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -605,6 +645,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -620,6 +661,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -635,6 +677,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -650,6 +693,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -665,6 +709,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -680,6 +725,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -695,6 +741,7 @@
   bodyPart: Tail
   markingCategory: Tail
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -712,6 +759,7 @@
   bodyPart: Head
   markingCategory: Head
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -727,6 +775,7 @@
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -742,6 +791,7 @@
   bodyPart: LArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -757,6 +807,7 @@
   bodyPart: RArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -772,6 +823,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -787,6 +839,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -804,6 +857,7 @@
   bodyPart: Head
   markingCategory: Head
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -819,6 +873,7 @@
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -834,6 +889,7 @@
   bodyPart: LArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -849,6 +905,7 @@
   bodyPart: RArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -864,6 +921,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -879,6 +937,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -895,6 +954,7 @@
   bodyPart: Head
   markingCategory: Head
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -910,6 +970,7 @@
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -925,6 +986,7 @@
   bodyPart: LArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -940,6 +1002,7 @@
   bodyPart: RArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -955,6 +1018,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -970,6 +1034,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -986,6 +1051,7 @@
   bodyPart: Head
   markingCategory: Head
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1001,6 +1067,7 @@
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1016,6 +1083,7 @@
   bodyPart: LArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1031,6 +1099,7 @@
   bodyPart: RArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1046,6 +1115,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1061,6 +1131,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1077,6 +1148,7 @@
   bodyPart: Head
   markingCategory: Head
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1092,6 +1164,7 @@
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1107,6 +1180,7 @@
   bodyPart: LArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1122,6 +1196,7 @@
   bodyPart: RArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1137,6 +1212,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1152,6 +1228,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1168,6 +1245,7 @@
   bodyPart: Head
   markingCategory: Head
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1183,6 +1261,7 @@
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1198,6 +1277,7 @@
   bodyPart: LArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1213,6 +1293,7 @@
   bodyPart: RArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1228,6 +1309,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1243,6 +1325,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1259,6 +1342,7 @@
   bodyPart: Head
   markingCategory: Head
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1274,6 +1358,7 @@
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1289,6 +1374,7 @@
   bodyPart: LArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1304,6 +1390,7 @@
   bodyPart: RArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1319,6 +1406,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1334,6 +1422,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1350,6 +1439,7 @@
   bodyPart: Head
   markingCategory: Head
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1365,6 +1455,7 @@
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1380,6 +1471,7 @@
   bodyPart: LArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1395,6 +1487,7 @@
   bodyPart: RArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1410,6 +1503,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1425,6 +1519,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1441,6 +1536,7 @@
   bodyPart: Head
   markingCategory: Head
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1456,6 +1552,7 @@
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1471,6 +1568,7 @@
   bodyPart: LArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1486,6 +1584,7 @@
   bodyPart: RArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1501,6 +1600,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1516,6 +1616,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1532,6 +1633,7 @@
   bodyPart: Head
   markingCategory: Head
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1547,6 +1649,7 @@
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1562,6 +1665,7 @@
   bodyPart: LArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1577,6 +1681,7 @@
   bodyPart: RArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1592,6 +1697,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1607,6 +1713,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1623,6 +1730,7 @@
   bodyPart: Head
   markingCategory: Head
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1638,6 +1746,7 @@
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1653,6 +1762,7 @@
   bodyPart: LArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1668,6 +1778,7 @@
   bodyPart: RArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1683,6 +1794,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1698,6 +1810,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1714,6 +1827,7 @@
   bodyPart: Head
   markingCategory: Head
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1729,6 +1843,7 @@
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1744,6 +1859,7 @@
   bodyPart: LArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1759,6 +1875,7 @@
   bodyPart: RArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1774,6 +1891,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1789,6 +1907,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1805,6 +1924,7 @@
   bodyPart: Head
   markingCategory: Head
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1820,6 +1940,7 @@
   bodyPart: Chest
   markingCategory: Chest
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1835,6 +1956,7 @@
   bodyPart: LArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1850,6 +1972,7 @@
   bodyPart: RArm
   markingCategory: Arms
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1865,6 +1988,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -1880,6 +2004,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   forcedColoring: true
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   coloring:
     default:

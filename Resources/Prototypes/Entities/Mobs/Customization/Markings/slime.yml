@@ -2,6 +2,7 @@
   id: SlimeGradientLeftArm
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
@@ -11,6 +12,7 @@
   id: SlimeGradientRightArm
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
@@ -20,6 +22,7 @@
   id: SlimeGradientLeftLeg
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
@@ -29,6 +32,7 @@
   id: SlimeGradientRightLeg
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
@@ -38,6 +42,7 @@
   id: SlimeGradientLeftFoot
   bodyPart: LFoot
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
@@ -47,6 +52,7 @@
   id: SlimeGradientRightFoot
   bodyPart: RFoot
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
@@ -56,6 +62,7 @@
   id: SlimeGradientLeftHand
   bodyPart: LHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
@@ -65,6 +72,7 @@
   id: SlimeGradientRightHand
   bodyPart: RHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [SlimePerson]
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi

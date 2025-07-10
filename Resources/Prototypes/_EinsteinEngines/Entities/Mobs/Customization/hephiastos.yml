@@ -2,6 +2,7 @@
   id: CyberLimbsMarkingHesphiastosHead
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_monitor.rsi
@@ -13,6 +14,7 @@
   id: CyberLimbsMarkingHesphiastosHeadAlt
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_alt1.rsi
@@ -26,6 +28,7 @@
   id: CyberLimbsMarkingHesphiastosChest
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
@@ -37,6 +40,7 @@
   id: CyberLimbsMarkingHesphiastosLArm
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
   - Moth
@@ -59,6 +63,7 @@
   id: CyberLimbsMarkingHesphiastosLHand
   bodyPart: LHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
   - Moth
@@ -81,6 +86,7 @@
   id: CyberLimbsMarkingHesphiastosLLeg
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
   - Moth
@@ -104,6 +110,7 @@
   id: CyberLimbsMarkingHesphiastosLFoot
   bodyPart: LFoot
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
   - Moth
@@ -128,6 +135,7 @@
   id: CyberLimbsMarkingHesphiastosRArm
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
   - Moth
@@ -151,6 +159,7 @@
   id: CyberLimbsMarkingHesphiastosRHand
   bodyPart: RHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
   - Moth
@@ -174,6 +183,7 @@
   id: CyberLimbsMarkingHesphiastosRLeg
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
   - Moth
@@ -197,6 +207,7 @@
   id: CyberLimbsMarkingHesphiastosRFoot
   bodyPart: RFoot
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
   - Moth
