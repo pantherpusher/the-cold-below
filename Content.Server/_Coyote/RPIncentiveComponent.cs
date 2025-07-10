@@ -12,7 +12,7 @@ public sealed partial class RoleplayIncentiveComponent : Component
     /// The actions that have taken place.
     /// </summary>
     [DataField]
-    public HashSet<RoleplayAction> ActionsTaken = new();
+    public List<RoleplayAction> ActionsTaken = new();
 
     /// <summary>
     /// The last time the system checked for actions, for paywards.
