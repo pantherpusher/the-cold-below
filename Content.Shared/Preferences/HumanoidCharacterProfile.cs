@@ -26,7 +26,8 @@ namespace Content.Shared.Preferences
     [Serializable, NetSerializable]
     public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     {
-        private static readonly Regex RestrictedNameRegex = new(@"[^A-Za-z0-9 '\-]");
+
+        // private static readonly Regex RestrictedNameRegex = new(@"[a-zA-Z0-9!@#$%^&*()\-_=+\[\]{};:'"",.<>?/\\|`~]");
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
         public const int MaxNameLength = 32;
@@ -546,15 +547,7 @@ namespace Content.Shared.Preferences
 
             if (configManager.GetCVar(CCVars.RestrictedNames))
             {
-                name = Regex.Replace(name, @"[^\u0041-\u005A,\u0061-\u007A,\u00C0-\u00D6,\u00D8-\u00F6,\u00F8-\u00FF,\u0100-\u017F, -]", string.Empty);
-                /*
-                 * 0041-005A  Basic Latin: Uppercase Latin Alphabet
-                 * 0061-007A  Basic Latin: Lowercase Latin Alphabet
-                 * 00C0-00D6  Latin-1 Supplement: Letters I
-                 * 00D8-00F6  Latin-1 Supplement: Letters II
-                 * 00F8-00FF  Latin-1 Supplement: Letters III
-                 * 0100-017F  Latin Extended A: European Latin
-                 */
+                name = ICNameRegexifier(name);
             }
 
             if (configManager.GetCVar(CCVars.ICNameCase))
@@ -675,6 +668,17 @@ namespace Content.Shared.Preferences
             {
                 _loadouts.Remove(value);
             }
+        }
+
+        public static string ICNameRegexifier(string name)
+        {
+            // The regex pattern that will delete any character that isnt part of this set:
+            // a-z, A-Z, 0-9, !@#$%^&*()-_=+[]{};:'",.<>?/\\|`~
+            Regex coolRegex = new(@"[^\a-zA-Z0-9!@#$%^&*()\-_=+\[\]{};:'"",.<>?/\\|`~]");
+            // Replace all characters that match the regex with an empty string
+            name = coolRegex.Replace(name, string.Empty);
+            name = name.Trim();
+            return name;
         }
 
         /// <summary>
