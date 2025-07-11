@@ -164,7 +164,8 @@ public partial class ChatSystem
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="textInput"></param>
-    public bool TryEmoteChatInput(EntityUid uid, string textInput) // Frontier: void<bool
+    /// <param name="actuallyEmote">If true, will invoke the emote event and play sounds. If false, will only check if the emote is valid.</param>
+    public bool TryEmoteChatInput(EntityUid uid, string textInput, bool actuallyEmote = true) // Frontier: void<bool
     {
         var actionTrimmedLower = TrimPunctuation(textInput.ToLower());
         if (!_wordEmoteDict.TryGetValue(actionTrimmedLower, out var emotes)) // DeltaV, renames to emotes
@@ -176,7 +177,8 @@ public partial class ChatSystem
             if (!AllowedToUseEmote(uid, emote))
                 continue;
 
-            InvokeEmoteEvent(uid, emote);
+            if (actuallyEmote)
+                InvokeEmoteEvent(uid, emote);
             validEmote = true; // DeltaV
             break; // Frontier: break on first emote (avoid playing multiple sounds at once)
         }
@@ -200,6 +202,8 @@ public partial class ChatSystem
             return textInput[trimStart..trimEnd];
         }
     }
+
+
     /// <summary>
     /// Checks if we can use this emote based on the emotes whitelist, blacklist, and availibility to the entity.
     /// </summary>
