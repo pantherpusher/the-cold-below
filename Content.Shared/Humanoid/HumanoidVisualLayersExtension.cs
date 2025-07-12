@@ -61,6 +61,8 @@ namespace Content.Shared.Humanoid
                     break;
                 case HumanoidVisualLayers.Chest:
                     yield return HumanoidVisualLayers.Chest;
+                    yield return HumanoidVisualLayers.UndershirtUnderclothes;
+                    yield return HumanoidVisualLayers.UndershirtOverclothes;
                     yield return HumanoidVisualLayers.Tail;
                     yield return HumanoidVisualLayers.TailBehind;
                     yield return HumanoidVisualLayers.TailOversuit;
