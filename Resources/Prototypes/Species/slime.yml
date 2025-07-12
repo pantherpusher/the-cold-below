@@ -31,6 +31,8 @@
     RFoot: MobSlimeRFoot
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
+    UndershirtUnderclothes: MobHumanoidAnyMarking
+    UndershirtOverclothes: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobSlimeMarkingLimits
