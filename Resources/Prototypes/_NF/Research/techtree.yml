@@ -1269,18 +1269,18 @@
   - NFTrashPowerGeneration
   position: 2, 28
 
-- type: technology
-  id: NFParticleDecelerator
-  name: nf-research-technology-portable-particle-emission
-  entityIcon: NFWeaponParticleDecelerator
-  discipline: NFEngineering
-  tier: 1
-  cost: 10000
-  recipeUnlocks:
-  - NFWeaponParticleDecelerator
-  technologyPrerequisites:
-  - NFEmitter
-  position: 2, 30
+#- type: technology
+#  id: NFParticleDecelerator
+#  name: nf-research-technology-portable-particle-emission
+#  entityIcon: NFWeaponParticleDecelerator
+#  discipline: NFEngineering
+#  tier: 1
+#  cost: 10000
+#  recipeUnlocks:
+#  - NFWeaponParticleDecelerator
+#  technologyPrerequisites:
+#  - NFEmitter
+#  position: 2, 30
 
 - type: technology
   id: NFPowerGeneration

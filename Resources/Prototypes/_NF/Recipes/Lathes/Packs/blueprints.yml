@@ -125,7 +125,7 @@
   # HardsuitsAdvanced
   - ClothingOuterHardsuitEngineeringWhite
   # PortableParticleEmission
-  - NFWeaponParticleDecelerator
+#  - NFWeaponParticleDecelerator
   # MatterEnergyConversion
   - BorgModuleRCD
   # MagnetsTech
