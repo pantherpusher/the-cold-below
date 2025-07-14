@@ -146,6 +146,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [IPC]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: _EE/Mobs/Species/IPC/parts.rsi
     state: torso_m
@@ -155,6 +156,7 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [IPC]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: _EE/Mobs/Species/IPC/parts.rsi
     state: torso_f
@@ -169,6 +171,7 @@
   bodyPart: LLeg
   markingCategory: Legs
   speciesRestriction: [IPC]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: _EE/Mobs/Species/IPC/parts.rsi
     state: l_leg
@@ -183,6 +186,7 @@
   bodyPart: LArm
   markingCategory: Arms
   speciesRestriction: [IPC]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: _EE/Mobs/Species/IPC/parts.rsi
     state: l_arm
@@ -197,6 +201,7 @@
   bodyPart: LHand
   markingCategory: Arms
   speciesRestriction: [IPC]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: _EE/Mobs/Species/IPC/parts.rsi
     state: l_hand
@@ -211,6 +216,7 @@
   bodyPart: LFoot
   markingCategory: Legs
   speciesRestriction: [IPC]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: _EE/Mobs/Species/IPC/parts.rsi
     state: l_foot
@@ -225,6 +231,7 @@
   bodyPart: RLeg
   markingCategory: Legs
   speciesRestriction: [IPC]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: _EE/Mobs/Species/IPC/parts.rsi
     state: r_leg
@@ -239,6 +246,7 @@
   bodyPart: RArm
   markingCategory: Arms
   speciesRestriction: [IPC]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: _EE/Mobs/Species/IPC/parts.rsi
     state: r_arm
@@ -253,6 +261,7 @@
   bodyPart: RHand
   markingCategory: Arms
   speciesRestriction: [IPC]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: _EE/Mobs/Species/IPC/parts.rsi
     state: r_hand
@@ -267,6 +276,7 @@
   bodyPart: RFoot
   markingCategory: Legs
   speciesRestriction: [IPC]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: _EE/Mobs/Species/IPC/parts.rsi
     state: r_foot

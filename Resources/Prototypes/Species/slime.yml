@@ -33,6 +33,11 @@
     TailOversuit: MobHumanoidAnyMarking
     UndershirtUnderclothes: MobHumanoidAnyMarking
     UndershirtOverclothes: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+
 
 - type: markingPoints
   id: MobSlimeMarkingLimits
@@ -44,20 +49,19 @@
       points: 1
       required: false
     Tail:
-      points: 1
-      required: true
-      defaultMarkings: [ VulpTail ]
+      points: 10
+      required: false
     Head:
-      points: 3
+      points: 10
       required: false
     Legs:
-      points: 3
+      points: 10
       required: false
     Arms:
-      points: 3
+      points: 10
       required: false
     Snout:
-      points: 3
+      points: 10
       required: false
     # Frontier: apparently these don't exist on Delta
     UndergarmentTop:
@@ -68,7 +72,7 @@
       required: false
     # End Frontier
     HeadTop:
-      points: 3
+      points: 10
       required: false
 
 
