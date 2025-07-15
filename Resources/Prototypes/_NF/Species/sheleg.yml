@@ -40,6 +40,10 @@
     RLeg: MobShelegRLeg
     LFoot: MobShelegLFoot
     RFoot: MobShelegRFoot
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
+    UndershirtUnderclothes: MobHumanoidAnyMarking
+    UndershirtOverclothes: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobShelegMarkingLimits
@@ -54,13 +58,13 @@
       points: 1
       required: false
     Snout:
-      points: 1
+      points: 5
       required: false
     Tail: # the cat tail joke
-      points: 0
+      points: 5
       required: false
     HeadTop:
-      points: 1
+      points: 5
       required: false
     UndergarmentTop:
       points: 3
