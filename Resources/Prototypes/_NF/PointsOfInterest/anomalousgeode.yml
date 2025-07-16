@@ -2,36 +2,45 @@
 # GitHub:
 # Discord: Checkraze
 
+# ^ buddy. this shit lets you eschew player interaction for desireable, *optional* in round upgrades.
+# a lack of science ships is a lowpop issue - but Frontier's design philosophy made it where you can do your job and turn a profit without their help.
+# even if you bought a science ship, you would still be worse off;
+# because the geode is designed in such a way that incredibly limits the amount of damage the anomalies can do.
+
+# I can't blame you.
+# this game dev shit is hard.
+# I am sealing this evil away to never return.
+
 # Maintainer Info
 # GitHub: ???
 # Discord: ???
 
 # Notes:
 # The local Science lab
-- type: pointOfInterest
-  id: AnomalousGeode
-  parent: BasePOI
-  name: 'Anomalous Geode'
-  minimumDistance: 2100
-  maximumDistance: 3800
-  spawnGroup: ScienceLab
-  gridPath: /Maps/_NF/POI/anomalousgeode.yml
-  addComponents:
-  - type: SolarPoweredGrid
-    trackOnInit: true
-    doNotCull: true
+#- type: pointOfInterest
+#  id: AnomalousGeode
+#  parent: BasePOI
+#  name: 'Anomalous Geode'
+#  minimumDistance: 2100
+#  maximumDistance: 3800
+#  spawnGroup: ScienceLab
+#  gridPath: /Maps/_NF/POI/anomalousgeode.yml
+#  addComponents:
+#  - type: SolarPoweredGrid
+#    trackOnInit: true
+#    doNotCull: true
 
-- type: gameMap
-  id: AnomalousGeode
-  mapName: 'Anomalous Geode'
-  mapPath: /Maps/_NF/POI/anomalousgeode.yml
-  minPlayers: 0
-  stations:
-    AnomalousGeode:
-      stationProto: StandardFrontierOutpost
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: 'Anomalous Geode'
-        - type: StationJobs
-          availableJobs: {}
-        - type: StationDeadDropHintExempt
+#- type: gameMap
+#  id: AnomalousGeode
+#  mapName: 'Anomalous Geode'
+#  mapPath: /Maps/_NF/POI/anomalousgeode.yml
+#  minPlayers: 0
+#  stations:
+#    AnomalousGeode:
+#      stationProto: StandardFrontierOutpost
+#      components:
+#        - type: StationNameSetup
+#          mapNameTemplate: 'Anomalous Geode'
+#        - type: StationJobs
+#          availableJobs: {}
+#        - type: StationDeadDropHintExempt
