@@ -2,6 +2,20 @@
 # Medical
 This is the department where people go to when they're hurt, it's up to the folks working here to fix them.
 
+## The Big Six: United Health Services
+
+Have you renewed your UHS Membership recently?
+
+It covers most of the cost of your healthcare - but sometimes the individual costs of each pill or patch stack up.
+
+Generally, in the Core-Worlds, healthcare is handled by the Trans-Solar Federation.
+
+But this far out? Doctors want hazard pay too. They're even willing to join a union to make it happen.
+
+You can trust them to keep you alive though, a dead customer isn't a paying one.
+
+But know that if you're wanting something to kill the pain, you're gonna have to pay for it.
+
 ## Personnel
 [color=#5b97bc]Medical[/color]'s staff is made up of Medical Interns, Medical Doctors, Paramedics and Chemists. [color=#5b97bc]Medical[/color] is run by the Chief Medical Officer.
 
@@ -11,7 +25,7 @@ This is the department where people go to when they're hurt, it's up to the folk
     <GuideEntityEmbed Entity="ToyFigurineChemist" Caption="Chemist"/>
     <GuideEntityEmbed Entity="ToyFigurineChiefMedicalOfficer" Caption="CMO"/>
   </Box>
-  
+
 Right now, medbay is divided into two different sets of care:
 
 ## Medical Treatment
