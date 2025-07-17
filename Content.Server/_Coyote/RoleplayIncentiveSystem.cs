@@ -1,10 +1,12 @@
 using System.Linq;
 using Content.Server._NF.Bank;
+using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Popups;
 using Content.Shared._NF.Bank.Components;
 using Content.Shared.Chat;
 using Content.Shared.Popups;
+using Robust.Server.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
@@ -19,6 +21,8 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
     [Dependency] private readonly BankSystem _bank = null!;
     [Dependency] private readonly PopupSystem _popupSystem = null!;
     [Dependency] private readonly ChatSystem _chatsys = null!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     private const float GoodlenSpeaking = 75;
     private const float GoodlenWhispering = 75;
@@ -293,6 +297,17 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             uid,
             uid
             );
+        // cum it to chat
+        if (_playerManager.TryGetSessionByEntity(uid, out var session))
+        {
+            _chatManager.ChatMessageToOne(
+                ChatChannel.Notifications,
+                message,
+                message,
+                default,
+                false,
+                session.Channel);
+        }
     }
 
     /// <summary>
