@@ -10,6 +10,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -81,17 +82,7 @@ public sealed class ThirstSystem : EntitySystem
 
     private ThirstThreshold GetThirstThreshold(ThirstComponent component, float amount)
     {
-        ThirstThreshold result = ThirstThreshold.Dead;
-        var value = component.ThirstThresholds[ThirstThreshold.OverHydrated];
-        foreach (var threshold in component.ThirstThresholds)
-        {
-            if (threshold.Value <= value && threshold.Value >= amount)
-            {
-                result = threshold.Key;
-                value = threshold.Value;
-            }
-        }
-
+        var result = (from threshold in component.ThirstThresholds where amount >= threshold.Value select threshold.Key).FirstOrDefault();
         return result;
     }
 
@@ -136,6 +127,7 @@ public sealed class ThirstSystem : EntitySystem
                 break;
 
             case ThirstThreshold.Parched:
+            case ThirstThreshold.Dead:
                 _prototype.TryIndex(ThirstIconParchedId, out prototype);
                 break;
 
@@ -190,12 +182,10 @@ public sealed class ThirstSystem : EntitySystem
                 component.ActualDecayRate = component.BaseDecayRate * 0.8f;
                 return;
             case ThirstThreshold.Parched:
+            case ThirstThreshold.Dead:
                 _movement.RefreshMovementSpeedModifiers(uid);
                 component.LastThirstThreshold = component.CurrentThirstThreshold;
                 component.ActualDecayRate = component.BaseDecayRate * 0.6f;
-                return;
-
-            case ThirstThreshold.Dead:
                 return;
 
             default:
