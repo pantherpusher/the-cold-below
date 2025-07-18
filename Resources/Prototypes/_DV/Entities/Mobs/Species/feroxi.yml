@@ -109,6 +109,13 @@
     thirsty: 0.75
     parched: 0.25
     dehydrated: 0.1
+  - type: ShortWhitelist
+    scale: 0.8
+    density: 140
+    pseudoItem: true
+    cosmeticOnly: false
+  - type: TallWhitelist
+    scale: 1.2
 
 - type: entity
   parent: MobHumanDummy

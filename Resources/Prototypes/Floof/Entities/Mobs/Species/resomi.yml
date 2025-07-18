@@ -40,13 +40,13 @@
             - MobMask
           layer:
             - MobLayer
-    - type: DamageVisuals
-      damageOverlayGroups:
-        Brute:
-          sprite: Floof/Mobs/Effects/Resomi/brute_damage.rsi
-          color: "#C048C2"
-        Burn:
-          sprite: Floof/Mobs/Effects/Resomi/burn_damage.rsi
+#    - type: DamageVisuals
+#      damageOverlayGroups:
+#        Brute:
+#          sprite: Floof/Mobs/Effects/Resomi/brute_damage.rsi
+#          color: "#C048C2"
+#        Burn:
+#          sprite: Floof/Mobs/Effects/Resomi/burn_damage.rsi
     - type: FireVisuals
       sprite: Floof/Mobs/Effects/onfire.rsi
       normalState: Resomi_minor_burning
@@ -123,6 +123,13 @@
             32:
               sprite: Floof/Mobs/Species/Resomi/displacement.rsi
               state: belt
+    - type: ShortWhitelist
+      scale: 0.8
+      density: 140
+      pseudoItem: true
+      cosmeticOnly: false
+    - type: TallWhitelist
+      scale: 1.2
 
 - type: entity
   parent: BaseSpeciesDummy
