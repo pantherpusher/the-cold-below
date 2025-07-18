@@ -1,6 +1,6 @@
 - type: gameMap
   id: Frontier
-  mapName: 'Frontier Outpost'
+  mapName: 'Nash Station'
   mapPath: /Maps/_NF/Outpost/frontier.yml
   minPlayers: 0
   maxPlayers: 100
@@ -11,7 +11,7 @@
       stationProto: StandardFrontierStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Frontier Outpost'
+          mapNameTemplate: 'Nash Station'
 #          nameGenerator:
 #            !type:NanotrasenNameGenerator
 #            prefixCreator: '14'

@@ -76,13 +76,28 @@ public sealed class PointOfInterestSystem : EntitySystem
             Vector2i offset = new Vector2i(_random.Next(proto.MinimumDistance, proto.MaximumDistance), 0);
             offset = offset.Rotate(rotationOffset);
             rotationOffset += rotation;
-            // Append letter to depot name.
 
+            // Append letter to depot name.
+            //string overrideName = proto.Name;
+            //
+            //if (i < 26)
+            //    overrideName += $" {(char)('A' + i)}"; // " A" ... " Z"
+            //else
+            //    overrideName += $" {i + 1}"; // " 27", " 28"...
+
+            // I'd like actual names for our depos, thanks.
+            // Editors note: This is bad. But it works!
             string overrideName = proto.Name;
-            if (i < 26)
-                overrideName += $" {(char)('A' + i)}"; // " A" ... " Z"
-            else
-                overrideName += $" {i + 1}"; // " 27", " 28"...
+            if (i == 0)
+                overrideName = "Voidport Garland";
+            if (i == 1)
+                overrideName = "Voidport New Boston";
+            if (i == 2)
+                overrideName = "Voidport Redwater";
+            if (i == 3)
+                overrideName = "Voidport Dallus";
+
+
             if (TrySpawnPoiGrid(mapUid, proto, offset, out var depotUid, overrideName: overrideName) && depotUid is { Valid: true } depot)
             {
                 // Nasty jank: set up destination in the station.
