@@ -40,6 +40,7 @@
     RLeg: MobShelegRLeg
     LFoot: MobShelegLFoot
     RFoot: MobShelegRFoot
+    Tail: MobHumanoidAnyMarking
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     UndershirtUnderclothes: MobHumanoidAnyMarking
