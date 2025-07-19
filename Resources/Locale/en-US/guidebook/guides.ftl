@@ -99,7 +99,6 @@ guide-entry-radio = Radio and Speech
 guide-entry-roleplay = Roleplaying
 
 guide-entry-loremaster = Lore
-guide-entry-loreprimer
 
 guide-entry-references = Tables & References
 guide-entry-chemicals = Chemicals
