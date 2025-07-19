@@ -4,7 +4,7 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/18/2025 14:55:22
+  time: 07/19/2025 13:12:26
   entityCount: 6565
 maps:
 - 983
@@ -5423,6 +5423,10 @@ entities:
     - type: IFF
     - type: StationMember
     - type: NavMap
+    - type: ForceAnchor
+    - type: SolarPoweredGrid
+      doNotCull: True
+      trackOnInit: True
   - uid: 983
     components:
     - type: MetaData
@@ -30374,6 +30378,18 @@ entities:
       - 6464
     - type: AtmosPipeColor
       color: '#990000FF'
+- proto: GeneratorBasic15kW
+  entities:
+  - uid: 5414
+    components:
+    - type: Transform
+      pos: 21.5,20.5
+      parent: 1
+  - uid: 5415
+    components:
+    - type: Transform
+      pos: 21.5,21.5
+      parent: 1
 - proto: Girder
   entities:
   - uid: 1819
@@ -33412,18 +33428,6 @@ entities:
     components:
     - type: Transform
       pos: 9.598784,23.332973
-      parent: 1
-- proto: PortableGeneratorPacman
-  entities:
-  - uid: 5414
-    components:
-    - type: Transform
-      pos: 21.5,21.5
-      parent: 1
-  - uid: 5415
-    components:
-    - type: Transform
-      pos: 21.5,20.5
       parent: 1
 - proto: PottedPlantRandom
   entities:
