@@ -3,5 +3,10 @@
   name: guide-entry-loremaster
   priority: 0
   text: "/ServerInfo/Guidebook/Lore/LoreMaster.xml"
-  # children: # just for future reference for those that come after
-  # - Controls
+#  children:
+#  - Primer
+
+#- type: guideEntry
+#  id: Primer
+#  name: guide-entry-construction
+#  text: "/ServerInfo/Guidebook/Engineering/Construction.xml"
