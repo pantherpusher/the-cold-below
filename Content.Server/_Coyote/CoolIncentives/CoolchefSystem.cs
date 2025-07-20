@@ -2,7 +2,9 @@
 namespace Content.Server._Coyote.CoolIncentives;
 
 /// <summary>
-/// This handles...
+/// Handles roleplay incentive multipliers for food service workers.
+/// This system modifies the roleplay incentive based on the multiplier
+/// defined in the CoolchefComponent.
 /// </summary>
 public sealed class CoolchefSystem : EntitySystem
 {
