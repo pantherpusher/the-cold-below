@@ -13,8 +13,6 @@
   maleFirstNames: NamesResomiMale
   femaleFirstNames: NamesResomiFemale
   naming: First
-  sexes:
-  - Unsexed
   kind:
   - RaptorLike
 

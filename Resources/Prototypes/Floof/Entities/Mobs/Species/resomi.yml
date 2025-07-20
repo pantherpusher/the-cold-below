@@ -37,16 +37,17 @@
           density: 185
           restitution: 0.0
           mask:
-            - MobMask
+          - MobMask
           layer:
-            - MobLayer
-#    - type: DamageVisuals
-#      damageOverlayGroups:
-#        Brute:
-#          sprite: Floof/Mobs/Effects/Resomi/brute_damage.rsi
-#          color: "#C048C2"
-#        Burn:
-#          sprite: Floof/Mobs/Effects/Resomi/burn_damage.rsi
+          - MobLayer
+    - type: DamageVisuals
+      thresholds: [ 10, 30, 50, 70 ]
+      damageOverlayGroups:
+        Brute:
+          sprite: Floof/Mobs/Effects/Resomi/brute_damage.rsi
+          color: "#C048C2"
+        Burn:
+          sprite: Floof/Mobs/Effects/Resomi/burn_damage.rsi
     - type: FireVisuals
       sprite: Floof/Mobs/Effects/onfire.rsi
       normalState: Resomi_minor_burning
