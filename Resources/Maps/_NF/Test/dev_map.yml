@@ -8199,6 +8199,13 @@ entities:
     - type: Transform
       pos: -3.5,2.5
       parent: 179
+- proto: SpawnPointFoodService
+  entities:
+  - uid: 1815
+    components:
+    - type: Transform
+      pos: -3.5,2.5
+      parent: 179
 - proto: SpawnPointPirate
   entities:
   - uid: 1466

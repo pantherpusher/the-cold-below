@@ -70,6 +70,14 @@
     - McDelivery
     - Garden
 
+- type: entity
+  id: SpawnPointFoodService
+  parent: SpawnPointPassenger
+  name: food service
+  components:
+  - type: SpawnPoint
+    job_id: FoodService
+
 # Food Service Role Loadout
 - type: roleLoadout
   id: JobFoodService
