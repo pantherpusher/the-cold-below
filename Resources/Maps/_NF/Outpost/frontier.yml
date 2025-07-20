@@ -32051,13 +32051,6 @@ entities:
     - type: Transform
       pos: 29.5,18.5
       parent: 2173
-- proto: SpawnPointFoodService
-  entities:
-  - uid: 6043
-    components:
-    - type: Transform
-      pos: -4.5,1.5
-      parent: 2173
 - proto: SpawnPointMercenary
   entities:
   - uid: 2843
