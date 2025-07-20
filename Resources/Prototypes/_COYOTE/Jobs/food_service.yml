@@ -7,7 +7,7 @@
   playTimeTracker: JobFoodService
   startingGear: FoodServiceGear
   icon: "JobIconChef"
-  supervisors: job-supervisors-fda
+  supervisors: job-supervisors-food-service
   weight: 40 # Prioritize station & department jobs
   displayWeight: 3 # idk
   access:
