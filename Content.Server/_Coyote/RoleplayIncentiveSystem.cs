@@ -77,6 +77,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             {
                 continue; // no bank account, no pramgle
             }
+
             // pay the player
             UpdatePayward(uid, rpic);
         }
@@ -103,20 +104,23 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             Log.Warning($"RoleplayIncentiveComponent not found on entity {uid}!");
             return;
         } // i guess?
+
         // then, check if the channel in the args can be translated to a RoleplayAct
         var actOut = GetRoleplayActFromChannel(args.Channel);
         if (actOut == RoleplayActs.None)
         {
             return; // lot of stuff happens and it dont
         }
+
         // if its EmotingOrQuickEmoting, we need to doffgerentiate thewween the tween the two
         if (actOut == RoleplayActs.EmotingOrQuickEmoting)
         {
             actOut = DoffgerentiateEmotingAndQuickEmoting(
                 args.Source,
                 args.Message
-                );
+            );
         }
+
         // make the thing
         var action = new RoleplayAction(
             actOut,
@@ -168,13 +172,14 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
     private RoleplayActs DoffgerentiateEmotingAndQuickEmoting(
         EntityUid source,
         string message
-        )
+    )
     {
         if (_chatsys.TryEmoteChatInput(source, message, false))
         {
             // if the message is a valid emote, then its a quick emote
             return RoleplayActs.QuickEmoting;
         }
+
         return RoleplayActs.Emoting;
 
         // well i cant figure out how the system does it, so im just gonnasay if theres
@@ -201,12 +206,12 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         }
 
         // go through all the actions, and judge them into a cooler format
-        var bestSay        = 0f;
-        var bestWhisper    = 0f;
-        var bestEmote      = 0f;
+        var bestSay = 0f;
+        var bestWhisper = 0f;
+        var bestEmote = 0f;
         var bestQuickEmote = 0f;
-        var bestSubtle     = 0f;
-        var bestRadio      = 0f;
+        var bestSubtle = 0f;
+        var bestRadio = 0f;
         // go through all the actions taken, sort and judge them
         var actionsToRemove = new List<RoleplayAction>();
         foreach (var action in incentive.ActionsTaken.Where(action => !(action.Judgement > 0)))
@@ -261,14 +266,17 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
                     Log.Warning($"Unknown roleplay action {action.Action} on entity {uid}!");
                     break;
             }
+
             action.Judgement = judgement; // set the judgement on the action
             actionsToRemove.Add(action); // add the action to the removal list
         }
+
         foreach (var action in actionsToRemove)
         {
             incentive.ActionsTaken.Remove(action); // remove actions after iteration
         }
-        var judgeAmount = (int) (bestSay + bestWhisper + bestEmote + bestQuickEmote + bestSubtle + bestRadio);
+
+        var judgeAmount = (int)(bestSay + bestWhisper + bestEmote + bestQuickEmote + bestSubtle + bestRadio);
         var payFlat = judgeAmount switch
         {
             < TaxBracket1 => TaxBracket1Flat,
@@ -277,26 +285,79 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             _ => TaxBracketRest,
         };
         var payAmount = Math.Clamp(judgeAmount * payFlat, 20, int.MaxValue); // at least 20 bucks, bui
+        // poll for player's components for multiplier and additive
+        // create the event
+        var basePay = payAmount;
+        var modifyEvent = new GetRoleplayIncentiveModifier(uid, 1f, 0f);
+        // raise the event
+        RaiseLocalEvent(uid, modifyEvent, true);
+        // apply the add first
+        payAmount += (int) modifyEvent.Additive;
+        // then apply the multiplier
+        payAmount = (int) (payAmount * modifyEvent.Multiplier);
+        // clamp the pay amount to a minimum of 20 and a maximum of int.MaxValue
+        payAmount = Math.Clamp(payAmount, 20, int.MaxValue);
+        var addedPay = (int) modifyEvent.Additive;
+        var multiplier = modifyEvent.Multiplier;
+        var hasMultiplier = Math.Abs(multiplier - 1f) > 0.01f;
+        var hasAdditive = addedPay != 0;
+        var hasModifier = hasMultiplier || hasAdditive;
         // pay the player
         if (!_bank.TryBankDeposit(uid, payAmount))
         {
             Log.Warning($"Failed to deposit {payAmount} into bank account of entity {uid}!");
             return;
         }
-        if (payAmount <= 100)
-        {
-            // if the pay amount is less than or equal to 100, we don't need to tell them
-            return;
-        }
+
         // tell the player they got paid!
-        var message = Loc.GetString("coyote-rp-incentive-payward-message",
+        var message = "Hi mom~";
+        var messageOverhead = Loc.GetString(
+            "coyote-rp-incentive-payward-message",
             ("amount", payAmount)
         );
+        if (hasModifier)
+        {
+            if (hasMultiplier && hasAdditive)
+            {
+                message = Loc.GetString(
+                    "coyote-rp-incentive-payward-message-multiplier-and-additive",
+                    ("amount", payAmount),
+                    ("basePay", basePay),
+                    ("multiplier", multiplier),
+                    ("additive", addedPay)
+                );
+            }
+            else if (hasMultiplier)
+            {
+                message = Loc.GetString(
+                    "coyote-rp-incentive-payward-message-multiplier",
+                    ("amount", payAmount),
+                    ("basePay", basePay),
+                    ("multiplier", multiplier)
+                );
+            }
+            else if (hasAdditive)
+            {
+                message = Loc.GetString(
+                    "coyote-rp-incentive-payward-message-additive",
+                    ("amount", payAmount),
+                    ("basePay", basePay),
+                    ("additive", addedPay)
+                );
+            }
+        }
+        else
+        {
+            message = Loc.GetString(
+                "coyote-rp-incentive-payward-message",
+                ("amount", payAmount)
+            );
+        }
         _popupSystem.PopupEntity(
-            message,
+            messageOverhead,
             uid,
             uid
-            );
+        );
         // cum it to chat
         if (_playerManager.TryGetSessionByEntity(uid, out var session))
         {
@@ -355,6 +416,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         // clamp the multiplier to a maximum of MaxListenerMult
         return Math.Clamp(listeners * listeners, 0f, MaxListenerMult);
     }
+
     /// <summary>
     /// Gets the message length multiplier for the action
     /// </summary>

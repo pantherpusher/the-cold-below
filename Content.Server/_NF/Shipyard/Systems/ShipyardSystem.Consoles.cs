@@ -155,7 +155,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 }
                 return;
             }
-            else if (voucher!.ConsoleType != (ShipyardConsoleUiKey)args.UiKey)
+            else if (!voucher.UseAnywhere && voucher!.ConsoleType != (ShipyardConsoleUiKey)args.UiKey)
             {
                 ConsolePopup(player, Loc.GetString("shipyard-console-invalid-voucher-type"));
                 PlayDenySound(player, shipyardConsoleUid, component);
@@ -671,6 +671,13 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         public IReadOnlyCollection<ProtoId<AccessGroupPrototype>> Groups;
     }
 
+    private struct VoucherShipAccesses()
+    {
+        public bool IsVoucher = false;
+        public List<VesselClass> Classes = new();
+        public List<string> Vessels = new();
+    }
+
     /// <summary>
     ///   Returns all shuttle prototype IDs the given shipyard console can offer.
     /// </summary>
@@ -699,9 +706,11 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
 
         // Construct access set from input type (voucher or ID card)
         IDShipAccesses accesses;
+        VoucherShipAccesses voucherAccesses = new();
         bool initialHasAccess = true;
         if (TryComp<ShipyardVoucherComponent>(targetId, out var voucher))
         {
+            voucherAccesses.IsVoucher = true;
             if (voucher.ConsoleType == key)
             {
                 accesses.Tags = voucher.Access;
@@ -713,6 +722,8 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 accesses.Groups = new HashSet<ProtoId<AccessGroupPrototype>>();
                 initialHasAccess = false;
             }
+            voucherAccesses.Classes = voucher.Classes.ToList();
+            voucherAccesses.Vessels = voucher.Vessels.ToList();
         }
         else if (TryComp<AccessComponent>(targetId, out var accessComponent))
         {
@@ -748,6 +759,27 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                             break;
                         }
                     }
+                }
+
+            }
+
+            // If the vessel is a voucher, check if the voucher allows it.
+            if (voucherAccesses.IsVoucher)
+            {
+                // If the voucher has classes, check if the vessel class is allowed.
+                foreach (var vesselClass in vessel.Classes)
+                {
+                    if (voucherAccesses.Classes.Contains(vesselClass))
+                    {
+                        hasAccess = true;
+                        break;
+                    }
+                }
+
+                // If the voucher has vessels, check if the vessel is allowed.
+                if (!hasAccess && voucherAccesses.Vessels.Contains(vessel.ID))
+                {
+                    hasAccess = true;
                 }
             }
 
