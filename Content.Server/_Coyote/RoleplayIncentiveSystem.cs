@@ -311,6 +311,10 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
 
         // tell the player they got paid!
         var message = "Hi mom~";
+        var messageOverhead = Loc.GetString(
+            "coyote-rp-incentive-payward-message",
+            ("amount", payAmount)
+        );
         if (hasModifier)
         {
             if (hasMultiplier && hasAdditive)
@@ -346,12 +350,11 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         {
             message = Loc.GetString(
                 "coyote-rp-incentive-payward-message",
-                ("amount", payAmount),
-                ("basePay", basePay)
+                ("amount", payAmount)
             );
         }
         _popupSystem.PopupEntity(
-            message,
+            messageOverhead,
             uid,
             uid
         );
