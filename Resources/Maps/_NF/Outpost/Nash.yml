@@ -4,7 +4,7 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/19/2025 14:05:14
+  time: 07/20/2025 00:10:23
   entityCount: 6584
 maps:
 - 983
@@ -6222,18 +6222,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 28.5,-9.5
       parent: 1
-  - uid: 1836
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 26.5,-10.5
-      parent: 1
-  - uid: 1838
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 26.5,-11.5
-      parent: 1
 - proto: AirlockExternalGlassShuttleTransitTradeExpress
   entities:
   - uid: 2467
@@ -6833,29 +6821,23 @@ entities:
       parent: 1
     - type: Docking
       name: dock-label-trade-cargo-bay-one
-- proto: AirlockGlassShuttleNfsdLocked
+- proto: AirlockGlassShuttleNfsd
   entities:
-  - uid: 2544
-    components:
-    - type: Transform
-      pos: 29.5,-14.5
-      parent: 1
-    - type: Docking
-      name: dock-label-nfsd
-  - uid: 2545
+  - uid: 5244
     components:
     - type: Transform
       pos: 28.5,-14.5
       parent: 1
-    - type: Docking
-      name: dock-label-nfsd
-  - uid: 2546
+  - uid: 5245
     components:
     - type: Transform
       pos: 27.5,-14.5
       parent: 1
-    - type: Docking
-      name: dock-label-nfsd
+  - uid: 5246
+    components:
+    - type: Transform
+      pos: 29.5,-14.5
+      parent: 1
 - proto: AirlockHatchMaintenance
   entities:
   - uid: 2855
@@ -6925,31 +6907,37 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 46.5,2.5
       parent: 1
-- proto: AirlockNfsdBrigGlassLocked
+- proto: AirlockNfsdGlass
   entities:
+  - uid: 1836
+    components:
+    - type: Transform
+      pos: 26.5,-10.5
+      parent: 1
+  - uid: 1838
+    components:
+    - type: Transform
+      pos: 23.5,-3.5
+      parent: 1
+  - uid: 2544
+    components:
+    - type: Transform
+      pos: 23.5,-1.5
+      parent: 1
+  - uid: 2545
+    components:
+    - type: Transform
+      pos: 24.5,-1.5
+      parent: 1
+  - uid: 2546
+    components:
+    - type: Transform
+      pos: 24.5,-3.5
+      parent: 1
   - uid: 5243
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 23.5,-1.5
-      parent: 1
-  - uid: 5244
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 24.5,-1.5
-      parent: 1
-  - uid: 5245
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 23.5,-3.5
-      parent: 1
-  - uid: 5246
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 24.5,-3.5
+      pos: 26.5,-11.5
       parent: 1
 - proto: AirlockNfsdGlassLocked
   entities:
