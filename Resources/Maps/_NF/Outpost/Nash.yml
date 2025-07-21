@@ -4,7 +4,7 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/21/2025 17:01:56
+  time: 07/21/2025 17:30:11
   entityCount: 6909
 maps:
 - 983
@@ -5756,6 +5756,7 @@ entities:
     - type: SolarPoweredGrid
       doNotCull: True
       trackOnInit: True
+    - type: StationBusDepot
   - uid: 983
     components:
     - type: MetaData
@@ -11062,14 +11063,14 @@ entities:
   - uid: 412
     components:
     - type: Transform
-      pos: -30.5,-1.5
+      pos: -30.5,2.5
       parent: 1
 - proto: BusScheduleRoute3
   entities:
   - uid: 440
     components:
     - type: Transform
-      pos: -30.5,2.5
+      pos: -30.5,-1.5
       parent: 1
 - proto: ButchCleaver
   entities:
