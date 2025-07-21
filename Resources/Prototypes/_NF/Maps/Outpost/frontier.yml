@@ -28,7 +28,7 @@
             Mercenary: [ -1, -1 ]
             FoodService: [ -1, -1]
             Borg: [ -1, -1 ]
-            StationRepresentative: [ 1, 1 ]
+            StationRepresentative: [ 1, 2 ]
             StationTrafficController: [ 1, 2 ]
             SecurityGuard: [ 1, 2 ]
             Valet: [ 1, 2 ]
