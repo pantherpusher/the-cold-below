@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/21/2025 16:27:48
-  entityCount: 6907
+  time: 07/21/2025 17:01:56
+  entityCount: 6909
 maps:
 - 983
 grids:
@@ -1022,6 +1022,20 @@ entities:
       chunkCollection:
         version: 2
         nodes:
+        - node:
+            cleanable: True
+            color: '#FF0000FF'
+            id: 6
+          decals:
+            4942: 12.6866455,10.256675
+            4945: 12.847283,10.140934
+            4946: 13.0602455,9.877046
+        - node:
+            cleanable: True
+            color: '#FF0000FF'
+            id: Blasto
+          decals:
+            4941: 21,7
         - node:
             angle: -1.5707963267948966 rad
             color: '#FFFFFFFF'
@@ -4368,6 +4382,27 @@ entities:
             4474: 51,18
             4475: 49,18
             4476: 49,17
+            4904: 12,10
+            4905: 13,11
+            4906: 12,9
+            4913: -11,0
+            4914: -37,1
+            4915: -38,0
+            4916: -37,0
+            4917: -39,1
+            4918: -40,1
+            4919: -40,0
+            4920: -43,-1
+            4921: -42,1
+            4922: -42,0
+            4927: -46,1
+            4928: -47,0
+            4929: -47,0
+            4930: -48,-1
+            4931: -46,-1
+            4950: 19,10
+            4955: 17,6
+            4956: 18,5
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -4375,6 +4410,16 @@ entities:
           decals:
             4477: 50,18
             4478: 51,16
+            4923: -41,-1
+            4924: -41,0
+            4925: -47,0
+            4926: -48,1
+            4937: -50,0
+            4938: -50,1
+            4948: 13,10
+            4949: 16,10
+            4957: 12,-22
+            4958: 11,-21
         - node:
             cleanable: True
             color: '#49392696'
@@ -4581,6 +4626,25 @@ entities:
             4464: 49,-17
             4479: 50,17
             4480: 49,16
+            4898: 20,4
+            4899: 20,3
+            4900: 19,3
+            4901: 18,3
+            4902: 18,3
+            4903: 17,3
+            4908: 15,4
+            4909: 14,5
+            4910: 14,6
+            4911: 13,7
+            4912: 14,7
+            4932: -47,-1
+            4933: -48,0
+            4934: -46,-3
+            4935: -47,-3
+            4936: -50,-1
+            4951: 20,10
+            4952: 21,10
+            4953: 17,10
         - node:
             cleanable: True
             color: '#49392696'
@@ -4725,6 +4789,7 @@ entities:
             4468: 50,-18
             4471: 66,-1
             4481: 51,17
+            4954: 20,11
         - node:
             color: '#FFFFFFFF'
             id: Flowerspv1
@@ -5588,7 +5653,7 @@ entities:
           decals:
             4862: 20,3
             4863: 21,4
-            4897: 13,10
+            4947: 13,10
         - node:
             color: '#FFFFFFFF'
             id: WoodTrimThinInnerNw
@@ -5670,6 +5735,18 @@ entities:
           decals:
             1865: -10,9
             1866: -10,8
+        - node:
+            cleanable: True
+            color: '#00C800FF'
+            id: e
+          decals:
+            4939: 14,8
+        - node:
+            cleanable: True
+            color: '#AC8D00FF'
+            id: x
+          decals:
+            4940: 20,4
     - type: BecomesStation
       id: Frontier
     - type: IFF
@@ -35333,6 +35410,16 @@ entities:
     components:
     - type: Transform
       pos: -15.5,2.5
+      parent: 1
+  - uid: 6908
+    components:
+    - type: Transform
+      pos: 21.5,3.5
+      parent: 1
+  - uid: 6909
+    components:
+    - type: Transform
+      pos: 14.5,11.5
       parent: 1
 - proto: PowerCellMedium
   entities:
