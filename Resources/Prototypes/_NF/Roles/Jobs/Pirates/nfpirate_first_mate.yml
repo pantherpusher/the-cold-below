@@ -22,6 +22,7 @@
   weight: 30
   displayWeight: 30
   setPreference: true
+  newPlayerMessage: false
   access:
   - Pirate
   accessGroups:
