@@ -43,11 +43,11 @@
   description: An urgent crate of goods made in the Frontier sector, ready to be quickly sold at a cargo depot for higher value. MAKE SURE THE CRATE IS INTACT.
   components:
   - type: TradeCrate
-    valueAtDestination: 4000
-    valueElsewhere: 1500
-    expressDeliveryDuration: 2700
-    expressOnTimeBonus: 2000
-    expressLatePenalty: 1500 # 0/1000
+    valueAtDestination: 2000 # 2500 original
+    valueElsewhere: 1500 # 1500 original
+    expressDeliveryDuration: 2700 # 1680 original
+    expressOnTimeBonus: 1500 # 1500 original
+    expressLatePenalty: 1000 # 1000 original
   - type: Icon
     sprite: _NF/Structures/Storage/Crates/tradelight.rsi
   - type: Sprite
