@@ -12,8 +12,8 @@
   id: CargoDepot
   parent: BasePOI
   name: Cargo Depot
-  minimumDistance: 4000
-  maximumDistance: 5000
+  minimumDistance: 7800 # (60 * 5) * 26 | 5 minutes at 26 tiles per second
+  maximumDistance: 12480 # (7800 + 60 * 3) * 26 | 8 minutes at 26 tiles per second
   spawnGroup: CargoDepot
   gridPath: /Maps/_NF/POI/cargodepot.yml
   addComponents: &cargoComponents
@@ -36,8 +36,8 @@
   id: CargoDepotAlt
   parent: BasePOI
   name: Cargo Depot
-  minimumDistance: 4000
-  maximumDistance: 5000
+  minimumDistance: 7800 # (60 * 5) * 26 | 5 minutes at 26 tiles per second
+  maximumDistance: 12480 # (7800 + 60 * 3) * 26 | 8 minutes at 26 tiles per second
   spawnGroup: CargoDepot
   gridPath: /Maps/_NF/POI/cargodepotalt.yml
   addComponents: *cargoComponents
