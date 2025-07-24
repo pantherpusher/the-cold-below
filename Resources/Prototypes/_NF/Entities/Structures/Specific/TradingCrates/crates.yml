@@ -45,7 +45,7 @@
   - type: TradeCrate
     valueAtDestination: 2000 # 2500 original
     valueElsewhere: 1500 # 1500 original
-    expressDeliveryDuration: 2700 # 1680 original
+    expressDeliveryDuration: 3600 # 1680 (28 minutes) original -> 2700 (45 minutes) -> 3600 (60 minutes)
     expressOnTimeBonus: 1500 # 1500 original
     expressLatePenalty: 1000 # 1000 original
   - type: Icon
