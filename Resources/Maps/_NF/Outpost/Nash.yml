@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/25/2025 16:05:17
-  entityCount: 7588
+  time: 07/25/2025 16:21:44
+  entityCount: 7601
 maps:
 - 983
 grids:
@@ -7260,7 +7260,7 @@ entities:
       pos: -4.5,2.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -6408.762
+      secondsUntilStateChange: -6972.669
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16147,6 +16147,11 @@ entities:
     components:
     - type: Transform
       pos: -3.5,41.5
+      parent: 1
+  - uid: 7219
+    components:
+    - type: Transform
+      pos: -4.5,33.5
       parent: 1
   - uid: 7596
     components:
@@ -39190,6 +39195,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -2.5,39.5
       parent: 1
+  - uid: 7218
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 28.5,17.5
+      parent: 1
   - uid: 7601
     components:
     - type: Transform
@@ -44092,6 +44103,164 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 25.5,14.5
       parent: 1
+- proto: SurveillanceCameraCommand
+  entities:
+  - uid: 2387
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 26.5,18.5
+      parent: 1
+  - uid: 2507
+    components:
+    - type: Transform
+      pos: 14.5,-8.5
+      parent: 1
+  - uid: 7164
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 19.5,-5.5
+      parent: 1
+- proto: SurveillanceCameraEngineering
+  entities:
+  - uid: 2388
+    components:
+    - type: Transform
+      pos: -10.5,-7.5
+      parent: 1
+  - uid: 5400
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 17.5,17.5
+      parent: 1
+- proto: SurveillanceCameraGeneral
+  entities:
+  - uid: 285
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 12.5,1.5
+      parent: 1
+  - uid: 421
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 43.5,-3.5
+      parent: 1
+  - uid: 911
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 5.5,-2.5
+      parent: 1
+  - uid: 912
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5,-28.5
+      parent: 1
+  - uid: 1317
+    components:
+    - type: Transform
+      pos: 4.5,27.5
+      parent: 1
+  - uid: 1921
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5,-8.5
+      parent: 1
+  - uid: 2358
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,12.5
+      parent: 1
+  - uid: 2373
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 43.5,4.5
+      parent: 1
+  - uid: 2386
+    components:
+    - type: Transform
+      pos: 37.5,-0.5
+      parent: 1
+  - uid: 2538
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 17.5,-18.5
+      parent: 1
+  - uid: 4212
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -12.5,1.5
+      parent: 1
+  - uid: 5342
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -30.5,1.5
+      parent: 1
+  - uid: 7026
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,-19.5
+      parent: 1
+  - uid: 7027
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5,-37.5
+      parent: 1
+  - uid: 7028
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -22.5,1.5
+      parent: 1
+  - uid: 7029
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 22.5,1.5
+      parent: 1
+  - uid: 7030
+    components:
+    - type: Transform
+      pos: 21.5,13.5
+      parent: 1
+  - uid: 7031
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,37.5
+      parent: 1
+  - uid: 7217
+    components:
+    - type: Transform
+      pos: -42.5,-0.5
+      parent: 1
+- proto: SurveillanceCameraMedical
+  entities:
+  - uid: 7024
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -5.5,34.5
+      parent: 1
+  - uid: 7025
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -7.5,42.5
+      parent: 1
 - proto: SurveillanceCameraRouterCommand
   entities:
   - uid: 2578
@@ -44146,26 +44315,33 @@ entities:
     - type: Transform
       pos: 25.5,16.5
       parent: 1
-- proto: SurveillanceCameraSupply
+- proto: SurveillanceCameraSecurity
   entities:
-  - uid: 285
+  - uid: 321
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 12.5,1.5
+      pos: 29.5,4.5
       parent: 1
-  - uid: 321
+  - uid: 2537
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 24.5,-9.5
+      parent: 1
+  - uid: 2602
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 29.5,11.5
       parent: 1
-  - uid: 421
+  - uid: 7216
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 43.5,-3.5
+      pos: 29.5,-3.5
       parent: 1
+- proto: SurveillanceCameraService
+  entities:
   - uid: 869
     components:
     - type: Transform
@@ -44178,51 +44354,10 @@ entities:
       rot: 3.141592653589793 rad
       pos: -8.5,9.5
       parent: 1
-  - uid: 911
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 1.5,-9.5
-      parent: 1
-  - uid: 912
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 1.5,-28.5
-      parent: 1
-  - uid: 913
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 58.5,-1.5
-      parent: 1
-  - uid: 1317
-    components:
-    - type: Transform
-      pos: 4.5,27.5
-      parent: 1
-  - uid: 1383
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 48.5,-7.5
-      parent: 1
-  - uid: 1430
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 49.5,-1.5
-      parent: 1
   - uid: 1920
     components:
     - type: Transform
       pos: 5.5,3.5
-      parent: 1
-  - uid: 1921
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 5.5,-2.5
       parent: 1
   - uid: 1922
     components:
@@ -44236,79 +44371,30 @@ entities:
       rot: 3.141592653589793 rad
       pos: -4.5,-10.5
       parent: 1
-  - uid: 2358
+- proto: SurveillanceCameraSupply
+  entities:
+  - uid: 913
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: -0.5,12.5
+      pos: 58.5,-1.5
       parent: 1
-  - uid: 2373
+  - uid: 1383
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 43.5,4.5
+      rot: 3.141592653589793 rad
+      pos: 48.5,-7.5
+      parent: 1
+  - uid: 1430
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 49.5,-1.5
       parent: 1
   - uid: 2385
     components:
     - type: Transform
       pos: 52.5,8.5
-      parent: 1
-  - uid: 2386
-    components:
-    - type: Transform
-      pos: 37.5,-0.5
-      parent: 1
-  - uid: 2387
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -7.5,-16.5
-      parent: 1
-  - uid: 2388
-    components:
-    - type: Transform
-      pos: -10.5,-7.5
-      parent: 1
-  - uid: 2507
-    components:
-    - type: Transform
-      pos: 14.5,-8.5
-      parent: 1
-  - uid: 2537
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 23.5,-7.5
-      parent: 1
-  - uid: 2538
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 17.5,-18.5
-      parent: 1
-  - uid: 2602
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 29.5,4.5
-      parent: 1
-  - uid: 4212
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -12.5,1.5
-      parent: 1
-  - uid: 5342
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -29.5,1.5
-      parent: 1
-  - uid: 5400
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 22.5,18.5
       parent: 1
   - uid: 6343
     components:
