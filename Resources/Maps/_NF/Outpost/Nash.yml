@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/24/2025 15:08:01
-  entityCount: 6963
+  time: 07/25/2025 00:48:05
+  entityCount: 6962
 maps:
 - 983
 grids:
@@ -35634,13 +35634,6 @@ entities:
       parent: 1
     - type: Physics
       bodyType: Static
-- proto: PacifiedZone100
-  entities:
-  - uid: 6322
-    components:
-    - type: Transform
-      pos: 0.5,-0.5
-      parent: 1
 - proto: Paper
   entities:
   - uid: 6837
