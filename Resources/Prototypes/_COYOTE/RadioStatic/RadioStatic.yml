@@ -1,0 +1,6 @@
+- type: RadioStatic
+  id: RadioStaticDefault
+  secret: false
+  saySound:
+    path: /Audio/_COYOTE/RadioStatic/Default/say.ogg
+# todo: add more

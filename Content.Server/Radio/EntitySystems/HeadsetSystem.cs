@@ -1,6 +1,7 @@
 using Content.Server.Chat.Systems;
 using Content.Server.Emp;
 using Content.Server.Radio.Components;
+using Content.Shared._Coyote.RadioNoises;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
@@ -100,7 +101,25 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
     private void OnHeadsetReceive(EntityUid uid, HeadsetComponent component, ref RadioReceiveEvent args)
     {
         if (TryComp(Transform(uid).ParentUid, out ActorComponent? actor))
+        {
+            /*public sealed class RadioReceivedEvent(
+                EntityUid radioUid,
+                EntityUid sender,
+                EntityUid? receiver,
+                string channel,
+                string message)
+                : EntityEventArgs*/
+            var staticEv = new RadioReceivedEvent(
+                uid,
+                args.MessageSource,
+                actor.PlayerSession.AttachedEntity,
+                args.Channel.ID,
+                args.Message
+            );
+            RaiseLocalEvent(args.MessageSource, ref staticEv);
+
             _netMan.ServerSendMessage(args.ChatMsg, actor.PlayerSession.Channel);
+        }
     }
 
     private void OnEmpPulse(EntityUid uid, HeadsetComponent component, ref EmpPulseEvent args)

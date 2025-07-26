@@ -138,6 +138,12 @@ public abstract class SharedChatSystem : EntitySystem
         if (input.Length == 0)
             return false;
 
+        if (input.StartsWith(".."))
+        {
+            // its an elipses, bro! Probably not a radio message.
+            return false;
+        }
+
         if (input.StartsWith(RadioCommonPrefix))
         {
             output = SanitizeMessageCapital(input[1..].TrimStart());

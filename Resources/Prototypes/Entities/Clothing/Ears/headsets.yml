@@ -26,6 +26,8 @@
   - type: GuideHelp
     guides:
     - Radio
+  - type: RadioStatic
+    baseSoundpack: RadioStaticDefault
 
 - type: entity
   parent: ClothingHeadset

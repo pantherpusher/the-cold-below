@@ -7,6 +7,7 @@ using Content.Server.Power.EntitySystems;
 using Content.Server.Radio.Components;
 using Content.Server.Speech;
 using Content.Server.Speech.Components;
+using Content.Shared._Coyote.RadioNoises;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Power;
@@ -236,6 +237,14 @@ public sealed class RadioDeviceSystem : EntitySystem
 
         var nameEv = new TransformSpeakerNameEvent(args.MessageSource, Name(args.MessageSource));
         RaiseLocalEvent(args.MessageSource, nameEv);
+        var staticEv = new RadioReceivedEvent(
+            uid,
+            args.MessageSource,
+            null,
+            args.Channel.ID,
+            args.Message
+            );
+        RaiseLocalEvent(args.MessageSource, ref staticEv);
 
         var name = Loc.GetString("speech-name-relay",
             ("speaker", Name(uid)),
