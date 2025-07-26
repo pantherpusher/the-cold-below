@@ -67,7 +67,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public const int VoiceRange = 12; // how far voice goes in world units
     public const int ShoutRange = 30; // how far Shout goes in world units
     public const int EmoteRange = 12; // how far Emote goes in world units
-    public const int SubtleRange = 3; // how far Subtle goes in world units
+    public const int SubtleRange = 1; // how far Subtle goes in world units
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public const int LOOCRange = 15; // how far LOOC goes in world units
     [SuppressMessage("ReSharper", "InconsistentNaming")]
