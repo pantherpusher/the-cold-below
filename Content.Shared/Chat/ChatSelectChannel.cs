@@ -57,6 +57,11 @@
         Admin = ChatChannel.AdminChat,
 
         /// <summary>
+        ///     Admin chat
+        /// </summary>
+        Admin2 = 50,
+
+        /// <summary>
         ///     Nyano - Summary:. Telepathic channel for all psionic entities.
         /// </summary>
         Telepathic = ChatChannel.Telepathic,
