@@ -783,7 +783,7 @@ namespace Content.Server.Administration.Systems
                         RaiseNetworkEvent(msg, session.Channel);
                 }
             }
-            superOverrideText = $"[color=red][bold][AHELP] {superOverrideText}[/bold][/color]";
+            superOverrideText = $"[color=red][bold][AHELP][/bold] {superOverrideText}[/color]";
             // send the message to EVERY ADMIN, whether they like it or not
             foreach (var admin in admins)
             {
