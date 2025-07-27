@@ -71,7 +71,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public const int LOOCRange = 15; // how far LOOC goes in world units
     [SuppressMessage("ReSharper", "InconsistentNaming")]
-    public const int SubtleLOOCRange = 3; // how far Subtle LOOC goes in world units
+    public const int SubtleLOOCRange = 2; // how far Subtle LOOC goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
     public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
@@ -820,7 +820,18 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entityName", name),
             ("message", FormattedMessage.EscapeText(message)));
 
-        SendInVoiceRange(ChatChannel.LOOC, message, wrappedMessage, source, hideChat ? ChatTransmitRange.HideChat : ChatTransmitRange.Normal, player.UserId);
+        SendInVoiceRange(
+            ChatChannel.LOOC,
+            message,
+            wrappedMessage,
+            source,
+            hideChat
+                ? ChatTransmitRange.HideChat
+                : ChatTransmitRange.Normal,
+            player.UserId,
+            voiceRange: LOOCRange, // COYOTESTATION ADD - LOOC goes further
+            blockedByOcclusion: !LOOCGoesThroughWalls, // COYOTESTATION ADD - some things dont do thru walls
+            ensmallenedByOcclusion: false); // COYOTESTATION ADD - LOOC dont get ensmallened by occlusion
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"LOOC from {player:Player}: {message}");
     }
 
