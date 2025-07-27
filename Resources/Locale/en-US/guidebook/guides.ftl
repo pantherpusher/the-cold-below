@@ -99,6 +99,9 @@ guide-entry-radio = Radio and Speech
 guide-entry-roleplay = Roleplaying
 
 guide-entry-loremaster = Lore
+guide-entry-solgov = The Trans Solar Federation
+guide-entry-nt = Nanotrasen
+guide-entry-ussp = The Union of Soviet Socialist Planets
 
 guide-entry-references = Tables & References
 guide-entry-chemicals = Chemicals

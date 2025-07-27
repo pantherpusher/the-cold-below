@@ -3,10 +3,28 @@
   name: guide-entry-loremaster
   priority: 0
   text: "/ServerInfo/Guidebook/Lore/LoreMaster.xml"
-#  children:
-#  - Primer
+  children:
+  - NT
+  - SolGov
+  - USSP
 
 #- type: guideEntry
 #  id: Primer
 #  name: guide-entry-construction
 #  text: "/ServerInfo/Guidebook/Engineering/Construction.xml"
+
+- type: guideEntry
+  id: NT
+  name: guide-entry-nt
+  priority: 1
+  text: "/ServerInfo/Guidebook/Lore/Nanotrasen.xml"
+
+- type: guideEntry
+  id: SolGov
+  name: guide-entry-solgov
+  text: "/ServerInfo/Guidebook/Lore/Solgov.xml"
+
+- type: guideEntry
+  id: USSP
+  name: guide-entry-ussp
+  text: "/ServerInfo/Guidebook/Lore/USSP.xml"
