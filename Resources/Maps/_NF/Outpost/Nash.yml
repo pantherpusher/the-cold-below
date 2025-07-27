@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/25/2025 16:30:24
-  entityCount: 7601
+  time: 07/27/2025 12:00:26
+  entityCount: 7602
 maps:
 - 983
 grids:
@@ -7260,7 +7260,7 @@ entities:
       pos: -4.5,2.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -7135.1587
+      secondsUntilStateChange: -7178.6587
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -23257,6 +23257,13 @@ entities:
     components:
     - type: Transform
       pos: -7.5,-11.5
+      parent: 1
+- proto: CrewMonitoringServer
+  entities:
+  - uid: 7220
+    components:
+    - type: Transform
+      pos: 23.5,16.5
       parent: 1
 - proto: CurtainsBlackOpen
   entities:
