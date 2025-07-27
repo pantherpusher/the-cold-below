@@ -383,28 +383,80 @@ namespace Content.Server.Ghost
                 if (warp.AdminOnly && !isAdmin) // Frontier: skip admin-only warp points if not an admin
                     continue; // Frontier
 
-                yield return new GhostWarp(GetNetEntity(uid), warp.Location ?? Name(uid), true);
+                yield return new GhostWarp(
+                    GetNetEntity(uid),
+                    warp.Location ?? Name(uid),
+                    true,
+                    GhostStatus.OtherStuff);
             }
         }
 
         private IEnumerable<GhostWarp> GetPlayerWarps(EntityUid except)
         {
-            foreach (var player in _player.Sessions)
+            Dictionary<string, int> dupeNum = new();
+            var query = AllEntityQuery<MindContainerComponent>();
+            while (query.MoveNext(out var attached, out var mind))
             {
-                if (player.AttachedEntity is not {Valid: true} attached)
-                    continue;
-
-                if (attached == except) continue;
-
-                TryComp<MindContainerComponent>(attached, out var mind);
-
-                var jobName = _jobs.MindTryGetJobName(mind?.Mind);
-                var playerInfo = $"{Comp<MetaDataComponent>(attached).EntityName} ({jobName})";
-
-                if (_mobState.IsAlive(attached) || _mobState.IsCritical(attached))
-                    yield return new GhostWarp(GetNetEntity(attached), playerInfo, false);
+                {
+                    if (attached == except)
+                        continue;
+                    if (!mind.HasHadMind)
+                        continue;
+                    var jobName = _jobs.MindTryGetJobName(mind?.Mind);
+                    var nameName = Comp<MetaDataComponent>(attached).EntityName;
+                    // var playerInfo = $"{nameName} ({jobName})";
+                    var gStatus = true switch
+                    {
+                        true when mind!.IsInCryosleep => GhostStatus.CryoSleep,
+                        true when _mobState.IsCritical(attached) => GhostStatus.Unconscious,
+                        true when HasComp<GhostComponent>(attached) => GhostStatus.Ghost,
+                        true when _mobState.IsAlive(attached) => GhostStatus.Alive,
+                        _ => GhostStatus.Dead,
+                    };
+                    var dupeNumber = 0;
+                    if (dupeNum.TryGetValue(nameName, out var dupeCount))
+                    {
+                        dupeNumber = dupeCount + 1;
+                        dupeNum[nameName] = dupeNumber;
+                    }
+                    else
+                    {
+                        dupeNum[nameName] = 0;
+                    }
+                    // if (_mobState.IsAlive(attached) || _mobState.IsCritical(attached))
+                    yield return new GhostWarp(
+                        GetNetEntity(attached),
+                        nameName,
+                        false,
+                        gStatus,
+                        dupeNumber,
+                        jobName);
+                }
             }
         }
+            // foreach (var player in _player.Sessions)
+            // {
+            //     if (player.AttachedEntity is not {Valid: true} attached)
+            //         continue;
+            //
+            //     if (attached == except)
+            //         continue;
+            //
+            //     TryComp<MindContainerComponent>(attached, out var mind);
+            //
+            //     var jobName = _jobs.MindTryGetJobName(mind?.Mind);
+            //     var playerInfo = $"{Comp<MetaDataComponent>(attached).EntityName} ({jobName})";
+            //     var gStatus = _mobState.IsAlive(attached)
+            //         ? GhostStatus.Alive
+            //             : _mobState.IsCritical(attached)
+            //                 ? GhostStatus.Unconscious
+            //             : HasComp<GhostComponent>(attached)
+            //                 ? GhostStatus.Ghost
+            //                 : GhostStatus.Dead;
+            //
+            //     // if (_mobState.IsAlive(attached) || _mobState.IsCritical(attached))
+            //     yield return new GhostWarp(GetNetEntity(attached), playerInfo, false, gStatus);
+
 
         #endregion
 
