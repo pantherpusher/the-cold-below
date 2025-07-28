@@ -8,3 +8,5 @@ radio-squelch-squelched = Messages from {$channel} will no longer make noise!
 radio-squelch-omni-enabled = Radio Static Suppression Enabled!
 radio-squelch-omni-disabled = Radio Static Suppression Disabled!
 
+radio-squelch-verb-unsquelch = Unsquelch {$channel}
+radio-squelch-verb-squelch = Squelch {$channel}

@@ -22,6 +22,8 @@ public sealed class RadioStaticSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
 
+    private static float _defaultVolume = 2f;
+
     public static readonly VerbCategory RadioSquelchCat =
         new("verb-categories-radiosquelch", null);
 
@@ -124,7 +126,7 @@ public sealed class RadioStaticSystem : EntitySystem
                 sound,
                 hearer,
                 hearer,
-                AudioParams.Default.WithVolume(-2f)
+                AudioParams.Default.WithVolume(_defaultVolume)
             );
             return;
         }
@@ -134,7 +136,7 @@ public sealed class RadioStaticSystem : EntitySystem
             sound,
             uid,
             null,
-            AudioParams.Default.WithVolume(-2f)
+            AudioParams.Default.WithVolume(_defaultVolume)
         );
     }
 
@@ -181,8 +183,8 @@ public sealed class RadioStaticSystem : EntitySystem
         {
             Text = Loc.GetString($"radio-squelch-verb-toggle-all-{(
                 component.OmniSquelch
-                ? "unsquelch"
-                : "squelch"
+                ? "squelch"
+                : "unsquelch"
                 )}"),
             Category = RadioSquelchCat,
             Act = () =>

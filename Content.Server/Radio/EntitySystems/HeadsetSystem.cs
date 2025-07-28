@@ -116,7 +116,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
                 args.Channel.ID,
                 args.Message
             );
-            RaiseLocalEvent(args.MessageSource, ref staticEv);
+            RaiseLocalEvent(uid, ref staticEv);
 
             _netMan.ServerSendMessage(args.ChatMsg, actor.PlayerSession.Channel);
         }

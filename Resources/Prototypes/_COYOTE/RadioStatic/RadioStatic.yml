@@ -3,4 +3,34 @@
   secret: false
   saySound:
     path: /Audio/_COYOTE/RadioStatic/Default/say.ogg
-# todo: add more
+
+- type: RadioStatic
+  id: RadioStaticTrafficHeadset
+  secret: false
+  saySound:
+    path: /Audio/_COYOTE/RadioStatic/Traffic/say.ogg
+
+- type: RadioStatic
+  id: RadioStaticTrafficConsole
+  secret: false
+  saySound:
+    path: /Audio/_COYOTE/RadioStatic/TrafficConsole/say.ogg
+
+- type: RadioStatic
+  id: RadioStaticMedical
+  secret: false
+  saySound:
+    path: /Audio/_COYOTE/RadioStatic/Medical/say.ogg
+
+- type: RadioStatic
+  id: RadioStaticSecurity
+  secret: false
+  saySound:
+    path: /Audio/_COYOTE/RadioStatic/Security/say.ogg
+
+- type: RadioStatic
+  id: RadioStaticScience
+  secret: false
+  saySound:
+    path: /Audio/_COYOTE/RadioStatic/Science/say.ogg
+

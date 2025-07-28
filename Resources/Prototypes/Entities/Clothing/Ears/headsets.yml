@@ -28,6 +28,11 @@
     - Radio
   - type: RadioStatic
     baseSoundpack: RadioStaticDefault
+    departmentSoundPacks:
+      Traffic: RadioStaticTrafficHeadset
+      Medical: RadioStaticMedical
+      Nfsd: RadioStaticSecurity
+      Science: RadioStaticScience
 
 - type: entity
   parent: ClothingHeadset

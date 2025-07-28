@@ -244,7 +244,7 @@ public sealed class RadioDeviceSystem : EntitySystem
             args.Channel.ID,
             args.Message
             );
-        RaiseLocalEvent(args.MessageSource, ref staticEv);
+        RaiseLocalEvent(uid, ref staticEv);
 
         var name = Loc.GetString("speech-name-relay",
             ("speaker", Name(uid)),
