@@ -1,6 +1,6 @@
 - type: entity
   name: handicomms
-  description: A handy handheld radio with adjustible frequency.
+  description: A handy handheld radio with adjustable frequency.
   parent: RadioHandheld
   id: RadioHandheldNF
   components:
@@ -44,3 +44,12 @@
         enum.RadioDeviceVisualLayers.Speaker:
           True: { visible: true }
           False: { visible: false }
+  - type: RadioStatic
+    baseSoundpack: RadioStaticDefault
+    departmentSoundPacks:
+      Traffic: RadioStaticTrafficConsole
+      Medical: RadioStaticMedical
+      Nfsd: RadioStaticSecurity
+
+
+

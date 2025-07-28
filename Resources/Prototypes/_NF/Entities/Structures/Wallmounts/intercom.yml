@@ -24,6 +24,13 @@
       key_slots: !type:Container
   - type: ShuttleIntercom
     appendName: true
+  - type: RadioStatic
+    baseSoundpack: RadioStaticDefault
+    departmentSoundPacks:
+      Traffic: RadioStaticTrafficConsole
+      Medical: RadioStaticMedical
+      Nfsd: RadioStaticSecurity
+      Science: RadioStaticScience
 
 - type: entity
   parent: BaseShuttleIntercom

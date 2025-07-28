@@ -3,13 +3,15 @@ using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.Power.Components;
 using Content.Server.Radio.Components;
+using Content.Shared._Coyote;
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Robust.Server.GameObjects; // Frontier
 using Content.Shared.Speech;
-using Content.Shared.Ghost; // Nuclear-14
+using Content.Shared.Ghost;
+using Content.Shared.IdentityManagement; // Nuclear-14
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -123,8 +125,20 @@ public sealed class RadioSystem : EntitySystem
             channelText = $"\\[{channel.LocalizedName}\\]";
         // End Frontier
 
+        var entityName = Identity.Name(messageSource, EntityManager);
+        if (string.IsNullOrEmpty(entityName))
+        {
+            // If no name override is provided, we use the entity's name.
+            entityName = "bingles";
+        }
+        var nameHashColor = ColorExtensions.ConsistentRandomSeededColorFromString(entityName);
+        var nameHashColorAdjusted = ColorExtensions.PreventColorFromBeingTooCloseToTheBackgroundColor(nameHashColor); // pastilla loses
+        var nameColorString = nameHashColorAdjusted.ToHex();
+
+
         var wrappedMessage = Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
             ("color", channel.Color),
+            ("chatColor", nameColorString),
             ("fontType", speech.FontId),
             ("fontSize", speech.FontSize),
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
