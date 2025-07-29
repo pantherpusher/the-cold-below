@@ -8,16 +8,27 @@
   - NFPirateJumpskirt
   - NFPirateClothingUniformJumpsuitPirateSlops
   - NFPirateClothingUniformJumpsuitPirateLuffy
+  subgroups:
+  - MercenaryJumpsuit
+  - PilotJumpsuit
+  - ContractorJumpsuit
   fallbacks:
   - NFPirateJumpsuit
   - NFPirateJumpskirt
 
 - type: loadoutGroup
+  id:
+
+- type: loadoutGroup
   id: NFPiratePDA
   name: loadout-group-contractor-pda
-  hidden: true # No point in showing this, it gets auto-selected.
+  hidden: false # No point in showing this, it gets auto-selected. # Coyote: But what if...
   loadouts:
   - NFPirateNFPiratePDA
+  subgroups:
+  - MercenaryPDA
+  - PilotPDA
+  - ContractorPDA
   fallbacks:
   - NFPirateNFPiratePDA
 
@@ -29,6 +40,9 @@
   - ContractorClothingMaskBreath
   - ContractorClothingMaskBreathMedical
   - ContractorClothingMaskGas
+  subgroups:
+  - MercenaryFace
+  - PilotFace
   fallbacks:
   - ContractorClothingMaskBreath
 
@@ -46,6 +60,10 @@
   loadouts:
   - NFPirateClothingShoesBootsLaceup
   - NFPirateClothingShoesBootsPirateLuffy
+  subgroups:
+  - MercenaryShoes
+  - ContractorShoes
+  - PilotShoes
   fallbacks:
   - NFPirateClothingShoesBootsLaceup
 
@@ -58,6 +76,9 @@
   - NFPirateClothingHeadBandBrown
   - NFPirateClothingHeadBandGrey
   - NFPirateClothingHeadBandRed
+  subgroups:
+  - PilotHead
+  - ContractorHead
   fallbacks:
   - NFPirateClothingHeadBandBlack
 
@@ -80,6 +101,10 @@
   loadouts:
   - NFPirateClothingHeadHatPirate
   - NFPirateClothingHeadHatPirateLuffy
+  subgroups:
+  - MercenaryHead
+  - PilotHead
+  - ContractorHead
   fallbacks:
   - NFPirateClothingHeadHatPirate
 
@@ -89,15 +114,23 @@
   hidden: true # No point in showing this, it gets auto-selected.
   loadouts:
   - NFPirateCaptainClothingOuterCoatPirate
+  subgroups:
+    - MercenaryOuterClothing
+    - PilotOuterClothing
+    - ContractorOuterClothing
   fallbacks:
   - NFPirateCaptainClothingOuterCoatPirate
 
 - type: loadoutGroup
   id: NFPirateCaptainPDA
   name: loadout-group-contractor-pda
-  hidden: true # No point in showing this, it gets auto-selected.
+  hidden: false # No point in showing this, it gets auto-selected.
   loadouts:
   - NFPirateCaptainNFPirateCaptainPDA
+  subgroups:
+  - MercenaryPDA
+  - PilotPDA
+  - ContractorPDA
   fallbacks:
   - NFPirateCaptainNFPirateCaptainPDA
 
@@ -137,6 +170,10 @@
   loadouts:
   - NFPirateClothingHeadHatPirateTricord
   - NFPirateClothingHeadHatPirateLuffy
+  subgroups:
+  - MercenaryHead
+  - PilotHead
+  - ContractorHead
   fallbacks:
   - NFPirateClothingHeadHatPirateTricord
 
@@ -145,14 +182,22 @@
   name: loadout-group-contractor-outerclothing
   loadouts:
   - NFPirateFirstMateClothingOuterCoatGentle
+  subgroups:
+  - MercenaryOuterClothing
+  - PilotOuterClothing
+  - ContractorOuterClothing
   fallbacks:
   - NFPirateFirstMateClothingOuterCoatGentle
 
 - type: loadoutGroup
   id: NFPirateFirstMatePDA
   name: loadout-group-contractor-pda
-  hidden: true # No point in showing this, it gets auto-selected.
+  hidden: false # No point in showing this, it gets auto-selected.
   loadouts:
   - NFPirateFirstMateNFPirateFirstMatePDA
+  subgroups:
+  - MercenaryPDA
+  - PilotPDA
+  - ContractorPDA
   fallbacks:
   - NFPirateFirstMateNFPirateFirstMatePDA
