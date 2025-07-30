@@ -1,0 +1,34 @@
+- type: blipShapeSet
+  id: BlipShapeCircle
+  name: Basic Circle
+  shape: "enum.RadarBlipShape.Circle"
+
+- type: blipShapeSet
+  id: BlipShapeSquare
+  name: Civilian Square
+  shape: "enum.RadarBlipShape.Square"
+
+- type: blipShapeSet
+  id: BlipShapeTriangle
+  name: Outlaw Triangle
+  shape: "enum.RadarBlipShape.Triangle"
+
+- type: blipShapeSet
+  id: BlipShapeDiamond
+  name: Working Diamond
+  shape: "enum.RadarBlipShape.Diamond"
+
+- type: blipShapeSet
+  id: BlipShapeHexagon
+  name: Mysterious Hexagon
+  shape: "enum.RadarBlipShape.Hexagon"
+
+- type: blipShapeSet
+  id: BlipShapeStar
+  name: Important Star
+  shape: "enum.RadarBlipShape.Star"
+
+- type: blipShapeSet
+  id: BlipShapeArrow
+  name: Blipz Arrow
+  shape: "enum.RadarBlipShape.Arrow"

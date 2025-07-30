@@ -1,0 +1,69 @@
+- type: radarBlipPreset
+  id: BlipPresetCivilian
+  name: Harmless Civilian
+  colorSet: "BlipColorGreen"
+  shapeSet: "BlipShapeCircle"
+  scale: 1.0
+
+- type: radarBlipPreset
+  id: BlipPresetMercenary
+  name: Rough Mercenary
+  colorSet: "BlipColorGreen"
+  shapeSet: "BlipShapeSquare"
+  scale: 2.0
+
+- type: radarBlipPreset
+  id: BlipPresetCommand
+  name: Important VIP
+  colorSet: "BlipColorGold"
+  shapeSet: "BlipShapeStar"
+  scale: 3.0
+
+- type: radarBlipPreset
+  id: BlipPresetPirate
+  name: Dangerous Baddie
+  colorSet: "BlipColorRed"
+  shapeSet: "BlipShapeTriangle"
+  scale: 1.0
+
+- type: radarBlipPreset
+  id: BlipPresetMedical
+  name: Medical Assistance
+  colorSet: "BlipColorCyan"
+  shapeSet: "BlipShapeDiamond"
+  scale: 1.5
+
+- type: radarBlipPreset
+  id: BlipPresetEngineering
+  name: Engineering Support
+  colorSet: "BlipColorOrange"
+  shapeSet: "BlipShapeHexagon"
+  scale: 1.5
+
+- type: radarBlipPreset
+  id: BlipPresetSecurity
+  name: Frontier Sheriff
+  colorSet: "BlipColorBlue"
+  shapeSet: "BlipShapeArrow"
+  scale: 2.0
+
+- type: radarBlipPreset
+  id: BlipPresetScience
+  name: Scientific Research
+  colorSet: "BlipColorPurple"
+  shapeSet: "BlipShapeHexagon"
+  scale: 1.5
+
+- type: radarBlipPreset
+  id: BlipPresetSupply
+  name: Salvage Supply
+  colorSet: "BlipColorYellow"
+  shapeSet: "BlipShapeSquare"
+  scale: 1.0
+
+- type: radarBlipPreset
+  id: BlipPresetPilot
+  name: Space Pilot
+  colorSet: "BlipColorBlue"
+  shapeSet: "BlipShapeCircle"
+  scale: 1.0

@@ -1,0 +1,48 @@
+- type: blipColorSet
+  id: BlipColorRed
+  name: Rough And Tumble Red
+  color: red
+  highlightedColor: lightcoral
+
+- type: blipColorSet
+  id: BlipColorGreen
+  name: Good Guy Green
+  color: green
+  highlightedColor: limegreen
+
+- type: blipColorSet
+  id: BlipColorBlue
+  name: Bob Blue
+  color: blue
+  highlightedColor: lightblue
+
+- type: blipColorSet
+  id: BlipColorYellow
+  name: High Vis Yellow
+  color: yellow
+  highlightedColor: lightyellow
+
+- type: blipColorSet
+  id: BlipColorPurple
+  name: Royal Purple
+  color: purple
+  highlightedColor: lightpurple
+
+- type: blipColorSet
+  id: BlipColorGold
+  name: Commander Gold
+  color: gold
+  highlightedColor: lightgoldenrodyellow
+
+- type: blipColorSet
+  id: BlipColorWhite
+  name: Bright White
+  color: white
+  highlightedColor: lightgray
+
+- type: blipColorSet
+  id: BlipColorCyan
+  name: Sky May Blue
+  color: cyan
+  highlightedColor: lightcyan
+

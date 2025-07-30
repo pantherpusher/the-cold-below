@@ -95,6 +95,7 @@
       - NewsReaderCartridge
       - BountyContractsCartridge # Frontier
       - AstroNavCartridge # Frontier
+      - BlipCartridge # Frontier
     cartridgeSlot:
       priority: -1
       name: device-pda-slot-component-slot-name-cartridge
