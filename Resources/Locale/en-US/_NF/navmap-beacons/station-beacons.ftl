@@ -36,3 +36,5 @@ station-beacon-dock-six = Dock 6
 station-beacon-dock-six-a = Dock 6a
 station-beacon-dock-six-b = Dock 6b
 station-beacon-dock-six-c = Dock 6c
+station-beacon-dock-seven = Dock 7
+station-beacon-dock-drydock = Dry Dock

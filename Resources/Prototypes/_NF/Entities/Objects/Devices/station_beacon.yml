@@ -111,7 +111,7 @@
   suffix: NFSD
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-nfsd    
+    defaultText: station-beacon-nfsd
     color: "#f1b223"
 
 - type: entity
@@ -296,3 +296,19 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-dock-six-c
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconFrontierDockSeven
+  suffix: Dock 7
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-dock-seven
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconFrontierDockDrydock
+  suffix: Dock Drydock
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-dock-drydock
