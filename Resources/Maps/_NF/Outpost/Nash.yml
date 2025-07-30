@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/30/2025 15:16:50
-  entityCount: 9120
+  time: 07/30/2025 16:31:36
+  entityCount: 9128
 maps:
 - 983
 grids:
@@ -560,7 +560,7 @@ entities:
             1: 23924
           -3,6:
             1: 112
-            0: 8
+            2: 8
           -3,7:
             1: 1
             0: 49344
@@ -702,26 +702,37 @@ entities:
             1: 49656
           -5,-6:
             1: 59392
+          -4,-7:
+            1: 12
+          -4,-8:
+            1: 34816
+          -3,-8:
+            1: 318
+          -3,-7:
+            1: 4097
+            0: 52424
           -3,-6:
             1: 12561
             0: 8
-          -3,-7:
-            1: 4096
-            0: 52424
           -2,-8:
+            1: 17
             0: 61440
           -2,-7:
             0: 65535
           -2,-6:
             0: 49407
+          -2,-9:
+            1: 61440
           -1,-8:
             0: 63624
+            1: 17
           -1,-7:
             0: 48063
           -1,-6:
             0: 47359
             1: 768
           -1,-9:
+            1: 4096
             0: 34952
           0,-8:
             0: 47923
@@ -5066,6 +5077,37 @@ entities:
             5786: -69,0
             5787: -69,-1
             5788: -67,3
+            6285: -1,47
+            6286: -2,47
+            6287: -2,45
+            6288: -3,46
+            6289: -3,45
+            6290: -6,45
+            6291: -5,46
+            6292: 1,53
+            6293: 0,53
+            6294: -1,54
+            6295: -1,52
+            6296: 0,51
+            6297: 0,50
+            6298: 1,50
+            6299: 1,51
+            6307: -1,70
+            6308: -1,72
+            6309: 1,70
+            6310: -1,65
+            6311: -1,64
+            6312: 0,65
+            6313: -1,60
+            6314: -1,59
+            6315: 1,58
+            6316: 1,63
+            6317: 1,62
+            6318: 0,62
+            6319: -3,71
+            6320: -3,70
+            6321: 0,74
+            6322: -1,74
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -5125,6 +5167,7 @@ entities:
             6274: 23,42
             6275: 22,43
             6276: 24,43
+            6300: 0,54
         - node:
             cleanable: True
             color: '#49392696'
@@ -5402,6 +5445,19 @@ entities:
             6268: 26,48
             6269: 24,46
             6270: 23,45
+            6278: 1,45
+            6279: -1,46
+            6280: -1,45
+            6281: -4,45
+            6282: -4,47
+            6283: -1,47
+            6284: 0,48
+            6301: -1,50
+            6302: 1,60
+            6303: 0,59
+            6304: 1,65
+            6305: 0,67
+            6306: 0,71
         - node:
             cleanable: True
             color: '#49392696'
@@ -8208,7 +8264,7 @@ entities:
       pos: -4.5,2.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -51557.883
+      secondsUntilStateChange: -53359.285
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9031,8 +9087,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 19.5,59.5
       parent: 1
-    - type: Docking
-      name: dock-label-drydock-a
   - uid: 8020
     components:
     - type: Transform
@@ -9047,40 +9101,30 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 27.5,49.5
       parent: 1
-    - type: Docking
-      name: dock-label-drydock-b
   - uid: 8073
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 27.5,58.5
+      pos: 27.5,60.5
       parent: 1
-    - type: Docking
-      name: dock-label-drydock-b
   - uid: 8076
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 27.5,48.5
-      parent: 1
-    - type: Docking
-      name: dock-label-drydock-b
-  - uid: 8077
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 27.5,50.5
       parent: 1
-    - type: Docking
-      name: dock-label-drydock-b
+  - uid: 8077
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 27.5,48.5
+      parent: 1
   - uid: 8079
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 19.5,69.5
       parent: 1
-    - type: Docking
-      name: dock-label-drydock-a
   - uid: 8081
     components:
     - type: Transform
@@ -9095,8 +9139,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 19.5,70.5
       parent: 1
-    - type: Docking
-      name: dock-label-drydock-a
   - uid: 8084
     components:
     - type: Transform
@@ -9117,42 +9159,32 @@ entities:
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 27.5,60.5
+      pos: 27.5,58.5
       parent: 1
-    - type: Docking
-      name: dock-label-drydock-b
   - uid: 8123
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 27.5,59.5
       parent: 1
-    - type: Docking
-      name: dock-label-drydock-b
   - uid: 8192
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 19.5,58.5
       parent: 1
-    - type: Docking
-      name: dock-label-drydock-a
   - uid: 8202
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 19.5,68.5
       parent: 1
-    - type: Docking
-      name: dock-label-drydock-a
   - uid: 8218
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 19.5,60.5
       parent: 1
-    - type: Docking
-      name: dock-label-drydock-a
 - proto: AirSensor
   entities:
   - uid: 7026
@@ -9213,18 +9245,24 @@ entities:
       parent: 1
   - uid: 360
     components:
+    - type: MetaData
+      name: Medbay APC
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -4.5,32.5
       parent: 1
   - uid: 446
     components:
+    - type: MetaData
+      name: Port Solars APC
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -12.5,-7.5
       parent: 1
   - uid: 581
     components:
+    - type: MetaData
+      name: Security APC
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 30.5,11.5
@@ -9237,11 +9275,15 @@ entities:
       parent: 1
   - uid: 1359
     components:
+    - type: MetaData
+      name: Pier Six APC
     - type: Transform
       pos: -29.5,2.5
       parent: 1
   - uid: 1647
     components:
+    - type: MetaData
+      name: Pier Four APC
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,-37.5
@@ -9256,6 +9298,8 @@ entities:
       parent: 1
   - uid: 2647
     components:
+    - type: MetaData
+      name: Sheriffs Branch APC
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 29.5,-4.5
@@ -9310,12 +9354,16 @@ entities:
       parent: 1
   - uid: 4009
     components:
+    - type: MetaData
+      name: Gravity Generator APC
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 14.5,21.5
       parent: 1
   - uid: 4047
     components:
+    - type: MetaData
+      name: Hydroponics APC
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 9.5,5.5
@@ -9329,12 +9377,16 @@ entities:
       parent: 1
   - uid: 4099
     components:
+    - type: MetaData
+      name: Mall APC
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 9.5,-4.5
       parent: 1
   - uid: 4244
     components:
+    - type: MetaData
+      name: Dorms APC
     - type: Transform
       pos: 6.5,-18.5
       parent: 1
@@ -9349,7 +9401,7 @@ entities:
   - uid: 4373
     components:
     - type: MetaData
-      name: Medbay APC
+      name: Starboard Med APC
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 44.5,6.5
@@ -9372,29 +9424,39 @@ entities:
       parent: 1
   - uid: 4450
     components:
+    - type: MetaData
+      name: Engineering APC
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 20.5,13.5
       parent: 1
   - uid: 4473
     components:
+    - type: MetaData
+      name: Cargo Bay Three APC
     - type: Transform
       pos: 52.5,-6.5
       parent: 1
   - uid: 4547
     components:
+    - type: MetaData
+      name: Cargo Bay Two APC
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 57.5,2.5
       parent: 1
   - uid: 4548
     components:
+    - type: MetaData
+      name: Cargo Bay One APC
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 48.5,7.5
       parent: 1
   - uid: 4648
     components:
+    - type: MetaData
+      name: Starboard Solars APC
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 57.5,7.5
@@ -9406,30 +9468,40 @@ entities:
       parent: 1
   - uid: 5893
     components:
+    - type: MetaData
+      name: Atmospherics APC
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 22.5,29.5
       parent: 1
   - uid: 6069
     components:
+    - type: MetaData
+      name: Engineering Lobby APC
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 28.5,35.5
       parent: 1
   - uid: 6338
     components:
+    - type: MetaData
+      name: Atmospherics Recycling APC
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 25.5,26.5
       parent: 1
   - uid: 7974
     components:
+    - type: MetaData
+      name: Dry Dock APC
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 20.5,45.5
       parent: 1
   - uid: 8710
     components:
+    - type: MetaData
+      name: Park APC
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -3.5,-21.5
@@ -19605,6 +19677,16 @@ entities:
     - type: Transform
       pos: 26.5,59.5
       parent: 1
+  - uid: 9123
+    components:
+    - type: Transform
+      pos: 5.5,16.5
+      parent: 1
+  - uid: 9124
+    components:
+    - type: Transform
+      pos: 6.5,16.5
+      parent: 1
 - proto: Cablecuffs
   entities:
   - uid: 6905
@@ -27370,6 +27452,13 @@ entities:
     - type: Transform
       pos: 61.5,0.5
       parent: 1
+- proto: DefaultStationBeaconFrontierDockDrydock
+  entities:
+  - uid: 9122
+    components:
+    - type: Transform
+      pos: 23.5,49.5
+      parent: 1
 - proto: DefaultStationBeaconFrontierDockFive
   entities:
   - uid: 7002
@@ -27383,6 +27472,13 @@ entities:
     components:
     - type: Transform
       pos: 0.5,-40.5
+      parent: 1
+- proto: DefaultStationBeaconFrontierDockSeven
+  entities:
+  - uid: 9121
+    components:
+    - type: Transform
+      pos: 0.5,71.5
       parent: 1
 - proto: DefaultStationBeaconFrontierDockSix
   entities:
@@ -42069,6 +42165,12 @@ entities:
     - type: Transform
       pos: -6.5,-29.5
       parent: 1
+  - uid: 150
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 8.5,12.5
+      parent: 1
   - uid: 156
     components:
     - type: Transform
@@ -42746,6 +42848,12 @@ entities:
     - type: Transform
       pos: 14.5,28.5
       parent: 1
+  - uid: 1136
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 7.5,20.5
+      parent: 1
   - uid: 1166
     components:
     - type: Transform
@@ -42820,6 +42928,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 46.5,15.5
+      parent: 1
+  - uid: 1231
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 8.5,20.5
       parent: 1
   - uid: 1233
     components:
@@ -47377,6 +47491,12 @@ entities:
       parent: 983
     - type: Physics
       bodyType: Dynamic
+  - uid: 9125
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 7.5,16.5
+      parent: 1
 - proto: PoweredSmallLightEmpty
   entities:
   - uid: 1801
@@ -49651,6 +49771,24 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -1.5,63.5
+      parent: 1
+  - uid: 9126
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 8.5,12.5
+      parent: 1
+  - uid: 9127
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 8.5,20.5
+      parent: 1
+  - uid: 9128
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 7.5,20.5
       parent: 1
 - proto: ReinforcedWindowDiagonal
   entities:
@@ -52564,31 +52702,43 @@ entities:
   entities:
   - uid: 1323
     components:
+    - type: MetaData
+      name: Civilian Aft Substation
     - type: Transform
       pos: -8.5,-7.5
       parent: 1
   - uid: 2076
     components:
+    - type: MetaData
+      name: Civilian Forward Substation
     - type: Transform
       pos: 6.5,24.5
       parent: 1
   - uid: 4179
     components:
+    - type: MetaData
+      name: Engineering Substation
     - type: Transform
       pos: 21.5,14.5
       parent: 1
   - uid: 5455
     components:
+    - type: MetaData
+      name: Medical Substation
     - type: Transform
       pos: -2.5,37.5
       parent: 1
   - uid: 5671
     components:
+    - type: MetaData
+      name: Cargo Substation
     - type: Transform
       pos: 61.5,8.5
       parent: 1
   - uid: 5672
     components:
+    - type: MetaData
+      name: Cargo Substation
     - type: Transform
       pos: 61.5,7.5
       parent: 1
@@ -52596,12 +52746,16 @@ entities:
   entities:
   - uid: 3052
     components:
+    - type: MetaData
+      name: Command Substation
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 22.5,-4.5
       parent: 1
   - uid: 4008
     components:
+    - type: MetaData
+      name: Gravity Generator Substation
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 14.5,23.5
@@ -54621,11 +54775,6 @@ entities:
     - type: Transform
       pos: 21.5,10.5
       parent: 1
-  - uid: 150
-    components:
-    - type: Transform
-      pos: 8.5,20.5
-      parent: 1
   - uid: 194
     components:
     - type: Transform
@@ -56276,12 +56425,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 6.5,12.5
       parent: 1
-  - uid: 1136
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 8.5,12.5
-      parent: 1
   - uid: 1137
     components:
     - type: Transform
@@ -56502,11 +56645,6 @@ entities:
     components:
     - type: Transform
       pos: 12.5,23.5
-      parent: 1
-  - uid: 1231
-    components:
-    - type: Transform
-      pos: 7.5,20.5
       parent: 1
   - uid: 1234
     components:
