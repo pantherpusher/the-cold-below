@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/30/2025 16:31:36
-  entityCount: 9128
+  time: 07/30/2025 17:12:00
+  entityCount: 9125
 maps:
 - 983
 grids:
@@ -1768,6 +1768,9 @@ entities:
             5938: 1,47
             5939: 1,46
             5940: 1,45
+            6323: 1,28
+            6324: 1,29
+            6325: 1,30
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkLineN
@@ -8264,7 +8267,7 @@ entities:
       pos: -4.5,2.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -53359.285
+      secondsUntilStateChange: -54607.766
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -25025,12 +25028,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 15.439267,-19.516863
       parent: 1
-  - uid: 7822
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 20.580692,5.48819
-      parent: 1
 - proto: CardBoxNanotrasen
   entities:
   - uid: 6548
@@ -25864,17 +25861,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -7.3702745,18.478687
       parent: 1
-  - uid: 7817
-    components:
-    - type: Transform
-      pos: 20.611942,6.55069
-      parent: 1
-  - uid: 7818
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 21.596317,5.660065
-      parent: 1
 - proto: ChairFoldingSpawnFolded
   entities:
   - uid: 7626
@@ -25888,16 +25874,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 29.88816,28.629425
-      parent: 1
-  - uid: 7815
-    components:
-    - type: Transform
-      pos: 20.674442,4.847565
-      parent: 1
-  - uid: 7816
-    components:
-    - type: Transform
-      pos: 19.611942,5.83194
       parent: 1
 - proto: ChairGreyscale
   entities:
@@ -31890,6 +31866,18 @@ entities:
       deviceLists:
       - 7165
       - 8843
+- proto: Floodlight
+  entities:
+  - uid: 7816
+    components:
+    - type: Transform
+      pos: 20.496565,4.4399557
+      parent: 1
+  - uid: 7818
+    components:
+    - type: Transform
+      pos: 20.482677,6.5719023
+      parent: 1
 - proto: FloorDrain
   entities:
   - uid: 1830
@@ -45201,6 +45189,11 @@ entities:
     - type: Transform
       pos: 4.5,7.5
       parent: 1
+  - uid: 8830
+    components:
+    - type: Transform
+      pos: 6.5,9.5
+      parent: 1
 - proto: IntercomNfsd
   entities:
   - uid: 2362
@@ -45432,9 +45425,9 @@ entities:
         5409:
         - - Pressed
           - Toggle
-- proto: LockerAtmospherics
+- proto: LockerAtmosphericsFilled
   entities:
-  - uid: 7622
+  - uid: 7621
     components:
     - type: Transform
       pos: 16.5,26.5
@@ -45446,9 +45439,9 @@ entities:
     - type: Transform
       pos: 9.5,3.5
       parent: 1
-- proto: LockerElectricalSupplies
+- proto: LockerElectricalSuppliesFilled
   entities:
-  - uid: 7621
+  - uid: 7622
     components:
     - type: Transform
       pos: 19.5,19.5
@@ -46454,6 +46447,11 @@ entities:
     components:
     - type: Transform
       pos: -1.5,58.5
+      parent: 1
+  - uid: 9129
+    components:
+    - type: Transform
+      pos: 3.5,39.5
       parent: 1
 - proto: PottedPlantRandomPlastic
   entities:
@@ -48117,16 +48115,6 @@ entities:
     components:
     - type: Transform
       pos: 17.5,5.5
-      parent: 1
-  - uid: 7812
-    components:
-    - type: Transform
-      pos: 20.5,5.5
-      parent: 1
-  - uid: 7813
-    components:
-    - type: Transform
-      pos: 19.5,6.5
       parent: 1
 - proto: RandomSpawner100
   entities:
@@ -53801,12 +53789,6 @@ entities:
     - type: Transform
       pos: 20.5,11.5
       parent: 1
-  - uid: 7819
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 20.5,5.5
-      parent: 1
   - uid: 8622
     components:
     - type: Transform
@@ -53976,6 +53958,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: 47.5,-5.5
       parent: 1
+  - uid: 7812
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 20.5,5.5
+      parent: 1
 - proto: TowelColorGray
   entities:
   - uid: 796
@@ -54017,20 +54005,6 @@ entities:
     components:
     - type: Transform
       pos: -5.5966344,-10.315265
-      parent: 1
-- proto: TreasureCoinIron
-  entities:
-  - uid: 7820
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 20.393192,5.76944
-      parent: 1
-  - uid: 7821
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 20.908817,5.253815
       parent: 1
 - proto: TwoWayLever
   entities:
@@ -54501,11 +54475,6 @@ entities:
       parent: 1
 - proto: VendingMachineFlatpackVend
   entities:
-  - uid: 8830
-    components:
-    - type: Transform
-      pos: 15.5,42.5
-      parent: 1
   - uid: 9009
     components:
     - type: Transform
@@ -54537,10 +54506,10 @@ entities:
       parent: 1
 - proto: VendingMachineHydrobe
   entities:
-  - uid: 6791
+  - uid: 7819
     components:
     - type: Transform
-      pos: 10.5,8.5
+      pos: 2.5,13.5
       parent: 1
 - proto: VendingMachineJaniDrobe
   entities:
@@ -54646,11 +54615,6 @@ entities:
     components:
     - type: Transform
       pos: 11.5,-18.5
-      parent: 1
-  - uid: 8260
-    components:
-    - type: Transform
-      pos: 2.5,13.5
       parent: 1
 - proto: VendingMachineVendomatPOI
   entities:
@@ -61863,6 +61827,12 @@ entities:
     - type: Transform
       pos: 21.5,20.5
       parent: 1
+  - uid: 6791
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 21.5,5.5
+      parent: 1
   - uid: 6898
     components:
     - type: Transform
@@ -61927,6 +61897,23 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -6.5,39.5
+      parent: 1
+  - uid: 7813
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 19.5,5.5
+      parent: 1
+  - uid: 7815
+    components:
+    - type: Transform
+      pos: 20.5,6.5
+      parent: 1
+  - uid: 7817
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 20.5,4.5
       parent: 1
 - proto: Wirecutter
   entities:
