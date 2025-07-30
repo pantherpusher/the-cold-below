@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/30/2025 17:19:04
-  entityCount: 9128
+  time: 07/30/2025 17:50:59
+  entityCount: 9129
 maps:
 - 983
 grids:
@@ -5902,6 +5902,12 @@ entities:
             5656: -66,0
             5660: -67,-1
         - node:
+            color: '#E6E6E6FF'
+            id: QuarterTileOverlayGreyscale
+          decals:
+            6329: 17,36
+            6337: 26,36
+        - node:
             color: '#EFB34196'
             id: QuarterTileOverlayGreyscale
           decals:
@@ -5926,12 +5932,36 @@ entities:
             711: 49,10
             731: 60,0
         - node:
+            color: '#DE3A3AFF'
+            id: QuarterTileOverlayGreyscale180
+          decals:
+            6346: 20,36
+            6347: 21,36
+            6349: 30,36
+            6352: 29,36
+            6353: 28,36
+        - node:
+            color: '#E6E6E6FF'
+            id: QuarterTileOverlayGreyscale180
+          decals:
+            6330: 17,36
+            6331: 18,36
+            6333: 19,36
+            6338: 26,36
+            6339: 27,36
+        - node:
             color: '#EFB34196'
             id: QuarterTileOverlayGreyscale180
           decals:
             5865: 1,72
             5867: 0,71
             5869: -1,70
+        - node:
+            color: '#52B4E9FF'
+            id: QuarterTileOverlayGreyscale270
+          decals:
+            6344: 17,36
+            6345: 18,36
         - node:
             color: '#9FED5896'
             id: QuarterTileOverlayGreyscale270
@@ -5953,6 +5983,22 @@ entities:
           decals:
             710: 51,10
         - node:
+            color: '#DE3A3AFF'
+            id: QuarterTileOverlayGreyscale270
+          decals:
+            6350: 30,36
+            6351: 29,36
+        - node:
+            color: '#E6E6E6FF'
+            id: QuarterTileOverlayGreyscale270
+          decals:
+            6332: 19,36
+            6334: 20,36
+            6335: 21,36
+            6341: 26,36
+            6342: 27,36
+            6354: 28,36
+        - node:
             color: '#9FED5896'
             id: QuarterTileOverlayGreyscale90
           decals:
@@ -5973,6 +6019,16 @@ entities:
           decals:
             713: 49,11
             763: 50,-11
+        - node:
+            color: '#DE3A3AFF'
+            id: QuarterTileOverlayGreyscale90
+          decals:
+            6348: 30,36
+        - node:
+            color: '#E6E6E6FF'
+            id: QuarterTileOverlayGreyscale90
+          decals:
+            6336: 21,36
         - node:
             color: '#EFB34196'
             id: QuarterTileOverlayGreyscale90
@@ -8270,7 +8326,7 @@ entities:
       pos: -4.5,2.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -54728.758
+      secondsUntilStateChange: -55195.637
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14510,12 +14566,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 11.5,39.5
       parent: 1
-  - uid: 8509
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -55.5,-1.5
-      parent: 1
   - uid: 8826
     components:
     - type: Transform
@@ -14565,12 +14615,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 9.5,39.5
-      parent: 1
-  - uid: 8510
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -56.5,-1.5
       parent: 1
   - uid: 8825
     components:
@@ -26088,6 +26132,11 @@ entities:
     components:
     - type: Transform
       pos: 24.5,12.5
+      parent: 1
+  - uid: 8510
+    components:
+    - type: Transform
+      pos: -56.5,-1.5
       parent: 1
 - proto: ClosetL3JanitorFilled
   entities:
@@ -54504,6 +54553,16 @@ entities:
     components:
     - type: Transform
       pos: 44.5,1.5
+      parent: 1
+  - uid: 8260
+    components:
+    - type: Transform
+      pos: -0.5,-31.5
+      parent: 1
+  - uid: 8509
+    components:
+    - type: Transform
+      pos: -55.5,-1.5
       parent: 1
   - uid: 8823
     components:
