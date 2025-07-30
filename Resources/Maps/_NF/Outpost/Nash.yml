@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/30/2025 17:12:00
-  entityCount: 9125
+  time: 07/30/2025 17:19:04
+  entityCount: 9128
 maps:
 - 983
 grids:
@@ -1558,6 +1558,7 @@ entities:
             5459: 1,42
             5668: -65,1
             5879: 1,72
+            6328: 1,-20
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkInnerNw
@@ -1588,6 +1589,8 @@ entities:
             5360: 25,40
             5666: -65,-1
             5881: 1,70
+            6326: 1,40
+            6327: 1,-22
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkInnerSw
@@ -8267,7 +8270,7 @@ entities:
       pos: -4.5,2.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -54607.766
+      secondsUntilStateChange: -54728.758
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -45188,6 +45191,21 @@ entities:
     components:
     - type: Transform
       pos: 4.5,7.5
+      parent: 1
+  - uid: 7820
+    components:
+    - type: Transform
+      pos: 6.5,6.5
+      parent: 1
+  - uid: 7821
+    components:
+    - type: Transform
+      pos: 6.5,8.5
+      parent: 1
+  - uid: 7822
+    components:
+    - type: Transform
+      pos: 4.5,6.5
       parent: 1
   - uid: 8830
     components:
