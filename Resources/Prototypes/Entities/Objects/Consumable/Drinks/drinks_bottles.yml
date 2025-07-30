@@ -732,6 +732,27 @@
   - type: Sealable
 
 - type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticSmallBaseFull]
+  id: DrinkWataurBottleFull
+  name: wataur bottle
+  description: Simple clean tauric water of unknown origin. You think that maybe you dont want to know it.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 30
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/wataurbottle.rsi
+  - type: SolutionContainerVisuals
+    inHandsMaxFillLevels: 2
+    inHandsFillBaseName: -fill-
+  - type: Label
+    currentLabel: reagent-name-water
+  - type: Sealable
+
+- type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassSmallBaseFull]
   id: DrinkBeerBottleFull
   name: beer bottle # beer it is. coffee. beer? coff-ee? be-er? c-o... b-e
@@ -779,7 +800,7 @@
   # Frontier: haiku description
   description: |
     Spirit, clear or foggy
-    Taken hot or chilled on ice. 
+    Taken hot or chilled on ice.
     Fill a cup, drink up!
   # End Frontier
   components:
