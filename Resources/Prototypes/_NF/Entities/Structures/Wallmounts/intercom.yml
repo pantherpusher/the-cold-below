@@ -25,12 +25,11 @@
   - type: ShuttleIntercom
     appendName: true
   - type: RadioStatic
-    baseSoundpack: RadioStaticDefault
+    baseSoundpack: RadioStaticDefaultLoud
     departmentSoundPacks:
-      Traffic: RadioStaticTrafficConsole
-      Medical: RadioStaticMedical
-      Nfsd: RadioStaticSecurity
-      Science: RadioStaticScience
+      Traffic: RadioStaticTrafficConsoleLoud
+      Medical: RadioStaticMedicalLoud
+      Nfsd: RadioStaticSecurityLoud
 
 - type: entity
   parent: BaseShuttleIntercom
