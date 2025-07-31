@@ -26,8 +26,7 @@
     prototype: FrontierBirthdayGift
   - !type:AddComponentSpecial
     components:
-    - type: Coolchef #Nyano - End Summary.
-      multiplier: 1.25
+    - type: CoolChef # 1.5x
 
 # starting gear
 - type: startingGear

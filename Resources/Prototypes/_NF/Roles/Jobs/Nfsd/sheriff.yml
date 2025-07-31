@@ -47,6 +47,7 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: CoolSheriff
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift

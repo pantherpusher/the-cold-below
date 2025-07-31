@@ -27,7 +27,10 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift
-
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+    - type: CoolStationTrafficController
 - type: startingGear
   id: StcGear
   equipment:

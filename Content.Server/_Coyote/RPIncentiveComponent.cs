@@ -30,25 +30,26 @@ public sealed partial class RoleplayIncentiveComponent : Component
     /// Interval between paywards.
     /// </summary>
     [DataField]
-    public TimeSpan PaywardInterval = TimeSpan.FromMinutes(20); // TimeSpan.FromMinutes(15);
+    public TimeSpan PaywardInterval = TimeSpan.FromSeconds(20); // TimeSpan.FromMinutes(15);
 
     /// <summary>
     /// Interval between paywards when offline.
+    /// hey guess what doesnt work? this thing!
     /// </summary>
     [DataField]
     public TimeSpan PaywardIntervalOffline = TimeSpan.FromMinutes(30); // TimeSpan.FromMinutes(15);
 
     [ViewVariables(VVAccess.ReadWrite)]
-    public int TaxBracket1Payout = 50;
+    public int TaxBracket1Payout = 300;
     [ViewVariables(VVAccess.ReadWrite)]
-    public int TaxBracket2Payout = 50;
+    public int TaxBracket2Payout = 200;
     [ViewVariables(VVAccess.ReadWrite)]
-    public int TaxBracket3Payout = 50;
+    public int TaxBracket3Payout = 100;
     [ViewVariables(VVAccess.ReadWrite)]
-    public int TaxBracketRestPayout = 50;
+    public int TaxBracketRestPayout = 80;
     [ViewVariables(VVAccess.ReadWrite)]
     public int TaxBracketPayoutOverride = -1; // -1 means no override, use the default payouts
     [ViewVariables(VVAccess.ReadWrite)]
-    public string TaxZZZCurrentActiveBracket = "TaxBracket1";
+    public string TaxZZZCurrentActiveBracket = "TaxBracket1"; // purely for debugging purposes, to see which bracket is active
 
 }

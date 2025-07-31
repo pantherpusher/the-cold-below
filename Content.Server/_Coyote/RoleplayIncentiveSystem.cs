@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._Coyote.CoolIncentives;
 using Content.Server._NF.Bank;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
@@ -7,6 +8,8 @@ using Content.Shared._NF.Bank.Components;
 using Content.Shared.Chat;
 using Robust.Server.Player;
 using Robust.Shared.Timing;
+
+// ReSharper disable InconsistentNaming
 
 namespace Content.Server._Coyote;
 
@@ -38,16 +41,21 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
 
     private const int MaxListenerMult = 5;
 
-    private const int TaxBracket1 = 15000;
-    private const int TaxBracket2 = 40000;
-    private const int TaxBracket3 = 100000;
+    private const int TaxBracket1 = 40000; // enough to get a decent ship
+    private const int TaxBracket2 = 75000; // enough for a good ship and some upgrades
+    private const int TaxBracket3 = 100000; // past this youre fiiiiine!
 
     /// <inheritdoc/>
     public override void Initialize()
     {
-        // get the component this thing is attached to
-        SubscribeLocalEvent<RoleplayIncentiveComponent, ComponentInit>(OnComponentInit);
-        SubscribeLocalEvent<RoleplayIncentiveComponent, RoleplayIncentiveEvent>(OnGotRoleplayIncentiveEvent);
+        // get the component this thing is attached to            v- my code my formatting
+        SubscribeLocalEvent<RoleplayIncentiveComponent,            ComponentInit>(OnComponentInit);
+        SubscribeLocalEvent<RoleplayIncentiveComponent,            RoleplayIncentiveEvent>(OnGotRoleplayIncentiveEvent);
+        SubscribeLocalEvent<CoolPirateComponent,                   GetRoleplayIncentiveModifier>(AdjustRPI);
+        SubscribeLocalEvent<CoolStationRepComponent,               GetRoleplayIncentiveModifier>(AdjustRPI);
+        SubscribeLocalEvent<CoolStationTrafficControllerComponent, GetRoleplayIncentiveModifier>(AdjustRPI);
+        SubscribeLocalEvent<CoolStationDirectorOfCareComponent,    GetRoleplayIncentiveModifier>(AdjustRPI);
+        SubscribeLocalEvent<CoolStationSheriffComponent,           GetRoleplayIncentiveModifier>(AdjustRPI);
     }
 
     private void OnComponentInit(EntityUid uid, RoleplayIncentiveComponent component, ComponentInit args)
@@ -170,7 +178,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             source,
             message,
             false)
-            ? RoleplayActs.QuickEmoting  // if the message is a valid emote, then its a quick emote
+            ? RoleplayActs.QuickEmoting // if the message is a valid emote, then its a quick emote
             : RoleplayActs.Emoting;
 
         // well i cant figure out how the system does it, so im just gonnasay if theres
@@ -263,12 +271,13 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             action.Judgement = judgement; // set the judgement on the action
             actionsToRemove.Add(action); // add the action to the removal list
         }
+
         foreach (var action in actionsToRemove)
         {
             incentive.ActionsTaken.Remove(action); // remove actions after iteration
         }
 
-        var judgeAmount = (int) MathF.Ceiling(
+        var judgeAmount = (int)MathF.Ceiling(
             bestSay
             + bestWhisper
             + bestEmote
@@ -290,6 +299,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
                 _ => rpic.TaxBracketRestPayout,
             };
         }
+
         UpdateComponentTaxBracketIndicator(
             ref rpic,
             hasThisMuchMoney);
@@ -311,15 +321,15 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             modifyEvent,
             true);
         // apply the add first
-        payAmount += (int) modifyEvent.Additive;
+        payAmount += (int)modifyEvent.Additive;
         // then apply the multiplier
-        payAmount = (int) (payAmount * modifyEvent.Multiplier);
+        payAmount = (int)(payAmount * modifyEvent.Multiplier);
         // clamp the pay amount to a minimum of 20 and a maximum of int.MaxValue
         payAmount = Math.Clamp(
             payAmount,
             20,
             int.MaxValue);
-        var addedPay = (int) modifyEvent.Additive;
+        var addedPay = (int)modifyEvent.Additive;
         var multiplier = modifyEvent.Multiplier;
         var hasMultiplier = Math.Abs(multiplier - 1f) > 0.01f;
         var hasAdditive = addedPay != 0;
@@ -338,13 +348,16 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             ("amount", payAmount));
         if (hasModifier)
         {
+            // truncage the multiplier to 2 decimal places
+            // and format it to a string
+            var mult2show = String.Format("{0:0.00}", multiplier);
             if (hasMultiplier && hasAdditive)
             {
                 message = Loc.GetString(
                     "coyote-rp-incentive-payward-message-multiplier-and-additive",
                     ("amount", payAmount),
                     ("basePay", basePay),
-                    ("multiplier", multiplier),
+                    ("multiplier", mult2show),
                     ("additive", addedPay));
             }
             else if (hasMultiplier)
@@ -353,7 +366,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
                     "coyote-rp-incentive-payward-message-multiplier",
                     ("amount", payAmount),
                     ("basePay", basePay),
-                    ("multiplier", multiplier));
+                    ("multiplier", mult2show));
             }
             else if (hasAdditive)
             {
@@ -370,6 +383,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
                 "coyote-rp-incentive-payward-message",
                 ("amount", payAmount));
         }
+
         _popupSystem.PopupEntity(
             messageOverhead,
             uid,
@@ -490,6 +504,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             rpic.TaxZZZCurrentActiveBracket = "TaxBracketOverride";
             return;
         }
+
         rpic.TaxZZZCurrentActiveBracket = balance switch
         {
             < TaxBracket1 => "TaxBracket1",
@@ -497,5 +512,50 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             < TaxBracket3 => "TaxBracket3",
             _ => "TaxBracketRest",
         };
+    }
+
+    private void AdjustRPI(
+        float mult,
+        ref GetRoleplayIncentiveModifier args)
+    {
+        args.Modify(mult, 0f);
+    }
+
+    private void AdjustRPI(
+        EntityUid uid,
+        CoolPirateComponent component,
+        ref GetRoleplayIncentiveModifier args)
+    {
+        AdjustRPI(component.Multiplier, ref args);
+    }
+
+    private void AdjustRPI(
+        EntityUid uid,
+        CoolStationRepComponent component,
+        ref GetRoleplayIncentiveModifier args)
+    {
+        AdjustRPI(component.Multiplier, ref args);
+    }
+
+    private void AdjustRPI(EntityUid uid,
+        CoolStationTrafficControllerComponent component,
+        ref GetRoleplayIncentiveModifier args)
+    {
+        AdjustRPI(component.Multiplier, ref args);
+    }
+
+    private void AdjustRPI(EntityUid uid,
+        CoolStationDirectorOfCareComponent component,
+        ref GetRoleplayIncentiveModifier args)
+    {
+        AdjustRPI(component.Multiplier, ref args);
+    }
+
+    private void AdjustRPI(
+        EntityUid uid,
+        CoolStationSheriffComponent component,
+        ref GetRoleplayIncentiveModifier args)
+    {
+        AdjustRPI(component.Multiplier, ref args);
     }
 }
