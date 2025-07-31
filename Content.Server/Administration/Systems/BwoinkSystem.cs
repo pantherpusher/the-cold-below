@@ -795,7 +795,7 @@ namespace Content.Server.Administration.Systems
                 if (_playerManager.TryGetSessionByChannel(admin, out var sesh))
                 {
                     _chatManager.ChatMessageToOne(
-                        ChatChannel.Admin,
+                        ChatChannel.AdminChat,
                         superOverrideText,
                         superOverrideText,
                         default,
