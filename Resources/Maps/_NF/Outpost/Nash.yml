@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/31/2025 02:22:11
-  entityCount: 9129
+  time: 07/31/2025 19:11:19
+  entityCount: 9133
 maps:
 - 983
 grids:
@@ -8326,7 +8326,7 @@ entities:
       pos: -4.5,2.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -55280.773
+      secondsUntilStateChange: -55808.55
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10035,6 +10035,12 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,75.5
+      parent: 1
+  - uid: 9133
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 29.5,14.5
       parent: 1
 - proto: AtmosDeviceFanTiny
   entities:
@@ -14695,13 +14701,6 @@ entities:
     - type: Transform
       pos: -6.5423126,41.783264
       parent: 1
-- proto: BoxFolderSr
-  entities:
-  - uid: 2575
-    components:
-    - type: Transform
-      pos: 20.332226,-6.1781716
-      parent: 1
 - proto: BoxFolderWhite
   entities:
   - uid: 7095
@@ -14742,13 +14741,6 @@ entities:
     components:
     - type: Transform
       pos: -6.300231,37.763035
-      parent: 1
-- proto: BrbSign
-  entities:
-  - uid: 6995
-    components:
-    - type: Transform
-      pos: 20.700172,-6.179939
       parent: 1
 - proto: Brutepack
   entities:
@@ -26707,10 +26699,11 @@ entities:
       parent: 1
 - proto: ComputerShuttleRecords
   entities:
-  - uid: 4334
+  - uid: 6995
     components:
     - type: Transform
-      pos: 14.5,-6.5
+      rot: 1.5707963267948966 rad
+      pos: 20.5,-6.5
       parent: 1
 - proto: ComputerSolarControl
   entities:
@@ -26866,12 +26859,17 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 6.5,32.5
       parent: 1
-- proto: ComputerTabletopShuttleFrontierOutpostRemote
+- proto: ComputerTabletopShuttleFrontierOutpostLocal
   entities:
   - uid: 4328
     components:
     - type: Transform
       pos: 15.5,-6.5
+      parent: 1
+  - uid: 6988
+    components:
+    - type: Transform
+      pos: 14.5,-6.5
       parent: 1
 - proto: ComputerTabletopSolarControl
   entities:
@@ -45729,6 +45727,20 @@ entities:
           showEnts: False
           occludes: False
           ent: null
+- proto: MaterialCloth
+  entities:
+  - uid: 9132
+    components:
+    - type: Transform
+      pos: 11.440811,-4.48359
+      parent: 1
+- proto: MaterialDurathread
+  entities:
+  - uid: 9131
+    components:
+    - type: Transform
+      pos: 11.487686,-4.48359
+      parent: 1
 - proto: MaterialReclaimer
   entities:
   - uid: 4297
@@ -46249,11 +46261,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 20.5,30.5
       parent: 1
-  - uid: 6988
+  - uid: 6994
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 20.5,-6.5
+      pos: 21.5,-3.5
       parent: 1
   - uid: 7090
     components:
@@ -46270,6 +46282,12 @@ entities:
       parent: 1
 - proto: Pen
   entities:
+  - uid: 2575
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 21.246822,-3.481854
+      parent: 1
   - uid: 5855
     components:
     - type: Transform
@@ -49884,17 +49902,17 @@ entities:
       parent: 1
 - proto: RubberStampApproved
   entities:
-  - uid: 6994
-    components:
-    - type: Transform
-      pos: 20.65156,-5.909106
-      parent: 1
-- proto: RubberStampDenied
-  entities:
   - uid: 6993
     components:
     - type: Transform
-      pos: 20.366838,-5.909106
+      pos: 20.32321,-4.84991
+      parent: 1
+- proto: RubberStampDenied
+  entities:
+  - uid: 4334
+    components:
+    - type: Transform
+      pos: 20.580154,-4.842965
       parent: 1
 - proto: SeedExtractor
   entities:
@@ -53747,8 +53765,7 @@ entities:
   - uid: 6979
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 20.5,-6.5
+      pos: 14.5,-6.5
       parent: 1
   - uid: 7031
     components:
@@ -54396,6 +54413,14 @@ entities:
           - Reverse
         - - Middle
           - Off
+- proto: UniformPrinterStaff
+  entities:
+  - uid: 9130
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 11.5,-4.5
+      parent: 1
 - proto: VendingBarDrobe
   entities:
   - uid: 8256
