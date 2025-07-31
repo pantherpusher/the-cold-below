@@ -408,7 +408,7 @@ namespace Content.Server.Ghost
                     var gStatus = true switch
                     {
                         true when mind!.IsInCryosleep => GhostStatus.CryoSleep,
-                        true when _mobState.IsCritical(attached) => GhostStatus.Unconscious,
+                        // true when _mobState.IsCritical(attached) => GhostStatus.Unconscious,
                         true when HasComp<GhostComponent>(attached) => GhostStatus.Ghost,
                         true when _mobState.IsAlive(attached) => GhostStatus.Alive,
                         _ => GhostStatus.Dead,
