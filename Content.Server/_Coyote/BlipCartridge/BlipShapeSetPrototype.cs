@@ -21,7 +21,8 @@ public sealed partial class BlipShapeSetPrototype : IPrototype
     /// <summary>
     /// The shape of the blip on the radar.
     /// MUST have a name identical to RadarBlipShape enum value, or all is lost.
+    /// enum.RadarBlipShape.Circle
     /// </summary>
     [DataField]
-    public string Shape { get; set; } = "Circle";
+    public string Shape { get; set; } = "enum.RadarBlipShape.Circle";
 }
