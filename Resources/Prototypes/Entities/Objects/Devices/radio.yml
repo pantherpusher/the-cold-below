@@ -25,11 +25,11 @@
     tags:
     - Radio
   - type: RadioStatic
-    baseSoundpack: RadioStaticDefault
+    baseSoundpack: RadioStaticDefaultLoud
     departmentSoundPacks:
-      Traffic: RadioStaticTrafficConsole
-      Medical: RadioStaticMedical
-      Nfsd: RadioStaticSecurity
+      Traffic: RadioStaticTrafficConsoleLoud
+      Medical: RadioStaticMedicalLoud
+      Nfsd: RadioStaticSecurityLoud
 
 - type: entity
   name: security radio

@@ -45,11 +45,11 @@
           True: { visible: true }
           False: { visible: false }
   - type: RadioStatic
-    baseSoundpack: RadioStaticDefault
+    baseSoundpack: RadioStaticDefaultLoud
     departmentSoundPacks:
-      Traffic: RadioStaticTrafficConsole
-      Medical: RadioStaticMedical
-      Nfsd: RadioStaticSecurity
+      Traffic: RadioStaticTrafficConsoleLoud
+      Medical: RadioStaticMedicalLoud
+      Nfsd: RadioStaticSecurityLoud
 
 
 
