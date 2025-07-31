@@ -1,6 +1,7 @@
 using Content.Server.Storage.Components;
 using Content.Shared.Materials;
 using Robust.Shared.Physics.Components;
+using Content.Server.Materials;
 using Robust.Shared.Timing;
 using Content.Shared.Examine;   // Frontier
 using Content.Shared.Hands.Components;  // Frontier
@@ -110,9 +111,19 @@ public sealed class MaterialStorageMagnetPickupSystem : EntitySystem
                 if (near == parentUid)
                     continue;
 
+                var  ev = new FeedProduceEvent(near);
+                RaiseLocalEvent(uid, ev, true);
+                if (ev.Handled)
+                    continue;
+
                 if (!_storage.TryInsertMaterialEntity(uid, near, uid, storage))
                     continue;
             }
         }
     }
+}
+public sealed class FeedProduceEvent(EntityUid used) // cool event, dan
+{
+    public bool Handled = false;
+    public EntityUid Used { get; } = used;
 }

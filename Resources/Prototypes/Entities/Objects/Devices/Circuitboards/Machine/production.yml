@@ -219,7 +219,8 @@
   - type: MachineBoard
     prototype: Biogenerator
     requirements: # Frontier
-      MatterBin: 2 # Frontier stackRequirements<requirements
+      MatterBin: 1 # Frontier stackRequirements<requirements
+      Manipulator: 1 # Make this damn thing suck less
     tagRequirements:
       GlassBeaker:
         amount: 1
