@@ -4,7 +4,7 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/30/2025 17:50:59
+  time: 07/31/2025 02:22:11
   entityCount: 9129
 maps:
 - 983
@@ -8326,7 +8326,7 @@ entities:
       pos: -4.5,2.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -55195.637
+      secondsUntilStateChange: -55280.773
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -26705,6 +26705,13 @@ entities:
     - type: Transform
       pos: -19.5,2.5
       parent: 1
+- proto: ComputerShuttleRecords
+  entities:
+  - uid: 4334
+    components:
+    - type: Transform
+      pos: 14.5,-6.5
+      parent: 1
 - proto: ComputerSolarControl
   entities:
   - uid: 354
@@ -26859,13 +26866,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 6.5,32.5
       parent: 1
-- proto: ComputerTabletopShuttleFrontierOutpostLocal
-  entities:
-  - uid: 5928
-    components:
-    - type: Transform
-      pos: 14.5,-6.5
-      parent: 1
 - proto: ComputerTabletopShuttleFrontierOutpostRemote
   entities:
   - uid: 4328
@@ -26926,6 +26926,11 @@ entities:
       parent: 1
 - proto: ComputerWallmountBankATM
   entities:
+  - uid: 5928
+    components:
+    - type: Transform
+      pos: 16.5,2.5
+      parent: 1
   - uid: 6474
     components:
     - type: Transform
@@ -53567,12 +53572,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 13.5,-6.5
-      parent: 1
-  - uid: 4334
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 14.5,-6.5
       parent: 1
   - uid: 4336
     components:
