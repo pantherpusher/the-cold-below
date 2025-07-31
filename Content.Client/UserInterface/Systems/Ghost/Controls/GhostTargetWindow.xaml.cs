@@ -36,14 +36,6 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
                 .OrderBy(w => w.IsWarpPoint)
                 .ThenBy(w => w.AdminOnly)
                 .ThenBy(
-                    w => w.DisplayName,
-                    Comparer<string>.Create(
-                        (x, y) =>
-                            string.Compare(
-                                x,
-                                y,
-                                StringComparison.Ordinal)))
-                .ThenBy(
                     w => w.WarpKind,
                     Comparer<GhostStatus>.Create(
                     comparison: (x, y) =>
@@ -52,6 +44,14 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
                             : x < y
                                 ? -1
                                 : 1))
+                .ThenBy(
+                    w => w.DisplayName,
+                    Comparer<string>.Create(
+                        (x, y) =>
+                            string.Compare(
+                                x,
+                                y,
+                                StringComparison.Ordinal)))
                 .Select(
                     w =>
                     {
