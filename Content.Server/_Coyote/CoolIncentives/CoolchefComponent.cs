@@ -44,7 +44,7 @@ public sealed partial class CoolStationDirectorOfCareComponent : RoleplayIncenti
 }
 
 [RegisterComponent]
-public sealed partial class CoolStationSheriffComponent : RoleplayIncentiveModifierComponent
+public sealed partial class CoolSheriffComponent : RoleplayIncentiveModifierComponent
 {
     public new float Multiplier = 2f;
 }
