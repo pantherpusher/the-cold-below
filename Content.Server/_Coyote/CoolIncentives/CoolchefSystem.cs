@@ -8,18 +8,7 @@ namespace Content.Server._Coyote.CoolIncentives;
 /// </summary>
 public sealed class CoolchefSystem : EntitySystem
 {
-    [Dependency] private readonly IEntityManager EntManager = null!;
-    /// <inheritdoc/>
-    public override void Initialize()
-    {
-        SubscribeLocalEvent<RoleplayIncentiveComponent, GetRoleplayIncentiveModifier>(ModifyRPIncentive);
-    }
-
-    private void ModifyRPIncentive(Entity<RoleplayIncentiveComponent> ent, ref GetRoleplayIncentiveModifier args)
-    {
-        if (!EntManager.TryGetComponent(ent.Owner, out CoolchefComponent? chef))
-            return;
-        args.Modify(chef.Multiplier, 0f);
-    }
+    // THIS FILE IS VITAL TO THE FUNCTIONING OF THE ROLEPLAY INCENTIVE SYSTEM
+    // DO NOT REMOVE IT
 }
 

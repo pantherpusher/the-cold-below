@@ -26,6 +26,7 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: CoolStationRep
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift
