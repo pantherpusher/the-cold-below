@@ -4,7 +4,7 @@ namespace Content.Server._Coyote.CoolIncentives;
 /// Represents a component that provides role-playing (RP) incentive multipliers
 /// for food service workers, encouraging engagement in cooking activities.
 /// </summary>
-[RegisterComponent, Virtual]
+[Virtual]
 public abstract partial class RoleplayIncentiveModifierComponent : Component
 {
     /// <summary>
