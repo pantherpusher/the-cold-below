@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 08/01/2025 19:33:56
-  entityCount: 157
+  time: 08/02/2025 00:19:22
+  entityCount: 158
 maps: []
 grids:
 - 1
@@ -180,7 +180,7 @@ entities:
     - type: RadiationGridResistance
 - proto: AirAlarm
   entities:
-  - uid: 85
+  - uid: 2
     components:
     - type: Transform
       pos: 2.5,7.5
@@ -415,13 +415,20 @@ entities:
     - type: Transform
       pos: 0.5,0.5
       parent: 1
-- proto: CableMV
+- proto: CableHV
   entities:
   - uid: 45
     components:
     - type: Transform
       pos: 2.5,2.5
       parent: 1
+  - uid: 80
+    components:
+    - type: Transform
+      pos: 2.5,3.5
+      parent: 1
+- proto: CableMV
+  entities:
   - uid: 46
     components:
     - type: Transform
@@ -458,7 +465,7 @@ entities:
     - type: Transform
       pos: 3.5,9.5
       parent: 1
-- proto: ComputerShuttleRecords
+- proto: ComputerStationRecords
   entities:
   - uid: 52
     components:
@@ -641,7 +648,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.5,6.5
       parent: 1
-  - uid: 80
+  - uid: 158
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -676,7 +683,7 @@ entities:
       parent: 1
 - proto: GasVentScrubber
   entities:
-  - uid: 2
+  - uid: 85
     components:
     - type: Transform
       rot: -1.5707963267948966 rad

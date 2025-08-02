@@ -23,7 +23,7 @@
   mapPath: /Maps/_NF/Shuttles/Scrap/hotdog.yml
   minPlayers: 0
   stations:
-    Geode:
+    Hotdog:
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
