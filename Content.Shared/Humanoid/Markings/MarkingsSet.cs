@@ -296,28 +296,41 @@ public sealed partial class MarkingSet
     /// <param name="eyeColor">Eye color for marking coloring.</param>
     /// <param name="hairColor">Hair color for marking coloring.</param>
     /// <param name="markingManager">Marking manager.</param>
-    public void EnsureDefault(Color? skinColor = null, Color? eyeColor = null, MarkingManager? markingManager = null)
+    /// <param name="humanoidAppearance">Humanoid appearance component for what markings they have whatever.</param>
+    public void EnsureDefault(
+        Color? skinColor = null,
+        Color? eyeColor = null,
+        MarkingManager? markingManager = null)
     {
         IoCManager.Resolve(ref markingManager);
 
         foreach (var (category, points) in Points)
         {
-            if (points.Points <= 0 || points.DefaultMarkings.Count <= 0)
+            if (points.Points <= 0
+                || points.DefaultMarkings.Count <= 0)
+            {
+                continue;
+            }
+
+            // check if they have ANY markings in this category
+            // and if so, skip this category
+            if (Markings.TryGetValue(category, out var markings)
+                && markings.Count > 0)
             {
                 continue;
             }
 
             var index = 0;
-            while (points.Points > 0 && index < points.DefaultMarkings.Count)
+            while (points.Points > 0
+                   && index < points.DefaultMarkings.Count)
             {
                 if (markingManager.Markings.TryGetValue(points.DefaultMarkings[index], out var prototype))
                 {
                     var colors = MarkingColoring.GetMarkingLayerColors(
-                            prototype,
-                            skinColor,
-                            eyeColor,
-                            this
-                        );
+                        prototype,
+                        skinColor,
+                        eyeColor,
+                        this);
                     var marking = new Marking(points.DefaultMarkings[index], colors);
 
                     AddBack(category, marking);

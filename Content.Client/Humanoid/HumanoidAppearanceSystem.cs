@@ -46,6 +46,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     {
         UpdateLayers(component, sprite);
         ApplyMarkingSet(component, sprite);
+        UpdateLayersAgain(component, sprite); // cool
 
         sprite[sprite.LayerMapReserveBlank(HumanoidVisualLayers.Eyes)].Color = component.EyeColor;
     }
@@ -57,6 +58,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     {
         var oldLayers = new HashSet<HumanoidVisualLayers>(component.BaseLayers.Keys);
         component.BaseLayers.Clear();
+        component.HiddenBaseLayers.Clear();
 
         // add default species layers
         var speciesProto = _prototypeManager.Index(component.Species);
@@ -65,14 +67,27 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         {
             oldLayers.Remove(key);
             if (!component.CustomBaseLayers.ContainsKey(key))
-                SetLayerData(component, sprite, key, id, sexMorph: true);
+            {
+                SetLayerData(
+                    component,
+                    sprite,
+                    key,
+                    id,
+                    sexMorph: true);
+            }
         }
 
         // add custom layers
         foreach (var (key, info) in component.CustomBaseLayers)
         {
             oldLayers.Remove(key);
-            SetLayerData(component, sprite, key, info.Id, sexMorph: false, color: info.Color);
+            SetLayerData(
+                component,
+                sprite,
+                key,
+                info.Id,
+                sexMorph: false,
+                color: info.Color);
         }
 
         // hide old layers
@@ -81,6 +96,23 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         {
             if (sprite.LayerMapTryGet(key, out var index))
                 sprite[index].Visible = false;
+        }
+    }
+
+    /// <summary>
+    /// Goes through the layers again and hides them if they are hidden by the comp's HiddenBaseLayers.
+    /// Bite me
+    /// </summary>
+    private void UpdateLayersAgain(
+        HumanoidAppearanceComponent component,
+        SpriteComponent sprite)
+    {
+        foreach (var layer in component.HiddenBaseLayers)
+        {
+            if (sprite.LayerMapTryGet(layer, out var index))
+            {
+                sprite[index].Visible = false;
+            }
         }
     }
 
@@ -113,6 +145,36 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         if (proto.BaseSprite != null)
             sprite.LayerSetSprite(layerIndex, proto.BaseSprite);
+    }
+
+    /// <summary>
+    /// Finds this list of keys in the <see cref="HumanoidAppearanceComponent.BaseLayers"/> and
+    /// Hides them if they are present. To be used after markings are applied, to hide the base
+    /// layer if something is set on the marking base layer. g
+    /// </summary>
+    public void HideBaseLayers(
+        EntityUid uid,
+        HumanoidAppearanceComponent? humanoid,
+        IEnumerable<HumanoidVisualLayers> layers2Hide)
+    {
+        if (!Resolve(uid, ref humanoid))
+            return;
+
+        var sprite = Comp<SpriteComponent>(uid);
+        var speciesProto = _prototypeManager.Index(humanoid.Species);
+        var baseSprites = _prototypeManager.Index(speciesProto.SpriteSet);
+
+        foreach (var layer in layers2Hide)
+        {
+            if (!baseSprites.Sprites.TryGetValue(layer, out var id))
+                continue;
+            if (humanoid.BaseLayers.TryGetValue(layer, out var baseLayer)
+                && sprite.LayerMapTryGet(layer, out var index))
+            {
+                sprite[index].Visible = false;
+                humanoid.PermanentlyHidden.Add(layer);
+            }
+        }
     }
 
     /// <summary>
@@ -458,6 +520,18 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             if (humanoid.MarkingsDisplacement.TryGetValue(markingPrototype.BodyPart, out var displacementData) && markingPrototype.CanBeDisplaced)
             {
                 _displacement.TryAddDisplacement(displacementData, sprite, targetLayer + j + 1, layerId, out _);
+            }
+        }
+
+        if (MarkingCategoriesConversion.Category2Layer(
+                markingPrototype.MarkingCategory,
+                out var whichCat))
+        {
+            // WEEOO WEEOO set the base layer to be hidden on the comp
+            // but only if it is not already hidden
+            if (!humanoid.HiddenBaseLayers.Contains(whichCat))
+            {
+                humanoid.HiddenBaseLayers.Add(whichCat);
             }
         }
     }

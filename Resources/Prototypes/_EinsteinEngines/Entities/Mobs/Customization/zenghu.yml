@@ -1,7 +1,7 @@
 - type: marking
   id: CyberLimbsMarkingZenghuHead
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -13,7 +13,7 @@
 - type: marking
   id: CyberLimbsMarkingZenghuChest
   bodyPart: Chest
-  markingCategory: Chest
+  markingCategory: BaseChest
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -25,7 +25,7 @@
 - type: marking
   id: CyberLimbsMarkingZenghuLArm
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: BaseLArm
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -37,7 +37,7 @@
 - type: marking
   id: CyberLimbsMarkingZenghuLHand
   bodyPart: LHand
-  markingCategory: Arms
+  markingCategory: BaseLHand
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -49,7 +49,7 @@
 - type: marking
   id: CyberLimbsMarkingZenghuLLeg
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: BaseLLeg
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -62,7 +62,7 @@
 - type: marking
   id: CyberLimbsMarkingZenghuLFoot
   bodyPart: LFoot
-  markingCategory: Legs
+  markingCategory: BaseLFoot
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -76,7 +76,7 @@
 - type: marking
   id: CyberLimbsMarkingZenghuRArm
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: BaseRArm
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -90,7 +90,7 @@
 - type: marking
   id: CyberLimbsMarkingZenghuRHand
   bodyPart: RHand
-  markingCategory: Arms
+  markingCategory: BaseRHand
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -102,7 +102,7 @@
 - type: marking
   id: CyberLimbsMarkingZenghuRLeg
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: BaseRLeg
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -115,7 +115,7 @@
 - type: marking
   id: CyberLimbsMarkingZenghuRFoot
   bodyPart: RFoot
-  markingCategory: Legs
+  markingCategory: BaseRFoot
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:

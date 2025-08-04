@@ -326,12 +326,10 @@ namespace Content.Shared.Humanoid.Markings
         {
             IoCManager.Resolve(ref prototypeManager);
             var speciesProto = prototypeManager.Index<SpeciesPrototype>(species);
-            if (
-                !prototypeManager.TryIndex(speciesProto.SpriteSet, out var baseSprites) ||
-                !baseSprites.Sprites.TryGetValue(layer, out var spriteName) ||
-                !prototypeManager.TryIndex(spriteName, out HumanoidSpeciesSpriteLayer? sprite) ||
-                sprite == null ||
-                !sprite.MarkingsMatchSkin
+            if (!prototypeManager.TryIndex(speciesProto.SpriteSet, out var baseSprites)
+                || !baseSprites.Sprites.TryGetValue(layer, out var spriteName)
+                || !prototypeManager.TryIndex(spriteName, out HumanoidSpeciesSpriteLayer? sprite)
+                || !sprite.MarkingsMatchSkin
             )
             {
                 alpha = 1f;
@@ -347,12 +345,10 @@ namespace Content.Shared.Humanoid.Markings
         {
             IoCManager.Resolve(ref prototypeManager);
             var speciesProto = prototypeManager.Index<SpeciesPrototype>(species);
-            if (
-                !prototypeManager.TryIndex(speciesProto.SpriteSet, out HumanoidSpeciesBaseSpritesPrototype? baseSprites) ||
-                !baseSprites.Sprites.TryGetValue(layer, out var spriteName) ||
-                !prototypeManager.TryIndex(spriteName, out HumanoidSpeciesSpriteLayer? sprite) ||
-                sprite == null ||
-                !sprite.ForcedColoring
+            if (!prototypeManager.TryIndex(speciesProto.SpriteSet, out HumanoidSpeciesBaseSpritesPrototype? baseSprites)
+                || !baseSprites.Sprites.TryGetValue(layer, out var spriteName)
+                || !prototypeManager.TryIndex(spriteName, out HumanoidSpeciesSpriteLayer? sprite)
+                || !sprite.ForcedColoring
             )
             {
                 alpha = 1f;
