@@ -1,7 +1,7 @@
 - type: marking
   id: CyberLimbsMarkingHesphiastosHead
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -13,7 +13,7 @@
 - type: marking
   id: CyberLimbsMarkingHesphiastosHeadAlt
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -27,7 +27,7 @@
 - type: marking
   id: CyberLimbsMarkingHesphiastosChest
   bodyPart: Chest
-  markingCategory: Chest
+  markingCategory: BaseChest
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -39,7 +39,7 @@
 - type: marking
   id: CyberLimbsMarkingHesphiastosLArm
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: BaseLArm
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
@@ -62,7 +62,7 @@
 - type: marking
   id: CyberLimbsMarkingHesphiastosLHand
   bodyPart: LHand
-  markingCategory: Arms
+  markingCategory: BaseLHand
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
@@ -85,7 +85,7 @@
 - type: marking
   id: CyberLimbsMarkingHesphiastosLLeg
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: BaseLLeg
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
@@ -109,7 +109,7 @@
 - type: marking
   id: CyberLimbsMarkingHesphiastosLFoot
   bodyPart: LFoot
-  markingCategory: Legs
+  markingCategory: BaseLFoot
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
@@ -134,7 +134,7 @@
 - type: marking
   id: CyberLimbsMarkingHesphiastosRArm
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: BaseRArm
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
@@ -158,7 +158,7 @@
 - type: marking
   id: CyberLimbsMarkingHesphiastosRHand
   bodyPart: RHand
-  markingCategory: Arms
+  markingCategory: BaseRHand
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
@@ -182,7 +182,7 @@
 - type: marking
   id: CyberLimbsMarkingHesphiastosRLeg
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: BaseRLeg
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
@@ -206,7 +206,7 @@
 - type: marking
   id: CyberLimbsMarkingHesphiastosRFoot
   bodyPart: RFoot
-  markingCategory: Legs
+  markingCategory: BaseRFoot
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC

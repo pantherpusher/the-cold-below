@@ -69,6 +69,12 @@ public sealed partial class HumanoidAppearanceComponent : Component
     public Dictionary<HumanoidVisualLayers, SlotFlags> HiddenLayers = new();
 
     /// <summary>
+    /// So. When the mob has a custom layer base thing in this slot, it will be hidden.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public List<HumanoidVisualLayers> HiddenBaseLayers = new();
+
+    /// <summary>
     /// The specific markings that are hidden, whether or not the layer is hidden.
     /// This is so we can just turn off a single marking, or part of a single marking.
     /// (cus underwear, its for underwear, so you can take off your bra and still have your shirt on)

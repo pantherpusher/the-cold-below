@@ -40,6 +40,7 @@ namespace Content.Shared.Humanoid
         RArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
         UndershirtUnderclothes,
         UndershirtOverclothes,
+        Disregard,
     }
 }
 

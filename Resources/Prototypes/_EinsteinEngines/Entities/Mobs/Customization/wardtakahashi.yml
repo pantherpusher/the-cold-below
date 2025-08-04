@@ -1,7 +1,7 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiHead
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -11,7 +11,7 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiHeadAlt
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -21,7 +21,7 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiHeadAlt1
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -31,7 +31,7 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiChest
   bodyPart: Chest
-  markingCategory: Chest
+  markingCategory: BaseChest
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -41,7 +41,7 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiLArm
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: BaseLArm
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -51,7 +51,7 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiLHand
   bodyPart: LHand
-  markingCategory: Arms
+  markingCategory: BaseLHand
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -61,7 +61,7 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiLLeg
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: BaseLLeg
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -72,7 +72,7 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiLFoot
   bodyPart: LFoot
-  markingCategory: Legs
+  markingCategory: BaseLFoot
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -84,7 +84,7 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiRArm
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: BaseRArm
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -95,7 +95,7 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiRHand
   bodyPart: RHand
-  markingCategory: Arms
+  markingCategory: BaseRHand
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -105,7 +105,7 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiRLeg
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: BaseRLeg
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
@@ -116,7 +116,7 @@
 - type: marking
   id: CyberLimbsMarkingWardtakahashiRFoot
   bodyPart: RFoot
-  markingCategory: Legs
+  markingCategory: BaseRFoot
   kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:

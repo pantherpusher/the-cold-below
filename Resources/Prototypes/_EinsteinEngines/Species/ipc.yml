@@ -1,3 +1,4 @@
+# METATAGS: UpdateMarkingPoints, UpdateSpeciesBaseSprites
 - type: species
   id: IPC
   name: species-name-ipc
@@ -59,50 +60,84 @@
   id: MobIPCMarkingLimits
   points:
     Hair:
-      points: 4
+      points: 35
       required: false
     Head:
-      points: 3
+      points: 35
       required: true
       defaultMarkings: [ MobIPCHeadDefault ]
     Chest:
-      points: 3
+      points: 35
       required: true
       defaultMarkings: [ MobIPCTorsoDefault ]
     Legs:
-      points: 4
+      points: 35
       required: true
       defaultMarkings: [ MobIPCLLegDefault, MobIPCLFootDefault, MobIPCRLegDefault, MobIPCRFootDefault ]
     Arms:
-      points: 4
+      points: 35
       required: true
       defaultMarkings: [ MobIPCLArmDefault, MobIPCLHandDefault, MobIPCRArmDefault, MobIPCRHandDefault ]
     HeadSide:
-      points: 3
+      points: 35
       required: false
     Tail:
-      points: 4
+      points: 35
       required: false
     Snout:
-      points: 4
+      points: 35
       required: false
     # Frontier: apparently these don't exist on Delta
     UndergarmentTop:
-      points: 3
+      points: 35
       required: false
     UndergarmentBottom:
-      points: 3
+      points: 35
       required: false
     # End Frontier
     HeadTop:
-      points: 4
+      points: 35
       required: false
     FacialHair:
-      points: 4
+      points: 35
       required: false
-
-
-
+    Overlay:
+      points: 35
+      required: false
+    Special:
+      points: 35
+      required: false
+    # Copypaste these into every species I HATE THIS CODE
+    BaseChest:
+      points: 35
+      required: false
+    BaseHead:
+      points: 35
+      required: false
+    BaseLArm:
+      points: 35
+      required: false
+    BaseLFoot:
+      points: 35
+      required: false
+    BaseLHand:
+      points: 35
+      required: false
+    BaseLLeg:
+      points: 35
+      required: false
+    BaseRArm:
+      points: 35
+      required: false
+    BaseRFoot:
+      points: 35
+      required: false
+    BaseRHand:
+      points: 35
+      required: false
+    BaseRLeg:
+      points: 35
+      required: false
 
 - type: humanoidBaseSprite
   id: MobIPCMarkingFollowSkin
