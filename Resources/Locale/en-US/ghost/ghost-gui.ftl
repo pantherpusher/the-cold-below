@@ -14,7 +14,19 @@ ghost-gui-toggle-hearing-popup-on = You can now hear all messages.
 ghost-gui-toggle-hearing-popup-off = You can now only hear radio and nearby messages.
 
 ghost-target-window-title = Ghost Warp
-ghost-target-window-current-button = Warp: {$name}
+
+ghost-target-window-current-button = {$name} ({$job})
+ghost-target-window-warp-button-dead = {$name} ({$job}) <Dead>
+ghost-target-window-warp-button-unconscious = {$name} ({$job}) <Crit!>
+ghost-target-window-warp-button-ghost = {$name} ({$job}) <Ghost>
+ghost-target-window-warp-button-cryo = {$name} ({$job}) <Cryo>
+
+ghost-target-window-current-button-dupe = {$name} ({$job}) [{$dupe}]
+ghost-target-window-warp-button-dead-dupe = {$name} ({$job}) [{$dupe}] <Dead>
+ghost-target-window-warp-button-unconscious-dupe = {$name} ({$job}) [{$dupe}] <Crit!>
+ghost-target-window-warp-button-ghost-dupe = {$name} ({$job}) [{$dupe}] <Ghost>
+ghost-target-window-warp-button-cryo-dupe = {$name} ({$job}) [{$dupe}] <Cryo>
+
 ghost-target-window-warp-to-most-followed = Warp to Most Followed
 
 ghost-roles-window-title = Ghost Roles

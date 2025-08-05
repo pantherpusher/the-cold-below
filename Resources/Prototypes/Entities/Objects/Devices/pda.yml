@@ -145,6 +145,7 @@
     mindRoles: [] # Frontier: no default value here
   - type: ShipyardSellCondition # Frontier: Teleport to shipyard console on sale
     preserveOnSale: true
+  - type: BlipCartridge
 
 - type: entity
   parent: BasePDA
@@ -179,11 +180,16 @@
     - BountyContractsCartridge # Frontier
     - AstroNavCartridge # Frontier
     - WantedListCartridge
+  - type: BlipCartridge
+    defaultPreset: BlipPresetSecurity
 
 - type: entity
   parent: BasePDA
   id: BaseMedicalPDA
   abstract: true
+  components:
+  - type: BlipCartridge
+    defaultPreset: BlipPresetMedical
   # Frontier: cartridges moved to loadouts
   # components:
   # - type: CartridgeLoader
@@ -226,6 +232,8 @@
     accentVColor: "#949137"
   - type: Icon
     state: pda-interntech
+  - type: BlipCartridge
+    defaultPreset: BlipPresetEngineering
 
 - type: entity
   parent: BaseMedicalPDA
@@ -286,6 +294,8 @@
     accentVColor: "#8900c9"
   - type: Icon
     state: pda-internsci
+  - type: BlipCartridge
+    defaultPreset: BlipPresetScience
 
 - type: entity
   parent: BasePDA
@@ -512,6 +522,8 @@
     accentVColor: "#a23e3e"
   - type: Icon
     state: pda-qm
+  - type: BlipCartridge
+    defaultPreset: BlipPresetCommand
 
 - type: entity
   parent: BasePDA
@@ -530,6 +542,8 @@
     borderColor: "#e39751"
   - type: Icon
     state: pda-cargo
+  - type: BlipCartridge
+    defaultPreset: BlipPresetEngineering
 
 - type: entity
   parent: BasePDA
@@ -549,6 +563,8 @@
     accentVColor: "#8900c9"
   - type: Icon
     state: pda-miner
+  - type: BlipCartridge
+    defaultPreset: BlipPresetEngineering
   # Frontier: cartridges moved to loadouts
   # - type: CartridgeLoader
   #   uiKey: enum.PdaUiKey.Key
@@ -690,6 +706,8 @@
     borderColor: "#7C5D00"
   - type: Icon
     state: pda-captain
+  - type: BlipCartridge
+    defaultPreset: BlipPresetCommand
 
 - type: entity
   parent: BasePDA
@@ -715,6 +733,8 @@
     accentHColor: "#447987"
   - type: Icon
     state: pda-hop
+  - type: BlipCartridge
+    defaultPreset: BlipPresetCommand
 
 - type: entity
   parent: BasePDA
@@ -734,6 +754,8 @@
     accentHColor: "#447987"
   - type: Icon
     state: pda-ce
+  - type: BlipCartridge
+    defaultPreset: BlipPresetCommand
 
 - type: entity
   parent: BasePDA
@@ -753,6 +775,8 @@
     accentVColor: "#A32D26"
   - type: Icon
     state: pda-engineer
+  - type: BlipCartridge
+    defaultPreset: BlipPresetEngineering
 
 - type: entity
   parent: BaseMedicalPDA
@@ -773,6 +797,8 @@
     accentVColor: "#447987"
   - type: Icon
     state: pda-cmo
+  - type: BlipCartridge
+    defaultPreset: BlipPresetCommand
 
 - type: entity
   parent: BaseMedicalPDA
@@ -864,6 +890,8 @@
     accentVColor: "#8900c9"
   - type: Icon
     state: pda-rd
+  - type: BlipCartridge
+    defaultPreset: BlipPresetCommand
 
 - type: entity
   parent: BasePDA
@@ -883,6 +911,8 @@
     accentVColor: "#8900c9"
   - type: Icon
     state: pda-science
+  - type: BlipCartridge
+    defaultPreset: BlipPresetScience
 
 - type: entity
   parent: BaseSecurityPDA
@@ -910,6 +940,8 @@
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
+  - type: BlipCartridge
+    defaultPreset: BlipPresetCommand
 
 - type: entity
   parent: BaseSecurityPDA
@@ -981,6 +1013,8 @@
       - WantedListCartridge
       - LogProbeCartridge
       - AstroNavCartridge
+  - type: BlipCartridge
+    defaultPreset: BlipPresetCommand
 
 - type: entity
   parent: CentcomPDA
@@ -1011,6 +1045,8 @@
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
+  - type: BlipCartridge
+    enabled: false # Frontier: Admin PDA does not have blips
 
 - type: entity
   parent: CentcomPDA
@@ -1075,6 +1111,8 @@
     accentVColor: "#447987"
   - type: Icon
     state: pda-atmos
+  - type: BlipCartridge
+    defaultPreset: BlipPresetEngineering
 
 - type: entity
   parent: BasePDA
@@ -1128,6 +1166,8 @@
       - NotekeeperCartridge
       - NanoTaskCartridge
       - AstroNavCartridge # Frontier
+  - type: BlipCartridge
+    defaultPreset: BlipPresetPirate
 
 - type: entity
   parent: BaseSecurityPDA
@@ -1405,6 +1445,8 @@
     accentVColor: "#CD6900"
   - type: Icon
     state: pda-seniorengineer
+  - type: BlipCartridge
+    defaultPreset: BlipPresetEngineering
 
 - type: entity
   parent: BasePDA
@@ -1425,6 +1467,8 @@
     accentVColor: "#8900c9"
   - type: Icon
     state: pda-seniorresearcher
+  - type: BlipCartridge
+    defaultPreset: BlipPresetScience
 
 - type: entity
   parent: BaseMedicalPDA
@@ -1481,6 +1525,8 @@
        pda-pirate
   - type: Icon
     state: pda-pirate
+  - type: BlipCartridge
+    defaultPreset: BlipPresetPirate
 
 - type: entity
   parent: [ BaseMedicalPDA, BaseC3SyndicateContrabandNoValue ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandNoValue
@@ -1560,3 +1606,5 @@
     borderColor: "#7F3300"
   - type: Icon
     state: pda-wizard
+  - type: BlipCartridge
+    defaultPreset: BlipPresetPirate

@@ -1,7 +1,8 @@
 - type: marking
   id: CyberLimbsMarkingBishopHead
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/bishop/bishop_monitor.rsi
@@ -12,7 +13,8 @@
 - type: marking
   id: CyberLimbsMarkingBishopHeadAlt
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
@@ -21,7 +23,8 @@
 - type: marking
   id: CyberLimbsMarkingBishopHeadAlt1
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/bishop/bishop_alt1.rsi
@@ -30,7 +33,8 @@
 - type: marking
   id: CyberLimbsMarkingBishopChest
   bodyPart: Chest
-  markingCategory: Chest
+  markingCategory: BaseChest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
@@ -41,7 +45,8 @@
 - type: marking
   id: CyberLimbsMarkingBishopLArm
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: BaseLArm
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
   - Moth
@@ -65,7 +70,8 @@
 - type: marking
   id: CyberLimbsMarkingBishopLHand
   bodyPart: LHand
-  markingCategory: Arms
+  markingCategory: BaseLHand
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
   - Moth
@@ -85,7 +91,8 @@
 - type: marking
   id: CyberLimbsMarkingBishopLLeg
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: BaseLLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction:
   - IPC
   - Moth
@@ -108,7 +115,8 @@
 - type: marking
   id: CyberLimbsMarkingBishopLFoot
   bodyPart: LFoot
-  markingCategory: Legs
+  markingCategory: BaseLFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Feroxi]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
@@ -119,7 +127,8 @@
 - type: marking
   id: CyberLimbsMarkingBishopRArm
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: BaseRArm
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Feroxi]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
@@ -133,7 +142,8 @@
 - type: marking
   id: CyberLimbsMarkingBishopRHand
   bodyPart: RHand
-  markingCategory: Arms
+  markingCategory: BaseRHand
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Feroxi]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
@@ -142,7 +152,8 @@
 - type: marking
   id: CyberLimbsMarkingBishopRLeg
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: BaseRLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Feroxi]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
@@ -154,7 +165,8 @@
 - type: marking
   id: CyberLimbsMarkingBishopRFoot
   bodyPart: RFoot
-  markingCategory: Legs
+  markingCategory: BaseRFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Feroxi]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/bishop/bishop_main.rsi

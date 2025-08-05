@@ -135,11 +135,20 @@ namespace Content.Shared.Ghost
     [Serializable, NetSerializable]
     public struct GhostWarp
     {
-        public GhostWarp(NetEntity entity, string displayName, bool isWarpPoint)
+        public GhostWarp(NetEntity entity,
+            string displayName,
+            bool isWarpPoint,
+            GhostStatus isGhost,
+            int dupeNumber = 0,
+            string jobName = ""
+            )
         {
             Entity = entity;
             DisplayName = displayName;
             IsWarpPoint = isWarpPoint;
+            WarpKind = isGhost;
+            DupeNumber = dupeNumber; // Frontier: warp point hiding
+            JobName = jobName;
         }
 
         /// <summary>
@@ -154,6 +163,11 @@ namespace Content.Shared.Ghost
         public string DisplayName { get; }
 
         /// <summary>
+        /// The Job name of the player
+        /// </summary>
+        public string JobName { get; set; } = string.Empty;
+
+        /// <summary>
         /// Whether this warp represents a warp point or a player
         /// </summary>
         public bool IsWarpPoint { get;  }
@@ -164,6 +178,16 @@ namespace Content.Shared.Ghost
         /// </summary>
         public bool AdminOnly { get; }
         // End Frontier
+
+        /// <summary>
+        /// Its a g-ghost!
+        /// </summary>
+        public GhostStatus WarpKind { get;  }
+
+        /// <summary>
+        /// Used to disambiguate multiple warms with the same name.
+        /// </summary>
+        public int DupeNumber { get;  } = 0;
     }
 
     /// <summary>
@@ -182,6 +206,19 @@ namespace Content.Shared.Ghost
         /// A list of warp points.
         /// </summary>
         public List<GhostWarp> Warps { get; }
+    }
+
+    /// <summary>
+    /// Enum of stuff like are they alive, are they dead, a ghost, etc.
+    /// </summary>
+    public enum GhostStatus
+    {
+        Alive,
+        Dead,
+        Ghost,
+        Unconscious,
+        CryoSleep,
+        OtherStuff,
     }
 
     /// <summary>

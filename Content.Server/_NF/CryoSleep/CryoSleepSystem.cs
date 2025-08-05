@@ -305,6 +305,12 @@ public sealed partial class CryoSleepSystem : EntitySystem
         if (cryo.CryosleepDoAfter != null && _doAfter.GetStatus(cryo.CryosleepDoAfter) == DoAfterStatus.Running)
             _doAfter.Cancel(cryo.CryosleepDoAfter);
 
+        // set the mindcontainer's isInCryosleep to true
+        if (TryComp<MindContainerComponent>(bodyId, out var mindContainer))
+        {
+            mindContainer.IsInCryosleep = true;
+        }
+
         if (deleteEntity)
         {
             QueueDel(bodyId);
@@ -340,6 +346,12 @@ public sealed partial class CryoSleepSystem : EntitySystem
 
         if (component.CryosleepDoAfter != null && _doAfter.GetStatus(component.CryosleepDoAfter) == DoAfterStatus.Running)
             _doAfter.Cancel(component.CryosleepDoAfter);
+
+        // set the mindcontainer's isInCryosleep to false
+        if (TryComp<MindContainerComponent>(toEject.Value, out var mindContainer))
+        {
+            mindContainer.IsInCryosleep = false;
+        }
 
         return true;
     }

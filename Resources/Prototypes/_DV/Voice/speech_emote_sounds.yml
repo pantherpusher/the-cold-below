@@ -17,7 +17,7 @@
     Crying:
       collection: HarpyCry
     Whistle:
-      collection: Whistles
+      collection: HarpyWhistles # Frontier
     Hiss:
       collection: HarpyHisses
     Meow:
@@ -80,6 +80,10 @@
       collection: Belch # Frontier
     Squish: # Frontier
       collection: HarpySquishes # Frontier
+    Bubble: # Imp
+      collection: Bubbles # Imp
+    Pop: # Imp
+      collection: Pops # Imp
     Gnash: # Flooftier
       collection: FeroxiGnashes # Flooftier
     MonkeyScreeches: # Frontier
@@ -145,7 +149,7 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: RodentiaScreams # Floofstation
+      collection: VulpkaninScreams # Floofstation
     Laugh:
       collection: FemaleLaugh
     Sneeze:
@@ -186,6 +190,14 @@
       collection: FemaleDeathGasp
     Belch: # Frontier
       collection: Belch # Frontier
+    MonkeyScreeches: # Frontier
+      collection: MonkeyScreeches # Frontier
+    Yap: # Floof
+      collection: VulpkaninYaps
+    Gekker: # Floof
+      collection: VulpkaninGekkers
+
+
 
 - type: emoteSounds
   id: MobDog
@@ -247,7 +259,7 @@
     variation: 0.125
   sounds:
     Scream:
-      path: /Audio/Animals/mouse_squeak.ogg
+      collection: RodentiaScreams # Floof
     Laugh:
       collection: FemaleLaugh
     Sneeze:

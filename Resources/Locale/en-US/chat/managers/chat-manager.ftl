@@ -29,14 +29,14 @@ chat-manager-entity-whisper-wrap-message = [font size=11][italic][BubbleHeader][
 chat-manager-entity-whisper-unknown-wrap-message = [font size=11][italic][BubbleHeader][color={$chatColor}]Someone[/color][/BubbleHeader] whispers, "[BubbleContent]{$message}[/BubbleContent]"[/italic][/font]
 
 # THE() is not used here because the entity and its name can technically be disconnected if a nameOverride is passed...
-chat-manager-entity-me-wrap-message = [italic]{ PROPER($entity) ->
-    *[false] The [color={$chatColor}]{$entityName}[/color] {$message}[/italic]
-     [true] [color={$chatColor}]{CAPITALIZE($entityName)}[/color] {$message}[/italic]
+chat-manager-entity-me-wrap-message = { PROPER($entity) ->
+    *[false] The [color={$chatColor}]{$entityName}[/color] {$message}
+     [true] [color={$chatColor}]{CAPITALIZE($entityName)}[/color] {$message}
     }
 
-chat-manager-entity-subtle-wrap-message = [italic]{ PROPER($entity) ->
-    *[false] the [color={$chatColor}]{$entityName}[/color] subtly {$message}[/italic]
-     [true] [color={$chatColor}]{$entityName}[/color] subtly {$message}[/italic]
+chat-manager-entity-subtle-wrap-message = { PROPER($entity) ->
+    *[false] [font size=11][italic]the [color={$chatColor}]{$entityName}[/color] {$message}[/italic][/font]
+     [true] [font size=11][italic][color={$chatColor}]{$entityName}[/color] {$message}[/italic][/font]
     }
 
 chat-manager-entity-looc-wrap-message = LOOC: [bold]{$entityName}:[/bold] {$message}
@@ -46,6 +46,7 @@ chat-manager-send-ooc-patron-wrap-message = OOC: [bold][color={$patronColor}]{$p
 chat-manager-send-dead-chat-wrap-message = {$deadChannelName}: [bold][BubbleHeader]{$playerName}[/BubbleHeader]:[/bold] [BubbleContent]{$message}[/BubbleContent]
 chat-manager-send-admin-dead-chat-wrap-message = {$adminChannelName}: [bold]([BubbleHeader]{$userName}[/BubbleHeader]):[/bold] [BubbleContent]{$message}[/BubbleContent]
 chat-manager-send-admin-chat-wrap-message = {$adminChannelName}: [bold]{$playerName}:[/bold] {$message}
+chat-manager-send-ahelp-wrap-message = [bold](AHELP)[/bold] {$message}
 chat-manager-send-admin-announcement-wrap-message = [bold]{$adminChannelName}: {$message}[/bold]
 
 chat-manager-send-hook-ooc-wrap-message = OOC: [bold](D){$senderName}:[/bold] {$message}

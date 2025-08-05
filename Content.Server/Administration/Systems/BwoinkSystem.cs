@@ -7,12 +7,14 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Content.Server.Administration.Managers;
 using Content.Server.Afk;
+using Content.Server.Chat.Managers;
 using Content.Server.Database;
 using Content.Server.Discord;
 using Content.Server.GameTicking;
 using Content.Server.Players.RateLimiting;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
+using Content.Shared.Chat;
 using Content.Shared.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Players.RateLimiting;
@@ -43,6 +45,7 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly IAfkManager _afkManager = default!;
         [Dependency] private readonly IServerDbManager _dbManager = default!;
         [Dependency] private readonly PlayerRateLimitManager _rateLimit = default!;
+        [Dependency] private readonly IChatManager _chatManager = default!;
 
         [GeneratedRegex(@"^https://(?:(?:canary|ptb)\.)?discord\.com/api/webhooks/(\d+)/((?!.*/).*)$")]
         private static partial Regex DiscordRegex();
@@ -673,7 +676,15 @@ namespace Content.Server.Administration.Systems
         /// <param name="senderChannel">The channel to send a message to, e.g. in case of failure to send</param>
         /// <param name="sendWebhook">If true, message should be sent off through the webhook if possible</param>
         /// <param name="fromWebhook">Message originated from a webhook (e.g. Discord)</param>
-        private void OnBwoinkInternal(BwoinkTextMessage message, NetUserId senderId, AdminData? senderAdmin, string senderName, INetChannel? senderChannel, bool userOnly, bool sendWebhook, bool fromWebhook)
+        private void OnBwoinkInternal(
+            BwoinkTextMessage message,
+            NetUserId senderId,
+            AdminData? senderAdmin,
+            string senderName,
+            INetChannel? senderChannel,
+            bool userOnly,
+            bool sendWebhook,
+            bool fromWebhook)
         {
             _activeConversations[message.UserId] = DateTime.Now;
 
@@ -729,6 +740,7 @@ namespace Content.Server.Administration.Systems
             {
                 adminPrefixWebhook = $"[bold]\\[{senderAdmin.Title}\\][/bold] ";
             }
+            string superOverrideText = bwoinkText;
 
             // Notify player
             if (_playerManager.TryGetSessionById(message.UserId, out var session) && !message.AdminOnly)
@@ -759,6 +771,7 @@ namespace Content.Server.Administration.Systems
                             overrideMsgText = $"(DC) {overrideMsgText}";
 
                         overrideMsgText = $"{(message.PlaySound ? "" : "(S) ")}{overrideMsgText}: {escapedText}";
+                        superOverrideText = overrideMsgText;
 
                         RaiseNetworkEvent(new BwoinkTextMessage(message.UserId,
                                 senderId,
@@ -769,6 +782,27 @@ namespace Content.Server.Administration.Systems
                     else
                         RaiseNetworkEvent(msg, session.Channel);
                 }
+            }
+            superOverrideText = $"[color=red][bold][AHELP][/bold] {superOverrideText}[/color]";
+            // send the message to EVERY ADMIN, whether they like it or not
+            foreach (var admin in admins)
+            {
+                // If the message is from a webhook, we don't want to send it to the sender.
+                if (admin.UserId == senderId && fromWebhook)
+                    continue;
+
+                // cum it to chat
+                if (_playerManager.TryGetSessionByChannel(admin, out var sesh))
+                {
+                    _chatManager.ChatMessageToOne(
+                        ChatChannel.AdminChat,
+                        superOverrideText,
+                        superOverrideText,
+                        default,
+                        false,
+                        sesh.Channel);
+                }
+
             }
 
             var sendsWebhook = _webhookUrl != string.Empty;

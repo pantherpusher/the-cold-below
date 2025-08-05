@@ -1,12 +1,32 @@
 <Document>
   # Cargo Hauling
 
-One of the ways you can make money on the Frontier is by moving shipments of [color=peru]trading crates[/color].
+One of the ways you can make money on the Sector is by moving shipments of [color=peru]trading crates[/color].
+
+## The Big Five: JanusCorp
+
+"The door to everything!"
+
+JanusCorp is a shipping and logistics company simply unheard of outside of the Sector.
+
+Formed from the Sector's first wave of colonists' need of survival, then desire. they're local - but have the fastest shipping times.
+
+JanusCorp branded ships are generally more acceleration focused, lightly armored (and unarmed), with ample space for the trade-goods that keep the sector's heart beating.
+
+All in all, it's to support their "load 'n' pray" shipping method - day in and day out, they're fighting to keep their hold on the lanes.
+
+Janus knows which doors to open, and they keep them shut on the competition.
+
+When you're born out of survival - you learn a thing or two that larger corporations don't.
+
+## Trading Crates
 
   <Box>
     <GuideEntityEmbed Entity="CrateTradeSecureNormal"/>
     <GuideEntityEmbed Entity="CrateTradeContrabandSecure1"/>
   </Box>
+
+
 
 You can find these by:
   - Buying them at [color=peru]cargo request computers[/color] at the [color=forestgreen]Trade Outpost[/color]

@@ -22,7 +22,7 @@
     layers:
     - state: law_space
   - type: HyperlinkBook
-    url: https://frontierstation.wiki.gg/wiki/Space_Law
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vSbnZL_7-GCOlzVbQ6JnMVsKcB6u1d9lyTx3_-Z8ePlgF_VdYeey-2izazCxoav3Th_jIA3RoM_7wK8/pubhtml
   - type: Tag
     tags:
     - Book
@@ -39,7 +39,7 @@
     layers:
     - state: nfsd_sop
   - type: HyperlinkBook
-    url: https://frontierstation.wiki.gg/wiki/NFSDSOP
+    url: https://docs.google.com/document/d/e/2PACX-1vRSHwrILic-cnvVu5hbD-FXVuNlY0X5GQrH093_2CLvSefhB3M6Wr9x_EXF0IPc-ZLNNeKnx7kEOMmX/pub
   - type: Tag
     tags:
     - Book

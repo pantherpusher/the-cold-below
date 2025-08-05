@@ -3,7 +3,8 @@
   id: FeroxiEars
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/ear_markings.rsi
     state: feroxi-ears
@@ -14,7 +15,8 @@
   id: FeroxiTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -25,7 +27,8 @@
   id: FeroxiSnout
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
     state: feroxi-snout
@@ -35,7 +38,8 @@
   id: FeroxiEarsTips
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/ear_markings.rsi
     state: feroxi-ears
@@ -49,7 +53,8 @@
   id: FeroxiSnoutStripe
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
     state: feroxi-snout
@@ -60,7 +65,8 @@
   id: FeroxiSnoutCountershading
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
     state: feroxi-snout
@@ -71,7 +77,8 @@
   id: FeroxiSnoutCountershadingStripe
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
     state: feroxi-snout
@@ -84,7 +91,8 @@
   id: FeroxiSnoutNurse
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
     state: feroxi-snout
@@ -95,7 +103,8 @@
   id: FeroxiSnoutNurseCountershading
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/snout_markings.rsi
     state: feroxi-snout
@@ -109,7 +118,8 @@
   id: FeroxiTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -118,7 +128,8 @@
   id: FeroxiStripedTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -129,7 +140,8 @@
   id: FeroxiStripedTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -144,7 +156,8 @@
   id: FeroxiTipTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -159,7 +172,8 @@
   id: FeroxiTipTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -178,7 +192,8 @@
   id: FeroxiTailBlitz
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -199,7 +214,8 @@
   id: FeroxiTailBlitzNoDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -216,7 +232,8 @@
   id: FeroxiTwoToneTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -227,7 +244,8 @@
   id: FeroxiTwoToneTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -240,7 +258,8 @@
   id: FeroxiStripeTwoToneTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -253,7 +272,8 @@
   id: FeroxiStripeTwoToneTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -270,7 +290,8 @@
   id: FeroxiTipTwoToneTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -287,7 +308,8 @@
   id: FeroxiTipTwoToneTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -309,7 +331,8 @@
   id: FeroxiHeadStripesTiger
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-head-stripes-tiger
@@ -318,7 +341,8 @@
   id: FeroxiTorsoStripesBlitz
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-torso-stripes-blitz
@@ -327,7 +351,8 @@
   id: FeroxiTorsoCountershadingF
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-torso-countershading-f
@@ -336,7 +361,8 @@
   id: FeroxiTorsoCountershadingM
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-torso-countershading-m
@@ -345,7 +371,8 @@
   id: FeroxiTorsoStripesTiger
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-torso-stripes-tiger
@@ -355,7 +382,8 @@
   id: FeroxiLeftLegStripesBlitz
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-left-leg-stripes-blitz
@@ -364,7 +392,8 @@
   id: FeroxiRightLegStripesBlitz
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
    - sprite: DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
      state: feroxi-right-leg-stripes-blitz
@@ -373,7 +402,8 @@
   id: FeroxiLeftLegStripesTiger
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-left-leg-stripes-tiger
@@ -382,7 +412,8 @@
   id: FeroxiRightLegStripesTiger
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-right-leg-stripes-tiger
@@ -392,7 +423,8 @@
   id: FeroxiLeftArmStripesBlitz
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-left-arm-stripes-blitz
@@ -401,7 +433,8 @@
   id: FeroxiRightArmStripesBlitz
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-right-arm-stripes-blitz
@@ -410,7 +443,8 @@
   id: FeroxiLeftArmStripesTiger
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-left-arm-stripes-tiger
@@ -419,7 +453,8 @@
   id: FeroxiRightArmStripesTiger
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [ Feroxi ]
+  speciesRestriction: [Feroxi]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   sprites:
   - sprite: DeltaV/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-right-arm-stripes-tiger

@@ -170,7 +170,11 @@ public sealed class MindSystem : SharedMindSystem
         }
     }
 
-    public override void TransferTo(EntityUid mindId, EntityUid? entity, bool ghostCheckOverride = false, bool createGhost = true,
+    public override void TransferTo(
+        EntityUid mindId,
+        EntityUid? entity,
+        bool ghostCheckOverride = false,
+        bool createGhost = true,
         MindComponent? mind = null)
     {
         if (mind == null && !Resolve(mindId, ref mind))
@@ -186,6 +190,7 @@ public sealed class MindSystem : SharedMindSystem
         if (entity != null)
         {
             component = EnsureComp<MindContainerComponent>(entity.Value);
+            component.HasHadMind = true;
 
             if (component.HasMind)
                 _ghosts.OnGhostAttempt(component.Mind.Value, false);
@@ -193,8 +198,9 @@ public sealed class MindSystem : SharedMindSystem
             if (TryComp<ActorComponent>(entity.Value, out var actor))
             {
                 // Happens when transferring to your currently visited entity.
-                if (!_players.TryGetSessionByEntity(entity.Value, out var session) ||
-                    mind.UserId == null || actor.PlayerSession != session )
+                if (!_players.TryGetSessionByEntity(entity.Value, out var session)
+                    || mind.UserId == null
+                    || actor.PlayerSession != session )
                 {
                     throw new ArgumentException("Visit target already has a session.", nameof(entity));
                 }
@@ -215,6 +221,7 @@ public sealed class MindSystem : SharedMindSystem
 
             entity = Spawn(GameTicker.ObserverPrototypeName, position);
             component = EnsureComp<MindContainerComponent>(entity.Value);
+            component.HasHadMind = true;
             var ghostComponent = Comp<GhostComponent>(entity.Value);
             _ghosts.SetCanReturnToBody((entity.Value, ghostComponent), false);
             _ghosts.SetCanReturnFromCryo(ghostComponent, mind.UserId != null ? _cryo.HasCryosleepingBody(mind.UserId.Value) : false); // Frontier
@@ -224,6 +231,7 @@ public sealed class MindSystem : SharedMindSystem
         if (TryComp(oldEntity, out MindContainerComponent? oldContainer))
         {
             oldContainer.Mind = null;
+            oldContainer.HasHadMind = true;
             mind.OwnedEntity = null;
             Entity<MindComponent> mindEnt = (mindId, mind);
             Entity<MindContainerComponent> containerEnt = (oldEntity.Value, oldContainer);
@@ -267,6 +275,24 @@ public sealed class MindSystem : SharedMindSystem
             RaiseLocalEvent(entity.Value, new MindAddedMessage(mindEnt, containerEnt));
             RaiseLocalEvent(mindId, new MindGotAddedEvent(mindEnt, containerEnt));
             Dirty(entity.Value, component);
+        }
+        // and just to be sure both mindcontainers have their HasHadMind set to true...
+        if (oldEntity != null
+            && TryComp(oldEntity, out MindContainerComponent? oldComp))
+        {
+            oldComp.HasHadMind = true;
+            Dirty(oldEntity.Value, oldComp);
+        }
+        if (entity != null
+            && TryComp(entity.Value, out MindContainerComponent? newComp))
+        {
+            newComp.HasHadMind = true;
+            Dirty(entity.Value, newComp);
+        }
+        if (component != null)
+        {
+            component.HasHadMind = true;
+            Dirty(entity!.Value, component);
         }
     }
 

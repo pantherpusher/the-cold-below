@@ -72,7 +72,12 @@ public sealed partial class RadarBlipSystem : EntitySystem
     /// </summary>
     private List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)> AssembleBlipsReport(Entity<RadarConsoleComponent> ent)
     {
-        var blips = new List<(NetEntity? Grid, Vector2 Position, float Scale, Color Color, RadarBlipShape Shape)>();
+        var blips = new List<(
+            NetEntity? Grid,
+            Vector2 Position,
+            float Scale,
+            Color Color,
+            RadarBlipShape Shape)>();
 
         if (!TryComp(ent, out TransformComponent? radarXform))
             return blips;
@@ -130,7 +135,31 @@ public sealed partial class RadarBlipSystem : EntitySystem
                 blipNetGrid = GetNetEntity(blipGrid.Value);
                 blipPosition = Vector2.Transform(blipPosition, _xform.GetInvWorldMatrix(blipGrid.Value));
             }
-            blips.Add((blipNetGrid, blipPosition, blip.Scale, blip.RadarColor, blip.Shape));
+            var scale = blip.Scale;
+            var shape = blip.Shape;
+            var color = blip.RadarColor;
+            // {
+            //     var ev = new RadarBlipEvent(
+            //         color,
+            //         shape,
+            //         scale,
+            //         blip.Enabled);
+            //     RaiseLocalEvent(blipUid, ref ev);
+            //     scale = ev.ChangeScale ?? scale;
+            //     color = ev.ChangeColor ?? color;
+            //     shape = ev.ChangeShape ?? shape;
+            //     if (ev.ChangeEnabled.HasValue)
+            //     {
+            //         blip.Enabled = ev.ChangeEnabled.Value;
+            //         if (!blip.Enabled)
+            //         {
+            //             Log.Debug($"Blip {blipUid} skipped: disabled by event.");
+            //             continue;
+            //         }
+            //     }
+            // }
+
+            blips.Add((blipNetGrid, blipPosition, scale, color, shape));
         }
         return blips;
     }

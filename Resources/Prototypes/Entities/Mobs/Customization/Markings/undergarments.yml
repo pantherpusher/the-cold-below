@@ -6,6 +6,7 @@
   id: UndergarmentBottomBoxers
   bodyPart: UndergarmentBottom
   markingCategory: UndergarmentBottom
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Arachnid, Diona, Human, Dwarf, Moth, SlimePerson, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy] # Frontier: added Goblin and afterwards
   coloring:
     default:
@@ -19,6 +20,7 @@
   id: UndergarmentBottomBriefs
   bodyPart: UndergarmentBottom
   markingCategory: UndergarmentBottom
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Arachnid, Diona, Human, Dwarf, Moth, SlimePerson, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy] # Frontier: added Goblin and afterwards
   coloring:
     default:
@@ -32,6 +34,7 @@
   id: UndergarmentBottomSatin
   bodyPart: UndergarmentBottom
   markingCategory: UndergarmentBottom
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Arachnid, Diona, Human, Dwarf, Moth, SlimePerson, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy] # Frontier: added Goblin and afterwards
   coloring:
     default:
@@ -45,6 +48,7 @@
   id: UndergarmentTopBra
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Arachnid, Diona, Human, Dwarf, Moth, Reptilian, SlimePerson, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy] # Frontier: added Goblin and afterwards
   coloring:
     default:
@@ -58,6 +62,7 @@
   id: UndergarmentTopSportsbra
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Arachnid, Diona, Human, Dwarf, Moth, Reptilian, SlimePerson, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy] # Frontier: added Goblin and afterwards
   coloring:
     default:
@@ -71,6 +76,7 @@
   id: UndergarmentTopBinder
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Arachnid, Diona, Human, Dwarf, Moth, Reptilian, SlimePerson, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy] # Frontier: added Goblin and afterwards
   coloring:
     default:
@@ -84,6 +90,7 @@
   id: UndergarmentTopTanktop
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Arachnid, Diona, Human, Dwarf, Moth, Reptilian, SlimePerson, Goblin, Sheleg, Felinid, Vulpkanin, Oni, Harpy] # Frontier: added Goblin and afterwards
   coloring:
     default:
@@ -190,6 +197,7 @@
   id: UndergarmentBottomBoxersReptilian
   bodyPart: UndergarmentBottom
   markingCategory: UndergarmentBottom
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Reptilian]
   coloring:
     default:
@@ -203,6 +211,7 @@
   id: UndergarmentBottomBriefsReptilian
   bodyPart: UndergarmentBottom
   markingCategory: UndergarmentBottom
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Reptilian]
   coloring:
     default:
@@ -216,6 +225,7 @@
   id: UndergarmentBottomSatinReptilian
   bodyPart: UndergarmentBottom
   markingCategory: UndergarmentBottom
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Reptilian]
   coloring:
     default:

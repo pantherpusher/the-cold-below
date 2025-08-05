@@ -2,7 +2,8 @@
   id: CatEars
   bodyPart: Special
   markingCategory: Special
-  speciesRestriction: [] # Frontier: Human<empty list
+  speciesRestriction: [Human]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   coloring:
     default:
       type:
@@ -25,7 +26,8 @@
   id: CatTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: []
+  speciesRestriction: [Human]
+  kindAllowance: [BasicHumanlike, BasicFurry]
   coloring:
     default:
       type:

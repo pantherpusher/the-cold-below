@@ -2,6 +2,7 @@
   id: ChestCutHere
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
   coloring:
     default:
@@ -16,6 +17,7 @@
   id: ArmDollJointsTattooLeft
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
   coloring:
     default:
@@ -30,6 +32,7 @@
   id: ArmDollJointsTattooRight
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
   coloring:
     default:
@@ -44,6 +47,7 @@
   id: HandDollJointsTattooLeft
   bodyPart: LHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
   coloring:
     default:
@@ -58,6 +62,7 @@
   id: HandDollJointsTattooRight
   bodyPart: RHand
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
   coloring:
     default:
@@ -72,6 +77,7 @@
   id: LegDollJointsTattooLeft
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
   coloring:
     default:
@@ -86,6 +92,7 @@
   id: LegDollJointsTattooRight
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
   coloring:
     default:
@@ -100,6 +107,7 @@
   id: FootDollJointsTattooLeft
   bodyPart: LFoot
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
   coloring:
     default:
@@ -114,6 +122,7 @@
   id: FootDollJointsTattooRight
   bodyPart: RFoot
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
   coloring:
     default:

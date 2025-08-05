@@ -1,3 +1,4 @@
+# METATAGS: UpdateMarkingPoints, UpdateSpeciesBaseSprites
 - type: species
   id: SlimePerson
   name: species-name-slime
@@ -29,24 +30,93 @@
     RLeg: MobSlimeRLeg
     LFoot: MobSlimeLFoot
     RFoot: MobSlimeRFoot
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
+    UndershirtUnderclothes: MobHumanoidAnyMarking
+    UndershirtOverclothes: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+
 
 - type: markingPoints
   id: MobSlimeMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 35
       required: false
     FacialHair:
-      points: 1
+      points: 35
       required: false
-    Chest:
-      points: 4 # imp 2<4
+    Tail:
+      points: 35
+      required: false
+    Head:
+      points: 35
       required: false
     Legs:
-      points: 8 # imp 4<8
+      points: 35
       required: false
     Arms:
-      points: 8 # imp 4<8
+      points: 35
+      required: false
+    Snout:
+      points: 35
+      required: false
+    # Frontier: apparently these don't exist on Delta
+    UndergarmentTop:
+      points: 35
+      required: false
+    UndergarmentBottom:
+      points: 35
+      required: false
+    # End Frontier
+    HeadTop:
+      points: 35
+      required: false
+    Chest:
+      points: 35
+      required: false
+    HeadSide:
+      points: 35
+      required: false
+    Overlay:
+      points: 35
+      required: false
+    Special:
+      points: 35
+      required: false
+    # Copypaste these into every species I HATE THIS CODE
+    BaseChest:
+      points: 35
+      required: false
+    BaseHead:
+      points: 35
+      required: false
+    BaseLArm:
+      points: 35
+      required: false
+    BaseLFoot:
+      points: 35
+      required: false
+    BaseLHand:
+      points: 35
+      required: false
+    BaseLLeg:
+      points: 35
+      required: false
+    BaseRArm:
+      points: 35
+      required: false
+    BaseRFoot:
+      points: 35
+      required: false
+    BaseRHand:
+      points: 35
+      required: false
+    BaseRLeg:
+      points: 35
       required: false
 
 - type: humanoidBaseSprite

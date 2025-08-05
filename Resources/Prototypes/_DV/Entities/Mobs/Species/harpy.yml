@@ -34,6 +34,7 @@
   - type: Sprite
     scale: 0.9, 0.9
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -44,6 +45,7 @@
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
+      - map: [ "enum.HumanoidVisualLayers.UndershirtUnderclothes" ]
       - map: [ "socks" ]
       - map: [ "jumpsuit" ]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
@@ -63,6 +65,8 @@
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
+      - map: [ "enum.HumanoidVisualLayers.UndershirtOverclothes" ]
       - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
@@ -110,31 +114,7 @@
   - type: Speech
     speechSounds: Harpy
     speechVerb: Harpy
-    allowedEmotes:
-    - Meow
-    - Hiss
-    - Mew
-    - Purr
-    - Growl
-    - Bark
-    - Snarl
-    - Whine
-    - Howl
-    - Awoo
-    - HarpyHonk
-    - HarpyRing
-    - HarpyPew
-    - HarpyBang
-    - HarpyBeep
-    - HarpyRev
-    - HarpyCaw
-    - Squish
-    - Chitter
-    - Squeak
-    - Click
-    - Belch # Frontier
-    - Squish # Frontier
-    - Gnash # Flooftier
+    allowedEmotes: ['Meow', 'Hiss', 'Mew', 'Purr', 'Growl', 'Bark', 'Snarl', 'Whine', 'Howl', 'Awoo', 'HarpyHonk', 'HarpyRing', 'HarpyPew', 'HarpyBang', 'HarpyBeep', 'HarpyRev', 'HarpyCaw', 'Squish', 'Chitter', 'Squeak', 'Click', 'Belch', 'Squish', 'Bubble', 'Pop'] # Frontier: add Belch, Squish, Bubble, Pop
   - type: Vocal
     sounds:
       Male: SoundsHarpy

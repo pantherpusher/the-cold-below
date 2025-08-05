@@ -229,6 +229,9 @@ internal sealed partial class ChatManager : IChatManager
             case OOCChatType.Admin:
                 SendAdminChat(player, message);
                 break;
+            case OOCChatType.AdminHelp:
+                SendAhelpToChat(player, message);
+                break;
         }
     }
 
@@ -296,6 +299,40 @@ internal sealed partial class ChatManager : IChatManager
         }
 
         _adminLogger.Add(LogType.Chat, $"Admin chat from {player:Player}: {message}");
+    }
+
+    private void SendAhelpToChat(ICommonSession player, string message)
+    {
+
+        var clients = _adminManager.ActiveAdmins.Select(p => p.Channel);
+        var wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-wrap-message",
+                                        ("message", FormattedMessage.EscapeText(message)));
+
+        foreach (var client in clients)
+        {
+            var isSource = client != player.Channel;
+            ChatMessageToOne(ChatChannel.AdminChat,
+                message,
+                wrappedMessage,
+                default,
+                false,
+                client,
+                audioPath: isSource ? _netConfigManager.GetClientCVar(client, CCVars.AdminChatSoundPath) : default,
+                audioVolume: isSource ? _netConfigManager.GetClientCVar(client, CCVars.AdminChatSoundVolume) : default,
+                author: player.UserId);
+        }
+        // then one to the player who sent the ahelp
+        ChatMessageToOne(ChatChannel.Server,
+            message,
+            wrappedMessage,
+            default,
+            false,
+            player.Channel,
+            audioPath: _netConfigManager.GetClientCVar(player.Channel, CCVars.AdminChatSoundPath),
+            audioVolume: _netConfigManager.GetClientCVar(player.Channel, CCVars.AdminChatSoundVolume)
+            );
+
+        _adminLogger.Add(LogType.Chat, $"Ahelp from {player:Player}: {message}");
     }
 
     #endregion
@@ -404,5 +441,6 @@ internal sealed partial class ChatManager : IChatManager
 public enum OOCChatType : byte
 {
     OOC,
-    Admin
+    Admin,
+    AdminHelp
 }
