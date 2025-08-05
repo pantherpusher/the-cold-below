@@ -40,5 +40,6 @@
     - Flash
     - RubberStampSr
     - DoorRemoteCommand
+    - ShipVoucherCoyoteSectorRep
   encryptionKeys:
   - EncryptionKeyStationMaster
