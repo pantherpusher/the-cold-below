@@ -401,6 +401,7 @@ namespace Content.Client.Lobby.UI
                 CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
                 SetProfileHeight(value);
                 UpdateWeight();
+                ReloadProfilePreview();
             };
 
             CHeightReset.OnPressed += _ =>
@@ -408,6 +409,7 @@ namespace Content.Client.Lobby.UI
                 _heightSlider.Value = prototype.DefaultHeight;
                 SetProfileHeight(prototype.DefaultHeight);
                 UpdateWeight();
+                ReloadProfilePreview();
             };
 
 
@@ -429,6 +431,7 @@ namespace Content.Client.Lobby.UI
                 CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", width));
                 SetProfileWidth(value);
                 UpdateWeight();
+                ReloadProfilePreview();
             };
 
             CWidthReset.OnPressed += _ =>
@@ -436,6 +439,7 @@ namespace Content.Client.Lobby.UI
                 _widthSlider.Value = prototype.DefaultWidth;
                 SetProfileWidth(prototype.DefaultWidth);
                 UpdateWeight();
+                ReloadProfilePreview();
             };
 
             prototypeManager.Index(prototype.Prototype).TryGetComponent<FixturesComponent>(out var fixture);
