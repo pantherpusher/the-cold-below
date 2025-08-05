@@ -121,7 +121,7 @@
 
 - type: humanoidBaseSprite
   id: MobSlimeMarkingFollowSkin
-  markingsMatchSkin: true
+  markingsMatchSkin: false
   layerAlpha: 0.75 # imp 0.72<0.75
 
 - type: humanoidBaseSprite
