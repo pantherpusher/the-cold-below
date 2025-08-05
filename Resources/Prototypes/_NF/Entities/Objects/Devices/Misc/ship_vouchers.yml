@@ -135,3 +135,17 @@
   - type: ShipyardVoucher
     access:
     - StationTrafficController
+
+- type: entity
+  parent: ShipVoucherFrontierJanitor
+  id: ShipVoucherCoyoteSectorRep
+  name: sector rep ship voucher
+  description: Allows for one free SR ship purchase from the Frontier Staff Shipyard. Destroyed on sale.
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - state: voucherSR
+  - type: ShipyardVoucher
+    access:
+    - HeadOfPersonnel # Coyote, for some stupid, really dumb reason, frontier DID NOT add an SR access level or even bother to rename the HoP one. And I'm too lazy to make one. Like seriously, they made FUCKING SPACE SHIPS AND ENTIRELY NEW DEPARTMENTS, but they stopped at HoP job icons and access levels. AAAAAaa!!
