@@ -565,7 +565,11 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         {
             return;
         }
-        humanoid.MarkingSet.EnsureDefault(humanoid.SkinColor, humanoid.EyeColor, _markingManager);
+
+        humanoid.MarkingSet.EnsureDefault(
+            humanoid.SkinColor,
+            humanoid.EyeColor,
+            _markingManager);
     }
 
     /// <summary>
@@ -627,4 +631,24 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         return Loc.GetString("identity-age-old");
     }
+    // Floofstation section
+    public void SetMarkingVisibility(
+        EntityUid uid,
+        HumanoidAppearanceComponent? humanoid,
+        string markingId,
+        bool visible)
+    {
+        if (!_markingManager.Markings.TryGetValue(markingId, out var prototype))
+            return;
+        if (!Resolve(uid, ref humanoid))
+            return;
+
+        if (visible)
+            humanoid.HiddenMarkings.Remove(markingId);
+        else
+            humanoid.HiddenMarkings.Add(markingId);
+
+        Dirty(uid, humanoid);
+    }
+    // Floofstation section end
 }

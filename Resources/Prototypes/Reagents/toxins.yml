@@ -404,16 +404,20 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:OrganType
-          type: Animal # Applying damage to the mobs with lower metabolism capabilities
+        - !type:EventResponse
+          message: "TheobromineIntolerance"
+          response: "Damage"
+          guidebookHelpthing: "they have Theobromine Intolerance Trait"
         damage:
           types:
             Poison: 0.4
       - !type:ChemVomit
         probability: 0.04 #Scaled for time, not metabolismrate.
         conditions:
-          - !type:OrganType
-            type: Animal
+          - !type:EventResponse
+            message: "TheobromineIntolerance"
+            response: "Vomit"
+            guidebookHelpthing: "they have Theobromine Intolerance Trait"
 
 - type: reagent
   id: Amatoxin
@@ -544,8 +548,10 @@
         conditions:
         - !type:ReagentThreshold
           min: 1
-        - !type:OrganType
-          type: Animal
+        - !type:EventResponse
+          message: "AllicinIntolerance"
+          response: "Damage"
+          guidebookHelpthing: "they have Allicin Intolerance Trait"
         damage:
           types:
             Poison: 0.06

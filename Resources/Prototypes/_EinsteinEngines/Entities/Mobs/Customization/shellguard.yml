@@ -1,7 +1,8 @@
 - type: marking
   id: CyberLimbsMarkingShellguardHead
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/shellguard/shellguard_monitor.rsi
@@ -12,7 +13,8 @@
 - type: marking
   id: CyberLimbsMarkingShellguardHeadAlt
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/shellguard/shellguard_alt1.rsi
@@ -23,7 +25,8 @@
 - type: marking
   id: CyberLimbsMarkingShellguardChest
   bodyPart: Chest
-  markingCategory: Chest
+  markingCategory: BaseChest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -34,7 +37,8 @@
 - type: marking
   id: CyberLimbsMarkingShellguardLArm
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: BaseLArm
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -45,7 +49,8 @@
 - type: marking
   id: CyberLimbsMarkingShellguardLHand
   bodyPart: LHand
-  markingCategory: Arms
+  markingCategory: BaseLHand
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -56,7 +61,8 @@
 - type: marking
   id: CyberLimbsMarkingShellguardLLeg
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: BaseLLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -68,7 +74,8 @@
 - type: marking
   id: CyberLimbsMarkingShellguardLFoot
   bodyPart: LFoot
-  markingCategory: Legs
+  markingCategory: BaseLFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -81,7 +88,8 @@
 - type: marking
   id: CyberLimbsMarkingShellguardRArm
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: BaseRArm
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -93,7 +101,8 @@
 - type: marking
   id: CyberLimbsMarkingShellguardRHand
   bodyPart: RHand
-  markingCategory: Arms
+  markingCategory: BaseRHand
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -104,7 +113,8 @@
 - type: marking
   id: CyberLimbsMarkingShellguardRLeg
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: BaseRLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi
@@ -116,7 +126,8 @@
 - type: marking
   id: CyberLimbsMarkingShellguardRFoot
   bodyPart: RFoot
-  markingCategory: Legs
+  markingCategory: BaseRFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/shellguard/shellguard_main.rsi

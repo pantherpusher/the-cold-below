@@ -476,6 +476,9 @@
       - id: DrinkWaterBottleFull
         prob: 0.001
         orGroup: dressersecondloot
+      - id: DrinkWataurBottleFull
+        prob: 0.001
+        orGroup: dressersecondloot
       - id: BrokenBottle
         prob: 0.001
         orGroup: dressersecondloot

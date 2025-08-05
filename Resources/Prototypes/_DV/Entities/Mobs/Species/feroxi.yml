@@ -38,6 +38,7 @@
     noRot: true
     drawdepth: Mobs
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -51,8 +52,9 @@
         # its fine, but its still very stupid that it has to be done like this instead of allowing sprites to just directly insert a stencil clear.
         # sprite refactor when
         state: l_leg
-      # - map: [ "enum.HumanoidVisualLayers.Underwear" ] Floof - M3739 - Underwear Undershirt when? #575
-      # - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
+      - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
+      - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
+      - map: [ "enum.HumanoidVisualLayers.UndershirtUnderclothes" ]
       - map: [ "jumpsuit" ]
       - map: [ "enum.HumanoidVisualLayers.LHand" ]
       - map: [ "enum.HumanoidVisualLayers.RHand" ]
@@ -71,7 +73,9 @@
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "neck" ]
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
       - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.UndershirtOverclothes" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
@@ -99,10 +103,19 @@
     damageModifierSet: Feroxi
   - type: TypingIndicator
     proto: feroxi
-#  - type: FeroxiDehydrate # hey bby, the CPAP stays on while we make out
-#    hydratedMetabolizer: Feroxi
-#    dehydratedMetabolizer: FeroxiDehydrated
-#    dehydrationThreshold: 150
+  - type: FeroxiDehydrate # hey bby, the CPAP stays on while we make out
+    overhydrated: 1.05
+    okay: 1
+    thirsty: 0.75
+    parched: 0.25
+    dehydrated: 0.1
+  - type: ShortWhitelist
+    scale: 0.8
+    density: 140
+    pseudoItem: true
+    cosmeticOnly: false
+  - type: TallWhitelist
+    scale: 1.2
 
 - type: entity
   parent: MobHumanDummy

@@ -10,6 +10,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -81,17 +82,7 @@ public sealed class ThirstSystem : EntitySystem
 
     private ThirstThreshold GetThirstThreshold(ThirstComponent component, float amount)
     {
-        ThirstThreshold result = ThirstThreshold.Dead;
-        var value = component.ThirstThresholds[ThirstThreshold.OverHydrated];
-        foreach (var threshold in component.ThirstThresholds)
-        {
-            if (threshold.Value <= value && threshold.Value >= amount)
-            {
-                result = threshold.Key;
-                value = threshold.Value;
-            }
-        }
-
+        var result = (from threshold in component.ThirstThresholds where amount >= threshold.Value select threshold.Key).FirstOrDefault();
         return result;
     }
 
@@ -102,9 +93,9 @@ public sealed class ThirstSystem : EntitySystem
 
     public void SetThirst(EntityUid uid, ThirstComponent component, float amount)
     {
-        component.CurrentThirst = Math.Clamp(amount,
+        component.CurrentThirst = (float) Math.Clamp(amount,
             component.ThirstThresholds[ThirstThreshold.Dead],
-            component.ThirstThresholds[ThirstThreshold.OverHydrated]
+            component.ThirstThresholds[ThirstThreshold.OverHydrated] * 1.1 // Allow for overhydration
         );
 
         DirtyField(uid, component, nameof(ThirstComponent.CurrentThirst));
@@ -112,18 +103,15 @@ public sealed class ThirstSystem : EntitySystem
 
     private bool IsMovementThreshold(ThirstThreshold threshold)
     {
-        switch (threshold)
+        return threshold switch
         {
-            case ThirstThreshold.Dead:
-            case ThirstThreshold.Parched:
-                return true;
-            case ThirstThreshold.Thirsty:
-            case ThirstThreshold.Okay:
-            case ThirstThreshold.OverHydrated:
-                return false;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(threshold), threshold, null);
-        }
+            ThirstThreshold.Dead => true,
+            ThirstThreshold.Parched => true,
+            ThirstThreshold.Thirsty => true,
+            ThirstThreshold.Okay => true,
+            ThirstThreshold.OverHydrated => true,
+            _ => throw new ArgumentOutOfRangeException(nameof(threshold), threshold, null)
+        };
     }
 
     public bool TryGetStatusIconPrototype(ThirstComponent component, [NotNullWhen(true)] out SatiationIconPrototype? prototype)
@@ -139,6 +127,7 @@ public sealed class ThirstSystem : EntitySystem
                 break;
 
             case ThirstThreshold.Parched:
+            case ThirstThreshold.Dead:
                 _prototype.TryIndex(ThirstIconParchedId, out prototype);
                 break;
 
@@ -152,8 +141,12 @@ public sealed class ThirstSystem : EntitySystem
 
     private void UpdateEffects(EntityUid uid, ThirstComponent component)
     {
-        if (IsMovementThreshold(component.LastThirstThreshold) != IsMovementThreshold(component.CurrentThirstThreshold) &&
-                TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
+        // if (IsMovementThreshold(component.LastThirstThreshold) != IsMovementThreshold(component.CurrentThirstThreshold) &&
+        //         TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
+        // {
+        //     _movement.RefreshMovementSpeedModifiers(uid, movementSlowdownComponent);
+        // }
+        if (TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent))
         {
             _movement.RefreshMovementSpeedModifiers(uid, movementSlowdownComponent);
         }
@@ -189,12 +182,10 @@ public sealed class ThirstSystem : EntitySystem
                 component.ActualDecayRate = component.BaseDecayRate * 0.8f;
                 return;
             case ThirstThreshold.Parched:
+            case ThirstThreshold.Dead:
                 _movement.RefreshMovementSpeedModifiers(uid);
                 component.LastThirstThreshold = component.CurrentThirstThreshold;
                 component.ActualDecayRate = component.BaseDecayRate * 0.6f;
-                return;
-
-            case ThirstThreshold.Dead:
                 return;
 
             default:

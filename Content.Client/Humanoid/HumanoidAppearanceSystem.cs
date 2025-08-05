@@ -56,6 +56,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         component.Width = width;
 
         sprite.Scale = new Vector2(width, height);
+        UpdateLayersAgain(component, sprite); // cool
 
         sprite[sprite.LayerMapReserveBlank(HumanoidVisualLayers.Eyes)].Color = component.EyeColor;
     }
@@ -67,6 +68,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     {
         var oldLayers = new HashSet<HumanoidVisualLayers>(component.BaseLayers.Keys);
         component.BaseLayers.Clear();
+        component.HiddenBaseLayers.Clear();
 
         // add default species layers
         var speciesProto = _prototypeManager.Index(component.Species);
@@ -75,14 +77,27 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         {
             oldLayers.Remove(key);
             if (!component.CustomBaseLayers.ContainsKey(key))
-                SetLayerData(component, sprite, key, id, sexMorph: true);
+            {
+                SetLayerData(
+                    component,
+                    sprite,
+                    key,
+                    id,
+                    sexMorph: true);
+            }
         }
 
         // add custom layers
         foreach (var (key, info) in component.CustomBaseLayers)
         {
             oldLayers.Remove(key);
-            SetLayerData(component, sprite, key, info.Id, sexMorph: false, color: info.Color);
+            SetLayerData(
+                component,
+                sprite,
+                key,
+                info.Id,
+                sexMorph: false,
+                color: info.Color);
         }
 
         // hide old layers
@@ -91,6 +106,23 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         {
             if (sprite.LayerMapTryGet(key, out var index))
                 sprite[index].Visible = false;
+        }
+    }
+
+    /// <summary>
+    /// Goes through the layers again and hides them if they are hidden by the comp's HiddenBaseLayers.
+    /// Bite me
+    /// </summary>
+    private void UpdateLayersAgain(
+        HumanoidAppearanceComponent component,
+        SpriteComponent sprite)
+    {
+        foreach (var layer in component.HiddenBaseLayers)
+        {
+            if (sprite.LayerMapTryGet(layer, out var index))
+            {
+                sprite[index].Visible = false;
+            }
         }
     }
 
@@ -123,6 +155,36 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         if (proto.BaseSprite != null)
             sprite.LayerSetSprite(layerIndex, proto.BaseSprite);
+    }
+
+    /// <summary>
+    /// Finds this list of keys in the <see cref="HumanoidAppearanceComponent.BaseLayers"/> and
+    /// Hides them if they are present. To be used after markings are applied, to hide the base
+    /// layer if something is set on the marking base layer. g
+    /// </summary>
+    public void HideBaseLayers(
+        EntityUid uid,
+        HumanoidAppearanceComponent? humanoid,
+        IEnumerable<HumanoidVisualLayers> layers2Hide)
+    {
+        if (!Resolve(uid, ref humanoid))
+            return;
+
+        var sprite = Comp<SpriteComponent>(uid);
+        var speciesProto = _prototypeManager.Index(humanoid.Species);
+        var baseSprites = _prototypeManager.Index(speciesProto.SpriteSet);
+
+        foreach (var layer in layers2Hide)
+        {
+            if (!baseSprites.Sprites.TryGetValue(layer, out var id))
+                continue;
+            if (humanoid.BaseLayers.TryGetValue(layer, out var baseLayer)
+                && sprite.LayerMapTryGet(layer, out var index))
+            {
+                sprite[index].Visible = false;
+                humanoid.PermanentlyHidden.Add(layer);
+            }
+        }
     }
 
     /// <summary>
@@ -249,11 +311,11 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         // Really, markings should probably be a separate component altogether.
         ClearAllMarkings(humanoid, sprite);
 
-        var censorNudity = _configurationManager.GetCVar(CCVars.AccessibilityClientCensorNudity) ||
-                           _configurationManager.GetCVar(CCVars.AccessibilityServerCensorNudity);
+        // var censorNudity = _configurationManager.GetCVar(CCVars.AccessibilityClientCensorNudity) ||
+        //                    _configurationManager.GetCVar(CCVars.AccessibilityServerCensorNudity);
         // The reason we're splitting this up is in case the character already has undergarment equipped in that slot.
-        var applyUndergarmentTop = censorNudity;
-        var applyUndergarmentBottom = censorNudity;
+        // var applyUndergarmentTop = censorNudity;
+        // var applyUndergarmentBottom = censorNudity;
 
         foreach (var markingList in humanoid.MarkingSet.Markings.Values)
         {
@@ -262,17 +324,17 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 if (_markingManager.TryGetMarking(marking, out var markingPrototype))
                 {
                     ApplyMarking(markingPrototype, marking.MarkingColors, marking.Visible, humanoid, sprite);
-                    if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentTop)
-                        applyUndergarmentTop = false;
-                    else if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentBottom)
-                        applyUndergarmentBottom = false;
+                    // if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentTop)
+                    //     applyUndergarmentTop = false;
+                    // else if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentBottom)
+                    //     applyUndergarmentBottom = false;
                 }
             }
         }
 
         humanoid.ClientOldMarkings = new MarkingSet(humanoid.MarkingSet);
 
-        AddUndergarments(humanoid, sprite, applyUndergarmentTop, applyUndergarmentBottom);
+        // AddUndergarments(humanoid, sprite, applyUndergarmentTop, applyUndergarmentBottom);
     }
 
     private void ClearAllMarkings(HumanoidAppearanceComponent humanoid, SpriteComponent sprite)
@@ -351,29 +413,99 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         HumanoidAppearanceComponent humanoid,
         SpriteComponent sprite)
     {
-        if (!sprite.LayerMapTryGet(markingPrototype.BodyPart, out int targetLayer))
+        // FLOOF ADD START
+        // make a handy dict of filename -> colors
+        // cus we might need to access it by filename to link
+        // one sprite's colors to another
+        var colorDict = new Dictionary<string, Color>();
+        for (var i = 0; i < markingPrototype.Sprites.Count; i++)
         {
-            return;
-        }
+            var spriteName = markingPrototype.Sprites[i] switch
+            {
+                SpriteSpecifier.Rsi rsi => rsi.RsiState,
+                SpriteSpecifier.Texture texture => texture.TexturePath.Filename,
+                _ => null
+            };
 
-        visible &= !IsHidden(humanoid, markingPrototype.BodyPart);
-        visible &= humanoid.BaseLayers.TryGetValue(markingPrototype.BodyPart, out var setting)
-           && setting.AllowsMarkings;
+            if (spriteName != null)
+            {
+                if (colors != null && i < colors.Count)
+                    colorDict.Add(spriteName, colors[i]);
+                else
+                    colorDict.Add(spriteName, Color.White);
+            }
+        }
+        // now, rearrange them, copying any parented colors to children set to
+        // inherit them
+        if (markingPrototype.ColorLinks != null)
+        {
+            foreach (var (child, parent) in markingPrototype.ColorLinks)
+            {
+                if (colorDict.TryGetValue(parent, out var color))
+                {
+                    colorDict[child] = color;
+                }
+            }
+        }
+        // and, since we can't rely on the iterator knowing where the heck to put
+        // each sprite when we have one marking setting multiple layers,
+        // lets just kinda sorta do that ourselves
+        var layerDict = new Dictionary<string, int>();
+
+        visible &= !humanoid.HiddenMarkings.Contains(markingPrototype.ID); // FLOOF ADD
+        // FLOOF ADD END
 
         for (var j = 0; j < markingPrototype.Sprites.Count; j++)
         {
+            // FLOOF CHANGE START
             var markingSprite = markingPrototype.Sprites[j];
-
             if (markingSprite is not SpriteSpecifier.Rsi rsi)
             {
                 continue;
             }
 
+            var layerSlot = markingPrototype.BodyPart;
+            // first, try to see if there are any custom layers for this marking
+            if (markingPrototype.Layering != null)
+            {
+                var name = rsi.RsiState;
+                if (markingPrototype.Layering.TryGetValue(name, out var layerName))
+                {
+                    layerSlot = Enum.Parse<HumanoidVisualLayers>(layerName);
+                }
+            }
+            // update the layerDict
+            // if it doesnt have this, add it at 0, otherwise increment it
+            if (layerDict.TryGetValue(layerSlot.ToString(), out var layerIndex))
+            {
+                layerDict[layerSlot.ToString()] = layerIndex + 1;
+            }
+            else
+            {
+                layerDict.Add(layerSlot.ToString(), 0);
+            }
+
+            if (!sprite.LayerMapTryGet(layerSlot, out var targetLayer))
+            {
+                continue;
+            }
+
+            visible &= !IsHidden(humanoid, markingPrototype.BodyPart);
+            visible &= humanoid.BaseLayers.TryGetValue(markingPrototype.BodyPart, out var setting)
+                       && setting.AllowsMarkings;
+
             var layerId = $"{markingPrototype.ID}-{rsi.RsiState}";
+            // FLOOF CHANGE END
+
 
             if (!sprite.LayerMapTryGet(layerId, out _))
             {
-                var layer = sprite.AddLayer(markingSprite, targetLayer + j + 1);
+                // for layers that are supposed to be behind everything,
+                // adding 1 to the layer index makes it not be behind
+                // everything. fun! FLOOF ADD =3
+                // var targLayerAdj = targetLayer == 0 ? 0 + j : targetLayer + j + 1;
+                var targLayerAdj = targetLayer + layerDict[layerSlot.ToString()] + 1;
+                var layer = sprite.AddLayer(markingSprite, targLayerAdj);
                 sprite.LayerMapSet(layerId, layer);
                 sprite.LayerSetSprite(layerId, rsi);
             }
@@ -394,18 +526,24 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             // Okay so if the marking prototype is modified but we load old marking data this may no longer be valid
             // and we need to check the index is correct.
             // So if that happens just default to white?
-            if (colors != null && j < colors.Count)
-            {
-                sprite.LayerSetColor(layerId, colors[j]);
-            }
-            else
-            {
-                sprite.LayerSetColor(layerId, Color.White);
-            }
+            // FLOOF ADD =3
+            sprite.LayerSetColor(layerId, colorDict.TryGetValue(rsi.RsiState, out var color) ? color : Color.White);
 
             if (humanoid.MarkingsDisplacement.TryGetValue(markingPrototype.BodyPart, out var displacementData) && markingPrototype.CanBeDisplaced)
             {
                 _displacement.TryAddDisplacement(displacementData, sprite, targetLayer + j + 1, layerId, out _);
+            }
+        }
+
+        if (MarkingCategoriesConversion.Category2Layer(
+                markingPrototype.MarkingCategory,
+                out var whichCat))
+        {
+            // WEEOO WEEOO set the base layer to be hidden on the comp
+            // but only if it is not already hidden
+            if (!humanoid.HiddenBaseLayers.Contains(whichCat))
+            {
+                humanoid.HiddenBaseLayers.Add(whichCat);
             }
         }
     }

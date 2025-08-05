@@ -58,6 +58,7 @@
     - id: DrinkTeacup
     - id: DrinkTonicWaterCan
     - id: DrinkWaterBottleFull
+    - id: DrinkWataurBottleFull
     - id: DrinkWaterCup
     - id: DrinkWineCan
 

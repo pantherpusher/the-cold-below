@@ -18,5 +18,19 @@ consent-examine-verb = Consent Info
 consent-examine-not-set = This player has no consent preferences set. Ask for consent first before engaging in any erotic roleplay.
 
 # Consent toggles
+consent-Vore-name = Vore
+consent-Vore-desc = Allow yourself to be devoured by anyone... or anything.
+
+consent-Digestion-name = Digestion
+consent-Digestion-desc = Allow yourself to be digested. WARNING: BEING DIGESTED WILL ROUND-REMOVE YOU.
+
 consent-Example-name = Example Consent Toggle
 consent-Example-desc = This is just here as an example for how to add consent toggles.
+consent-Hypno-name = Hypnosis
+consent-Hypno-desc = Allow yourself to be hypnotized.
+
+consent-NoClone-name = Disallow Paradox Anomaly
+consent-NoClone-desc = Turn this on to disallow Paradox clones of yourself.
+
+consent-NSFWDescriptions-name = Show NSFW Descriptions
+consent-NSFWDescriptions-desc = Toggle this on to see dynamic player descriptions that may contain NSFW/ERP content.

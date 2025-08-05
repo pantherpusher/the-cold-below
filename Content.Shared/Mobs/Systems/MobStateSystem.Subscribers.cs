@@ -34,7 +34,7 @@ public partial class MobStateSystem
         SubscribeLocalEvent<MobStateComponent, ThrowAttemptEvent>(CheckAct);
         SubscribeLocalEvent<MobStateComponent, SpeakAttemptEvent>(OnSpeakAttempt);
         SubscribeLocalEvent<MobStateComponent, IsEquippingAttemptEvent>(OnEquipAttempt);
-        SubscribeLocalEvent<MobStateComponent, EmoteAttemptEvent>(CheckAct);
+        SubscribeLocalEvent<MobStateComponent, EmoteAttemptEvent>(OnEmoteAttempt);
         SubscribeLocalEvent<MobStateComponent, IsUnequippingAttemptEvent>(OnUnequipAttempt);
         SubscribeLocalEvent<MobStateComponent, DropAttemptEvent>(CheckAct);
         SubscribeLocalEvent<MobStateComponent, PickupAttemptEvent>(CheckAct);
@@ -141,13 +141,22 @@ public partial class MobStateSystem
 
     private void OnSpeakAttempt(EntityUid uid, MobStateComponent component, SpeakAttemptEvent args)
     {
-        if (HasComp<AllowNextCritSpeechComponent>(uid))
+        switch (component.CurrentState)
         {
-            RemCompDeferred<AllowNextCritSpeechComponent>(uid);
-            return;
+            case MobState.Dead:
+                args.Cancel();
+                break;
         }
+    }
 
-        CheckAct(uid, component, args);
+    private void OnEmoteAttempt(EntityUid uid, MobStateComponent component, EmoteAttemptEvent args)
+    {
+        switch (component.CurrentState)
+        {
+            case MobState.Dead:
+                args.Cancel();
+                break;
+        }
     }
 
     private void CheckAct(EntityUid target, MobStateComponent component, CancellableEntityEventArgs args)

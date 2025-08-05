@@ -87,6 +87,7 @@
         path: /Audio/Effects/bite.ogg
     - type: Carriable # DeltaV
     - type: LeashAnchor # Floofstation - sometimes you gotta walk that fish
+    - type: Vore # Floofstation - Vore
 
 - type: entity
   parent: BaseMobCarp

@@ -116,6 +116,9 @@ binds:
 - function: FocusRadioWindow
   type: State
   key: SemiColon
+- function: FocusSubtle
+  type: State
+  key: Minus
 - function: FocusLOOCWindow
   type: State
   mod1: Shift

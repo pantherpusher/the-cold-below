@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: Cove
   parent: BasePOI
-  name: Pirate Cove
+  name: 'The Den'
   minimumDistance: 10000
   maximumDistance: 15000
   spawnGamePreset: [ NFPirate ]
@@ -26,7 +26,7 @@
 
 - type: gameMap
   id: Cove
-  mapName: 'Pirate Cove'
+  mapName: 'The Den'
   mapPath: /Maps/_NF/POI/cove.yml
   minPlayers: 0
   stations:
@@ -34,16 +34,16 @@
       stationProto: RecordsFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Pirate Cove'
+          mapNameTemplate: 'The Den'
         - type: ExtraStationInformation
           iconPath: /Textures/_NF/Interface/Pirate/piratelogo.png
           stationSubtext: 'frontier-lobby-pirate-subtext'
           stationDescription: 'frontier-lobby-pirate-description'
         - type: StationJobs
           availableJobs:
-            NFPirateCaptain: [ 1, 1 ]
-            NFPirateFirstMate: [ 1, 1 ]
-            NFPirate: [ 0, 0 ]
+            NFPirateCaptain: [ 3, 3 ]
+            NFPirateFirstMate: [ 3, 3 ]
+            NFPirate: [ 12, 12 ]
         - type: StationDeadDropReporting
           messageSet: Pirate
         - type: StationDeadDropHintExempt

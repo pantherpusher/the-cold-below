@@ -7,7 +7,7 @@ namespace Content.Shared.Mind.Components;
 /// This component indicates that this entity may have mind, which is simply an entity with a <see cref="MindComponent"/>.
 /// The mind entity is not actually stored in a "container", but is simply stored in nullspace.
 /// </summary>
-[RegisterComponent, Access(typeof(SharedMindSystem)), NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class MindContainerComponent : Component
 {
     /// <summary>
@@ -35,6 +35,20 @@ public sealed partial class MindContainerComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("ghostOnShutdown")]
     public bool GhostOnShutdown { get; set; } = true;
+
+    /// <summary>
+    /// Has this mind container ever had a mind at some point, and thus is kinda important?
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField, AutoNetworkedField]
+    public bool HasHadMind = false;
+
+    /// <summary>
+    /// Is the container cuddled? i mean in cryosleep.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField, AutoNetworkedField]
+    public bool IsInCryosleep { get; set; } = false;
 }
 
 public abstract class MindEvent : EntityEventArgs

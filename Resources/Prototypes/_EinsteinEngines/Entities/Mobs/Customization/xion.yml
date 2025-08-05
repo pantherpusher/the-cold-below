@@ -1,7 +1,8 @@
 - type: marking
   id: CyberLimbsMarkingXionHead
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/xion/xion_monitor.rsi
@@ -12,7 +13,8 @@
 - type: marking
   id: CyberLimbsMarkingXionHeadAlt
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/xion/xion_alt1.rsi
@@ -23,7 +25,8 @@
 - type: marking
   id: CyberLimbsMarkingXionChest
   bodyPart: Chest
-  markingCategory: Chest
+  markingCategory: BaseChest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -34,7 +37,8 @@
 - type: marking
   id: CyberLimbsMarkingXionLArm
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: BaseLArm
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -45,7 +49,8 @@
 - type: marking
   id: CyberLimbsMarkingXionLHand
   bodyPart: LHand
-  markingCategory: Arms
+  markingCategory: BaseLHand
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -56,7 +61,8 @@
 - type: marking
   id: CyberLimbsMarkingXionLLeg
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: BaseLLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -68,7 +74,8 @@
 - type: marking
   id: CyberLimbsMarkingXionLFoot
   bodyPart: LFoot
-  markingCategory: Legs
+  markingCategory: BaseLFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -81,7 +88,8 @@
 - type: marking
   id: CyberLimbsMarkingXionRArm
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: BaseRArm
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -94,7 +102,8 @@
 - type: marking
   id: CyberLimbsMarkingXionRHand
   bodyPart: RHand
-  markingCategory: Arms
+  markingCategory: BaseRHand
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -105,7 +114,8 @@
 - type: marking
   id: CyberLimbsMarkingXionRLeg
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: BaseRLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/xion/xion_main.rsi
@@ -117,7 +127,8 @@
 - type: marking
   id: CyberLimbsMarkingXionRFoot
   bodyPart: RFoot
-  markingCategory: Legs
+  markingCategory: BaseRFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/xion/xion_main.rsi

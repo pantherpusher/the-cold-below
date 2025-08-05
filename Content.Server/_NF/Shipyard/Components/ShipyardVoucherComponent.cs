@@ -1,5 +1,6 @@
 using Content.Shared.Access;
 using Content.Shared._NF.Shipyard;
+using Content.Shared._NF.Shipyard.Prototypes;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._NF.Shipyard.Components;
@@ -27,6 +28,15 @@ public sealed partial class ShipyardVoucherComponent : Component
 
     [DataField]
     public IReadOnlyCollection<ProtoId<AccessGroupPrototype>> AccessGroups { get; private set; } = Array.Empty<ProtoId<AccessGroupPrototype>>();
+
+    [DataField]
+    public List<VesselClass> Classes = new();
+
+    [DataField]
+    public List<string> Vessels = new();
+
+    [DataField]
+    public bool UseAnywhere = false;
 
     /// <summary>
     ///  The type of console where this voucher can be used.

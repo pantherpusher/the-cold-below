@@ -28,3 +28,14 @@ markings-category-Arms = Arms
 markings-category-Legs = Legs
 markings-category-Tail = Tail
 markings-category-Overlay = Overlay
+
+markings-category-BaseChest = UnderStructure Chest
+markings-category-BaseHead  = UnderStructure Head
+markings-category-BaseLArm  = UnderStructure Arm (left)
+markings-category-BaseLFoot = UnderStructure Foot (left)
+markings-category-BaseLHand = UnderStructure Hand (left)
+markings-category-BaseLLeg  = UnderStructure Leg (left)
+markings-category-BaseRArm  = UnderStructure Arm (right)
+markings-category-BaseRFoot = UnderStructure Foot (right)
+markings-category-BaseRHand = UnderStructure Hand (right)
+markings-category-BaseRLeg  = UnderStructure Leg (right)

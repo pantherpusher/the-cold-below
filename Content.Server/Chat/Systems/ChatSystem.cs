@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Content.Server._Coyote;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
@@ -66,11 +67,11 @@ public sealed partial class ChatSystem : SharedChatSystem
     public const int VoiceRange = 12; // how far voice goes in world units
     public const int ShoutRange = 30; // how far Shout goes in world units
     public const int EmoteRange = 12; // how far Emote goes in world units
-    public const int SubtleRange = 3; // how far Subtle goes in world units
+    public const int SubtleRange = 1; // how far Subtle goes in world units
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public const int LOOCRange = 15; // how far LOOC goes in world units
     [SuppressMessage("ReSharper", "InconsistentNaming")]
-    public const int SubtleLOOCRange = 3; // how far Subtle LOOC goes in world units
+    public const int SubtleLOOCRange = 2; // how far Subtle LOOC goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
     public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
@@ -237,13 +238,25 @@ public sealed partial class ChatSystem : SharedChatSystem
             message = message[1..];
         }
 
-        bool shouldCapitalize = (desiredType != InGameICChatType.Emote);
+        var shouldCapitalize = desiredType switch
+        {
+            // Subtle messages are not capitalized.
+            InGameICChatType.Emote => false,
+            InGameICChatType.Subtle => false,
+            _ => true,
+        };
         bool shouldPunctuate = _configurationManager.GetCVar(CCVars.ChatPunctuation);
         // Capitalizing the word I only happens in English, so we check language here
         bool shouldCapitalizeTheWordI = (!CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Parent.Name == "en")
             || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en");
 
-        message = SanitizeInGameICMessage(source, message, out var emoteStr, shouldCapitalize, shouldPunctuate, shouldCapitalizeTheWordI);
+        message = SanitizeInGameICMessage(
+            source,
+            message,
+            out var emoteStr,
+            shouldCapitalize,
+            shouldPunctuate,
+            shouldCapitalizeTheWordI);
 
         var entityName = Identity.Name(source, EntityManager);
         if (string.IsNullOrEmpty(entityName))
@@ -256,9 +269,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         var nameColorString = nameHashColorAdjusted.ToHex();
 
         // Was there an emote in the message? If so, send it.
-        if (emoteStr != message && emoteStr != null)
+        if (emoteStr != message
+            && emoteStr != null)
         {
-            SendEntityEmote(source, emoteStr, range, nameOverride, ignoreActionBlocker, chatColor: nameColorString);
+            SendEntityEmote(
+                source,
+                emoteStr,
+                range,
+                nameOverride,
+                ignoreActionBlocker,
+                chatColor: nameColorString);
         }
 
         // This can happen if the entire string is sanitized out.
@@ -268,9 +288,21 @@ public sealed partial class ChatSystem : SharedChatSystem
         // This message may have a radio prefix, and should then be whispered to the resolved radio channel
         if (checkRadioPrefix)
         {
-            if (TryProccessRadioMessage(source, message, out var modMessage, out var channel))
+            if (TryProccessRadioMessage(
+                    source,
+                    message,
+                    out var modMessage,
+                    out var channel))
             {
-                SendEntityWhisper(source, modMessage, range, channel, nameOverride, hideLog, ignoreActionBlocker, chatColor: nameColorString);
+                SendEntityWhisper(
+                    source,
+                    modMessage,
+                    range,
+                    channel,
+                    nameOverride,
+                    hideLog,
+                    ignoreActionBlocker,
+                    chatColor: nameColorString);
                 return;
             }
         }
@@ -279,17 +311,46 @@ public sealed partial class ChatSystem : SharedChatSystem
         switch (desiredType)
         {
             case InGameICChatType.Speak:
-                SendEntitySpeak(source, message, range, nameOverride, hideLog, ignoreActionBlocker, chatColor: nameColorString);
+                SendEntitySpeak(
+                    source,
+                    message,
+                    range,
+                    nameOverride,
+                    hideLog,
+                    ignoreActionBlocker,
+                    chatColor: nameColorString);
                 break;
             case InGameICChatType.Whisper:
-                SendEntityWhisper(source, message, range, null, nameOverride, hideLog, ignoreActionBlocker, chatColor: nameColorString);
+                SendEntityWhisper(
+                    source,
+                    message,
+                    range,
+                    null,
+                    nameOverride,
+                    hideLog,
+                    ignoreActionBlocker,
+                    chatColor: nameColorString);
                 break;
             case InGameICChatType.Emote:
-                SendEntityEmote(source, message, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker, chatColor: nameColorString);
+                SendEntityEmote(
+                    source,
+                    message,
+                    range,
+                    nameOverride,
+                    hideLog: hideLog,
+                    ignoreActionBlocker: ignoreActionBlocker,
+                    chatColor: nameColorString);
                 break;
             case InGameICChatType.Subtle:
-                SendEntitySubtle(source, message, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker, chatColor: nameColorString);
-                break;
+                SendEntitySubtle(
+                    source,
+                    message,
+                    range,
+                    nameOverride,
+                    hideLog: hideLog,
+                    ignoreActionBlocker: ignoreActionBlocker,
+                    chatColor: nameColorString);
+                break; // i chop them so my PRs look bigger >w<;
         }
     }
 
@@ -326,8 +387,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             sendType = InGameOOCChatType.Dead;
 
         // If crit player LOOC is disabled, don't send the message at all.
-        if (!_critLoocEnabled && _mobStateSystem.IsCritical(source))
-            return;
+        // if (!_critLoocEnabled && _mobStateSystem.IsCritical(source))
+        //     return;
 
         switch (sendType)
         {
@@ -595,10 +656,11 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("message", FormattedMessage.EscapeText(obfuscatedMessage)),
             ("chatColor", chatColor ?? Color.White.ToHex()));
 
-
+        var numHeard = 0;
         foreach (var (session, data) in GetRecipients(source, WhisperMuffledRange))
         {
             EntityUid listener;
+            numHeard++;
 
             if (session.AttachedEntity is not { Valid: true } playerEntity)
                 continue;
@@ -616,6 +678,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             else
                 _chatManager.ChatMessageToOne(ChatChannel.Whisper, obfuscatedMessage, wrappedUnknownMessage, source, false, session.Channel);
         }
+        SendRPIncentive(source, ChatChannel.Whisper, message, numHeard);
 
         _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
 
@@ -714,20 +777,23 @@ public sealed partial class ChatSystem : SharedChatSystem
         var wrappedMessage = Loc.GetString("chat-manager-entity-subtle-wrap-message",
             ("entityName", name),
             ("entity", ent),
-            ("message", FormattedMessage.RemoveMarkup(action)),
+            ("message", FormattedMessage.RemoveMarkupOrThrow(action)),
             ("chatColor", chatColor ?? Color.White.ToHex())); // COYOTESTATION ADD - makes the your name color right
+        var numHeareded = 0;
         foreach (var (session, data) in GetRecipients(
                      source,
                      SubtleRange,
-                     blockedByOcclusion: !SubtleGoesThroughWalls
-                     ))
+                     blockedByOcclusion: !SubtleGoesThroughWalls))
         {
             if (session.AttachedEntity is not { Valid: true } listener)
                 continue;
             if (MessageRangeCheck(session, data, range) == MessageRangeCheckResult.Disallowed)
                 continue;
+            numHeareded++;
             _chatManager.ChatMessageToOne(ChatChannel.Emotes, action, wrappedMessage, source, false, session.Channel);
         }
+        SendRPIncentive(source, ChatChannel.Subtle, action, numHeareded);
+
         if (!hideLog)
             if (name != Name(source))
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Subtle from {ToPrettyString(source):user} as {name}: {action}");
@@ -754,7 +820,18 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entityName", name),
             ("message", FormattedMessage.EscapeText(message)));
 
-        SendInVoiceRange(ChatChannel.LOOC, message, wrappedMessage, source, hideChat ? ChatTransmitRange.HideChat : ChatTransmitRange.Normal, player.UserId);
+        SendInVoiceRange(
+            ChatChannel.LOOC,
+            message,
+            wrappedMessage,
+            source,
+            hideChat
+                ? ChatTransmitRange.HideChat
+                : ChatTransmitRange.Normal,
+            player.UserId,
+            voiceRange: LOOCRange, // COYOTESTATION ADD - LOOC goes further
+            blockedByOcclusion: !LOOCGoesThroughWalls, // COYOTESTATION ADD - some things dont do thru walls
+            ensmallenedByOcclusion: false); // COYOTESTATION ADD - LOOC dont get ensmallened by occlusion
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"LOOC from {player:Player}: {message}");
     }
 
@@ -852,8 +929,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         float voiceRange = 10f, // COYOTESTATION ADD - shouts go further
         string? occludedMessage = null)
     {
+        var numHeareded = 0;
         foreach (var (session, data) in GetRecipients(source, voiceRange, blockedByOcclusion, ensmallenedByOcclusion))
         {
+            numHeareded++;
             var entRange = MessageRangeCheck(session, data, range);
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;
@@ -861,6 +940,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             var text2Send = ensmallenedByOcclusion && data.Occluded ? occludedMessage ?? wrappedMessage : wrappedMessage;
             _chatManager.ChatMessageToOne(channel, message, text2Send, source, entHideChat, session.Channel, author: author);
         }
+        SendRPIncentive(source, channel, message, numHeareded);
 
         _replay.RecordServerMessage(new ChatMessage(channel, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
     }
@@ -1033,6 +1113,19 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool Occluded = false
         )
     {
+    }
+
+    /// <summary>
+    /// Do Roleplay Incentive for the given entity, channel and message.
+    /// </summary>
+    private void SendRPIncentive(EntityUid source, ChatChannel channel, string message, int numHeareded)
+    {
+        if (!HasComp<ActorComponent>(source))
+            return;
+        if (numHeareded <= 0)
+            return;
+        var ev = new RoleplayIncentiveEvent(source, channel, message, numHeareded);
+        RaiseLocalEvent(source, ev, true);
     }
 
     private string ObfuscateMessageReadability(string message, float chance)

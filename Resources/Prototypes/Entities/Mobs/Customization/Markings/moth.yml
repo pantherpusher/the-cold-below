@@ -3,6 +3,7 @@
   id: MothAntennasDefault
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -12,6 +13,7 @@
   id: MothAntennasCharred
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -21,6 +23,7 @@
   id: MothAntennasDbushy
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -30,6 +33,7 @@
   id: MothAntennasDcurvy
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -39,6 +43,7 @@
   id: MothAntennasDfan
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -48,6 +53,7 @@
   id: MothAntennasDpointy
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -57,6 +63,7 @@
   id: MothAntennasFeathery
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -66,6 +73,7 @@
   id: MothAntennasFirewatch
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -75,6 +83,7 @@
   id: MothAntennasGray
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -84,6 +93,7 @@
   id: MothAntennasJungle
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -93,6 +103,7 @@
   id: MothAntennasMoffra
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -102,6 +113,7 @@
   id: MothAntennasOakworm
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -111,6 +123,7 @@
   id: MothAntennasPlasmafire
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -120,6 +133,7 @@
   id: MothAntennasMaple
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -129,6 +143,7 @@
   id: MothAntennasRoyal
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -138,6 +153,7 @@
   id: MothAntennasStriped
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -147,6 +163,7 @@
   id: MothAntennasWhitefly
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -156,6 +173,7 @@
   id: MothAntennasWitchwing
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -165,6 +183,7 @@
   id: MothAntennasUnderwing
   bodyPart: HeadTop
   markingCategory: HeadTop
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
@@ -177,6 +196,7 @@
   id: MothWingsDefault
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -186,6 +206,7 @@
   id: MothWingsCharred
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -195,6 +216,7 @@
   id: MothWingsDbushy
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -206,6 +228,7 @@
   id: MothWingsDeathhead
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -217,6 +240,7 @@
   id: MothWingsFan
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -226,6 +250,7 @@
   id: MothWingsDfan
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -235,6 +260,7 @@
   id: MothWingsFeathery
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -244,6 +270,7 @@
   id: MothWingsFirewatch
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -255,6 +282,7 @@
   id: MothWingsGothic
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -264,6 +292,7 @@
   id: MothWingsJungle
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -273,6 +302,7 @@
   id: MothWingsLadybug
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -282,6 +312,7 @@
   id: MothWingsMaple
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -293,6 +324,7 @@
   id: MothWingsMoffra
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -304,6 +336,7 @@
   id: MothWingsOakworm
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -313,6 +346,7 @@
   id: MothWingsPlasmafire
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -324,6 +358,7 @@
   id: MothWingsPointy
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -333,6 +368,7 @@
   id: MothWingsRoyal
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -344,6 +380,7 @@
   id: MothWingsStellar
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -353,6 +390,7 @@
   id: MothWingsStriped
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -362,6 +400,7 @@
   id: MothWingsSwirly
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -371,6 +410,7 @@
   id: MothWingsWhitefly
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -380,6 +420,7 @@
   id: MothWingsWitchwing
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -389,6 +430,7 @@
   id: MothWingsUnderwing
   bodyPart: Tail
   markingCategory: Tail
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
@@ -402,6 +444,7 @@
   id: MothChestCharred
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -411,6 +454,7 @@
   id: MothHeadCharred
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -420,6 +464,7 @@
   id: MothLLegCharred
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -429,6 +474,7 @@
   id: MothRLegCharred
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -438,6 +484,7 @@
   id: MothLArmCharred
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -447,6 +494,7 @@
   id: MothRArmCharred
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -457,6 +505,7 @@
   id: MothChestDeathhead
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -466,6 +515,7 @@
   id: MothHeadDeathhead
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -475,6 +525,7 @@
   id: MothLLegDeathhead
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -484,6 +535,7 @@
   id: MothRLegDeathhead
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -493,6 +545,7 @@
   id: MothLArmDeathhead
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -502,6 +555,7 @@
   id: MothRArmDeathhead
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -512,6 +566,7 @@
   id: MothChestFan
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -521,6 +576,7 @@
   id: MothHeadFan
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -530,6 +586,7 @@
   id: MothLLegFan
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -539,6 +596,7 @@
   id: MothRLegFan
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -548,6 +606,7 @@
   id: MothLArmFan
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -557,6 +616,7 @@
   id: MothRArmFan
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -567,6 +627,7 @@
   id: MothChestFirewatch
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -576,6 +637,7 @@
   id: MothHeadFirewatch
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -585,6 +647,7 @@
   id: MothLLegFirewatch
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -594,6 +657,7 @@
   id: MothRLegFirewatch
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -603,6 +667,7 @@
   id: MothLArmFirewatch
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -612,6 +677,7 @@
   id: MothRArmFirewatch
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -622,6 +688,7 @@
   id: MothChestGothic
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -631,6 +698,7 @@
   id: MothHeadGothic
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -640,6 +708,7 @@
   id: MothLLegGothic
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -649,6 +718,7 @@
   id: MothRLegGothic
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -658,6 +728,7 @@
   id: MothLArmGothic
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -667,6 +738,7 @@
   id: MothRArmGothic
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -677,6 +749,7 @@
   id: MothChestJungle
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -686,6 +759,7 @@
   id: MothHeadJungle
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -695,6 +769,7 @@
   id: MothLLegJungle
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -704,6 +779,7 @@
   id: MothRLegJungle
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -713,6 +789,7 @@
   id: MothLArmJungle
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -722,6 +799,7 @@
   id: MothRArmJungle
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -732,6 +810,7 @@
   id: MothChestMoonfly
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -741,6 +820,7 @@
   id: MothHeadMoonfly
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -750,6 +830,7 @@
   id: MothLLegMoonfly
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -759,6 +840,7 @@
   id: MothRLegMoonfly
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -768,6 +850,7 @@
   id: MothLArmMoonfly
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -777,6 +860,7 @@
   id: MothRArmMoonfly
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -787,6 +871,7 @@
   id: MothChestOakworm
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -796,6 +881,7 @@
   id: MothHeadOakworm
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -805,6 +891,7 @@
   id: MothLLegOakworm
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -814,6 +901,7 @@
   id: MothRLegOakworm
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -823,6 +911,7 @@
   id: MothLArmOakworm
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -832,6 +921,7 @@
   id: MothRArmOakworm
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -842,6 +932,7 @@
   id: MothChestPointy
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -851,6 +942,7 @@
   id: MothHeadPointy
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -860,6 +952,7 @@
   id: MothLLegPointy
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -869,6 +962,7 @@
   id: MothRLegPointy
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -878,6 +972,7 @@
   id: MothLArmPointy
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -887,6 +982,7 @@
   id: MothRArmPointy
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -897,6 +993,7 @@
   id: MothChestRagged
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -906,6 +1003,7 @@
   id: MothHeadRagged
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -915,6 +1013,7 @@
   id: MothLLegRagged
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -924,6 +1023,7 @@
   id: MothRLegRagged
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -933,6 +1033,7 @@
   id: MothLArmRagged
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -942,6 +1043,7 @@
   id: MothRArmRagged
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -952,6 +1054,7 @@
   id: MothChestRoyal
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -961,6 +1064,7 @@
   id: MothHeadRoyal
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -970,6 +1074,7 @@
   id: MothLLegRoyal
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -979,6 +1084,7 @@
   id: MothRLegRoyal
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -988,6 +1094,7 @@
   id: MothLArmRoyal
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -997,6 +1104,7 @@
   id: MothRArmRoyal
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -1007,6 +1115,7 @@
   id: MothChestWhitefly
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -1016,6 +1125,7 @@
   id: MothHeadWhitefly
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -1025,6 +1135,7 @@
   id: MothLLegWhitefly
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -1034,6 +1145,7 @@
   id: MothRLegWhitefly
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -1043,6 +1155,7 @@
   id: MothLArmWhitefly
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -1052,6 +1165,7 @@
   id: MothRArmWhitefly
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -1062,6 +1176,7 @@
   id: MothChestWitchwing
   bodyPart: Chest
   markingCategory: Chest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -1071,6 +1186,7 @@
   id: MothHeadWitchwing
   bodyPart: Head
   markingCategory: Head
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -1080,6 +1196,7 @@
   id: MothLLegWitchwing
   bodyPart: LLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -1089,6 +1206,7 @@
   id: MothRLegWitchwing
   bodyPart: RLeg
   markingCategory: Legs
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -1098,6 +1216,7 @@
   id: MothLArmWitchwing
   bodyPart: LArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
@@ -1107,6 +1226,7 @@
   id: MothRArmWitchwing
   bodyPart: RArm
   markingCategory: Arms
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [Moth]
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi

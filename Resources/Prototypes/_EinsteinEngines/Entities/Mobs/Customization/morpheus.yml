@@ -1,7 +1,8 @@
 - type: marking
   id: CyberLimbsMarkingMorpheusHead
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -15,7 +16,8 @@
 - type: marking
   id: CyberLimbsMarkingMorpheusHeadAlt
   bodyPart: Head
-  markingCategory: Head
+  markingCategory: BaseHead
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -29,7 +31,8 @@
 - type: marking
   id: CyberLimbsMarkingMorpheusChest
   bodyPart: Chest
-  markingCategory: Chest
+  markingCategory: BaseChest
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -43,7 +46,8 @@
 - type: marking
   id: CyberLimbsMarkingMorpheusLArm
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: BaseLArm
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -57,7 +61,8 @@
 - type: marking
   id: CyberLimbsMarkingMorpheusLHand
   bodyPart: LHand
-  markingCategory: Arms
+  markingCategory: BaseLHand
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -71,7 +76,8 @@
 - type: marking
   id: CyberLimbsMarkingMorpheusLLeg
   bodyPart: LLeg
-  markingCategory: Legs
+  markingCategory: BaseLLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -86,7 +92,8 @@
 - type: marking
   id: CyberLimbsMarkingMorpheusLFoot
   bodyPart: LFoot
-  markingCategory: Legs
+  markingCategory: BaseLFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -102,7 +109,8 @@
 - type: marking
   id: CyberLimbsMarkingMorpheusRArm
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: BaseRArm
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -117,7 +125,8 @@
 - type: marking
   id: CyberLimbsMarkingMorpheusRHand
   bodyPart: RHand
-  markingCategory: Arms
+  markingCategory: BaseRHand
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -131,7 +140,8 @@
 - type: marking
   id: CyberLimbsMarkingMorpheusRLeg
   bodyPart: RLeg
-  markingCategory: Legs
+  markingCategory: BaseRLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   coloring:
     default:
@@ -146,7 +156,8 @@
 - type: marking
   id: CyberLimbsMarkingMorpheusRFoot
   bodyPart: RFoot
-  markingCategory: Legs
+  markingCategory: BaseRFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
   speciesRestriction: [IPC]
   coloring:
     default:
