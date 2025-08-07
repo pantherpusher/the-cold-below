@@ -1,6 +1,6 @@
 - type: loadoutGroup
   id: CoyoteJumpsuit
-  name: Coyote Bayou Clothes
+  name: loadout-group-contractor-jumpsuit
   loadouts:
   - LoadoutCoolCoyoteClothesAcolyte
   - LoadoutCoolCoyoteClothesAfrMerc
@@ -167,3 +167,23 @@
   - LoadoutCoolCoyoteClothesTradwifePurple
   - LoadoutCoolCoyoteClothesTradwifeRed
   - LoadoutCoolCoyoteClothesTradwifeYellow
+  - LoadoutCoolCoyoteClothesTribalColorful
+  - LoadoutCoolCoyoteClothesTribalColorfulTop
+  - LoadoutCoolCoyoteClothesUNIrish
+  - LoadoutCoolCoyoteClothesUNGreentrousersOG107
+  - LoadoutCoolCoyoteClothesVictorianDress
+  - LoadoutCoolCoyoteClothesVictorianblackdress
+  - LoadoutCoolCoyoteClothesVictorianblred
+  - LoadoutCoolCoyoteClothesHappyVampire
+  - LoadoutCoolCoyoteClothesVictorianlightfire
+  - LoadoutCoolCoyoteClothesVictorianRedDress
+  - LoadoutCoolCoyoteClothesVictorianRedVest
+  - LoadoutCoolCoyoteClothesVictorianVest
+  - LoadoutCoolCoyoteClothesWaistcoat
+  - LoadoutCoolCoyoteClothesWestender
+  - LoadoutCoolCoyoteClothesWesternBustle
+  - LoadoutCoolCoyoteClothesWhitebunnysuit
+  - LoadoutCoolCoyoteClothesWhitegown
+  - LoadoutCoolCoyoteClothesWhitesun
+  - LoadoutCoolCoyoteClothesYellowwshort
+  - LoadoutCoolCoyoteClothesGearHarness

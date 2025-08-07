@@ -3901,6 +3901,505 @@
       jumpsuit:
       - state: tradwife_yellow
 
-# and the rest, start off at.... tribal_colorful
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesTribalColorful
+  name: tribal colorful tribalwear
+  description: |
+    A colorful tribalwear, designed to be worn by the Coyote Bayou's tribal residents who wanted something
+    simple and comfortable to wear, even in the hot summer heat. The Sulphur Bottom tribal coalition of
+    nature lovers were a major facet of Coyote Bayou's culture, despite only being a couple of people who
+    ever showed up to do anything. And these clothes are colorful, symbolizing something.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: tribal_colorful
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: tribal_colorful
 
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesTribalColorfulTop
+  name: tribal colorful tribalwear top
+  description: |
+    A colorful tribalwear top, designed to be worn by the Coyote Bayou's tribal residents who wanted something
+    simple and comfortable to wear, even in the hot summer heat. The Sulphur Bottom tribal coalition of
+    nature lovers were a major facet of Coyote Bayou's culture, despite only being a couple of people who
+    ever showed up to do anything. And these clothes are colorful, symbolizing something.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: tribal_colorful_top
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: tribal_colorful_top
 
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesUNIrish
+  name: drab uniform
+  description: |
+    A drab uniform, designed from a mashup of old tired military uniforms that were at one point stylish
+    but is now just a sad reminder of the Coyote Bayou's past. The sad part was that of all the uniforms
+    bluespaced into the Coyote Bayou, they all looked very drab and sad, and few were designed to fit with
+    the general fashion of the Coyote Bayou, which is to say, quick to remove and easy to flip up.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: un_irish
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: un_irish
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesUNGreentrousersOG107
+  name: drab green trousers
+  description: |
+    A pair of drab green trousers, perfect for going shirtless in the Coyote Bayou's snakewaters and
+    showing off your assets. The trousers are made of a stretchy, breathable material that allows for easy
+    movement, and, of course, easy access to the wearer's business end. The suspenders ensure that no matter
+    how awful it gets, this thing will always have your back.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: un_greentrousers_og107
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: un_greentrousers_og107
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesVictorianDress
+  name: victorian dress
+  description: |
+    A demure, understated marmous dress, designed to be worn by the Coyote Bayou's uptight and prim
+    pseudotraditionalisticists who wanted something both non-showy and unrevealing, yet still
+    able to be flipped up in the back and rutted mercilessly if need be. While it comes from a
+    Victorian inspiration, the light flowing fabric was optimized to be as little of a hindrance
+    to one's hinder as possible, cutely.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: victorian_dress
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorian_dress
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesVictorianblackdress
+  name: victorian black dress
+  description: |
+    A demure, understated marmous black dress, designed to be worn by the Coyote Bayou's uptight and prim
+    pseudotraditionalisticists who wanted something both non-showy and unrevealing, yet still
+    able to be flipped up in the back and rutted mercilessly if need be. While it comes from a
+    Victorian inspiration, the light flowing fabric was optimized to be as little of a hindrance
+    to one's hinder as possible, cutely. The black symbolizes the Coyote Bayou's dark nights, where the
+    many moons would occasionally hide behind the clouds, leaving the residents in darkness,
+    which was nice, since most of the monsters were afraid of the dark.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: victorianblackdress
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorianblackdress
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesVictorianblred
+  name: black and red victorian vestsuit
+  description: |
+    A demure, understated marmous black and red vestsuit, designed to be worn by the Coyote Bayou's
+    uptight and prim pseudotraditionalisticists who wanted something both non-showy and unrevealing,
+    and also something that wasn't a dress at all, integrating the use of pants and a vest to make
+    something practical and attractive, though it lacked certain features that would allow for
+    easy access to the wearer's business end. The red shirt symbolizes the crimson red skies that
+    would form from the burning fallout assets that the world once purged into space at some point,
+    as though the world just suddenly rejected a longstanding facet of the world. It was for good
+    reason, since all that stuff was making the world suck and all the people annoying.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: victorianblred
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorianblred
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesHappyVampire
+  name: happy vampire vestsuit
+  description: |
+    A demure, understated marmous vestsuit, designed to be worn by the Coyote Bayou's
+    uptight and prim pseudotraditionalisticists who wanted something both non-showy and unrevealing,
+    and also something that wasn't a dress at all, integrating the use of pants and a vest to make
+    something practical and attractive, though it lacked certain features that would allow for
+    easy access to the wearer's business end. The happy vampire shirt symbolizes the happy vampires
+    that would roam the Coyote Bayou's streets at night, looking for a good time and a bite to eat,
+    which was usually just a couple of clams or some cherry pie.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: gayvampire
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: gayvampire
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesVictorianlightfire
+  name: light fire victorian vestsuit
+  description: |
+    A demure, understated marmous light fire vestsuit, designed to be worn by the Coyote Bayou's
+    uptight and prim pseudotraditionalisticists who wanted something both non-showy and unrevealing,
+    and also something that wasn't a dress at all, integrating the use of pants and a vest to make
+    something practical and attractive, though it lacked certain features that would allow for
+    easy access to the wearer's business end. The light fire shirt symbolizes the light fire that
+    would burn in the hearts of the Coyote Bayou's residents, a reminder that even in the darkest of times,
+    there is always hope and warmth to be found in your nearest vixen.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: victorianlightfire
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorianlightfire
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesVictorianRedDress
+  name: victorian red dress
+  description: |
+    A demure, understated marmous red dress, designed to be worn by the Coyote Bayou's uptight and prim
+    pseudotraditionalisticists who wanted something both non-showy and unrevealing, yet still
+    able to be flipped up in the back and rutted mercilessly if need be. While it comes from a
+    Victorian inspiration, the light flowing fabric was optimized to be as little of a hindrance
+    to one's hinder as possible, cutely. The red is not symbolic, and is in fact a result of a dye
+    accident when someone put an anomalous red hat into the communal laundromat and made all the black
+    dresses red, which was a happy accident, as red is more associated with the Coyote Bayou's
+    cherry pie, a sweet treat that would bring everyone together and remind them of the joys of life,
+    despite the fact that the cherry pie was actually a lie, and was just a cover for
+    the Coyote Bayou's secret pie smuggling operation, which was a major source of
+    income for the town's residents, and also a major source of conflict with the neighboring towns
+    who wanted a piece of the pie, but were never able to get it, because the
+    Coyote Bayou's residents were too clever and resourceful to let anyone else in on
+    their secret pie smuggling operation. [citation needed]
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: victorianreddress
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorianreddress
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesVictorianRedVest
+  name: victorian red vestsuit
+  description: |
+    A demure, understated marmous red vestsuit, designed to be worn by the Coyote Bayou's
+    uptight and prim pseudotraditionalisticists who wanted something both non-showy and unrevealing,
+    and also something that wasn't a dress at all, integrating the use of pants and a vest to make
+    something practical and attractive, though it lacked certain features that would allow for
+    easy access to the wearer's business end. The red vest was designed to be a nod to the
+    Annoying Dye Incident of Smarch 32nd, where a group of vixens accidentally dyed all their
+    clothes red, and it became a fashion trend that lasted for a couple of weeks before everyone
+    got bored of it and went back to their usual black and white outfits.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: victorianredvest
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorianredvest
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesVictorianVest
+  name: victorian vestsuit
+  description: |
+    A demure, understated marmous vestsuit, designed to be worn by the Coyote Bayou's
+    uptight and prim pseudotraditionalisticists who wanted something both non-showy and unrevealing,
+    and also something that wasn't a dress at all, integrating the use of pants and a vest to make
+    something practical and attractive, though it lacked certain features that would allow for
+    easy access to the wearer's business end. The 'rusty eggplant' shirt was made famous by
+    Gary, a notorious citizen who wore this shirt everywhere he went, and some people even
+    started calling it the 'Gary shirt', which was a bit of a misnomer, since the shirt
+    was actually designed by a group of vixens who wanted to create something that was both
+    practical and stylish, and the 'rusty eggplant' color was just a happy accident
+    that happened when they accidentally spilled some dye on the shirt while they were
+    trying to create a new color for the shirt.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: victorianvest
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: victorianvest
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesWaistcoat
+  name: waistcoat
+  description: |
+    A dapper waistcoat, designed to be worn by the Coyote Bayou's lesser known subcult of elderly
+    catboys who wanted something both stylish and practical, yet still able to be flipped up in the back
+    and rutted mercilessly if need be. While it comes from a Victorian inspiration, the breakaway trousers
+    were more of a recent innovation, appearing on other such fashions of the time, such as 'vestsuits',
+    later becoming phased out in favor for skirts and dresses, which were more practical for the daily usage
+    of those who wear them.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: waistcoat
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: waistcoat
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesWestender
+  name: westender slingsuit
+  description: |
+    A westender slingsuit, as worn by the Coyote Bayou's West Enders, a group of wolves who originally settled the
+    peri-redwater swampranches where much of the wide horses were bred and raised. The slingsuit is designed to be
+    repellent of the swamp's many insects, to the point where its use became so common that several species of
+    furry-feeding insects were driven to extinction, leading to the collapse of the Redwater ecosystem and the
+    eventual rise of the Coyote Bayou's nanoflora, which seeped into the watertable and made it safe to drink.
+    It is called a slingsuit due to a common mutation in the Coyote Bayou's wolves, which caused their
+    genitals to become elongated and slung down between their legs, prompting the use of a special
+    sling to keep them from dragging on the ground and getting dirty. [citation needed]
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: westender
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: westender
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesWesternBustle
+  name: western bustle dress
+  description: |
+    A western bustle dress, worn by the many cowgirls of the Coyote Bayou's western ranches, who wanted something
+    that would accommodate their naturally enormous assets while still being comfortable and practical.
+    The bustle is named as such because of the daily 'bustle' of the typical cowgirl, which typically involved
+    a lot of bending over and reaching for things, which would cause the bustle to 'bustle' around and
+    make it difficult to walk, which this outfit helps with. It is also designed to connect to various brands of
+    milking machines, some of which still in use to this day, though not currently on this dress.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: western_bustle
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: western_bustle
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesWhitebunnysuit
+  name: white bunnysuit
+  description: |
+    A white bunnysuit, designed in stark protest to the Heaven's Night's previous 'bunny suit', which gave an
+    unrealistic and untrue portrayal of the Coyote Bayou's bunnies, depicting them as hypersexualized and
+    objectified, rather than the cute and cuddly creatures they are. While it, like the previous bunnysuit,
+    is designed to be quick to remove and easy to flip up, it is also designed to provide a more accurate
+    caricature of the lagomorphic residents, emphasizing their natural curves and softness, as well as including
+    many hardpoints for armoring and weaponry, as while bunnies are cute and cuddly, they will also insist they
+    are the most dangerous creatures in the Coyote Bayou, and will not hesitate to prove it if you cross them.
+    One such bunny was in charge of the trade depot and wielded a couple laser blasters that the town universally
+    agreed was unfair, which made sense, as she was the only one who could actually use them without accidentally
+    shooting herself in the foot, which was a common problem with the Coyote Bayou's bunny population,
+    since their feet are so large and floppy that they often trip over themselves and accidentally
+    shoot themselves in the foot, which is why the bunnies are so dangerous, because they are always
+    accidentally shooting themselves in the foot, and then they get mad and start shooting at everything else
+    around them. [citation needed]
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: whitebunnysuit
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: whitebunnysuit
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesWhitegown
+  name: white gown
+  description: |
+    A white gown, designed to be worn by the Coyote Bayou's residents who wanted something simple and
+    comfortable to wear, even in the hot summer heat. The gown is made of a stretchy, breathable material that
+    allows for easy movement, and, of course, easy access to the wearer's business end. The white gown was
+    popularized by the Coyote Bayou's nightlife scene, where it was often worn by dancers and performers who
+    wanted to show off their curves while still being comfortable and practical. As with most of the Coyote Bayou's clothing,
+    it is designed to be quick to remove and easy to flip up, allowing for easy access to the wearer's business end.
+    Enjoy!
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: whitegown
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: whitegown
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesWhitesun
+  name: white sun dress
+  description: |
+    A white sun dress, designed to repel the harsh rays of the Coyote Bayou's sun, which can be quite intense
+    during the nuclear summer months. Though it appears as a simple white dress, it is actually the peak of
+    fashion technology from circa 2nd Era Nash, integrating a special nanoflora that would soak up the gross
+    bodily effluvia from being fluffy furries in a literal swamp, then convert it into a breathable pleasant
+    exudate that would keep the town from smelling like wet dog and swamp gas. While it, too, was designed to be
+    quick to remove and easy to flip up, it was also designed to be comfortable and practical to wear at all times,
+    due to the aforementioned dogstink problem.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: whitesun
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state:
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesYellowwshort
+  name: yellow athletic shorts
+  description: |
+    A pair of yellow athletic shorts, designed to be worn by the Coyote Bayou's residents who wanted something
+    simple and comfortable to wear, even in the hot summer heat. The shorts are made of a stretchy, breathable
+    material that not only allows for easy movement, but also remains able to be used no matter how large the
+    wearer's business end is, allowing for a cost effective solution to the Coyote Bayou's obesity epidemic.
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: yellowwshort
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: yellowwshort
+
+- type: entity
+  parent: CoolCoyoteClothes
+  id: CoolCoyoteClothesGearHarness
+  name: nudist gear harness
+  description: |
+    As the Coyote Bayou's residents were, for the most part, furries, clothes were not strictly necessary for
+    day to day life, and many residents preferred to go without them. While this was fine for most of the
+    residents, daily life required one to carry around various items, such as tools, weapons, and their
+    Guild Questbook, largely for convenience and survival. As such the Great Eastern Hiveblob developed a
+    nigh-invisible harness that would allow the wearer to carry around an ID and a couple of items in their
+    pockets, providing a convenient way to carry around their belongings while still being very much naked.
+    It was the pinnacle of fashion technology from the Coyote Bayou, and even today, nudists will wear this
+    harness to live out their naked dreams, both safely and practically. Go Nude Today!
+  components:
+  - type: Sprite
+    overrideDir: South
+    enableOverrideDir: true
+    sprite: _CS/Clothes/cbuniforms.rsi
+    layers:
+    - state: bean
+  - type: Clothing
+    sprite: _CS/Clothes/cbuniforms.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: gearharness

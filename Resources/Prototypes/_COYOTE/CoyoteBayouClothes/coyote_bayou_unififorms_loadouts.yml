@@ -9,7 +9,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesAcolyte
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -19,7 +18,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesAfrMerc
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -29,7 +27,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesArtisan
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -39,7 +36,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesAssyrian
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -49,7 +45,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBLandschneckt
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -59,7 +54,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBeggar
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -69,7 +63,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBlackTango
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -79,7 +72,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBlackDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -89,7 +81,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBlackNGold
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -99,7 +90,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBloodshot
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -109,7 +99,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBlueKimono
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -119,7 +108,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBlueSari
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -129,7 +117,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBlueSkirt
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -139,7 +126,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBlueDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -149,7 +135,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBlueRanger
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -159,7 +144,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBlueSun
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -169,7 +153,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBowSun
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -179,7 +162,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBridalBlue
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -189,7 +171,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBridalOrange
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -199,7 +180,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBridalPurple
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -209,7 +189,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBridalRed
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -219,7 +198,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBridalWhite
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -229,7 +207,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBrownPunkPants
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -239,7 +216,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesBunnySuit
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -249,7 +225,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesCartel
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -259,7 +234,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesChad
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -269,7 +243,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesCheong
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -279,7 +252,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesCheongRed
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -289,7 +261,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesCheongWhite
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -299,7 +270,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesCheongWhiteShort
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -309,7 +279,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesConquistador
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -319,7 +288,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesCorset
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -329,7 +297,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesCorsetDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -339,7 +306,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesCountess
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -349,7 +315,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesCrinoline
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -359,7 +324,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesCustomToga
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -369,7 +333,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesCyberHell
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -379,7 +342,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesDarkHanfu
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -389,7 +351,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesDivineRobe
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -399,7 +360,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesDomina
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -409,7 +369,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesDougDimmadome
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -419,7 +378,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesDraculass
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -429,7 +387,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesDress2
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -439,7 +396,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesDress3
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -449,7 +405,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesDressBlack
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -459,7 +414,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesDressSaloon
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -469,7 +423,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesDress5
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -479,7 +432,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesDress6
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -489,7 +441,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesDutch
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -499,7 +450,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesExplorerStripper
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -509,7 +459,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesFlamenco
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -519,7 +468,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesFloofDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -529,7 +477,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesFlashyGreenDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -539,7 +486,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesFlowRed
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -549,7 +495,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesFlowerDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -559,7 +504,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesFlowerKimono
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -569,7 +513,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesFormalRedDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -579,7 +522,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesFoxFlannel
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -589,7 +531,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesGoldDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -599,7 +540,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesGoldWrap
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -609,7 +549,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesGothic
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -619,7 +558,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesGothic2
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -629,7 +567,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesGreatShendyt
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -639,7 +576,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesGreekDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -649,7 +585,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesGreekTunic
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -659,7 +594,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesDress7
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -669,7 +603,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesGreenHanfu
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -679,7 +612,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesGreenAsymmetric
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -689,7 +621,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesHalfSkirt
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -699,7 +630,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesHalfHuipil
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -709,7 +639,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesHaori
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -719,7 +648,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesHaoriSamurai
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -729,7 +657,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesHuipil
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -739,7 +666,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesHunter
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -749,7 +675,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesHunterBra
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -759,7 +684,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesIrisTribal
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -769,7 +693,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesKeyholeSweater
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -779,7 +702,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesKimonoBlue
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -789,7 +711,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesKimonoEarth
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -799,7 +720,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesKimonoGreen
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -809,7 +729,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesKimonoOrange
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -819,7 +738,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesKimonoPink
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -829,7 +747,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesKimonoPurple
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -839,7 +756,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesKimonoRed
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -849,7 +765,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesKimonoViolet
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -859,7 +774,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesKimonoYellow
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -869,7 +783,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesLandschneckt
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -879,7 +792,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesLatexHalf
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -889,7 +801,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesLeavesSkirt
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -899,7 +810,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesLeavesSkirtLong
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -909,7 +819,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesLeia
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -919,7 +828,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesLightHanfu
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -929,7 +837,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesLittleBlackDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -939,7 +846,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesLoincloth
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -949,7 +855,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSexyMaid
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -959,7 +864,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesMaurader
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -969,7 +873,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesMarlowDuds
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -979,7 +882,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesMayanLoincloth
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -989,7 +891,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesMikuBikini
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -999,7 +900,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesOliveCargoPunk
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1009,7 +909,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesPentatop
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1019,7 +918,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesPharaoh
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1029,7 +927,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesPinkDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1039,7 +936,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesPinkSun
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1049,7 +945,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesPinkTutu
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1059,7 +954,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesPinkwshort
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1069,7 +963,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesPolyPerformer
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1079,7 +972,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesPortugueseSailor1d
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1089,7 +981,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesPromDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1099,7 +990,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesPuffyDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1109,7 +999,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesQipao
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1119,7 +1008,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesQipaoNosleeve
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1129,7 +1017,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesQipaoRed
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1139,7 +1026,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesQipaoRedNosleeve
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1149,7 +1035,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesQipaoTealNosleeve
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1159,7 +1044,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesQipaoWhite
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1169,7 +1053,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesQipaoWhiteNosleeve
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1179,7 +1062,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteRedLandschneckt
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1189,7 +1071,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesRadkini
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1199,7 +1080,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesRattyCyberpunk
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1209,7 +1089,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesRattySkirtGreen
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1219,7 +1098,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesRattySkirtPink
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1229,7 +1107,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesRattySkirtYellow
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1239,7 +1116,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesRedEveningDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1249,7 +1125,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesRedSari
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1259,7 +1134,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesRedWshort
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1269,7 +1143,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesRevealingDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1279,7 +1152,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesRippedPunk
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1289,7 +1161,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSecslutskirt
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1299,7 +1170,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSecslutskirtpink
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1309,7 +1179,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSecstripper
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1319,7 +1188,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSexyclown
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1329,7 +1197,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSexymime
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1339,7 +1206,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSexynursesuit
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1349,7 +1215,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesShamanblue
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1359,7 +1224,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSheerblue
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1369,7 +1233,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesShortPink
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1379,7 +1242,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesShortsBlue
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1389,7 +1251,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesShortsRed
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1399,7 +1260,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSocietyDress
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1409,7 +1269,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSunSkirt
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1419,7 +1278,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSunSkirtGrey
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1429,7 +1287,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSundressBlue
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1439,7 +1296,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSundressOrange
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1449,7 +1305,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSundressPurple
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1459,7 +1314,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSundressRed
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1469,7 +1323,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSundressYellow
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1479,7 +1332,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSwimBlack
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1489,7 +1341,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSwimBlue
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1499,7 +1350,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSwimEarth
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1509,7 +1359,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSwimGreen
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1519,7 +1368,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSwimPurp
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1529,7 +1377,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSwimRed
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1539,7 +1386,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesSyclothing
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1549,7 +1395,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesTacticoolHawaiianBlue
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1559,7 +1404,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesTacticoolHawaiianOrange
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1569,7 +1413,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesTacticoolHawaiianPurple
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1579,7 +1422,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesTexas
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1589,7 +1431,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesToga
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1599,7 +1440,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesToga2
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1609,7 +1449,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesTradwifeBlue
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1619,7 +1458,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesTradwifeOrange
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1629,7 +1467,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesTradwifePurple
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1639,7 +1476,6 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesTradwifeRed
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
@@ -1649,13 +1485,192 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesTradwifeYellow
-  parent: CoyoteClothingUniformBase
   price: 600
 #  effects:
 #  - !type:GroupLoadoutEffect
 #    proto: ContractorT1
   equipment:
     jumpsuit: CoolCoyoteClothesTradwifeYellow
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesTribalColorful
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesTribalColorful
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesTribalColorfulTop
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesTribalColorfulTop
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesUNIrish
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesUNIrish
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesUNGreentrousersOG107
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesUNGreentrousersOG107
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesVictorianDress
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesVictorianDress
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesVictorianblackdress
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesVictorianblackdress
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesVictorianblred
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesVictorianblred
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesHappyVampire
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesHappyVampire
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesVictorianlightfire
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesVictorianlightfire
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesVictorianRedDress
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesVictorianRedDress
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesVictorianRedVest
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesVictorianRedVest
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesVictorianVest
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesVictorianVest
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesWaistcoat
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesWaistcoat
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesWestender
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesWestender
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesWesternBustle
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesWesternBustle
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesWhitebunnysuit
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesWhitebunnysuit
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesWhitegown
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesWhitegown
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesWhitesun
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesWhitesun
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesYellowwshort
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesYellowwshort
+
+- type: loadout
+  id: LoadoutCoolCoyoteClothesGearHarness
+  price: 600
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+  equipment:
+    jumpsuit: CoolCoyoteClothesGearHarness
 
 
 
