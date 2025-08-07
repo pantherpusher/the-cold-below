@@ -214,6 +214,8 @@
   fallbacks:
   - ContractorClothingUniformJumpsuitColorGrey
   - ContractorClothingUniformJumpskirtColorGrey
+  subgroups:
+  - CoyoteJumpsuit
 
 - type: loadoutGroup
   id: ContractorBackpack
