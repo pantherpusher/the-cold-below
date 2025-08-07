@@ -3982,12 +3982,12 @@
     enableOverrideDir: true
     sprite: _CS/Clothes/cbuniforms.rsi
     layers:
-    - state: un_greentrousers_og107
+    - state: us_greentrousers_og107
   - type: Clothing
     sprite: _CS/Clothes/cbuniforms.rsi
     clothingVisuals:
       jumpsuit:
-      - state: un_greentrousers_og107
+      - state: us_greentrousers_og107
 
 - type: entity
   parent: CoolCoyoteClothes
