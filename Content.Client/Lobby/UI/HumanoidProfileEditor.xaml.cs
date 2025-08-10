@@ -848,6 +848,7 @@ namespace Content.Client.Lobby.UI
             JobOverride = null;
 
             UpdateNameEdit();
+            UpdateCustomSpeciesEdit();
             UpdateFlavorTextEdit();
             UpdateSexControls();
             // Changing species provides inaccurate sliders without these
@@ -1386,6 +1387,28 @@ namespace Content.Client.Lobby.UI
         private void UpdateNameEdit()
         {
             NameEdit.Text = Profile?.Name ?? "";
+        }
+
+        private void UpdateCustomSpeciesEdit()
+        {
+            if (Profile is null)
+            {
+                CCustomSpecieNameEdit.Text = "";
+                return;
+            }
+            var namespec = Profile?.Customspeciesname;
+            if (string.IsNullOrEmpty(namespec))
+            {
+                // If the custom species name is empty, use the species name.
+                _prototypeManager.TryIndex<SpeciesPrototype>(Profile!.Species, out var speciesProto);
+                namespec = speciesProto?.Name ?? "";
+            }
+            if (string.IsNullOrEmpty(namespec))
+            {
+                // If the species name is also empty, use the default species name.
+                namespec = "Default =3";
+            }
+            CCustomSpecieNameEdit.Text = namespec;
         }
 
         private void UpdateFlavorTextEdit()
