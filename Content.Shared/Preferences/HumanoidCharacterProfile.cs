@@ -101,6 +101,12 @@ namespace Content.Shared.Preferences
         [DataField] // Frontier: Bank balance
         public int BankBalance { get; private set; } = DefaultBalance; // Frontier: Bank balance
 
+        [DataField("height")]
+        public float Height { get; set; } = 1f;
+
+        [DataField("width")]
+        public float Width { get; set; } = 1f;
+
         /// <summary>
         /// <see cref="Appearance"/>
         /// </summary>
@@ -145,6 +151,8 @@ namespace Content.Shared.Preferences
             string flavortext,
             string species,
             string customspeciesname,
+            float height,
+            float width,
             int age,
             Sex sex,
             Gender gender,
@@ -161,6 +169,8 @@ namespace Content.Shared.Preferences
             FlavorText = flavortext;
             Species = species;
             Customspeciesname = customspeciesname;
+            Height = height;
+            Width = width;
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -185,6 +195,8 @@ namespace Content.Shared.Preferences
                 other.FlavorText,
                 other.Species,
                 other.Customspeciesname,
+                other.Height,
+                other.Width,
                 other.Age,
                 other.Sex,
                 other.Gender,
@@ -205,6 +217,8 @@ namespace Content.Shared.Preferences
                 other.FlavorText,
                 other.Species,
                 other.Customspeciesname,
+                other.Height,
+                other.Width,
                 other.Age,
                 other.Sex,
                 other.Gender,
@@ -263,10 +277,14 @@ namespace Content.Shared.Preferences
 
             var sex = Sex.Unsexed;
             var age = 18;
+            var height = 1f;
+            var width = 1f;
             if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
             {
                 sex = random.Pick(speciesPrototype.Sexes);
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
+                height = random.NextFloat(speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+                width = random.NextFloat(speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
             }
 
             var gender = Gender.Epicene;
@@ -289,6 +307,8 @@ namespace Content.Shared.Preferences
                 Age = age,
                 Gender = gender,
                 Species = species,
+                Height = height,
+                Width = width,
                 Appearance = HumanoidCharacterAppearance.Random(species, sex),
             };
         }
@@ -330,6 +350,15 @@ namespace Content.Shared.Preferences
             return new(this) { Species = species };
         }
 
+        public HumanoidCharacterProfile WithHeight(float height)
+        {
+            return new(this) { Height = height };
+        }
+
+        public HumanoidCharacterProfile WithWidth(float width)
+        {
+            return new(this) { Width = width };
+        }
         public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename)
         {
             return new(this) { Customspeciesname = customspeciename };
@@ -504,6 +533,8 @@ namespace Content.Shared.Preferences
             if (maybeOther is not HumanoidCharacterProfile other) return false;
             if (Name != other.Name) return false;
             if (Age != other.Age) return false;
+            if (Height != other.Height) return false;
+            if (Width != other.Width) return false;
             if (Sex != other.Sex) return false;
             if (Gender != other.Gender) return false;
             if (Species != other.Species) return false;
@@ -607,6 +638,14 @@ namespace Content.Shared.Preferences
             }
             // End Frontier
 
+            var height = Height;
+            if (speciesPrototype != null)
+                height = Math.Clamp(Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+
+            var width = Width;
+            if (speciesPrototype != null)
+                width = Math.Clamp(Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
+
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
 
             var prefsUnavailableMode = PreferenceUnavailable switch
@@ -656,6 +695,8 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Age = age;
+            Height = height;
+            Width = width;
             Sex = sex;
             Gender = gender;
             BankBalance = bankBalance;
@@ -777,6 +818,8 @@ namespace Content.Shared.Preferences
             hashCode.Add(Name);
             hashCode.Add(FlavorText);
             hashCode.Add(Species);
+            hashCode.Add(Height);
+            hashCode.Add(Width);
             hashCode.Add(Age);
             hashCode.Add((int)Sex);
             hashCode.Add((int)Gender);
