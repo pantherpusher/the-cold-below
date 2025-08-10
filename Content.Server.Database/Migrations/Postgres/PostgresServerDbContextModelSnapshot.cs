@@ -20,7 +20,7 @@ namespace Content.Server.Database.Migrations.Postgres
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.1")
+                .HasAnnotation("ProductVersion", "8.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -283,7 +283,8 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("expiration_time");
 
-                    b.Property<DateTime>("LastEditedAt")
+                    b.Property<DateTime?>("LastEditedAt")
+                        .IsRequired()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("last_edited_at");
 
@@ -417,7 +418,8 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("expiration_time");
 
-                    b.Property<DateTime>("LastEditedAt")
+                    b.Property<DateTime?>("LastEditedAt")
+                        .IsRequired()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("last_edited_at");
 
@@ -892,11 +894,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("char_name");
-
-                    b.Property<string>("Customspeciesname")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("customspeciesname");
 
                     b.Property<string>("EyeColor")
                         .IsRequired()
