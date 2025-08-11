@@ -1402,6 +1402,10 @@ namespace Content.Client.Lobby.UI
                 // If the custom species name is empty, use the species name.
                 _prototypeManager.TryIndex<SpeciesPrototype>(Profile!.Species, out var speciesProto);
                 namespec = speciesProto?.Name ?? "";
+                if (!string.IsNullOrEmpty(namespec))
+                {
+                    namespec = Loc.GetString(namespec);
+                }
             }
             if (string.IsNullOrEmpty(namespec))
             {
