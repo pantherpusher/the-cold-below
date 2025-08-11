@@ -44,8 +44,6 @@ namespace Content.IntegrationTests.Tests.Preferences
                 Name = "Charlie Charlieson",
                 FlavorText = "The biggest boy around.",
                 Species = "Human",
-                Height = 1,
-                Width = 1,
                 Age = 21,
                 Appearance = new(
                     "Afro",
