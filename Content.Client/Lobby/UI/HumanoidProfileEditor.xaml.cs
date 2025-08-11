@@ -386,8 +386,8 @@ namespace Content.Client.Lobby.UI
             _heightSlider.MinValue = prototype.MinHeight;
             _heightSlider.MaxValue = prototype.MaxHeight;
             _heightSlider.Value = Profile?.Height ?? prototype.DefaultHeight;
-            var height = MathF.Round(prototype.AverageHeight * _heightSlider.Value);
-            CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
+            // var height = MathF.Round(prototype.AverageHeight * _heightSlider.Value);
+            CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", FloatToPercentString(_heightSlider.Value)));
 
             _heightSlider.OnValueChanged += args =>
             {
@@ -398,7 +398,7 @@ namespace Content.Client.Lobby.UI
 
                 var value = Math.Clamp(args.Value, prototype.MinHeight, prototype.MaxHeight);
                 var height = MathF.Round(prototype.AverageHeight * value);
-                CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
+                CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", FloatToPercentString(value)));
                 SetProfileHeight(value);
                 UpdateWeight();
                 ReloadProfilePreview();
@@ -416,8 +416,8 @@ namespace Content.Client.Lobby.UI
             _widthSlider.MinValue = prototype.MinWidth;
             _widthSlider.MaxValue = prototype.MaxWidth;
             _widthSlider.Value = Profile?.Width ?? prototype.DefaultWidth;
-            var width = MathF.Round(prototype.AverageWidth * _widthSlider.Value);
-            CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", width));
+            // var width = MathF.Round(prototype.AverageWidth * _widthSlider.Value);
+            CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", FloatToPercentString(_widthSlider.Value)));
 
             _widthSlider.OnValueChanged += args =>
             {
@@ -427,8 +427,8 @@ namespace Content.Client.Lobby.UI
                 prototype = _speciesList.Find(x => x.ID == Profile.Species) ?? _speciesList.First(); // Just in case
 
                 var value = Math.Clamp(args.Value, prototype.MinWidth, prototype.MaxWidth);
-                var width = MathF.Round(prototype.AverageWidth * value);
-                CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", width));
+                // var width = MathF.Round(prototype.AverageWidth * value);
+                CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", FloatToPercentString(value)));
                 SetProfileWidth(value);
                 UpdateWeight();
                 ReloadProfilePreview();
@@ -1606,8 +1606,9 @@ namespace Content.Client.Lobby.UI
             _heightSlider.Value = Profile.Height;
             _heightSlider.MaxValue = species.MaxHeight;
 
-            var height = MathF.Round(species.AverageHeight * _heightSlider.Value);
-            CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
+            // var heightToTheSecondDecimal = MathF.Round(Profile.Height, 2);
+            // var height = MathF.Round(species.AverageHeight * _heightSlider.Value);
+            CHeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", FloatToPercentString(_heightSlider.Value)));
         }
 
         private void UpdateWidthControls()
@@ -1621,8 +1622,9 @@ namespace Content.Client.Lobby.UI
             _widthSlider.Value = Profile.Width;
             _widthSlider.MaxValue = species.MaxWidth;
 
-            var width = MathF.Round(species.AverageWidth * _widthSlider.Value);
-            CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int) width));
+            var widthToTheSecondDecimal = MathF.Round(Profile.Width, 2);
+            // var width = MathF.Round(species.AverageWidth * _widthSlider.Value);
+            CWidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", FloatToPercentString(_widthSlider.Value)));
         }
 
         private void UpdateWeight()
@@ -1881,6 +1883,12 @@ namespace Content.Client.Lobby.UI
             _exporting = false;
             ImportButton.Disabled = false;
             ExportButton.Disabled = false;
+        }
+
+        private string FloatToPercentString(float value)
+        {
+            // feed me a float, and I'll give you a string that looks like "50%"
+            return $"{(int) MathF.Round(value * 100f)}%";
         }
     }
 }
