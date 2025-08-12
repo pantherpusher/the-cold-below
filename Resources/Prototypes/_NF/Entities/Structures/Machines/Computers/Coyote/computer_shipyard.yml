@@ -20,127 +20,128 @@
 # Aerofex
 # JanusCorp
 
-# Nanotrasen
-- type: entity
-  id: coyoteShipyardNT
-  name: nanotrasen shipyard console
-  parent: coyoteShipyardComputerBase
-  suffix: Science Nanotrasen
-  components:
-  - type: ActivatableUI
-    key: enum.ShipyardConsoleUiKey.Nanotrasen
-  - type: UserInterface
-    interfaces:
-      enum.ShipyardConsoleUiKey.Nanotrasen:
-        type: ShipyardConsoleBoundUserInterface
-  - type: Sprite
-    sprite: _NF/Structures/Machines/computers.rsi
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer_expedition
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: shipyard
-    - map: ["computerLayerKeys"]
-      state: telesci_key
-
-# Aerofex
-- type: entity
-  id: coyoteShipyardAero
-  name: Aerofex shipyard console
-  parent: coyoteShipyardComputerBase
-  suffix: Service Aerofex
-  components:
-  - type: ActivatableUI
-    key: enum.ShipyardConsoleUiKey.Aerofex
-  - type: UserInterface
-    interfaces:
-      enum.ShipyardConsoleUiKey.Aerofex:
-        type: ShipyardConsoleBoundUserInterface
-  - type: Sprite
-    sprite: _NF/Structures/Machines/computers.rsi
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer_sr
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: shipyard_sr
-    - map: ["computerLayerKeys"]
-      state: telesci_key
-
-# Edison Electrical and HVAC
-- type: entity
-  id: coyoteShipyardEdison
-  name: edison electrical shipyard console
-  parent: coyoteShipyardComputerBase
-  suffix: Engineering Edison
-  components:
-  - type: ActivatableUI
-    key: enum.ShipyardConsoleUiKey.EdisonHvac
-  - type: Sprite
-    sprite: _NF/Structures/Machines/computers.rsi
-  - type: UserInterface
-    interfaces:
-      enum.ShipyardConsoleUiKey.EdisonHvac:
-        type: ShipyardConsoleBoundUserInterface
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer_scrap
-    - map: ["computerLayerKeyboard"]
-      state: scrap_keyboard
-    - map: ["computerLayerScreen"]
-      state: shipyard_scrap
-    - map: ["computerLayerKeys"]
-      state: scrap_key
-
-# JanusCorp
-- type: entity
-  id: coyoteShipyardJC
-  name: januscorp shipyard console
-  parent: coyoteShipyardComputerBase
-  suffix: Cargo JanusCorp
-  components:
-  - type: ActivatableUI
-    key: enum.ShipyardConsoleUiKey.JanusCorp
-  - type: UserInterface
-    interfaces:
-      enum.ShipyardConsoleUiKey.JanusCorp:
-        type: ShipyardConsoleBoundUserInterface
-  - type: Sprite
-    sprite: _NF/Structures/Machines/computers.rsi
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer_scrap
-    - map: ["computerLayerKeyboard"]
-      state: scrap_keyboard
-    - map: ["computerLayerScreen"]
-      state: shipyard_scrap
-    - map: ["computerLayerKeys"]
-      state: scrap_key
-
-# United Health Services
-- type: entity
-  id: coyoteShipyardUHS
-  name: uhs shipyard console
-  parent: coyoteShipyardComputerBase
-  suffix: Medical UHS
-  components:
-  - type: ActivatableUI
-    key: enum.ShipyardConsoleUiKey.UnitedHealthServices
-  - type: UserInterface
-    interfaces:
-      enum.ShipyardConsoleUiKey.UnitedHealthServices:
-        type: ShipyardConsoleBoundUserInterface
-  - type: Sprite
-    sprite: _NF/Structures/Machines/computers.rsi
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer_medical
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: shipyard_medical
-    - map: ["computerLayerKeys"]
-      state: telesci_key
+## Nanotrasen
+#- type: entity
+#  id: coyoteShipyardNT
+#  name: nanotrasen shipyard console
+#  parent: coyoteShipyardComputerBase
+#  suffix: Science Nanotrasen
+#  components:
+#  - type: ActivatableUI
+#    key: enum.ShipyardConsoleUiKey.Nanotrasen
+#  - type: UserInterface
+#    interfaces:
+#      enum.ShipyardConsoleUiKey.Nanotrasen:
+#        type: ShipyardConsoleBoundUserInterface
+#  - type: Sprite
+#    sprite: _NF/Structures/Machines/computers.rsi
+#    layers:
+#    - map: ["computerLayerBody"]
+#      state: computer_expedition
+#    - map: ["computerLayerKeyboard"]
+#      state: generic_keyboard
+#    - map: ["computerLayerScreen"]
+#      state: shipyard
+#    - map: ["computerLayerKeys"]
+#      state: telesci_key
+#
+## Aerofex
+#- type: entity
+#  id: coyoteShipyardAero
+#  name: Aerofex shipyard console
+#  parent: coyoteShipyardComputerBase
+#  suffix: Service Aerofex
+#  components:
+#  - type: ActivatableUI
+#    key: enum.ShipyardConsoleUiKey.Aerofex
+#  - type: UserInterface
+#    interfaces:
+#      enum.ShipyardConsoleUiKey.Aerofex:
+#        type: ShipyardConsoleBoundUserInterface
+#  - type: Sprite
+#    sprite: _NF/Structures/Machines/computers.rsi
+#    layers:
+#    - map: ["computerLayerBody"]
+#      state: computer_sr
+#    - map: ["computerLayerKeyboard"]
+#      state: generic_keyboard
+#    - map: ["computerLayerScreen"]
+#      state: shipyard_sr
+#    - map: ["computerLayerKeys"]
+#      state: telesci_key
+#
+## Edison Electrical and HVAC
+#- type: entity
+#  id: coyoteShipyardEdison
+#  name: edison electrical shipyard console
+#  parent: coyoteShipyardComputerBase
+#  suffix: Engineering Edison
+#  components:
+#  - type: ActivatableUI
+#    key: enum.ShipyardConsoleUiKey.EdisonHvac
+#  - type: Sprite
+#    sprite: _NF/Structures/Machines/computers.rsi
+#  - type: UserInterface
+#    interfaces:
+#      enum.ShipyardConsoleUiKey.EdisonHvac:
+#        type: ShipyardConsoleBoundUserInterface
+#    layers:
+#    - map: ["computerLayerBody"]
+#      state: computer_scrap
+#    - map: ["computerLayerKeyboard"]
+#      state: scrap_keyboard
+#    - map: ["computerLayerScreen"]
+#      state: shipyard_scrap
+#    - map: ["computerLayerKeys"]
+#      state: scrap_key
+#
+## JanusCorp
+#- type: entity
+#  id: coyoteShipyardJC
+#  name: januscorp shipyard console
+#  parent: coyoteShipyardComputerBase
+#  suffix: Cargo JanusCorp
+#  components:
+#  - type: ActivatableUI
+#    key: enum.ShipyardConsoleUiKey.JanusCorp
+#  - type: UserInterface
+#    interfaces:
+#      enum.ShipyardConsoleUiKey.JanusCorp:
+#        type: ShipyardConsoleBoundUserInterface
+#  - type: Sprite
+#    sprite: _NF/Structures/Machines/computers.rsi
+#    layers:
+#    - map: ["computerLayerBody"]
+#      state: computer_scrap
+#    - map: ["computerLayerKeyboard"]
+#      state: scrap_keyboard
+#    - map: ["computerLayerScreen"]
+#      state: shipyard_scrap
+#    - map: ["computerLayerKeys"]
+#      state: scrap_key
+#
+## United Health Services
+#- type: entity
+#  id: coyoteShipyardUHS
+#  name: uhs shipyard console
+#  parent: coyoteShipyardComputerBase
+#  suffix: Medical UHS
+#  components:
+#  - type: ActivatableUI
+#    key: enum.ShipyardConsoleUiKey.UnitedHealthServices
+#  - type: UserInterface
+#    interfaces:
+#      enum.ShipyardConsoleUiKey.UnitedHealthServices:
+#        type: ShipyardConsoleBoundUserInterface
+#  - type: Sprite
+#    sprite: _NF/Structures/Machines/computers.rsi
+#    layers:
+#    - map: ["computerLayerBody"]
+#      state: computer_medical
+#    - map: ["computerLayerKeyboard"]
+#      state: generic_keyboard
+#    - map: ["computerLayerScreen"]
+#      state: shipyard_medical
+#    - map: ["computerLayerKeys"]
+#      state: telesci_key
+#
