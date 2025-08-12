@@ -175,6 +175,7 @@
   #     - !type:DoActsBehavior
   #       acts: [ "Destruction" ]
   - type: NFIngredient # Frontier
+  - type: AntiRottingContainer
 
 - type: entity
   parent: FoodContainerEgg
@@ -280,7 +281,7 @@
       prob: 0.05
       orGroup: Pizza
     - id: KnifePlastic
-  
+
 - type: entity
   name: pizza box
   parent: FoodBoxPizzaFilled
@@ -592,6 +593,7 @@
         prob: 0.1
         orGroup: GiftPool
   - type: NFIngredient # Frontier
+  - type: AntiRottingContainer
 
 - type: entity
   id: HappyHonkMime
