@@ -40,6 +40,7 @@
     solution: food
     preventTransferOut: true # Frontier
   - type: Perishable
+#    rotAfter: 25
     rotAfter: 1800 # rot after 30 minutes
     molsPerSecondPerUnitMass: 0
   - type: RotInto

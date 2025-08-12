@@ -89,6 +89,7 @@
   - type: AccessReader
   - type: ExplosionResistance
     damageCoefficient: 0.6
+  - type: AntiRottingContainer
 
 - type: entity
   parent: DVSmartFridge
