@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 08/12/2025 02:56:03
-  entityCount: 9296
+  time: 08/12/2025 02:59:30
+  entityCount: 9303
 maps:
 - 1
 grids:
@@ -7700,7 +7700,7 @@ entities:
       pos: -4.5,2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -96361.24
+      secondsUntilStateChange: -96567.03
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -27214,6 +27214,17 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 56.5,12.5
       parent: 2
+  - uid: 9302
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 13.5,-22.5
+      parent: 2
+  - uid: 9303
+    components:
+    - type: Transform
+      pos: 15.5,2.5
+      parent: 2
 - proto: ComputerWallmountRadar
   entities:
   - uid: 3815
@@ -27549,7 +27560,7 @@ entities:
       pos: 41.5,-8.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6653.72
+      secondsUntilStateChange: -6859.5044
       state: Opening
   - uid: 4408
     components:
@@ -30194,6 +30205,21 @@ entities:
       - 4504
       - 4488
       - 4489
+  - uid: 9301
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 13.5,-18.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 9297
+      - 9298
+      - 9299
+      - 9300
+      - 5230
+      - 5228
+      - 2125
 - proto: FireAlarmElectronics
   entities:
   - uid: 4310
@@ -30429,6 +30455,42 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 21.5,68.5
       parent: 2
+  - uid: 9297
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 18.5,-15.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 9301
+  - uid: 9298
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 18.5,-18.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 9301
+  - uid: 9299
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 18.5,-26.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 9301
+  - uid: 9300
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 7.5,-26.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 9301
 - proto: FirelockEdge
   entities:
   - uid: 4352
@@ -30498,6 +30560,9 @@ entities:
       rot: 3.141592653589793 rad
       pos: 5.5,-19.5
       parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 9301
   - uid: 4359
     components:
     - type: Transform
@@ -31924,12 +31989,18 @@ entities:
       rot: 3.141592653589793 rad
       pos: 5.5,-20.5
       parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 9301
   - uid: 5230
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 5.5,-21.5
       parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 9301
 - proto: FloorDrain
   entities:
   - uid: 4546
