@@ -150,7 +150,7 @@
   id: NFMagnetBoxPlant
   parent: NFBaseMagnetBox
   name: plant box
-  description: A large storage container for holding plants and seeds.
+  description: A large storage container for holding plants and seeds. Also prevents rot!
   components:
   - type: Sprite
     layers:
@@ -168,6 +168,7 @@
       components:
         - Produce
         - Seed
+  - type: AntiRottingContainer
 
 #region trash box
 - type: entity
