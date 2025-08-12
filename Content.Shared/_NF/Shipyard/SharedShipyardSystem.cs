@@ -20,7 +20,12 @@ public enum ShipyardConsoleUiKey : byte
     Sr,
     Medical,
     // Add ships to this key if they are only available from mothership consoles. Shipyards using it are inherently empty and are populated using the ShipyardListingComponent.
-    Custom
+    Custom, // Coyote UI keys
+    Nanotrasen,
+    UnitedHealthServices,
+    EdisonHvac,
+    Aerofex,
+    JanusCorp
 }
 
 public abstract class SharedShipyardSystem : EntitySystem
