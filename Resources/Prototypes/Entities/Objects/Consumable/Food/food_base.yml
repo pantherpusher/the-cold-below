@@ -39,6 +39,13 @@
   - type: RefillableSolution
     solution: food
     preventTransferOut: true # Frontier
+  - type: Perishable
+    rotAfter: 1800 # rot after 30 minutes
+    molsPerSecondPerUnitMass: 0
+  - type: RotInto
+    entity: FoodBadRecipe
+    # once it would say bloated, turn into the rotten prototype
+    stage: 1
 
 # usable by any food that can be opened
 # handles appearance with states "icon" and "icon-open"

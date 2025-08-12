@@ -133,7 +133,7 @@
   name: plant bag
   id: PlantBag
   parent: NFBaseClothingBeltStorageBag # Frontier: BaseStorageItem<NFBaseClothingBeltStorageBag
-  description: A bag for botanists to easily move their huge harvests.
+  description: A bag for botanists to easily move their huge harvests. Also prevents rot!
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/Equipment/plant_bag.rsi
@@ -187,3 +187,8 @@
           True: { visible: True }
           False: { visible: False }
   # End DeltaV Additions
+  - type: AntiRottingContainer
+
+
+
+
