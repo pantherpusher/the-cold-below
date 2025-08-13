@@ -112,7 +112,7 @@
     - id: XenoArtifactExplosionScary
       weight: 1.0
     - id: XenoArtifactBoom
-      weight: 1.5 # Coyote
+      weight: 1.5 # Coyote: 5.0 < 1.5
     - id: XenoArtifactEffectCreationGasPlasma
       weight: 2.0
     - id: XenoArtifactEffectCreationGasTritium
