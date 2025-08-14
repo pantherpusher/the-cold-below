@@ -281,6 +281,9 @@ namespace Content.Shared.Examine
 
             var newMessage = examinedEvent.GetTotalMessage();
 
+            // Goobstation Change: I dont seem to have a way to get the event of examination to happen after EVERYTHING else, so fuck it.
+            var examineCompletedEvent = new ExamineCompletedEvent(newMessage, entity, examiner.Value);
+            RaiseLocalEvent(entity, examineCompletedEvent);
             // pop color tag
             newMessage.Pop();
 
@@ -544,4 +547,26 @@ namespace Content.Shared.Examine
             Examiner = examiner;
         }
     }
+    public sealed class ExamineCompletedEvent : EntityEventArgs
+    {
+        public FormattedMessage Message { get; }
+        public EntityUid Examined { get; }
+        public EntityUid Examiner { get; }
+        public bool IsSecondaryInfo { get; }
+        public string? HeaderModifier { get; }
+
+        public ExamineCompletedEvent(FormattedMessage message,
+            EntityUid examined,
+            EntityUid examiner,
+            bool isSecondaryInfo = false,
+            string? headerModifier = "")
+        {
+            Message = message;
+            Examined = examined;
+            Examiner = examiner;
+            IsSecondaryInfo = isSecondaryInfo;
+            HeaderModifier = headerModifier;
+        }
+    }
 }
+

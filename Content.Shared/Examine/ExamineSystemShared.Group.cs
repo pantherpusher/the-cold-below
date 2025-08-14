@@ -145,6 +145,8 @@ namespace Content.Shared.Examine
             var act = () =>
             {
                 SendExamineTooltip(verbsEvent.User, verbsEvent.Target, formattedMessage, false, false);
+                var examineCompletedEvent = new ExamineCompletedEvent(formattedMessage, verbsEvent.Target, verbsEvent.User, true);
+                RaiseLocalEvent(verbsEvent.Target, examineCompletedEvent);
             };
             if (isHoverExamine)
             {

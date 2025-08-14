@@ -36,6 +36,7 @@
     horizontalRotation: 0
   - type: DoAfter
   - type: Examiner
+  - type: ExaminableCharacter
   - type: Eye
   - type: ContentEye
   - type: CameraRecoil
