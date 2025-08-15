@@ -37,7 +37,19 @@ public abstract partial class SharedConsentSystem : EntitySystem
             Act = () =>
             {
                 var message = GetConsentText(userId);
-                _examineSystem.SendExamineTooltip(user, ent, message, getVerbs: false, centerAtCursor: false);
+                _examineSystem.SendExamineTooltip(
+                    user,
+                    ent,
+                    message,
+                    getVerbs: false,
+                    centerAtCursor: false);
+                var examineCompletedEvent = new ExamineCompletedEvent(
+                    message,
+                    ent,
+                    user,
+                    false, // Secondary info is false because this is the main examine verb
+                    "consent info:");
+                RaiseLocalEvent(ent, examineCompletedEvent);
             },
             Category = VerbCategory.Examine,
             CloseMenu = true,

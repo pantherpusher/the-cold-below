@@ -32,6 +32,13 @@ public sealed class DetailExaminableSystem : EntitySystem
                 var markup = new FormattedMessage();
                 markup.AddMarkupPermissive(ent.Comp.Content);
                 _examine.SendExamineTooltip(user, ent, markup, false, false);
+                var examineCompletedEvent = new ExamineCompletedEvent(
+                    markup,
+                    ent,
+                    user,
+                    false, // Secondary info is false because this is the main examine verb
+                    "flavor text:");
+                RaiseLocalEvent(ent, examineCompletedEvent);
             },
             Text = Loc.GetString("detail-examinable-verb-text"),
             Category = VerbCategory.Examine,
