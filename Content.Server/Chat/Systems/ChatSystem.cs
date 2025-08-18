@@ -907,7 +907,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             player.UserId,
             voiceRange: SubtleLOOCRange,
             blockedByOcclusion: !SubtleLOOCGoesThroughWalls,
-            ensmallenedByOcclusion: false);
+            ensmallenedByOcclusion: false,
+            noGhosts: true); // COYOTESTATION ADD - Subtle LOOC does not go to ghosts, so we set noGhosts to true
         _adminLogger.Add(
             LogType.Chat,
             LogImpact.Low,
@@ -1006,14 +1007,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool blockedByOcclusion = false, // COYOTESTATION ADD - some things dont do thru walls
         bool ensmallenedByOcclusion = false, // COYOTESTATION ADD - some things do get ensmallened by occlusion
         float voiceRange = 10f, // COYOTESTATION ADD - shouts go further
-        string? occludedMessage = null)
+        string? occludedMessage = null,
+        bool noGhosts = false) // COYOTESTATION ADD - some things do not go to ghosts
     {
         var numHeareded = 0;
         foreach (var (session, data) in GetRecipients(
                      source,
                      voiceRange,
                      blockedByOcclusion,
-                     ensmallenedByOcclusion))
+                     ensmallenedByOcclusion,
+                     noGhosts: noGhosts))
         {
             numHeareded++;
             var entRange = MessageRangeCheck(
@@ -1165,7 +1168,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         EntityUid source,
         float voiceGetRange,
         bool blockedByOcclusion = false,
-        bool effectedByOcclusion = false
+        bool effectedByOcclusion = false,
+        bool noGhosts = false
         )
     {
         // TODO proper speech occlusion
@@ -1182,6 +1186,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         {
             if (player.AttachedEntity is not { Valid: true } playerEntity)
                 continue;
+            // player is admin?
+            var playerIsAdmin = _adminManager.IsAdmin(player);
 
             var transformEntity = xforms.GetComponent(playerEntity);
 
@@ -1189,6 +1195,11 @@ public sealed partial class ChatSystem : SharedChatSystem
                 continue;
 
             var observer = ghostHearing.HasComponent(playerEntity);
+
+            if (noGhosts
+                && observer
+                && !playerIsAdmin)
+                continue; // Don't include ghosts if we don't want them.
 
             var amOcccluded = false;
 
