@@ -71,7 +71,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public const int LOOCRange = 15; // how far LOOC goes in world units
     [SuppressMessage("ReSharper", "InconsistentNaming")]
-    public const int SubtleLOOCRange = 2; // how far Subtle LOOC goes in world units
+    public const int SubtleLOOCRange = SubtleRange; // how far Subtle LOOC goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
     public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
