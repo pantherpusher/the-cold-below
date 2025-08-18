@@ -39,7 +39,8 @@ chat-manager-entity-subtle-wrap-message = { PROPER($entity) ->
      [true] [font size=11][italic][color={$chatColor}]{$entityName}[/color] {$message}[/italic][/font]
     }
 
-chat-manager-entity-looc-wrap-message = LOOC: [bold]{$entityName}:[/bold] {$message}
+chat-manager-entity-looc-wrap-message = LOOC: [bold][color={$chatColor}]{$entityName}[/color]:[/bold] {$message}
+chat-manager-entity-subtle-looc-wrap-message = SubtleLOOC: [bold][color={$chatColor}]{$entityName}[/color]:[/bold] {$message}
 chat-manager-send-ooc-wrap-message = OOC: [bold]{$playerName}:[/bold] {$message}
 chat-manager-send-ooc-patron-wrap-message = OOC: [bold][color={$patronColor}]{$playerName}[/color]:[/bold] {$message}
 
