@@ -23,6 +23,7 @@
       mobState:
       - Critical
       - Dead
+      preventVore: true
     - type: Rattle
       radioChannel: "Medical"
 
@@ -49,6 +50,7 @@
       mobState:
       - Critical
       - Dead
+      preventVore: true
     - type: Rattle
       radioChannel: "Freelance"
 
