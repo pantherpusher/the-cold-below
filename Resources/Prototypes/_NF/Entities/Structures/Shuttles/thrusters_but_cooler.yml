@@ -92,11 +92,11 @@
   - type: Machine
     board: SlowStrongThrusterMachineCircuitboard
 
-#region SpeedPutt Kobold - High speed, low thrust thruster
+#region TurboPutt Kobold - High speed, low thrust thruster
 - type: entity
   id: FastWeakThruster
   parent: Thruster
-  name: SpeedPutt Kobold thruster
+  name: TurboPutt Kobold thruster
   description: A fast thruster with low acceleration, designed for long distance and comfort.
     Has a higher than average max speed, but low acceleration and high power use.
   components:
@@ -139,11 +139,11 @@
   - type: Machine
     board: FastWeakThrusterMachineCircuitboard
 
-#region SpeedPutt Dragon - High speed, high thrust thruster
+#region TurboPutt Dragon - High speed, high thrust thruster
 - type: entity
   id: FastStrongThruster
   parent: Thruster
-  name: SpeedPutt Dragon thruster
+  name: TurboPutt Dragon thruster
   description: A fast thruster with high acceleration, designed for high end civilian applications.
     Has a higher than average max speed and acceleration, but uses a lot of power.
   components:
@@ -186,11 +186,11 @@
   - type: Machine
     board: FastStrongThrusterMachineCircuitboard
 
-#region SuperPutt Vesper - Higher speed, low thrust thruster
+#region UltraPutt Vesper - Higher speed, low thrust thruster
 - type: entity
   id: FasterWeakThruster
   parent: Thruster
-  name: SuperPutt Vesper thruster
+  name: UltraPutt Vesper thruster
   description: A low-acceleration thruster that can get up to some serious speeds, given enough time.
     Has a very high max speed, but low acceleration and high power use.
   components:
@@ -233,11 +233,11 @@
   - type: Machine
     board: FasterWeakThrusterMachineCircuitboard
 
-#region SuperPutt Titan - Higher speed, highest thrust thruster
+#region UltraPutt Titan - Higher speed, highest thrust thruster
 - type: entity
   id: FasterStrongThruster
   parent: Thruster
-  name: SuperPutt Titan thruster
+  name: UltraPutt Titan thruster
   description: A turbocharged superthruster that will zoom you around the galaxy at breakneck speeds... if you have the power to feed it.
     Has a very high max speed and acceleration, but uses a lot of power.
   components:
@@ -328,12 +328,12 @@
   id: SlowStrongThrusterMachineCircuitboard
   result: SlowStrongThrusterMachineCircuitboard
 
-#region SpeedPutt Kobold
+#region TurboPutt Kobold
 - type: entity
   id: FastWeakThrusterMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: SpeedPutt Kobold machine board
-  description: A machine board for the SpeedPutt Kobold thruster.
+  name: TurboPutt Kobold machine board
+  description: A machine board for the TurboPutt Kobold thruster.
     It is designed for high speed, low acceleration, and high power use.
   components:
   - type: Sprite
@@ -350,12 +350,12 @@
   id: FastWeakThrusterMachineCircuitboard
   result: FastWeakThrusterMachineCircuitboard
 
-#region SpeedPutt Dragon
+#region TurboPutt Dragon
 - type: entity
   id: FastStrongThrusterMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: SpeedPutt Dragon machine board
-  description: A machine board for the SpeedPutt Dragon thruster.
+  name: TurboPutt Dragon machine board
+  description: A machine board for the TurboPutt Dragon thruster.
     It is designed for high speed, high thrust, and high power use.
   components:
   - type: Sprite
@@ -372,12 +372,12 @@
   id: FastStrongThrusterMachineCircuitboard
   result: FastStrongThrusterMachineCircuitboard
 
-#region SuperPutt Vesper
+#region UltraPutt Vesper
 - type: entity
   id: FasterWeakThrusterMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: SuperPutt Vesper machine board
-  description: A machine board for the SuperPutt Vesper thruster.
+  name: UltraPutt Vesper machine board
+  description: A machine board for the UltraPutt Vesper thruster.
     It is designed for higher speed, low thrust, and high power use and capacitor requirement.
   components:
   - type: Sprite
@@ -394,12 +394,12 @@
   id: FasterWeakThrusterMachineCircuitboard
   result: FasterWeakThrusterMachineCircuitboard
 
-#region SuperPutt Titan
+#region UltraPutt Titan
 - type: entity
   id: FasterStrongThrusterMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: SuperPutt Titan machine board
-  description: A machine board for the SuperPutt Titan thruster.
+  name: UltraPutt Titan machine board
+  description: A machine board for the UltraPutt Titan thruster.
     It is designed for higher speed, highest thrust, at the expense of extreme power draw and capacitor requirement.
   components:
   - type: Sprite
