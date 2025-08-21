@@ -66,7 +66,7 @@ namespace Content.Server.Shuttles.Components
         /// Base damping modifier applied to the shuttle's physics component when not in FTL.
         /// </summary>
         [DataField]
-        public float BodyModifier = 0.25f;
+        public float BodyModifier = 0.0f;
 
         /// <summary>
         /// Final Damping Modifier for a shuttle.
