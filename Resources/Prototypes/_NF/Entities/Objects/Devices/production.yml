@@ -165,7 +165,7 @@
 - type: entity
   id: SmallThrusterMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: small thruster machine board
+  name: SpacePutt Mini thruster machine board
   components:
   - type: Sprite
     state: supply
