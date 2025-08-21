@@ -1,6 +1,8 @@
 // New Frontiers - This file is licensed under AGPLv3
 // Copyright (c) 2024 New Frontiers Contributors
 // See AGPLv3.txt for details.
+
+using Content.Server._NF.Shuttles.Components;
 using Content.Server._NF.Station.Components;
 using Content.Server.Shuttles.Components;
 using Content.Shared._NF.Shuttles.Events;
@@ -24,11 +26,29 @@ public sealed partial class ShuttleSystem
         SubscribeLocalEvent<ShuttleConsoleComponent, SetHideTargetRequest>(NfSetHideTarget);
     }
 
+    private void NfOnShuttleStartup(EntityUid uid, ShuttleComponent component)
+    {
+        if (EntityManager.TryGetComponent(uid, out IFFComponent? iffComponent)
+            && iffComponent.Flags.HasFlag(IFFFlags.IsPlayerShuttle))
+        { // screw off
+            component.BodyModifier = 0.0f;
+            component.DampingModifier = 0.0f;
+        }
+    }
+
     private bool SetInertiaDampening(EntityUid uid, PhysicsComponent physicsComponent, ShuttleComponent shuttleComponent, TransformComponent transform, InertiaDampeningMode mode)
     {
         if (!transform.GridUid.HasValue)
         {
             return false;
+        }
+        if (HasComp<ForceDampeningComponent>(uid)) // Frontier
+        {
+            shuttleComponent.BodyModifier = DampenDampingStrength;
+            if (shuttleComponent.DampingModifier != 0)
+                shuttleComponent.DampingModifier = shuttleComponent.BodyModifier;
+            _console.RefreshShuttleConsoles(transform.GridUid.Value);
+            return true;
         }
 
         if (mode == InertiaDampeningMode.Query)
@@ -37,8 +57,8 @@ public sealed partial class ShuttleSystem
             return false;
         }
 
-        if (!EntityManager.HasComponent<ShuttleDeedComponent>(transform.GridUid) ||
-            EntityManager.HasComponent<StationDampeningComponent>(_station.GetOwningStation(transform.GridUid)))
+        if (!EntityManager.HasComponent<ShuttleDeedComponent>(transform.GridUid)
+            || EntityManager.HasComponent<StationDampeningComponent>(_station.GetOwningStation(transform.GridUid)))
         {
             return false;
         }
@@ -60,10 +80,10 @@ public sealed partial class ShuttleSystem
     private void OnSetInertiaDampening(EntityUid uid, ShuttleConsoleComponent component, SetInertiaDampeningRequest args)
     {
         // Ensure that the entity requested is a valid shuttle (stations should not be togglable)
-        if (!EntityManager.TryGetComponent(uid, out TransformComponent? transform) ||
-            !transform.GridUid.HasValue ||
-            !EntityManager.TryGetComponent(transform.GridUid, out PhysicsComponent? physicsComponent) ||
-            !EntityManager.TryGetComponent(transform.GridUid, out ShuttleComponent? shuttleComponent))
+        if (!EntityManager.TryGetComponent(uid, out TransformComponent? transform)
+            || !transform.GridUid.HasValue
+            || !EntityManager.TryGetComponent(transform.GridUid, out PhysicsComponent? physicsComponent)
+            || !EntityManager.TryGetComponent(transform.GridUid, out ShuttleComponent? shuttleComponent))
         {
             return;
         }
@@ -76,6 +96,10 @@ public sealed partial class ShuttleSystem
     {
         if (!EntityManager.TryGetComponent<TransformComponent>(entity, out var xform))
             return InertiaDampeningMode.Dampen;
+        if (HasComp<ForceDampeningComponent>(entity)) // Frontier
+            return InertiaDampeningMode.Dampen; // ForceDampeningComponent overrides all other dampening modes
+        if (HasComp<ForceDampeningComponent>(xform.GridUid)) // Frontier
+            return InertiaDampeningMode.Dampen; // ForceDampeningComponent overrides all other dampening modes
 
         // Not a shuttle, shouldn't be togglable
         if (!EntityManager.HasComponent<ShuttleDeedComponent>(xform.GridUid) ||
