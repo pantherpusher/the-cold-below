@@ -2,7 +2,8 @@
 - type: entity
   id: SmallThruster
   parent: Thruster
-  name: small thruster
+  name: SpacePutt Mini thruster
+  description: A minified version of the SpacePutt Force thruster, for
   components:
   - type: Thruster
     baseThrust: 33

@@ -1,0 +1,456 @@
+#region Microputt StationKeeper - Low speed, Low thrust, high efficiency thruster
+- type: entity
+  id: SlowWeakThruster
+  parent: Thruster
+  name: MicroPutt StationKeeper thruster
+  description: A weak, high-efficiency thruster designed for shuttles that only move when they absolutely need to.
+    Has a low max speed and very low acceleration, but uses next to no power.
+  components:
+  - type: Thruster
+    baseThrust: 33
+    thrust: 22
+    thrustPerPartLevel: [22, 23, 24, 25] # its bad
+    damage:
+      types:
+        Heat: 40
+  - type: ApcPowerReceiver
+    powerLoad: 10
+  - type: Sprite
+    sprite: _NF/Structures/Shuttles/thruster.rsi
+    layers:
+    - state: base_small
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust_small
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.45,0.35,0.45" # Thruster is slightly narrower than the big one but still long
+        density: 60 # Same density as big thruster, will be slightly lighter
+        mask:
+        - SmallMobMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+  - type: StaticPrice
+    price: 100
+  - type: Machine
+    board: SlowWeakThrusterMachineCircuitboard
+
+#region MicroPutt TugMaster - Low speed, high thrust thruster
+- type: entity
+  id: SlowStrongThruster
+  parent: Thruster
+  name: MicroPutt TugMaster thruster
+  description: A slow yet powerful thruster, designed for low end civilian applications.
+    Has a low max speed, but decent acceleration and light power use.
+  components:
+  - type: Thruster
+    baseThrust: 200
+    thrust: 132
+    thrustPerPartLevel: [66, 75, 80, 85]
+    damage:
+      types:
+        Heat: 40
+  - type: ApcPowerReceiver
+    powerLoad: 250
+  - type: Sprite
+    sprite: _NF/Structures/Shuttles/thruster.rsi # Frontier: use _NF prefix
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.45,0.35,0.45" # Thruster is slightly narrower than the big one but still long
+        density: 60 # Same density as big thruster, will be slightly lighter
+        mask:
+        - SmallMobMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+  - type: StaticPrice
+    price: 250
+  - type: Machine
+    board: SlowStrongThrusterMachineCircuitboard
+
+#region TurboPutt Kobold - High speed, low thrust thruster
+- type: entity
+  id: FastWeakThruster
+  parent: Thruster
+  name: TurboPutt Kobold thruster
+  description: A fast thruster with low acceleration, designed for long distance and comfort.
+    Has a higher than average max speed, but low acceleration and high power use.
+  components:
+  - type: Thruster
+    baseThrust: 33
+    thrust: 60
+    thrustPerPartLevel: [60, 63, 65, 67]
+    damage:
+      types:
+        Heat: 40
+  - type: ApcPowerReceiver
+    powerLoad: 4000
+  - type: Sprite
+    sprite: _NF/Structures/Shuttles/thruster.rsi
+    layers:
+    - state: base_small
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust_small
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.45,0.35,0.45" # Thruster is slightly narrower than the big one but still long
+        density: 60 # Same density as big thruster, will be slightly lighter
+        mask:
+        - SmallMobMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+  - type: StaticPrice
+    price: 250
+  - type: Machine
+    board: FastWeakThrusterMachineCircuitboard
+
+#region TurboPutt Dragon - High speed, high thrust thruster
+- type: entity
+  id: FastStrongThruster
+  parent: Thruster
+  name: TurboPutt Dragon thruster
+  description: A fast thruster with high acceleration, designed for high end civilian applications.
+    Has a higher than average max speed and acceleration, but uses a lot of power.
+  components:
+  - type: Thruster
+    baseThrust: 100
+    thrust: 190
+    thrustPerPartLevel: [190, 210, 220, 250]
+    damage:
+      types:
+        Heat: 40
+  - type: ApcPowerReceiver
+    powerLoad: 7500
+  - type: Sprite
+    sprite: _NF/Structures/Shuttles/thruster.rsi # Frontier: use _NF prefix
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.45,0.35,0.45" # Thruster is slightly narrower than the big one but still long
+        density: 60 # Same density as big thruster, will be slightly lighter
+        mask:
+        - SmallMobMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+  - type: StaticPrice
+    price: 250
+  - type: Machine
+    board: FastStrongThrusterMachineCircuitboard
+
+#region UltraPutt Vesper - Higher speed, low thrust thruster
+- type: entity
+  id: FasterWeakThruster
+  parent: Thruster
+  name: UltraPutt Vesper thruster
+  description: A low-acceleration thruster that can get up to some serious speeds, given enough time.
+    Has a very high max speed, but low acceleration and high power use.
+  components:
+  - type: Thruster
+    baseThrust: 33
+    thrust: 75
+    thrustPerPartLevel: [75, 80, 85, 90]
+    damage:
+      types:
+        Heat: 40
+  - type: ApcPowerReceiver
+    powerLoad: 8500
+  - type: Sprite
+    sprite: _NF/Structures/Shuttles/thruster.rsi
+    layers:
+    - state: base_small
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust_small
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.45,0.35,0.45" # Thruster is slightly narrower than the big one but still long
+        density: 60 # Same density as big thruster, will be slightly lighter
+        mask:
+        - SmallMobMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+  - type: StaticPrice
+    price: 250
+  - type: Machine
+    board: FasterWeakThrusterMachineCircuitboard
+
+#region UltraPutt Titan - Higher speed, highest thrust thruster
+- type: entity
+  id: FasterStrongThruster
+  parent: Thruster
+  name: UltraPutt Titan thruster
+  description: A turbocharged superthruster that will zoom you around the galaxy at breakneck speeds... if you have the power to feed it.
+    Has a very high max speed and acceleration, but uses a lot of power.
+  components:
+  - type: Thruster
+    baseThrust: 330
+    thrust: 750
+    thrustPerPartLevel: [750, 850, 950, 1500]
+    damage:
+      types:
+        Heat: 40
+  - type: ApcPowerReceiver
+    powerLoad: 100000 # This is a lot of power, but it is a super thruster after all
+  - type: Sprite
+    sprite: _NF/Structures/Shuttles/thruster.rsi # Frontier: use _NF prefix
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.45,0.35,0.45" # Thruster is slightly narrower than the big one but still long
+        density: 60 # Same density as big thruster, will be slightly lighter
+        mask:
+        - SmallMobMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+  - type: StaticPrice
+    price: 250
+  - type: Machine
+    board: FasterStrongThrusterMachineCircuitboard
+
+
+#region circuit boards
+
+
+#region MicroPutt StationKeeper
+- type: entity
+  id: SlowWeakThrusterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: MicroPutt StationKeeper machine board
+  description: A machine board for the MicroPutt StationKeeper thruster.
+    It is designed for low speed, low thrust, and high efficiency.
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: SlowWeakThruster
+    requirements: # Frontier
+      Capacitor: 4 # Frontier stackRequirements<requirements
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
+  id: SlowWeakThrusterMachineCircuitboard
+  result: SlowWeakThrusterMachineCircuitboard
+
+#region MicroPutt TugMaster
+- type: entity
+  id: SlowStrongThrusterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: MicroPutt TugMaster machine board
+  description: A machine board for the MicroPutt TugMaster thruster.
+    It is designed for low speed, high thrust, and light power use.
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: SlowStrongThruster
+    requirements: # Frontier
+      Capacitor: 4 # Frontier stackRequirements<requirements
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
+  id: SlowStrongThrusterMachineCircuitboard
+  result: SlowStrongThrusterMachineCircuitboard
+
+#region TurboPutt Kobold
+- type: entity
+  id: FastWeakThrusterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: TurboPutt Kobold machine board
+  description: A machine board for the TurboPutt Kobold thruster.
+    It is designed for high speed, low acceleration, and high power use.
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: FastWeakThruster
+    requirements: # Frontier
+      Capacitor: 5 # Frontier stackRequirements<requirements
+    stackRequirements:
+      Steel: 15
+      Uranium: 10
+      Gold: 10
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
+  id: FastWeakThrusterMachineCircuitboard
+  result: FastWeakThrusterMachineCircuitboard
+  materials:
+    Steel: 700
+    Glass: 1500
+    Plastic: 2000
+    Gold: 1000
+    Silver: 1000
+
+#region TurboPutt Dragon
+- type: entity
+  id: FastStrongThrusterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: TurboPutt Dragon machine board
+  description: A machine board for the TurboPutt Dragon thruster.
+    It is designed for high speed, high thrust, and high power use.
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: FastStrongThruster
+    requirements: # Frontier
+      Capacitor: 6 # Frontier stackRequirements<requirements
+    stackRequirements:
+      Steel: 20
+      Uranium: 15
+      Gold: 15
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
+  id: FastStrongThrusterMachineCircuitboard
+  result: FastStrongThrusterMachineCircuitboard
+  materials:
+    Steel: 1500
+    Glass: 3000
+    Plastic: 4000
+    Gold: 2000
+    Silver: 2000
+
+#region UltraPutt Vesper
+- type: entity
+  id: FasterWeakThrusterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: UltraPutt Vesper machine board
+  description: A machine board for the UltraPutt Vesper thruster.
+    It is designed for higher speed, low thrust, and high power use and capacitor requirement.
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: FasterWeakThruster
+    requirements: # Frontier
+      Capacitor: 7 # Frontier stackRequirements<requirements
+    stackRequirements:
+      Steel: 60
+      Glass: 100
+      Uranium: 30
+      Gold: 30
+      Bananium: 20
+      Brass: 10
+      Bluespace: 1
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
+  id: FasterWeakThrusterMachineCircuitboard
+  result: FasterWeakThrusterMachineCircuitboard
+  materials:
+    Steel: 3000
+    Glass: 6000
+    Plastic: 8000
+    Gold: 4000
+    Silver: 4000
+    Bananium: 2000
+
+#region UltraPutt Titan
+- type: entity
+  id: FasterStrongThrusterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: UltraPutt Titan machine board
+  description: A machine board for the UltraPutt Titan thruster.
+    It is designed for higher speed, highest thrust, at the expense of extreme power draw and capacitor requirement.
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: FasterStrongThruster
+    requirements: # Frontier
+      Capacitor: 8 # Frontier stackRequirements<requirements
+    stackRequirements:
+      Steel: 120
+      Glass: 200
+      Uranium: 60
+      Gold: 60
+      Bananium: 40
+      Brass: 30
+      Bluespace: 1
+      Diamond: 1
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
+  id: FasterStrongThrusterMachineCircuitboard
+  result: FasterStrongThrusterMachineCircuitboard
+  materials:
+    Steel: 6000
+    Glass: 12000
+    Plastic: 16000
+    Gold: 8000
+    Silver: 8000
+    Bananium: 4000
