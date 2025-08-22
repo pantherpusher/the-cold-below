@@ -71,6 +71,13 @@
   - CircuitImprinterHyperConvectionMachineCircuitboard
   - SheetifierMachineCircuitboard
   - MaterialSiloMachineCircuitboard
+  - SlowWeakThrusterMachineCircuitboard
+  - SlowStrongThrusterMachineCircuitboard
+  - FastWeakThrusterMachineCircuitboard
+  - FastStrongThrusterMachineCircuitboard
+  - FasterWeakThrusterMachineCircuitboard
+  - FasterStrongThrusterMachineCircuitboard
+
   # PowerGeneration
   - PortableGeneratorPacmanMachineCircuitboard
   - PortableGeneratorSuperPacmanMachineCircuitboard

@@ -892,7 +892,7 @@
 - type: entity
   id: ThrusterMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: thruster machine board
+  name: SpacePutt Mule thruster machine board
   components:
   - type: Sprite
     state: supply

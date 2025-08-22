@@ -8,6 +8,12 @@
   - GasMiningDrillMachineCircuitboard
   - GaslockFrameMachineCircuitboard
   - MaterialSiloMachineCircuitboard
+  - SlowWeakThrusterMachineCircuitboard
+  - SlowStrongThrusterMachineCircuitboard
+  - FastWeakThrusterMachineCircuitboard
+  - FastStrongThrusterMachineCircuitboard
+  - FasterWeakThrusterMachineCircuitboard
+  - FasterStrongThrusterMachineCircuitboard
 
 - type: latheRecipePack
   id: NFEngineering

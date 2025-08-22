@@ -8,7 +8,7 @@
   - type: Thruster
     baseThrust: 33
     thrust: 33
-    thrustPerPartLevel: [42.9, 56.1, 69.3, 82.5]
+    thrustPerPartLevel: [33, 37, 42, 65]
     damage:
       types:
         Heat: 40

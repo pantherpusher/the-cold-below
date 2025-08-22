@@ -26,29 +26,16 @@ public sealed partial class ShuttleSystem
         SubscribeLocalEvent<ShuttleConsoleComponent, SetHideTargetRequest>(NfSetHideTarget);
     }
 
-    private void NfOnShuttleStartup(EntityUid uid, ShuttleComponent component)
-    {
-        if (EntityManager.TryGetComponent(uid, out IFFComponent? iffComponent)
-            && iffComponent.Flags.HasFlag(IFFFlags.IsPlayerShuttle))
-        { // screw off
-            component.BodyModifier = 0.0f;
-            component.DampingModifier = 0.0f;
-        }
-    }
-
-    private bool SetInertiaDampening(EntityUid uid, PhysicsComponent physicsComponent, ShuttleComponent shuttleComponent, TransformComponent transform, InertiaDampeningMode mode)
+    private bool SetInertiaDampening(
+        EntityUid uid,
+        PhysicsComponent physicsComponent,
+        ShuttleComponent shuttleComponent,
+        TransformComponent transform,
+        InertiaDampeningMode mode)
     {
         if (!transform.GridUid.HasValue)
         {
             return false;
-        }
-        if (HasComp<ForceDampeningComponent>(uid)) // Frontier
-        {
-            shuttleComponent.BodyModifier = DampenDampingStrength;
-            if (shuttleComponent.DampingModifier != 0)
-                shuttleComponent.DampingModifier = shuttleComponent.BodyModifier;
-            _console.RefreshShuttleConsoles(transform.GridUid.Value);
-            return true;
         }
 
         if (mode == InertiaDampeningMode.Query)
@@ -69,15 +56,17 @@ public sealed partial class ShuttleSystem
             InertiaDampeningMode.Dampen => DampenDampingStrength,
             InertiaDampeningMode.Anchor => AnchorDampingStrength,
             _ => DampenDampingStrength, // other values: default to some sane behaviour (assume normal dampening)
-        };
+        }; // FFS ITS DAMPING
 
-        if (shuttleComponent.DampingModifier != 0)
-            shuttleComponent.DampingModifier = shuttleComponent.BodyModifier;
+        shuttleComponent.DampingModifier = shuttleComponent.BodyModifier;
         _console.RefreshShuttleConsoles(transform.GridUid.Value);
         return true;
     }
 
-    private void OnSetInertiaDampening(EntityUid uid, ShuttleConsoleComponent component, SetInertiaDampeningRequest args)
+    private void OnSetInertiaDampening(
+        EntityUid uid,
+        ShuttleConsoleComponent component,
+        SetInertiaDampeningRequest args)
     {
         // Ensure that the entity requested is a valid shuttle (stations should not be togglable)
         if (!EntityManager.TryGetComponent(uid, out TransformComponent? transform)
@@ -88,7 +77,13 @@ public sealed partial class ShuttleSystem
             return;
         }
 
-        if (SetInertiaDampening(uid, physicsComponent, shuttleComponent, transform, args.Mode) && args.Mode != InertiaDampeningMode.Query)
+        if (SetInertiaDampening(
+                uid,
+                physicsComponent,
+                shuttleComponent,
+                transform,
+                args.Mode)
+            && args.Mode != InertiaDampeningMode.Query)
             component.DampeningMode = args.Mode;
     }
 
@@ -96,14 +91,10 @@ public sealed partial class ShuttleSystem
     {
         if (!EntityManager.TryGetComponent<TransformComponent>(entity, out var xform))
             return InertiaDampeningMode.Dampen;
-        if (HasComp<ForceDampeningComponent>(entity)) // Frontier
-            return InertiaDampeningMode.Dampen; // ForceDampeningComponent overrides all other dampening modes
-        if (HasComp<ForceDampeningComponent>(xform.GridUid)) // Frontier
-            return InertiaDampeningMode.Dampen; // ForceDampeningComponent overrides all other dampening modes
 
         // Not a shuttle, shouldn't be togglable
-        if (!EntityManager.HasComponent<ShuttleDeedComponent>(xform.GridUid) ||
-            EntityManager.HasComponent<StationDampeningComponent>(_station.GetOwningStation(xform.GridUid)))
+        if (!EntityManager.HasComponent<ShuttleDeedComponent>(xform.GridUid)
+            || EntityManager.HasComponent<StationDampeningComponent>(_station.GetOwningStation(xform.GridUid)))
             return InertiaDampeningMode.Station;
 
         if (!EntityManager.TryGetComponent(xform.GridUid, out ShuttleComponent? shuttle))
@@ -111,19 +102,18 @@ public sealed partial class ShuttleSystem
 
         if (shuttle.BodyModifier >= AnchorDampingStrength)
             return InertiaDampeningMode.Anchor;
-        else if (shuttle.BodyModifier <= SpaceFrictionStrength)
+        if (shuttle.BodyModifier <= SpaceFrictionStrength)
             return InertiaDampeningMode.Off;
-        else
-            return InertiaDampeningMode.Dampen;
+        return InertiaDampeningMode.Dampen;
     }
 
     public void NfSetPowered(EntityUid uid, ShuttleConsoleComponent component, bool powered)
     {
         // Ensure that the entity requested is a valid shuttle (stations should not be togglable)
-        if (!EntityManager.TryGetComponent(uid, out TransformComponent? transform) ||
-            !transform.GridUid.HasValue ||
-            !EntityManager.TryGetComponent(transform.GridUid, out PhysicsComponent? physicsComponent) ||
-            !EntityManager.TryGetComponent(transform.GridUid, out ShuttleComponent? shuttleComponent))
+        if (!EntityManager.TryGetComponent(uid, out TransformComponent? transform)
+            || !transform.GridUid.HasValue
+            || !EntityManager.TryGetComponent(transform.GridUid, out PhysicsComponent? physicsComponent)
+            || !EntityManager.TryGetComponent(transform.GridUid, out ShuttleComponent? shuttleComponent))
         {
             return;
         }
@@ -131,17 +121,26 @@ public sealed partial class ShuttleSystem
         // Update dampening physics without adjusting requested mode.
         if (!powered)
         {
-            SetInertiaDampening(uid, physicsComponent, shuttleComponent, transform, InertiaDampeningMode.Anchor);
+            SetInertiaDampening(
+                uid,
+                physicsComponent,
+                shuttleComponent,
+                transform,
+                InertiaDampeningMode.Anchor);
         }
         else
         {
             // Update our dampening mode if we need to, and if we aren't a station.
             var currentDampening = NfGetInertiaDampeningMode(uid);
-            if (currentDampening != component.DampeningMode &&
-                currentDampening != InertiaDampeningMode.Station &&
-                component.DampeningMode != InertiaDampeningMode.Station)
+            if (currentDampening != InertiaDampeningMode.Station
+                && component.DampeningMode != InertiaDampeningMode.Station)
             {
-                SetInertiaDampening(uid, physicsComponent, shuttleComponent, transform, component.DampeningMode);
+                SetInertiaDampening(
+                    uid,
+                    physicsComponent,
+                    shuttleComponent,
+                    transform,
+                    component.DampeningMode);
             }
         }
     }
