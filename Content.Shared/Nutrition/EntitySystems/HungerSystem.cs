@@ -260,9 +260,10 @@ public sealed class HungerSystem : EntitySystem
 
     private static float ClampHungerWithinThresholds(HungerComponent component, float hungerValue)
     {
-        return Math.Clamp(hungerValue,
+        return Math.Clamp(
+            hungerValue,
             component.Thresholds[HungerThreshold.Dead],
-            component.Thresholds[HungerThreshold.Overfed]);
+            component.Thresholds[HungerThreshold.Overfed] * 1.5f);
     }
 
     public override void Update(float frameTime)
