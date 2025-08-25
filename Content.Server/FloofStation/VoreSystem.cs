@@ -54,8 +54,8 @@ public sealed class VoreSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
-    [Dependency] private readonly HungerSystem _hunger = default!;
-    [Dependency] private readonly BatterySystem _battery = default!;
+    // [Dependency] private readonly HungerSystem _hunger = default!;
+    // [Dependency] private readonly BatterySystem _battery = default!;
     [Dependency] private readonly ContestsSystem _contests = default!;
     [Dependency] private readonly StandingStateSystem _standingState = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -456,23 +456,23 @@ public sealed class VoreSystem : EntitySystem
                 damage.DamageDict.Add("Caustic", 1);
                 _damageable.TryChangeDamage(uid, damage, true, false);
 
-                // Give 1 Hunger per 1 Caustic Damage.
-                if (TryComp<HungerComponent>(vored.Pred, out var hunger))
-                    _hunger.ModifyHunger(vored.Pred, 1, hunger);
-
-                // Give 2 Power per 1 Caustic Damage.
-                if (TryComp<BatteryComponent>(vored.Pred, out var internalbattery))
-                    _battery.SetCharge(vored.Pred, internalbattery.CurrentCharge + 2, internalbattery);
-
-                // Give 2 Power per 1 Caustic Damage.
-                if (TryComp<PowerCellSlotComponent>(vored.Pred, out var batterySlot)
-                    && _containerSystem.TryGetContainer(vored.Pred, batterySlot.CellSlotId, out var container)
-                    && container.ContainedEntities.Count > 0)
-                {
-                    var battery = container.ContainedEntities.First();
-                    if (TryComp<BatteryComponent>(battery, out var batterycomp))
-                        _battery.SetCharge(battery, batterycomp.CurrentCharge + 2, batterycomp);
-                }
+                // // Give 1 Hunger per 1 Caustic Damage.
+                // if (TryComp<HungerComponent>(vored.Pred, out var hunger))
+                //     _hunger.ModifyHunger(vored.Pred, 1, hunger);
+                //
+                // // Give 2 Power per 1 Caustic Damage.
+                // if (TryComp<BatteryComponent>(vored.Pred, out var internalbattery))
+                //     _battery.SetCharge(vored.Pred, internalbattery.CurrentCharge + 2, internalbattery);
+                //
+                // // Give 2 Power per 1 Caustic Damage.
+                // if (TryComp<PowerCellSlotComponent>(vored.Pred, out var batterySlot)
+                //     && _containerSystem.TryGetContainer(vored.Pred, batterySlot.CellSlotId, out var container)
+                //     && container.ContainedEntities.Count > 0)
+                // {
+                //     var battery = container.ContainedEntities.First();
+                //     if (TryComp<BatteryComponent>(battery, out var batterycomp))
+                //         _battery.SetCharge(battery, batterycomp.CurrentCharge + 2, batterycomp);
+                // }
             }
         }
     }
