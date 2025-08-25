@@ -6,6 +6,7 @@ using Content.Server.Chat.Systems;
 using Content.Server.Popups;
 using Content.Shared._NF.Bank.Components;
 using Content.Shared.Chat;
+using Content.Shared.Nutrition.Components;
 using Robust.Server.Player;
 using Robust.Shared.Timing;
 
@@ -320,6 +321,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             uid,
             modifyEvent,
             true);
+        ModifyOnThirstHunger(uid, ref modifyEvent);
         // apply the add first
         payAmount += (int)modifyEvent.Additive;
         // then apply the multiplier
@@ -512,6 +514,39 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             < TaxBracket3 => "TaxBracket3",
             _ => "TaxBracketRest",
         };
+    }
+
+    private void ModifyOnThirstHunger(
+        EntityUid uid,
+        ref GetRoleplayIncentiveModifier args)
+    {
+        // first, hunger
+        if (TryComp<ThirstComponent>(uid, out var thirst))
+        {
+            var RPImult = thirst.CurrentThirstThreshold switch
+            {
+                ThirstThreshold.OverHydrated => 1.2f,
+                ThirstThreshold.Okay => 1.0f,
+                ThirstThreshold.Thirsty => 0.8f,
+                ThirstThreshold.Parched => 0.6f,
+                ThirstThreshold.Dead => 0.5f,
+                _ => 1.0f
+            };
+            AdjustRPI(RPImult, ref args);
+        }
+        if (TryComp<HungerComponent>(uid, out var hunger))
+        {
+            var RPImult = hunger.CurrentThreshold switch
+            {
+                HungerThreshold.Overfed => 1.2f,
+                HungerThreshold.Okay => 1.0f,
+                HungerThreshold.Peckish => 0.8f,
+                HungerThreshold.Starving => 0.6f,
+                HungerThreshold.Dead => 0.5f,
+                _ => 1.0f
+            };
+            AdjustRPI(RPImult, ref args);
+        }
     }
 
     private void AdjustRPI(
