@@ -1,4 +1,6 @@
 using Content.Shared.Damage;
+using Content.Shared.FixedPoint;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Whitelist;
@@ -17,6 +19,7 @@ public abstract class SharedDamageMarkerSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
@@ -32,11 +35,35 @@ public abstract class SharedDamageMarkerSystem : EntitySystem
 
         args.BonusDamage += component.Damage;
         RemCompDeferred<DamageMarkerComponent>(uid);
-        _audio.PlayPredicted(component.Sound, uid, args.User);
+        _audio.PlayPredicted(
+            component.Sound,
+            uid,
+            args.User);
 
         if (TryComp<LeechOnMarkerComponent>(args.Used, out var leech))
         {
-            _damageable.TryChangeDamage(args.User, leech.Leech, true, false, origin: args.Used);
+            DamageSpecifier what2Heal = leech.Leech;
+            // is the target dead?
+            if (_mobState.IsDead(uid))
+            {
+                return; // no healing from dead people
+            }
+            // RULES OF FLEECHING
+            // If target is in crit, halve the healing.
+            var damMult = FixedPoint2.New(1.0f);
+            if (_mobState.IsCritical(uid))
+            {
+                damMult *= FixedPoint2.New(0.5f);
+            }
+
+            what2Heal *= damMult;
+
+            _damageable.TryChangeDamage(
+                args.User,
+                what2Heal,
+                true,
+                false,
+                origin: args.Used);
         }
     }
 
@@ -57,12 +84,12 @@ public abstract class SharedDamageMarkerSystem : EntitySystem
 
     private void OnMarkerCollide(EntityUid uid, DamageMarkerOnCollideComponent component, ref StartCollideEvent args)
     {
-        if (!args.OtherFixture.Hard ||
-            args.OurFixtureId != SharedProjectileSystem.ProjectileFixture ||
-            component.Amount <= 0 ||
-            _whitelistSystem.IsWhitelistFail(component.Whitelist, args.OtherEntity) ||
-            !TryComp<ProjectileComponent>(uid, out var projectile) ||
-            projectile.Weapon == null)
+        if (!args.OtherFixture.Hard
+            || args.OurFixtureId != SharedProjectileSystem.ProjectileFixture
+            || component.Amount <= 0
+            || _whitelistSystem.IsWhitelistFail(component.Whitelist, args.OtherEntity)
+            || !TryComp<ProjectileComponent>(uid, out var projectile)
+            || projectile.Weapon == null)
         {
             return;
         }
