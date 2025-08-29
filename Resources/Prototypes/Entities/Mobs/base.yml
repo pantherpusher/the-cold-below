@@ -144,7 +144,7 @@
   components:
   - type: AtmosExposed
   - type: Temperature
-    heatDamageThreshold: 325
+    heatDamageThreshold: 340
     coldDamageThreshold: 0
     currentTemperature: 310.15
     coldDamage: #per second, scales with temperature & other constants
@@ -179,7 +179,7 @@
     normalBodyTemperature: 310.15
     thermalRegulationTemperatureThreshold: 25
   - type: Temperature
-    heatDamageThreshold: 325
+    heatDamageThreshold: 340
     coldDamageThreshold: 260
     currentTemperature: 310.15
     specificHeat: 42
