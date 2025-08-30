@@ -9,7 +9,7 @@
   - type: Thruster
     baseThrust: 33
     thrust: 22
-    thrustPerPartLevel: [22, 23, 24, 25] # its bad
+    thrustPerPartLevel: [28.6, 37, 45.4, 53.8] # its bad
     damage:
       types:
         Heat: 40
@@ -56,7 +56,7 @@
   - type: Thruster
     baseThrust: 200
     thrust: 132
-    thrustPerPartLevel: [132, 145, 165, 200]
+    thrustPerPartLevel: [162, 202, 242, 282]
     damage:
       types:
         Heat: 40
@@ -106,7 +106,7 @@
   - type: Thruster
     baseThrust: 33
     thrust: 60
-    thrustPerPartLevel: [60, 67, 73, 80]
+    thrustPerPartLevel: [78, 96, 114, 132]
     damage:
       types:
         Heat: 40
@@ -153,7 +153,7 @@
   - type: Thruster
     baseThrust: 100
     thrust: 190
-    thrustPerPartLevel: [190, 230, 245, 275]
+    thrustPerPartLevel: [247, 304, 361, 418]
     damage:
       types:
         Heat: 40
@@ -200,7 +200,7 @@
   - type: Thruster
     baseThrust: 33
     thrust: 75
-    thrustPerPartLevel: [75, 85, 95, 110]
+    thrustPerPartLevel: [97.5, 120, 142.5, 165]
     damage:
       types:
         Heat: 40
@@ -247,7 +247,7 @@
   - type: Thruster
     baseThrust: 330
     thrust: 750
-    thrustPerPartLevel: [750, 900, 1350, 2000]
+    thrustPerPartLevel: [975, 1200, 1425, 1650]
     damage:
       types:
         Heat: 40
@@ -300,7 +300,7 @@
   - type: MachineBoard
     prototype: SlowWeakThruster
     requirements: # Frontier
-      Capacitor: 4 # Frontier stackRequirements<requirements
+      Capacitor: 3 # Frontier stackRequirements<requirements
 
 - type: latheRecipe
   parent: [BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory, BaseGeneralMachineRecipeCategory]
@@ -320,7 +320,7 @@
   - type: MachineBoard
     prototype: SlowStrongThruster
     requirements: # Frontier
-      Capacitor: 4 # Frontier stackRequirements<requirements
+      Capacitor: 3 # Frontier stackRequirements<requirements
 
 - type: latheRecipe
   parent: [BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory, BaseGeneralMachineRecipeCategory]
@@ -342,20 +342,16 @@
     requirements: # Frontier
       Capacitor: 5 # Frontier stackRequirements<requirements
     stackRequirements:
-      Steel: 15
-      Uranium: 10
-      Gold: 10
+      Steel: 5
 
 - type: latheRecipe
   parent: [BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory, BaseGeneralMachineRecipeCategory]
   id: FastWeakThrusterMachineCircuitboard
   result: FastWeakThrusterMachineCircuitboard
   materials:
-    Steel: 700
-    Glass: 1500
-    Plastic: 2000
-    Gold: 1000
-    Silver: 1000
+    Steel: 800
+    Glass: 900
+    Gold: 100
 
 #region TurboPutt Dragon
 - type: entity
@@ -370,22 +366,18 @@
   - type: MachineBoard
     prototype: FastStrongThruster
     requirements: # Frontier
-      Capacitor: 6 # Frontier stackRequirements<requirements
+      Capacitor: 5 # Frontier stackRequirements<requirements
     stackRequirements:
-      Steel: 20
-      Uranium: 15
-      Gold: 15
+      Steel: 10
 
 - type: latheRecipe
   parent: [BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory, BaseGeneralMachineRecipeCategory]
   id: FastStrongThrusterMachineCircuitboard
   result: FastStrongThrusterMachineCircuitboard
   materials:
-    Steel: 1500
-    Glass: 3000
-    Plastic: 4000
-    Gold: 2000
-    Silver: 2000
+    Steel: 800
+    Glass: 900
+    Gold: 100
 
 #region UltraPutt Vesper
 - type: entity
@@ -400,27 +392,20 @@
   - type: MachineBoard
     prototype: FasterWeakThruster
     requirements: # Frontier
-      Capacitor: 7 # Frontier stackRequirements<requirements
+      Capacitor: 6 # Frontier stackRequirements<requirements
     stackRequirements:
-      Steel: 60
-      Glass: 100
-      Uranium: 30
-      Gold: 30
-      Bananium: 20
-      Brass: 10
-      Bluespace: 1
+      Steel: 10
+      Plasma: 5
 
 - type: latheRecipe
   parent: [BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory, BaseGeneralMachineRecipeCategory]
   id: FasterWeakThrusterMachineCircuitboard
   result: FasterWeakThrusterMachineCircuitboard
   materials:
-    Steel: 3000
-    Glass: 6000
-    Plastic: 8000
-    Gold: 4000
-    Silver: 4000
-    Bananium: 2000
+    Steel: 800
+    Glass: 900
+    Gold: 200
+    Plasma: 100
 
 #region UltraPutt Titan
 - type: entity
@@ -437,28 +422,20 @@
   - type: MachineBoard
     prototype: FasterStrongThruster
     requirements: # Frontier
-      Capacitor: 8 # Frontier stackRequirements<requirements
+      Capacitor: 6 # Frontier stackRequirements<requirements
     stackRequirements:
-      Steel: 120
-      Glass: 200
-      Uranium: 60
-      Gold: 60
-      Bananium: 40
-      Brass: 30
-      Bluespace: 1
-      Diamond: 1
+      Steel: 20
+      Plasma: 10
 
 - type: latheRecipe
   parent: [BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory, BaseGeneralMachineRecipeCategory]
   id: FasterStrongThrusterMachineCircuitboard
   result: FasterStrongThrusterMachineCircuitboard
   materials:
-    Steel: 6000
-    Glass: 12000
-    Plastic: 16000
-    Gold: 8000
-    Silver: 8000
-    Bananium: 4000
+    Steel: 800
+    Glass: 900
+    Gold: 200
+    Plasma: 100
 
 #region tags i guess
 - type: Tag
