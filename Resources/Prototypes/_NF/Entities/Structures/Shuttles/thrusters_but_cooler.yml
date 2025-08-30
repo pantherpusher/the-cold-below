@@ -436,6 +436,7 @@
     Glass: 900
     Gold: 200
     Plasma: 100
+    Diamond: 100
 
 #region tags i guess
 - type: Tag
