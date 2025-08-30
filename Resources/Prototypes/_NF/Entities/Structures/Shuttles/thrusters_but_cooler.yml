@@ -252,7 +252,7 @@
       types:
         Heat: 40
   - type: ApcPowerReceiver
-    powerLoad: 100000 # This is a lot of power, but it is a super thruster after all
+    powerLoad: 50000 # This is a lot of power, but it is a super thruster after all
   - type: Sprite
     sprite: _NF/Structures/Shuttles/thruster.rsi # Frontier: use _NF prefix
     layers:
@@ -415,7 +415,7 @@
   description: A machine board for the UltraPutt Titan thruster.
     It is the ultimate in going unreasonably fast with extreme acceleration and thrust,
     but it requires a LOT of power to run. Fully upgraded, just one can fly an Ambition.
-    Be sure to upgrade your power systems first! It uses around 100kW of power, each.
+    Be sure to upgrade your power systems first! It uses around 50kW of power, each.
   components:
   - type: Sprite
     state: supply
