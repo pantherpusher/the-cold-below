@@ -1,3 +1,4 @@
+using Content.Shared._Coyote.Needs;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Overlays;
@@ -7,21 +8,21 @@ namespace Content.Client.Overlays;
 
 public sealed class ShowThirstIconsSystem : EquipmentHudSystem<ShowThirstIconsComponent>
 {
-    [Dependency] private readonly ThirstSystem _thirst = default!;
+    [Dependency] private readonly SharedNeedsSystem _needs = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ThirstComponent, GetStatusIconsEvent>(OnGetStatusIconsEvent);
+        // SubscribeLocalEvent<NeedsComponent, GetStatusIconsEvent>(OnGetStatusIconsEvent);
     }
 
-    private void OnGetStatusIconsEvent(EntityUid uid, ThirstComponent component, ref GetStatusIconsEvent ev)
+    private void OnGetStatusIconsEvent(EntityUid uid, NeedsComponent component, ref GetStatusIconsEvent ev)
     {
         if (!IsActive)
             return;
 
-        if (_thirst.TryGetStatusIconPrototype(component, out var iconPrototype))
+        if (_needs.TryGetThirstStatusIconPrototype(uid, out var iconPrototype, component))
             ev.StatusIcons.Add(iconPrototype);
     }
 }

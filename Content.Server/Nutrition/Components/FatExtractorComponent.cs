@@ -1,4 +1,6 @@
-﻿using Content.Server.Nutrition.EntitySystems;
+﻿using Content.Server._Coyote.Needs;
+using Content.Server.Nutrition.EntitySystems;
+using Content.Shared._Coyote.Needs;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Nutrition.Components;
 using Robust.Shared.Audio;
@@ -91,5 +93,5 @@ public sealed partial class FatExtractorComponent : Component
     /// Ignored when emagged.
     /// </summary>
     [DataField("minHungerThreshold")]
-    public HungerThreshold MinHungerThreshold = HungerThreshold.Okay;
+    public NeedThreshold MinHungerThreshold = NeedThreshold.Satisfied;
 }

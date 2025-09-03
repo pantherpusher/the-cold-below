@@ -1,0 +1,84 @@
+#hunger
+- type: need
+  id: NeedHungerDefault
+  needName: "Hunger"
+  needKind: "Hunger"
+  color: "Pink"
+  maxValue: 400
+  minValue: 0
+  minutesFromMaxToMin: 100
+  startingMinutesWorthOfDecay: 10
+  secondsPerUpdate: 5
+  # Extra Satisfied State
+  extraSatisfiedMinutesFromFull: 20
+  extraSatisfiedSpeedMult: 1.05
+  extraSatisfiedMultRPI: 1.50
+  extraSatisfiedAlert: null
+  extraSatisfiedIcon: HungerIconOverfed
+  # Satisfied State
+  satisfiedMinutesFromFull: 40
+  satisfiedSpeedMult: 1.00
+  satisfiedMultRPI: 1.00
+  satisfiedAlert: null
+  satisfiedIcon: HungerIconOverfed
+  # Neutral State
+  neutralMinutesFromFull: 60
+  neutralSpeedMult: 0.95
+  neutralMultRPI: 0.90
+  neutralAlert: Peckish
+  neutralIcon: HungerIconPeckish
+  # Low State
+  lowMinutesFromFull: 80
+  lowSpeedMult: 0.85
+  lowMultRPI: 0.75
+  lowAlert: Starving
+  lowIcon: HungerIconStarving
+  # Critical State
+  criticalMinutesFromFull: 100
+  criticalSpeedMult: 0.80
+  criticalMultRPI: 0.50
+  criticalAlert: Starving
+  criticalIcon: HungerIconStarving
+
+#thirst
+- type: need
+  id: NeedThirstBase
+  needName: "Thirst"
+  needKind: "Thirst"
+  color: "Cyan"
+  maxValue: 400
+  minValue: 0
+  minutesFromMaxToMin: 100 # 60 minutes from Satisfied, plus 20 minutes of Extra Satisfied
+  startingMinutesWorthOfDecay: 10
+  secondsPerUpdate: 1
+  # Extra Satisfied State
+  extraSatisfiedMinutesFromFull: 20
+  extraSatisfiedSpeedMult: 1.05
+  extraSatisfiedMultRPI: 1.50
+  extraSatisfiedAlert: null
+  extraSatisfiedIcon: ThirstIconOverhydrated
+  # Satisfied State
+  satisfiedMinutesFromFull: 40
+  satisfiedSpeedMult: 1.00
+  satisfiedMultRPI: 1.00
+  satisfiedAlert: null
+  satisfiedIcon: ThirstIconOverhydrated
+  # Neutral State
+  neutralMinutesFromFull: 60
+  neutralSpeedMult: 0.95
+  neutralMultRPI: 0.90
+  neutralAlert: Thirsty
+  neutralIcon: ThirstIconThirsty
+  # Low State
+  lowMinutesFromFull: 80
+  lowSpeedMult: 0.85
+  lowMultRPI: 0.75
+  lowAlert: Parched
+  lowIcon: ThirstIconParched
+  # Critical State
+  criticalMinutesFromFull: 100
+  criticalSpeedMult: 0.80
+  criticalMultRPI: 0.50
+  criticalAlert: Parched
+  criticalIcon: ThirstIconParched
+

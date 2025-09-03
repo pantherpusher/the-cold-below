@@ -1,10 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Server._Coyote.Needs;
 using Content.Server.Construction;
 using Content.Server.Nutrition.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Storage.Components;
+using Content.Shared._Coyote.Needs;
 using Content.Shared.Emag.Components;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Nutrition.Components;
@@ -24,7 +26,7 @@ public sealed class FatExtractorSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly EmagSystem _emag = default!;
-    [Dependency] private readonly HungerSystem _hunger = default!;
+    [Dependency] private readonly SharedNeedsSystem _needs = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
 
@@ -138,13 +140,20 @@ public sealed class FatExtractorSystem : EntitySystem
 
         occupant = storage.Contents.ContainedEntities.FirstOrDefault();
 
-        if (!TryComp<HungerComponent>(occupant, out var hunger))
+        if (occupant == null)
+            return false;
+        if (!TryComp<NeedsComponent>(occupant, out var needy))
+            return false;
+        if (!_needs.UsesHunger(occupant.Value, needy))
             return false;
 
-        if (_hunger.GetHunger(hunger) < component.NutritionPerSecond)
+        if (_needs.GetHunger(occupant.Value, needy) < component.NutritionPerSecond)
             return false;
-
-        if (hunger.CurrentThreshold < component.MinHungerThreshold && !_emag.CheckFlag(uid, EmagType.Interaction))
+        if (_needs.HungerIsBelowThreshold(
+                occupant.Value,
+                component.MinHungerThreshold,
+                needy)
+            && !_emag.CheckFlag(uid, EmagType.Interaction))
             return false;
 
         return true;
@@ -175,7 +184,7 @@ public sealed class FatExtractorSystem : EntitySystem
                 continue;
             fat.NextUpdate += fat.UpdateTime;
 
-            _hunger.ModifyHunger(occupant.Value, -fat.NutritionPerSecond);
+            _needs.ModifyHunger(occupant.Value, -fat.NutritionPerSecond);
             fat.NutrientAccumulator += fat.NutritionPerSecond;
             if (fat.NutrientAccumulator >= fat.NutrientPerMeat)
             {

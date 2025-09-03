@@ -316,6 +316,15 @@
   description: alerts-hunger-desc
 
 - type: alert
+  id: Overfed
+  category: Hunger
+  icons:
+  - sprite: /Textures/Interface/Alerts/hunger.rsi
+    state: overfed
+  name: alerts-hunger-overfed-name
+  description: alerts-hunger-overfed-desc
+
+- type: alert
   id: Stamina
   category: Stamina
   icons:
@@ -355,6 +364,15 @@
     state: thirsty
   name: alerts-thirsty-name
   description: alerts-thirsty-desc
+
+- type: alert
+  id: Hydrated
+  category: Thirst
+  icons:
+  - sprite: /Textures/Interface/Alerts/thirst.rsi
+    state: hydrated
+  name: alerts-thirsty-hydrated-name
+  description: alerts-thirsty-hydrated-desc
 
 - type: alert
   id: Parched

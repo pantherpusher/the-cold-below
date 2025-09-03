@@ -17,6 +17,13 @@
   - type: Appearance
   - type: Extractable
     grindableSolutionName: food
+  - type: Perishable
+    rotAfter: 3600 # rot after 60 minutes
+    molsPerSecondPerUnitMass: 0
+  - type: RotInto
+    entity: FoodBadRecipe
+    # once it would say bloated, turn into the rotten prototype
+    stage: 1
 
 # For produce that can be immediately eaten
 

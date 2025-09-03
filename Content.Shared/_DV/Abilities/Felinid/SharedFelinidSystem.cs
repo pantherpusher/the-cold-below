@@ -1,3 +1,4 @@
+using Content.Shared._Coyote.Needs;
 using Content.Shared._DV.Abilities;
 using Content.Shared._DV.Abilities.Felinid;
 using Content.Shared.Nutrition;
@@ -12,7 +13,7 @@ namespace Content.Shared._DV.Abilities.Felinid;
 /// </summary>
 public abstract class SharedFelinidSystem : EntitySystem
 {
-    [Dependency] private readonly HungerSystem _hunger = default!;
+    [Dependency] private readonly SharedNeedsSystem _needs = default!;
     [Dependency] private readonly ItemCougherSystem _cougher = default!;
 
     public override void Initialize()
@@ -25,10 +26,14 @@ public abstract class SharedFelinidSystem : EntitySystem
     private void OnMouseEaten(Entity<FelinidFoodComponent> ent, ref BeforeFullyEatenEvent args)
     {
         var user = args.User;
-        if (!HasComp<FelinidComponent>(user) || !TryComp<HungerComponent>(user, out var hunger))
+        if (!HasComp<FelinidComponent>(user)
+            || !TryComp<NeedsComponent>(user, out var hunger))
             return;
 
-        _hunger.ModifyHunger(user, ent.Comp.BonusHunger, hunger);
+        _needs.ModifyHunger(
+            user,
+            ent.Comp.BonusHunger,
+            hunger);
         _cougher.EnableAction(user);
     }
 }

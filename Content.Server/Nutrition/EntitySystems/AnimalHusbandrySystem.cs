@@ -1,5 +1,7 @@
+using Content.Server._Coyote.Needs;
 using Content.Server.Administration.Logs;
 using Content.Server.Popups;
+using Content.Shared._Coyote.Needs;
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Components;
@@ -24,7 +26,7 @@ namespace Content.Server.Nutrition.EntitySystems;
 public sealed class AnimalHusbandrySystem : EntitySystem
 {
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
-    [Dependency] private readonly HungerSystem _hunger = default!;
+    [Dependency] private readonly SharedNeedsSystem _needs = default!;
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -121,8 +123,8 @@ public sealed class AnimalHusbandrySystem : EntitySystem
         if (TryComp<InteractionPopupComponent>(uid, out var interactionPopup))
             _audio.PlayPvs(interactionPopup.InteractSuccessSound, uid);
 
-        _hunger.ModifyHunger(uid, -component.HungerPerBirth);
-        _hunger.ModifyHunger(partner, -component.HungerPerBirth);
+        _needs.ModifyHunger(uid, -component.HungerPerBirth);
+        _needs.ModifyHunger(partner, -component.HungerPerBirth);
 
         component.GestationEndTime = _timing.CurTime + component.GestationDuration;
         component.Gestating = true;
@@ -148,12 +150,21 @@ public sealed class AnimalHusbandrySystem : EntitySystem
         if (_mobState.IsIncapacitated(uid))
             return false;
 
-        if (TryComp<HungerComponent>(uid, out var hunger) && _hunger.GetHungerThreshold(hunger) < HungerThreshold.Okay)
-            return false;
-
-        if (TryComp<ThirstComponent>(uid, out var thirst) && thirst.CurrentThirstThreshold < ThirstThreshold.Okay)
-            return false;
-
+        if (TryComp<NeedsComponent>(uid, out var needy))
+        {
+            if (_needs.UsesHunger(uid, needy)
+                && _needs.HungerIsBelowThreshold(
+                    uid,
+                    NeedThreshold.Satisfied,
+                    needy))
+                return false;
+            if (_needs.UsesThirst(uid, needy)
+                && _needs.ThirstIsBelowThreshold(
+                    uid,
+                    NeedThreshold.Satisfied,
+                    needy))
+                return false;
+        }
         return true;
     }
 

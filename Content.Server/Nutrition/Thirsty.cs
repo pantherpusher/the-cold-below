@@ -1,4 +1,5 @@
 using Content.Server.Administration;
+using Content.Shared._Coyote.Needs;
 using Content.Shared.Administration;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
@@ -26,13 +27,16 @@ public sealed class Thirsty : LocalizedEntityCommands
             return;
         }
 
-        if (!EntityManager.TryGetComponent(playerEntity, out ThirstComponent? thirst))
+        if (!EntityManager.TryGetComponent(playerEntity, out NeedsComponent? needy))
         {
-            shell.WriteError(Loc.GetString("cmd-nutrition-error-component", ("comp", nameof(ThirstComponent))));
+            shell.WriteError(Loc.GetString("cmd-nutrition-error-component", ("comp", nameof(NeedsComponent))));
             return;
         }
 
-        var thirstyThreshold = thirst.ThirstThresholds[ThirstThreshold.Parched];
-        EntityManager.System<ThirstSystem>().SetThirst(playerEntity, thirst, thirstyThreshold);
+        EntityManager.System<SharedNeedsSystem>()
+            .SetThirstToThreshold(
+                playerEntity,
+                NeedThreshold.Critical,
+                needy);
     }
 }

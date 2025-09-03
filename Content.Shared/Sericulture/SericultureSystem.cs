@@ -1,3 +1,4 @@
+using Content.Shared._Coyote.Needs;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Content.Shared.Nutrition.EntitySystems;
@@ -20,7 +21,7 @@ public abstract partial class SharedSericultureSystem : EntitySystem
     // Systems
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] private readonly HungerSystem _hungerSystem = default!;
+    [Dependency] private readonly SharedNeedsSystem _needsSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedStackSystem _stackSystem = default!;
 
@@ -52,18 +53,23 @@ public abstract partial class SharedSericultureSystem : EntitySystem
 
     private void OnSericultureStart(EntityUid uid, SericultureComponent comp, SericultureActionEvent args)
     {
-        if (TryComp<HungerComponent>(uid, out var hungerComp)
-            && _hungerSystem.IsHungerBelowState(uid,
-                comp.MinHungerThreshold,
-                _hungerSystem.GetHunger(hungerComp) - comp.HungerCost,
-                hungerComp))
+
+        if (TryComp<NeedsComponent>(uid, out var needsComp)
+            && _needsSystem.UsesHunger(uid, needsComp)
+            && _needsSystem.HungerIsBelowThreshold(
+                uid,
+                comp.MinHungerThreshold))
         {
-            _popupSystem.PopupClient(Loc.GetString(comp.PopupText), uid, uid);
+            _popupSystem.PopupClient(
+                Loc.GetString(comp.PopupText),
+                uid,
+                uid);
             return;
         }
 
         var doAfter = new DoAfterArgs(EntityManager, uid, comp.ProductionLength, new SericultureDoAfterEvent(), uid)
-        { // I'm not sure if more things should be put here, but imo ideally it should probably be set in the component/YAML. Not sure if this is currently possible.
+        {
+            // I'm not sure if more things should be put here, but imo ideally it should probably be set in the component/YAML. Not sure if this is currently possible.
             BreakOnMove = true,
             BlockDuplicate = true,
             BreakOnDamage = true,
@@ -79,18 +85,20 @@ public abstract partial class SharedSericultureSystem : EntitySystem
         if (args.Cancelled || args.Handled || comp.Deleted)
             return;
 
-        if (TryComp<HungerComponent>(uid,
-                out var hungerComp) // A check, just incase the doafter is somehow performed when the entity is not in the right hunger state.
-            && _hungerSystem.IsHungerBelowState(uid,
-                comp.MinHungerThreshold,
-                _hungerSystem.GetHunger(hungerComp) - comp.HungerCost,
-                hungerComp))
+        if (TryComp<NeedsComponent>(uid, out var needsComp)
+            && _needsSystem.UsesHunger(uid, needsComp)
+            && _needsSystem.HungerIsBelowThreshold(
+                uid,
+                comp.MinHungerThreshold))
         {
-            _popupSystem.PopupClient(Loc.GetString(comp.PopupText), uid, uid);
+            _popupSystem.PopupClient(
+                Loc.GetString(comp.PopupText),
+                uid,
+                uid);
             return;
         }
 
-        _hungerSystem.ModifyHunger(uid, -comp.HungerCost);
+        _needsSystem.ModifyHunger(uid, -comp.HungerCost);
 
         if (!_netManager.IsClient) // Have to do this because spawning stuff in shared is CBT.
         {

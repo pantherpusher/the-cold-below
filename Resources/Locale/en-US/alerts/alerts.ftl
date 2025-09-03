@@ -63,17 +63,23 @@ alerts-internals-desc = Toggles your gas tank internals on or off.
 alerts-piloting-name = Piloting Shuttle
 alerts-piloting-desc = You are piloting a shuttle. Click the alert to stop.
 
-alerts-hunger-name = [color=yellow]Peckish[/color]
-alerts-hunger-desc = Some food would be good right about now.
+alerts-hunger-overfed-name = [color=green]Well Fed[/color]
+alerts-hunger-overfed-desc = You've had a big meal and are feeling great!
+
+alerts-hunger-name = [color=yellow]Hungry[/color]
+alerts-hunger-desc = You are hungry, and it's making you feel a bit sluggish
 
 alerts-stamina-name = Stamina
 alerts-stamina-desc = Stuns you if it is too low.
 
 alerts-starving-name = [color=red]Starving[/color]
-alerts-starving-desc = You're severely malnourished. The hunger pains make moving around a chore.
+alerts-starving-desc = You're starving! The hunger pains make moving around a chore.
+
+alerts-thirsty-hydrated-name = [color=green]Hydrated[/color]
+alerts-thirsty-hydrated-desc = You're one well hydrated critter! Keep up the good work.
 
 alerts-thirsty-name = [color=yellow]Thirsty[/color]
-alerts-thirsty-desc = Something to drink would be good right about now.
+alerts-thirsty-desc = You are thirsty, and it's making you feel a bit sluggish.
 
 alerts-parched-name = [color=red]Parched[/color]
 alerts-parched-desc = You're severely thirsty. The thirst makes moving around a chore.

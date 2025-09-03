@@ -7,10 +7,10 @@
   components:
   - type: HumanoidAppearance
     species: Diona
-  - type: Hunger
-    baseDecayRate: 0.0083
-  - type: Thirst
-    baseDecayRate: 0.0083
+  - type: Needs
+    needs:
+    - NeedHungerTree
+    - NeedThirstTree
   - type: Icon
     sprite: Mobs/Species/Diona/parts.rsi
     state: full

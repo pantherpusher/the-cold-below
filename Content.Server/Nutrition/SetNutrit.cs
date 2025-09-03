@@ -5,6 +5,7 @@ using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Robust.Shared.Console;
 using System.Linq;
+using Content.Shared._Coyote.Needs;
 
 namespace Content.Server.Nutrition;
 
@@ -30,56 +31,66 @@ public sealed class SetNutrit : LocalizedEntityCommands
 
         if (args.Length != 2)
         {
-            shell.WriteError(Loc.GetString("shell-wrong-arguments-number-need-specific",
-                ("properAmount", 2),
-                ("currentAmount", args.Length)
-            ));
+            shell.WriteError(
+                Loc.GetString(
+                    "shell-wrong-arguments-number-need-specific",
+                    ("properAmount", 2),
+                    ("currentAmount", args.Length)));
             return;
         }
+        if (!EntityManager.TryGetComponent(playerEntity, out NeedsComponent? needy))
+        {
+            shell.WriteError(Loc.GetString("cmd-nutrition-error-component", ("comp", nameof(NeedsComponent))));
+            return;
+        }
+        var needsSystem = EntityManager.System<SharedNeedsSystem>();
 
         var systemString = args[0];
         switch (systemString)
         {
             case "hunger":
             {
-                if (!EntityManager.TryGetComponent(playerEntity, out HungerComponent? hunger))
+                if (!needsSystem.UsesHunger(playerEntity, needy))
                 {
-                    shell.WriteError(Loc.GetString("cmd-nutrition-error-component", ("comp", nameof(HungerComponent))));
+                    shell.WriteError("They dont use hunger");
                     return;
                 }
-
-                if (!Enum.TryParse(args[1], out HungerThreshold hungerThreshold))
+                if (!Enum.TryParse(args[1], out NeedThreshold needThreshold))
                 {
                     shell.WriteError(Loc.GetString("cmd-setnutrit-error-invalid-threshold",
-                        ("thresholdType", nameof(HungerThreshold)),
+                        ("thresholdType", nameof(NeedThreshold)),
                         ("thresholdString", args[1])
                     ));
                     return;
                 }
 
-                var hungerValue = hunger.Thresholds[hungerThreshold];
-                EntityManager.System<HungerSystem>().SetHunger(playerEntity, hungerValue, hunger);
+                needsSystem.SetHungerToThreshold(
+                    playerEntity,
+                    needThreshold,
+                    needy);
                 return;
             }
             case "thirst":
             {
-                if (!EntityManager.TryGetComponent(playerEntity, out ThirstComponent? thirst))
+                if (!needsSystem.UsesThirst(playerEntity, needy))
                 {
-                    shell.WriteError(Loc.GetString("cmd-nutrition-error-component", ("comp", nameof(ThirstComponent))));
+                    shell.WriteError("They dont use thirst");
                     return;
                 }
 
-                if (!Enum.TryParse(args[1], out ThirstThreshold thirstThreshold))
+                if (!Enum.TryParse(args[1], out NeedThreshold thirstThreshold))
                 {
                     shell.WriteError(Loc.GetString("cmd-setnutrit-error-invalid-threshold",
-                         ("thresholdType", nameof(ThirstThreshold)),
+                         ("thresholdType", nameof(NeedThreshold)),
                          ("thresholdString", args[1])
                      ));
                     return;
                 }
 
-                var thirstValue = thirst.ThirstThresholds[thirstThreshold];
-                EntityManager.System<ThirstSystem>().SetThirst(playerEntity, thirst, thirstValue);
+                needsSystem.SetThirstToThreshold(
+                    playerEntity,
+                    thirstThreshold,
+                    needy);
                 return;
             }
             default:
@@ -103,8 +114,8 @@ public sealed class SetNutrit : LocalizedEntityCommands
             {
                 return args[0] switch
                 {
-                    "hunger" => CompletionResult.FromHintOptions(Enum.GetNames<HungerThreshold>(), nameof(HungerThreshold)),
-                    "thirst" => CompletionResult.FromHintOptions(Enum.GetNames<ThirstThreshold>(), nameof(ThirstThreshold)),
+                    "hunger" => CompletionResult.FromHintOptions(Enum.GetNames<NeedThreshold>(), nameof(NeedThreshold)),
+                    "thirst" => CompletionResult.FromHintOptions(Enum.GetNames<NeedThreshold>(), nameof(NeedThreshold)),
                     _ => CompletionResult.Empty,
                 };
             }

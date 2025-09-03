@@ -1,3 +1,4 @@
+using Content.Shared._Coyote.Needs;
 using Content.Shared.Nutrition.Components;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -62,5 +63,5 @@ public sealed partial class SericultureComponent : Component
     [DataField("minHungerThreshold")]
     [ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]
-    public HungerThreshold MinHungerThreshold = HungerThreshold.Okay;
+    public NeedThreshold MinHungerThreshold = NeedThreshold.Satisfied;
 }

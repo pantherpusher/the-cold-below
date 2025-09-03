@@ -157,6 +157,13 @@ namespace Content.Server.Kitchen.Components
         [DataField, ViewVariables(VVAccess.ReadOnly)]
         public MicrowaveUiKey Key = MicrowaveUiKey.Key;
         // End Frontier
+
+        /// <summary>
+        /// If the microwave was turned on by someone who is good at cooking,
+        /// it makes the food a bit better.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public bool OperatedByTrueChef = false;
     }
 
     public sealed class BeingMicrowavedEvent : HandledEntityEventArgs
