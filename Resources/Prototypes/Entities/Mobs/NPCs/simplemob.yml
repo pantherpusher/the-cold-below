@@ -66,7 +66,7 @@
       80: 0.5
   - type: MobPrice
     price: 1000 # Living critters are valuable in space.
-  - type: Perishable
+#  - type: Perishable
 
 - type: entity
   parent:

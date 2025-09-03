@@ -900,8 +900,8 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/cow_moo.ogg
-  - type: Perishable
-    molsPerSecondPerUnitMass: 0.0015
+#  - type: Perishable
+#    molsPerSecondPerUnitMass: 0.0015
   - type: NpcFactionMember
     factions:
     - Passive

@@ -314,7 +314,7 @@
     state: boiled
   - type: Item
     size: Normal
-  - type: Perishable
+#  - type: Perishable
     rotAfter: 120 # rot after 2 minutes
     molsPerSecondPerUnitMass: 0
     forceRotProgression: true

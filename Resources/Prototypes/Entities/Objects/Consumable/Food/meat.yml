@@ -49,13 +49,13 @@
   - type: PhysicalComposition
     materialComposition:
       Meaterial: 300
-  - type: Perishable
-    rotAfter: 1800 # rot after 30 minutes
-    molsPerSecondPerUnitMass: 0
-  - type: RotInto
-    entity: FoodMeatRotten
-    # once it would say bloated, turn into the rotten prototype
-    stage: 1
+#  - type: Perishable
+#    rotAfter: 1800 # rot after 30 minutes
+#    molsPerSecondPerUnitMass: 0
+#  - type: RotInto
+#    entity: FoodMeatRotten
+#    # once it would say bloated, turn into the rotten prototype
+#    stage: 1
 
 - type: entity
   parent: FoodMeatBase
