@@ -61,13 +61,13 @@
   # all below are for egg cooking/exploding
   - type: AtmosExposed
   - type: Temperature
-  - type: Perishable
-    rotAfter: 180000000 # just dont rot okay
-    molsPerSecondPerUnitMass: 0
-  - type: RotInto
-    entity: FoodMeatRotten
-    # once it would say bloated, turn into the rotten prototype
-    stage: 1
+#  - type: Perishable
+#    rotAfter: 180000000 # just dont rot okay
+#    molsPerSecondPerUnitMass: 0
+#  - type: RotInto
+#    entity: FoodMeatRotten
+#    # once it would say bloated, turn into the rotten prototype
+#    stage: 1
 
 # Splat
 - type: entity

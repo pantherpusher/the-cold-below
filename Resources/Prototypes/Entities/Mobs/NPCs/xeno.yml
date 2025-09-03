@@ -116,8 +116,8 @@
       - DoorBumpOpener
       - FootstepSound
   - type: NoSlip
-  - type: Perishable #Ummmm the acid kills a lot of the bacteria or something
-    molsPerSecondPerUnitMass: 0.0005
+#  - type: Perishable #Ummmm the acid kills a lot of the bacteria or something
+#    molsPerSecondPerUnitMass: 0.0005
   - type: Speech
     speechVerb: LargeMob
   - type: Vore # Floofstation - Vore
