@@ -54,6 +54,61 @@ public sealed partial class NeedsComponent : Component
         { NeedType.Hunger, NeedExamineVisibility.Owner },
         { NeedType.Thirst, NeedExamineVisibility.Owner },
     };
+
+    /// <summary>
+    /// COOL DEBUG STUFF
+    /// Cus its impossible to edit the actual need datums through viewvariables
+    /// So these vars are a workaround! They'll hold the values of the needs for easy editing
+    /// And when editing is done, the values will be pushed back into the datums
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float DebugHunger
+    {
+        get => GetNeedCurrent(NeedType.Hunger) ?? float.MinValue;
+        set => SetNeedCurrent(NeedType.Hunger, value);
+    }
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float DebugThirst
+    {
+        get => GetNeedCurrent(NeedType.Thirst) ?? float.MinValue;
+        set => SetNeedCurrent(NeedType.Thirst, value);
+    }
+
+    /// <summary>
+    /// Debug readouts of each need's current threshold data
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly)]
+    public Dictionary<string, string> DebugThresholds
+    {
+        get => GetNeedsThresholds();
+    }
+
+    private Dictionary<string, string> GetNeedsThresholds()
+    {
+        var dict = new Dictionary<string, string>();
+        foreach (var (needType, datum) in this.Needs)
+        {
+            datum.OutputDebugInfo(ref dict);
+        }
+        return dict;
+    }
+
+    private float? GetNeedCurrent(NeedType type)
+    {
+        if (Needs.TryGetValue(type, out var datum))
+        {
+            return datum.CurrentValue;
+        }
+        return null;
+    }
+
+    private void SetNeedCurrent(NeedType type, float value)
+    {
+        if (Needs.TryGetValue(type, out var datum))
+        {
+            datum.SetCurrentValue(value);
+        }
+    }
 }
 /// <summary>
 /// Visibility settings for a need on examine.
@@ -74,3 +129,4 @@ public enum NeedExamineVisibility : byte
     /// </summary>
     Owner = 2,
 }
+

@@ -334,9 +334,13 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             int.MaxValue);
         var addedPay = (int)modifyEvent.Additive;
         var multiplier = modifyEvent.Multiplier;
+        // round multiplier the nearest 0.05f for display purposes
+        multiplier = (float)Math.Round(multiplier * 20f) / 20f;
         var hasMultiplier = Math.Abs(multiplier - 1f) > 0.01f;
         var hasAdditive = addedPay != 0;
         var hasModifier = hasMultiplier || hasAdditive;
+        // round UP to the nearest 10 cus it looks better
+        payAmount = (int)(Math.Ceiling(payAmount / 10.0) * 10);
         // pay the player
         if (!_bank.TryBankDeposit(uid, payAmount))
         {

@@ -286,7 +286,7 @@ public abstract class SharedNeedsSystem : EntitySystem
                         ("entity", Identity.Entity(examinee, IoCManager.Resolve<IEntityManager>())));
                 }
 
-                needChungus += "\n" + timeString + "\n";
+                needChungus += "\n" + timeString;
 
                 stringOut += needChungus + "\n";
             }
@@ -298,7 +298,7 @@ public abstract class SharedNeedsSystem : EntitySystem
             {
                 // turns something like 0.85 into -15%, and 1.25 into +25%
                 var speedPercent = $"{(slowMod - 1.0f) * 100.0f:+0;-0}%";
-                if (slowMod < 1.0f)
+                if (slowMod > 1.0f)
                 {
                     buffs.Add(
                         Loc.GetString(
@@ -323,7 +323,7 @@ public abstract class SharedNeedsSystem : EntitySystem
             {
                 // turns something like 0.85 into -15%, and 1.25 into +25%
                 var rpiPercent = $"{(rpiMod - 1.0f) * 100.0f:+0;-0}%";
-                if (rpiMod < 1.0f)
+                if (rpiMod > 1.0f)
                 {
                     buffs.Add(
                         Loc.GetString(
@@ -358,6 +358,8 @@ public abstract class SharedNeedsSystem : EntitySystem
             RaiseLocalEvent(examinee, ev);
             ev.AppendAdditionalInfoLines(ref stringOut);
         } // GOOD
+        // DIVIDER
+        stringOut += "--------------------\n";
         return stringOut;
     }
 

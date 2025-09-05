@@ -1,10 +1,10 @@
 #hunger
 - type: need
-  id: NeedHungerDefault
+  id: NeedHungerVulpkanin
   needName: "Hunger"
   needKind: "Hunger"
   color: "Pink"
-  maxValue: 500
+  maxValue: 600
   minValue: 0
   minutesFromMaxToMin: 300 # 5 hours
   startingMinutesWorthOfDecay: 100
@@ -23,7 +23,7 @@
   satisfiedAlert: null
   satisfiedIcon: HungerIconOverfed
   # Low State
-  lowMinutesFromFull: 210
+  lowMinutesFromFull: 270
   lowSpeedMult: 0.70
   lowMultRPI: 0.75
   lowAlert: Peckish
@@ -37,11 +37,11 @@
 
 #thirst
 - type: need
-  id: NeedThirstDefault
+  id: NeedThirstVulpkanin
   needName: "Thirst"
   needKind: "Thirst"
   color: "Cyan"
-  maxValue: 500
+  maxValue: 600
   minValue: 0
   minutesFromMaxToMin: 300
   startingMinutesWorthOfDecay: 100
@@ -60,7 +60,7 @@
   satisfiedAlert: null
   satisfiedIcon: ThirstIconOverhydrated
   # Low State
-  lowMinutesFromFull: 210
+  lowMinutesFromFull: 270
   lowSpeedMult: 0.70
   lowMultRPI: 0.75
   lowAlert: Thirsty

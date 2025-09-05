@@ -44,11 +44,11 @@ examinable-need-thirst-critical-self        = You feel absolutely parched!
 examinable-need-thirst-numberized           = You'd rate {CAPITALIZE(SUBJECT($entity))}'s hydration as {$current}/{$max}.
 examinable-need-thirst-numberized-self      = You'd rate your hydration as {$current}/{$max}.
 
-examinable-need-thirst-timeleft-extrasatisfied-self  = You feel like {CAPITALIZE(SUBJECT($entity))} will remain hydrated for...
-examinable-need-thirst-timeleft-satisfied-self       = You feel like {CAPITALIZE(SUBJECT($entity))} will remain quenched for...
-examinable-need-thirst-timeleft-low-self             = You feel like {CAPITALIZE(SUBJECT($entity))} could put up with their thirst for...
-examinable-need-thirst-timeleft-low-meme-self        = You feel like {CAPITALIZE(SUBJECT($entity))} could put up with their thurrstyness for...
-examinable-need-thirst-timeleft-critical-self        = {CAPITALIZE($creature)} need
+examinable-need-thirst-timeleft-extrasatisfied  = You feel like {CAPITALIZE(SUBJECT($entity))} will remain hydrated for...
+examinable-need-thirst-timeleft-satisfied       = You feel like {CAPITALIZE(SUBJECT($entity))} will remain quenched for...
+examinable-need-thirst-timeleft-low             = You feel like {CAPITALIZE(SUBJECT($entity))} could put up with their thirst for...
+examinable-need-thirst-timeleft-low-meme        = You feel like {CAPITALIZE(SUBJECT($entity))} could put up with their thurrstyness for...
+examinable-need-thirst-timeleft-critical        = {CAPITALIZE($creature)} need
 
 examinable-need-thirst-timeleft-extrasatisfied  = You feel like you will remain hydrated for...\n.
 examinable-need-thirst-timeleft-satisfied       = You feel like you will remain quenched for...\n.
@@ -58,7 +58,7 @@ examinable-need-thirst-timeleft-critical        = {CAPITALIZE($creature)} needs 
 
 # Buffs and Debuffs
 examinable-need-effect-header = [bold][underline]Effects:[/underline][/bold]
-examinable-need-effect-buff = [color=green]{kind}[/color] {text} [color=green]({amount})[/color]
-examinable-need-effect-debuff = [color=red]{kind}[/color] {text} [color=red]({amount})[/color]
-examinable-need-effect-buff-custom = [color=green]{kind}[/color] {text}
-examinable-need-effect-debuff-custom = [color=red]{kind}[/color] {text}
+examinable-need-effect-buff = [color=green]{$kind}[/color] {$text} [color=green]({$amount})[/color]
+examinable-need-effect-debuff = [color=red]{$kind}[/color] {$text} [color=red]({$amount})[/color]
+examinable-need-effect-buff-custom = [color=green]{$kind}[/color] {$text}
+examinable-need-effect-debuff-custom = [color=red]{$kind}[/color] {$text}

@@ -389,8 +389,39 @@ public sealed class NeedDatum()
         return false;
     }
 
+    /// <summary>
+    /// Modifies an input dictionary to add debug information about this need
+    /// </summary>
+    public void OutputDebugInfo(ref Dictionary<string, string> dict)
+    {
+        var keyBase = NeedType.ToString();
+        dict[$"{keyBase} START"] = "-----";
+        dict[$"{keyBase} Current Value"] = CurrentValue.ToString("0.00");
+        dict[$"{keyBase} Max Value"] = MaxValue.ToString("0.00");
+        dict[$"{keyBase} Min Value"] = MinValue.ToString("0.00");
+        dict[$"{keyBase} Decay Rate"] = DecayRate.ToString("0.0000") + " per second";
+        dict[$"{keyBase} Current Threshold"] = CurrentThreshold.ToString();
+        dict[$"{keyBase} Next Update In"] = $"{(NextUpdateTime - TimeSpan.Zero).TotalSeconds:0.00} seconds";
+        dict[$"{keyBase} Current RPI Modifier"] = RpiModifiers[CurrentThreshold].ToString("0.00") + "x";
+        dict[$"{keyBase} Current Speed Modifier"] = SlowdownModifiers[CurrentThreshold].ToString("0.00") + "x";
+        dict[$"{keyBase} Current Alert"] = GetCurrentAlert().ToString();
+        dict[$"{keyBase} Current Status Icon"] = GetCurrentStatusIcon(out var icon) ? icon : "None";
+        foreach (var (threshold, value) in Thresholds)
+        {
+            var isCurr = threshold == CurrentThreshold ? " <-" : " ";
+            dict[$"{keyBase} Threshold {threshold} Value{isCurr}"] = value.ToString("0.00");
+            dict[$"{keyBase} Threshold {threshold} RPI Modifier{isCurr}"] = RpiModifiers[threshold].ToString("0.00") + "x";
+            dict[$"{keyBase} Threshold {threshold} Speed Modifier{isCurr}"] = SlowdownModifiers[threshold].ToString("0.00") + "x";
+            dict[$"{keyBase} Threshold {threshold} Alert{isCurr}"] = Alerts[threshold]?.ToString() ?? "None";
+            dict[$"{keyBase} Threshold {threshold} Status Icon{isCurr}"] = string.IsNullOrEmpty(StatusIcons[threshold]) ? "None" : StatusIcons[threshold];
+        }
+
+        dict["Fuzzy"] = "hugged";
+        dict[$"{keyBase} END"] = "-----";
+    }
 }
 
+#region Events
 /// <summary>
 /// An event raised when something ELSE wants to mess with the examine text
 /// </summary>
@@ -453,6 +484,7 @@ public sealed class NeedExamineInfoEvent(NeedDatum need, EntityUid examinee, boo
         }
     }
 }
+#endregion
 
 public struct NeedThresholdUpdateResult(NeedThreshold oldThreshold, NeedThreshold newThreshold)
 {

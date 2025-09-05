@@ -1,29 +1,29 @@
 #hunger
 - type: need
-  id: NeedHungerDefault
+  id: NeedHungerDragon
   needName: "Hunger"
   needKind: "Hunger"
   color: "Pink"
-  maxValue: 500
+  maxValue: 1700
   minValue: 0
   minutesFromMaxToMin: 300 # 5 hours
   startingMinutesWorthOfDecay: 100
   secondsPerUpdate: 1
   alertCategory: "Hunger"
   # Extra Satisfied State
-  extraSatisfiedMinutesFromFull: 45
+  extraSatisfiedMinutesFromFull: 80
   extraSatisfiedSpeedMult: 1.05
   extraSatisfiedMultRPI: 1.25
   extraSatisfiedAlert: null
   extraSatisfiedIcon: HungerIconOverfed
   # Satisfied State
-  satisfiedMinutesFromFull: 180 # 3 hours, minus 45 minutes of Extra Satisfied
+  satisfiedMinutesFromFull: 240 # 3 hours, minus 45 minutes of Extra Satisfied
   satisfiedSpeedMult: 1.0
   satisfiedMultRPI: 1.0
   satisfiedAlert: null
   satisfiedIcon: HungerIconOverfed
   # Low State
-  lowMinutesFromFull: 210
+  lowMinutesFromFull: 270
   lowSpeedMult: 0.70
   lowMultRPI: 0.75
   lowAlert: Peckish
@@ -37,30 +37,30 @@
 
 #thirst
 - type: need
-  id: NeedThirstDefault
+  id: NeedThirstDragon
   needName: "Thirst"
   needKind: "Thirst"
   color: "Cyan"
-  maxValue: 500
+  maxValue: 1700
   minValue: 0
   minutesFromMaxToMin: 300
   startingMinutesWorthOfDecay: 100
   secondsPerUpdate: 1
   alertCategory: "Thirst"
   # Extra Satisfied State
-  extraSatisfiedMinutesFromFull: 45
+  extraSatisfiedMinutesFromFull: 80
   extraSatisfiedSpeedMult: 1.05
   extraSatisfiedMultRPI: 1.25
   extraSatisfiedAlert: null
   extraSatisfiedIcon: ThirstIconOverhydrated
   # Satisfied State
-  satisfiedMinutesFromFull: 180 # 3 hours, minus 45 minutes of Extra Satisfied
+  satisfiedMinutesFromFull: 240
   satisfiedSpeedMult: 1.0
   satisfiedMultRPI: 1.0
   satisfiedAlert: null
   satisfiedIcon: ThirstIconOverhydrated
   # Low State
-  lowMinutesFromFull: 210
+  lowMinutesFromFull: 270
   lowSpeedMult: 0.70
   lowMultRPI: 0.75
   lowAlert: Thirsty

@@ -1,14 +1,14 @@
 #hunger
 - type: need
-  id: NeedHungerDefault
+  id: NeedHungerAnimal
   needName: "Hunger"
   needKind: "Hunger"
   color: "Pink"
-  maxValue: 500
+  maxValue: 200
   minValue: 0
   minutesFromMaxToMin: 300 # 5 hours
   startingMinutesWorthOfDecay: 100
-  secondsPerUpdate: 1
+  secondsPerUpdate: 10
   alertCategory: "Hunger"
   # Extra Satisfied State
   extraSatisfiedMinutesFromFull: 45
@@ -41,11 +41,11 @@
   needName: "Thirst"
   needKind: "Thirst"
   color: "Cyan"
-  maxValue: 500
+  maxValue: 200
   minValue: 0
   minutesFromMaxToMin: 300
   startingMinutesWorthOfDecay: 100
-  secondsPerUpdate: 1
+  secondsPerUpdate: 10
   alertCategory: "Thirst"
   # Extra Satisfied State
   extraSatisfiedMinutesFromFull: 45

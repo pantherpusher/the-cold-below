@@ -1,35 +1,35 @@
 #hunger
 - type: need
-  id: NeedHungerDefault
+  id: NeedHungerAnimalHuge
   needName: "Hunger"
   needKind: "Hunger"
   color: "Pink"
-  maxValue: 500
+  maxValue: 1500
   minValue: 0
-  minutesFromMaxToMin: 300 # 5 hours
-  startingMinutesWorthOfDecay: 100
-  secondsPerUpdate: 1
+  minutesFromMaxToMin: 600
+  startingMinutesWorthOfDecay: 300
+  secondsPerUpdate: 10
   alertCategory: "Hunger"
   # Extra Satisfied State
-  extraSatisfiedMinutesFromFull: 45
+  extraSatisfiedMinutesFromFull: 100
   extraSatisfiedSpeedMult: 1.05
   extraSatisfiedMultRPI: 1.25
   extraSatisfiedAlert: null
   extraSatisfiedIcon: HungerIconOverfed
   # Satisfied State
-  satisfiedMinutesFromFull: 180 # 3 hours, minus 45 minutes of Extra Satisfied
+  satisfiedMinutesFromFull: 250
   satisfiedSpeedMult: 1.0
   satisfiedMultRPI: 1.0
   satisfiedAlert: null
   satisfiedIcon: HungerIconOverfed
   # Low State
-  lowMinutesFromFull: 210
+  lowMinutesFromFull: 400
   lowSpeedMult: 0.70
   lowMultRPI: 0.75
   lowAlert: Peckish
   lowIcon: HungerIconPeckish
   # Critical State
-  criticalMinutesFromFull: 300 # 1.5 hours of starvation after Low
+  criticalMinutesFromFull: 600
   criticalSpeedMult: 0.50
   criticalMultRPI: 0.50
   criticalAlert: Starving
@@ -37,36 +37,36 @@
 
 #thirst
 - type: need
-  id: NeedThirstDefault
+  id: NeedThirstAnimalHuge
   needName: "Thirst"
   needKind: "Thirst"
   color: "Cyan"
-  maxValue: 500
+  maxValue: 1500
   minValue: 0
-  minutesFromMaxToMin: 300
-  startingMinutesWorthOfDecay: 100
-  secondsPerUpdate: 1
+  minutesFromMaxToMin: 600
+  startingMinutesWorthOfDecay: 300
+  secondsPerUpdate: 10
   alertCategory: "Thirst"
   # Extra Satisfied State
-  extraSatisfiedMinutesFromFull: 45
+  extraSatisfiedMinutesFromFull: 100
   extraSatisfiedSpeedMult: 1.05
   extraSatisfiedMultRPI: 1.25
   extraSatisfiedAlert: null
   extraSatisfiedIcon: ThirstIconOverhydrated
   # Satisfied State
-  satisfiedMinutesFromFull: 180 # 3 hours, minus 45 minutes of Extra Satisfied
+  satisfiedMinutesFromFull: 250
   satisfiedSpeedMult: 1.0
   satisfiedMultRPI: 1.0
   satisfiedAlert: null
   satisfiedIcon: ThirstIconOverhydrated
   # Low State
-  lowMinutesFromFull: 210
+  lowMinutesFromFull: 400
   lowSpeedMult: 0.70
   lowMultRPI: 0.75
   lowAlert: Thirsty
   lowIcon: ThirstIconThirsty
   # Critical State
-  criticalMinutesFromFull: 300 # 1.5 hours of starvation after Low
+  criticalMinutesFromFull: 600
   criticalSpeedMult: 0.50
   criticalMultRPI: 0.50
   criticalAlert: Parched
