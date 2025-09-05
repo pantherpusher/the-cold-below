@@ -17,7 +17,7 @@
       80: 0.5
   - type: MobPrice
     price: 2000
-  - type: Perishable
+#  - type: Perishable
   - type: Needs
     needs:
     - NeedHungerDragon
