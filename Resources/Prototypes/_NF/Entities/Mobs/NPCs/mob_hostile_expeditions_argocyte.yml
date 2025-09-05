@@ -64,8 +64,8 @@
     accent: genericAggressive
   - type: Speech
     speechVerb: LargeMob
-  - type: Perishable #Ummmm the acid kills a lot of the bacteria or something
-    molsPerSecondPerUnitMass: 0.0005
+#  - type: Perishable #Ummmm the acid kills a lot of the bacteria or something
+#    molsPerSecondPerUnitMass: 0.0005
   - type: Tag
     tags:
     - CannotSuicide
