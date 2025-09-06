@@ -410,81 +410,259 @@ public sealed class NeedDatum()
         {
             var isCurr = threshold == CurrentThreshold ? " <-" : " ";
             dict[$"{keyBase} Threshold {threshold} Value{isCurr}"] = value.ToString("0.00");
-            dict[$"{keyBase} Threshold {threshold} RPI Modifier{isCurr}"] = RpiModifiers[threshold].ToString("0.00") + "x";
-            dict[$"{keyBase} Threshold {threshold} Speed Modifier{isCurr}"] = SlowdownModifiers[threshold].ToString("0.00") + "x";
+            dict[$"{keyBase} Threshold {threshold} RPI Modifier{isCurr}"] =
+                RpiModifiers[threshold].ToString("0.00") + "x";
+            dict[$"{keyBase} Threshold {threshold} Speed Modifier{isCurr}"] =
+                SlowdownModifiers[threshold].ToString("0.00") + "x";
             dict[$"{keyBase} Threshold {threshold} Alert{isCurr}"] = Alerts[threshold]?.ToString() ?? "None";
-            dict[$"{keyBase} Threshold {threshold} Status Icon{isCurr}"] = string.IsNullOrEmpty(StatusIcons[threshold]) ? "None" : StatusIcons[threshold];
+            dict[$"{keyBase} Threshold {threshold} Status Icon{isCurr}"] =
+                string.IsNullOrEmpty(StatusIcons[threshold]) ? "None" : StatusIcons[threshold];
         }
 
         dict["Fuzzy"] = "hugged";
         dict[$"{keyBase} END"] = "-----";
     }
+
+    /// <summary>
+    /// Outputs a TimeSpan relating to how long it should take to go from ValueA to ValueB, in decay time.
+    /// </summary>
+    public TimeSpan GetDecayTime(float valueA, float valueB)
+    {
+        if (DecayRate <= 0)
+            return TimeSpan.MaxValue;
+        var delta = Math.Abs(valueA - valueB);
+        var seconds = delta / DecayRate;
+        return TimeSpan.FromSeconds(seconds);
+    }
+
+    /// <summary>
+    /// Takes in a TimeSpan and returns a pretty string representing that time span
+    /// Something like "2 hours, 3 minutes, and 5 seconds", or "5 minutes, and 1 second", or "1 hour, and 2 seconds"
+    public string Time2String(TimeSpan timeCool)
+    {
+        var totSecs = (int)timeCool.TotalSeconds;
+        var hours = (int)timeCool.TotalHours;
+        var minutes = timeCool.Minutes;
+        var seconds = timeCool.Seconds;
+        var timeString = string.Empty;
+        List<string> timeParts = new();
+        if (hours > 0)
+            timeParts.Add(hours == 1 ? "1 hour" : $"{hours} hours");
+        if (minutes > 0)
+            timeParts.Add(minutes == 1 ? "1 minute" : $"{minutes} minutes");
+        // if (seconds > 0)
+        //     timeParts.Add(seconds == 1 ? "1 second" : $"{seconds} seconds");
+        if (timeParts.Count == 0)
+            timeParts.Add("no time at all");
+        for (var i = 0; i < timeParts.Count; i++)
+        {
+            timeParts[i] = $"[color=yellow]{timeParts[i]}[/color]";
+        }
+        // Format into a nice string
+        switch (timeParts.Count)
+        {
+            case 1: // only one part
+                timeString = timeParts[0];
+                break;
+            case 2: // two parts, just join with and
+                timeString = $"{timeParts[0]} and {timeParts[1]}";
+                break;
+            default:
+            {
+                for (var i = 0; i < timeParts.Count; i++)
+                {
+                    if (i == timeParts.Count - 1)
+                    {
+                        timeString += $"and {timeParts[i]}";
+                    }
+                    else
+                    {
+                        timeString += $"{timeParts[i]}, ";
+                    }
+                }
+
+                break;
+            } // in ss13, this would be handled with english_list(list_of_stuff, "and")
+        } // why must everything in life be so complicated
+
+        // why must I fail at every attempt at masonry
+        return timeString;
+    }
+
+    /// <summary>
+    /// Gets the Theoretical time it would take to go from CurrentValue to MinValue
+    /// </summary>
+    public TimeSpan GetTimeToMinValue()
+    {
+        return GetDecayTime(CurrentValue, MinValue);
+    }
+
+    /// <summary>
+    /// Gets the Theoretical time it would take to go from CurrentValue to the next threshold
+    /// </summary>
+    public TimeSpan GetTimeFromNowToNextThreshold()
+    {
+        return GetDecayTime(CurrentValue, Thresholds[GetCurrentThreshold()]);
+    }
+
+    /// <summary>
+    /// Gets a pretty list of all the buffs and debuffs for this need
+    /// </summary>
+    public string GetBuffDebuffList(string stringOut)
+    {
+        var speed = GetSpeedModText();
+        var rpi = GetRpiModText();
+        if (stringOut != string.Empty)
+        {
+            return stringOut;
+        }
+        stringOut += Loc.GetString("examinable-need-effect-header") + "\n";
+        if (speed != null)
+        {
+            stringOut += speed + "\n";
+        }
+
+        if (rpi != null)
+        {
+            stringOut += rpi + "\n";
+
+        }
+        return stringOut;
+    }
+
+    public NeedThreshold GetCurrentThreshold()
+    {
+        return GetThresholdForValue(CurrentValue);
+    }
+
+    public string? GetSpeedModText()
+    {
+        if (!SlowdownModifiers.TryGetValue(GetCurrentThreshold(), out var modifier))
+        {
+            return null;
+        }
+
+        return GetModifierText(
+            modifier,
+            false,
+            "Movement Speed",
+            "examinable-need-effect-buff",
+            "examinable-need-effect-debuff");
+    }
+
+    public string? GetRpiModText()
+    {
+        if (!RpiModifiers.TryGetValue(GetCurrentThreshold(), out var modifier))
+        {
+            return null;
+        }
+
+        return GetModifierText(
+            modifier,
+            true,
+            "RP Incentive",
+            "examinable-need-effect-buff",
+            "examinable-need-effect-debuff");
+    }
+
+    /// <summary>
+    /// Turns a modifier into a pretty string
+    /// </summary>
+    public string? GetModifierText(
+        float modifier,
+        bool higherIsBetter,
+        string kind,
+        string buffLocKey,
+        string debuffLocKey)
+    {
+        if (Math.Abs(modifier - 1.0f) < 0.001f) // floating point imprecision
+            return null;
+        var percent = $"{(modifier - 1.0f) * 100.0f:+0;-0}%";
+        if ((modifier > 1.0f && higherIsBetter)
+            || (modifier < 1.0f && !higherIsBetter))
+        {
+            return Loc.GetString(
+                buffLocKey,
+                ("kind", kind),
+                ("amount", percent));
+        }
+        else
+        {
+            return Loc.GetString(
+                debuffLocKey,
+                ("kind", kind),
+                ("amount", percent));
+        }
+    }
 }
 
 #region Events
-/// <summary>
-/// An event raised when something ELSE wants to mess with the examine text
-/// </summary>
-public sealed class NeedExamineInfoEvent(NeedDatum need, EntityUid examinee, bool isSelf) : EntityEventArgs
-{
-    public NeedDatum Need = need;
-    public EntityUid Examinee = examinee;
-    public bool IsSelf = isSelf;
-    public List<string> AdditionalInfoLines = new();
 
-    public void AppendAdditionalInfoLines(ref string baseString)
+    /// <summary>
+    /// An event raised when something ELSE wants to mess with the examine text
+    /// </summary>
+    public sealed class NeedExamineInfoEvent(NeedDatum need, EntityUid examinee, bool isSelf) : EntityEventArgs
     {
-        foreach (var line in AdditionalInfoLines)
+        public NeedDatum Need = need;
+        public EntityUid Examinee = examinee;
+        public bool IsSelf = isSelf;
+        public List<string> AdditionalInfoLines = new();
+
+        public void AppendAdditionalInfoLines(ref string baseString)
         {
-            baseString += line + "\n";
+            foreach (var line in AdditionalInfoLines)
+            {
+                baseString += line + "\n";
+            }
+        }
+
+        public void AddPercentBuff(string kind, string text, float modifier)
+        {
+            if (Math.Abs(modifier - 1.0f) < 0.001f)
+                return;
+            var percent = $"{(modifier - 1.0f) * 100.0f:+0;-0}%";
+            if (modifier < 1.0f)
+            {
+                AdditionalInfoLines.Add(
+                    Loc.GetString(
+                        "examinable-need-effect-buff",
+                        ("kind", kind),
+                        ("amount", percent),
+                        ("text", text)));
+            }
+            else
+            {
+                AdditionalInfoLines.Add(
+                    Loc.GetString(
+                        "examinable-need-effect-debuff",
+                        ("kind", kind),
+                        ("amount", percent),
+                        ("text", text)));
+            }
+        }
+
+        public void AddRawBuff(string kind, string text, bool isBuff)
+        {
+            if (isBuff)
+            {
+                AdditionalInfoLines.Add(
+                    Loc.GetString(
+                        "examinable-need-effect-buff-custom",
+                        ("kind", kind),
+                        ("text", text)));
+            }
+            else
+            {
+                AdditionalInfoLines.Add(
+                    Loc.GetString(
+                        "examinable-need-effect-debuff-custom",
+                        ("kind", kind),
+                        ("text", text)));
+            }
         }
     }
 
-    public void AddPercentBuff(string kind, string text, float modifier)
-    {
-        if (Math.Abs(modifier - 1.0f) < 0.001f)
-            return;
-        var percent = $"{(modifier - 1.0f) * 100.0f:+0;-0}%";
-        if (modifier < 1.0f)
-        {
-            AdditionalInfoLines.Add(
-                Loc.GetString(
-                    "examinable-need-effect-buff",
-                    ("kind", kind),
-                    ("amount", percent),
-                    ("text", text)));
-        }
-        else
-        {
-            AdditionalInfoLines.Add(
-                Loc.GetString(
-                    "examinable-need-effect-debuff",
-                    ("kind", kind),
-                    ("amount", percent),
-                    ("text", text)));
-        }
-    }
-    public void AddRawBuff(string kind, string text, bool isBuff)
-    {
-        if (isBuff)
-        {
-            AdditionalInfoLines.Add(
-                Loc.GetString(
-                    "examinable-need-effect-buff-custom",
-                    ("kind", kind),
-                    ("text", text)));
-        }
-        else
-        {
-            AdditionalInfoLines.Add(
-                Loc.GetString(
-                    "examinable-need-effect-debuff-custom",
-                    ("kind", kind),
-                    ("text", text)));
-        }
-    }
-}
-#endregion
+    #endregion
 
 public struct NeedThresholdUpdateResult(NeedThreshold oldThreshold, NeedThreshold newThreshold)
 {
@@ -492,4 +670,3 @@ public struct NeedThresholdUpdateResult(NeedThreshold oldThreshold, NeedThreshol
     public NeedThreshold NewThreshold = newThreshold;
     public bool Changed => OldThreshold != NewThreshold;
 }
-

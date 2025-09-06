@@ -10,9 +10,11 @@ using Content.Shared.Nutrition.Components;
 using Content.Shared.Overlays;
 using Content.Shared.Rejuvenate;
 using Content.Shared.StatusIcon;
+using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._Coyote.Needs;
 
@@ -28,6 +30,7 @@ public abstract class SharedNeedsSystem : EntitySystem
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoid = default!;
+    [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -38,7 +41,7 @@ public abstract class SharedNeedsSystem : EntitySystem
         SubscribeLocalEvent<NeedsComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed);
         SubscribeLocalEvent<NeedsComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<NeedsComponent, GetRoleplayIncentiveModifier>(OnGetRoleplayIncentive);
-        SubscribeLocalEvent<NeedsComponent, ExaminedEvent>(OnExamine);
+        SubscribeLocalEvent<NeedsComponent, GetVerbsEvent<ExamineVerb>>(OnGetExamineVerbs);
     }
 
     #region Event Handlers
@@ -82,47 +85,6 @@ public abstract class SharedNeedsSystem : EntitySystem
         }
     }
 
-    /// <summary>
-    ///     Defines the text provided on examine.
-    ///     Changes depending on the amount of hunger the target has.
-    /// </summary>
-    private void OnExamine(Entity<NeedsComponent> needy, ref ExaminedEvent args)
-    {
-        if (!needy.Comp.Ready
-            || needy.Comp.Needs.Count == 0)
-            return;
-        var examinerIsSelf = args.Examiner == args.Examined;
-        var coolMedicalHud = EntityManager.HasComponent<ShowHealthBarsComponent>(args.Examiner);
-        var showExtendedInfo = coolMedicalHud || examinerIsSelf;
-        var showNumbers = coolMedicalHud;
-        // get the mob's species, if possible
-        // (for the "X is starving to death" examine text)
-        var species = "Critter"; // default fallback
-        if (_entMan.TryGetComponent(args.Examined, out HumanoidAppearanceComponent? humanoid))
-        {
-            species = _humanoid.GetSpeciesRepresentation(humanoid.Species, humanoid.CustomSpecieName);
-        }
-        foreach (var need in needy.Comp.Needs.Values)
-        {
-            if (!needy.Comp.VisibleNeeds.TryGetValue(need.NeedType, out var visibility))
-                continue;
-            if (visibility == NeedExamineVisibility.None)
-                continue;
-            if (visibility == NeedExamineVisibility.Owner
-                && !examinerIsSelf)
-                continue;
-            var line = GetExamineText(
-                args.Examiner,
-                args.Examined,
-                need,
-                species,
-                showNumbers,
-                showExtendedInfo);
-            if (string.IsNullOrEmpty(line))
-                continue;
-            args.PushMarkup(line);
-        }
-    }
     #endregion
     #region Examine stuff
    /// <summary>
@@ -196,171 +158,117 @@ public abstract class SharedNeedsSystem : EntitySystem
             // we need the entity's species, if we can get it
             // for meme reasons (Wizard needs food badly)
             needChungus = Loc.GetString(
-                $"examinable-need-{need.NeedType.ToString().ToLower()}-critical-timeleft",
+                $"examinable-need-{need.NeedType.ToString().ToLower()}-timeleft-critical",
                 ("creature", species));
             stringOut += needChungus + "\n";
         }
         else
         {
-            var nextThreshold = need.CurrentThreshold switch
+            var timeTillnext = need.GetTimeFromNowToNextThreshold();
+            var timeString = need.Time2String(timeTillnext);
+            if (isSelf)
             {
-                NeedThreshold.ExtraSatisfied => NeedThreshold.Satisfied,
-                NeedThreshold.Satisfied => NeedThreshold.Low,
-                NeedThreshold.Low => NeedThreshold.Critical,
-                _ => NeedThreshold.Critical,
-            };
-            var nextValue = need.GetValueForThreshold(nextThreshold);
-            if (need.DecayRate > 0)
-            {
-                var secondsUntilNext = (need.CurrentValue - nextValue) / need.DecayRate;
-                if (secondsUntilNext < 0)
-                    secondsUntilNext = 0;
-                var timeSpan = TimeSpan.FromSeconds(secondsUntilNext);
-                var hours = (int)timeSpan.TotalHours;
-                var minutes = timeSpan.Minutes;
-                var seconds = timeSpan.Seconds;
-                var timeString = string.Empty;
-                List<string> timeParts = new();
-                if (hours > 0)
-                {
-                    if (hours == 1)
-                        timeParts.Add("1 hour");
-                    else
-                        timeParts.Add($"{hours} hours");
-                }
-
-                if (minutes > 0)
-                {
-                    if (minutes == 1)
-                        timeParts.Add("1 minute");
-                    else
-                        timeParts.Add($"{minutes} minutes");
-                }
-
-                if (seconds > 0)
-                {
-                    if (seconds == 1)
-                        timeParts.Add("1 second");
-                    else
-                        timeParts.Add($"{seconds} seconds");
-                }
-
-                if (timeParts.Count == 0)
-                    timeParts.Add("no time at all");
-                switch (timeParts.Count)
-                {
-                    case 1:
-                        timeString = timeParts[0];
-                        break;
-                    case 2:
-                        timeString = $"{timeParts[0]} and {timeParts[1]}";
-                        break;
-                    default:
-                    {
-                        for (var i = 0; i < timeParts.Count; i++)
-                        {
-                            if (i == timeParts.Count - 1)
-                            {
-                                timeString += $"and {timeParts[i]}";
-                            }
-                            else
-                            {
-                                timeString += $"{timeParts[i]}, ";
-                            }
-                        }
-
-                        break;
-                    } // in ss13, this would be handled with english_list(list_of_stuff, "and")
-                } // why must everything in life be so hard, why mus I fail at every attempt at masonry
-
-                needChungus = string.Empty;
-                if (isSelf)
-                {
-                    needChungus = Loc.GetString(
-                        $"examinable-need-{need.NeedType.ToString().ToLower()}-timeleft-{need.CurrentThreshold.ToString().ToLower()}-self");
-                }
-                else
-                {
-                    needChungus = Loc.GetString(
-                        $"examinable-need-{need.NeedType.ToString().ToLower()}-timeleft-{need.CurrentThreshold.ToString().ToLower()}",
-                        ("entity", Identity.Entity(examinee, IoCManager.Resolve<IEntityManager>())));
-                }
-
-                needChungus += "\n" + timeString;
-
-                stringOut += needChungus + "\n";
+                needChungus = Loc.GetString(
+                    $"examinable-need-{need.NeedType.ToString().ToLower()}-timeleft-{need.CurrentThreshold.ToString().ToLower()}-self");
             }
-            // AND NOW THE BUFFS AND DEBUFFS
-            var buffs = new List<string>();
-            // Slowdown...
-            if (need.SlowdownModifiers.TryGetValue(need.CurrentThreshold, out var slowMod)
-                && Math.Abs(slowMod - 1.0f) > 0.001f) // floating point imprecision
+            else
             {
-                // turns something like 0.85 into -15%, and 1.25 into +25%
-                var speedPercent = $"{(slowMod - 1.0f) * 100.0f:+0;-0}%";
-                if (slowMod > 1.0f)
-                {
-                    buffs.Add(
-                        Loc.GetString(
-                            "examinable-need-effect-buff",
-                            ("kind", "Movement Speed"),
-                            ("amount", speedPercent),
-                            ("text", "bonus:")));
-                }
-                else
-                {
-                    buffs.Add(
-                        Loc.GetString(
-                            "examinable-need-effect-debuff",
-                            ("kind", "Movement Speed"),
-                            ("amount", speedPercent),
-                            ("text", "unbonus:")));
-                }
+                needChungus = Loc.GetString(
+                    $"examinable-need-{need.NeedType.ToString().ToLower()}-timeleft-{need.CurrentThreshold.ToString().ToLower()}",
+                    ("entity", Identity.Entity(examinee, IoCManager.Resolve<IEntityManager>())));
             }
-            // RPI...
-            if (need.RpiModifiers.TryGetValue(need.CurrentThreshold, out var rpiMod)
-                && Math.Abs(rpiMod - 1.0f) > 0.001f) // floating point imprecision
+
+            stringOut += needChungus + "\n";
+            stringOut += timeString + "\n";
+
+            var timeTillStarve = need.GetTimeToMinValue();
+            var timeStringStarve = need.Time2String(timeTillStarve);
+            if (isSelf)
             {
-                // turns something like 0.85 into -15%, and 1.25 into +25%
-                var rpiPercent = $"{(rpiMod - 1.0f) * 100.0f:+0;-0}%";
-                if (rpiMod > 1.0f)
-                {
-                    buffs.Add(
-                        Loc.GetString(
-                            "examinable-need-effect-buff",
-                            ("kind", "RP Incentive"),
-                            ("amount", rpiPercent),
-                            ("text", "bonus:")));
-                }
-                else
-                {
-                    buffs.Add(
-                        Loc.GetString(
-                            "examinable-need-effect-debuff",
-                            ("kind", "RP Incentive"),
-                            ("amount", rpiPercent),
-                            ("text", "unbonus:")));
-                }
+                needChungus = Loc.GetString(
+                    $"examinable-need-{need.NeedType.ToString().ToLower()}-timeleft-tillcritical-self");
             }
-            if (buffs.Count > 0)
+            else
             {
-                stringOut += "\n" + Loc.GetString("examinable-need-effect-header") + "\n";
-                foreach (var buff in buffs)
-                {
-                    stringOut += buff + "\n";
-                }
+                needChungus = Loc.GetString(
+                    $"examinable-need-{need.NeedType.ToString().ToLower()}-timeleft-tillcritical",
+                    ("entity", Identity.Entity(examinee, IoCManager.Resolve<IEntityManager>())));
             }
-            // ANYTHING ELSE YOU WANT TO ADD?
-            var ev = new NeedExamineInfoEvent(
-                need,
-                examinee,
-                isSelf);
-            RaiseLocalEvent(examinee, ev);
-            ev.AppendAdditionalInfoLines(ref stringOut);
-        } // GOOD
-        // DIVIDER
-        stringOut += "--------------------\n";
+            stringOut += needChungus + "\n";
+            stringOut += timeStringStarve + "\n";
+
+        }
+        var needMods = need.GetBuffDebuffList(stringOut);
+        // ANYTHING ELSE YOU WANT TO ADD?
+        var ev = new NeedExamineInfoEvent(
+            need,
+            examinee,
+            isSelf);
+        RaiseLocalEvent(examinee, ev);
+        ev.AppendAdditionalInfoLines(ref stringOut);
         return stringOut;
+    }
+    private void OnGetExamineVerbs(EntityUid uid, NeedsComponent needy, GetVerbsEvent<ExamineVerb> args)
+    {
+        var detailsRange = _examineSystem.IsInDetailsRange(args.User, uid);
+
+        var verb = new ExamineVerb()
+        {
+            Act = () =>
+            {
+                var info = string.Empty;
+
+                if (!needy.Ready
+                    || needy.Needs.Count == 0)
+                    return;
+                var examinerIsSelf = args.User == args.Target;
+
+                var coolMedicalHud = EntityManager.HasComponent<ShowHealthBarsComponent>(args.User);
+                var showExtendedInfo = coolMedicalHud || examinerIsSelf;
+                var showNumbers = coolMedicalHud;
+                // get the mob's species, if possible
+                // (for the "X is starving to death" examine text)
+                var species = "Critter"; // default fallback
+                if (_entMan.TryGetComponent(args.Target, out HumanoidAppearanceComponent? humanoid))
+                {
+                    species = _humanoid.GetSpeciesRepresentation(humanoid.Species, humanoid.CustomSpecieName);
+                }
+                foreach (var need in needy.Needs.Values)
+                {
+                    if (!needy.VisibleNeeds.TryGetValue(need.NeedType, out var visibility))
+                        continue;
+                    if (visibility == NeedExamineVisibility.None)
+                        continue;
+                    if (visibility == NeedExamineVisibility.Owner
+                        && !examinerIsSelf)
+                        continue;
+                    var line = GetExamineText(
+                        args.User,
+                        args.Target,
+                        need,
+                        species,
+                        showNumbers,
+                        showExtendedInfo);
+                    if (string.IsNullOrEmpty(line))
+                        continue;
+                    info += line + "\n";
+                }
+                var markup = FormattedMessage.FromMarkupPermissive(info);
+                _examineSystem.SendExamineTooltip(
+                    args.User,
+                    uid,
+                    markup,
+                    false,
+                    false);
+            },
+            Text = Loc.GetString("examinable-need-verb-text"),
+            Category = VerbCategory.Examine,
+            Disabled = !detailsRange,
+            Message = detailsRange ? null : Loc.GetString("examinable-need-verb-disabled"),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/NavMap/beveled_triangle.png"))
+        };
+
+        args.Verbs.Add(verb);
     }
 
     #endregion
