@@ -9,8 +9,8 @@
     species: Diona
   - type: Needs
     needs:
-    - NeedHungerTree
-    - NeedThirstTree
+    - NeedHungerDefault
+    - NeedThirstShark
   - type: Icon
     sprite: Mobs/Species/Diona/parts.rsi
     state: full
