@@ -365,14 +365,14 @@
   name: alerts-thirsty-name
   description: alerts-thirsty-desc
 
-- type: alert
-  id: Hydrated
-  category: Thirst
-  icons:
-  - sprite: /Textures/Interface/Alerts/thirst.rsi
-    state: hydrated
-  name: alerts-thirsty-hydrated-name
-  description: alerts-thirsty-hydrated-desc
+#- type: alert
+#  id: Hydrated
+#  category: Thirst
+#  icons:
+#  - sprite: /Textures/Interface/Alerts/thirst.rsi
+#    state: hydrated
+#  name: alerts-thirsty-hydrated-name
+#  description: alerts-thirsty-hydrated-desc
 
 - type: alert
   id: Parched
