@@ -1,9 +1,11 @@
+using Content.Server._Coyote.Needs;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Forensics;
 using Content.Server.Popups;
 using Content.Server.Stunnable;
+using Content.Shared._Coyote.Needs;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
@@ -24,12 +26,11 @@ namespace Content.Server.Medical
         [Dependency] private readonly IPrototypeManager _proto = default!;
         [Dependency] private readonly AudioSystem _audio = default!;
         [Dependency] private readonly BodySystem _body = default!;
-        [Dependency] private readonly HungerSystem _hunger = default!;
+        [Dependency] private readonly SharedNeedsSystem _needs = default!;
         [Dependency] private readonly PopupSystem _popup = default!;
         [Dependency] private readonly PuddleSystem _puddle = default!;
         [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
         [Dependency] private readonly StunSystem _stun = default!;
-        [Dependency] private readonly ThirstSystem _thirst = default!;
         [Dependency] private readonly ForensicsSystem _forensics = default!;
         [Dependency] private readonly BloodstreamSystem _bloodstream = default!;
 
@@ -54,12 +55,23 @@ namespace Content.Server.Medical
             if (stomachList.Count == 0)
                 return;
 
-            // Vomiting makes you hungrier and thirstier
-            if (TryComp<HungerComponent>(uid, out var hunger))
-                _hunger.ModifyHunger(uid, hungerAdded, hunger);
-
-            if (TryComp<ThirstComponent>(uid, out var thirst))
-                _thirst.ModifyThirst(uid, thirst, thirstAdded);
+            if (TryComp<NeedsComponent>(uid, out var needy))
+            {
+                if (_needs.UsesHunger(uid, needy))
+                {
+                    _needs.ModifyHunger(
+                        uid,
+                        hungerAdded,
+                        needy);
+                }
+                if (_needs.UsesThirst(uid, needy))
+                {
+                    _needs.ModifyThirst(
+                        uid,
+                        thirstAdded,
+                        needy);
+                }
+            }
 
             // It fully empties the stomach, this amount from the chem stream is relatively small
             var solutionSize = (MathF.Abs(thirstAdded) + MathF.Abs(hungerAdded)) / 6;

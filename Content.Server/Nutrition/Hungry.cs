@@ -1,4 +1,5 @@
 using Content.Server.Administration;
+using Content.Shared._Coyote.Needs;
 using Content.Shared.Administration;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
@@ -22,17 +23,35 @@ public sealed class Hungry : LocalizedEntityCommands
 
         if (player.AttachedEntity is not {Valid: true} playerEntity)
         {
-            shell.WriteError(Loc.GetString("cmd-nutrition-error-entity"));
+            shell.WriteError(
+                Loc.GetString(
+                    "cmd-nutrition-error-entity"));
             return;
         }
 
-        if (!EntityManager.TryGetComponent(playerEntity, out HungerComponent? hunger))
+        if (!EntityManager.TryGetComponent(playerEntity, out NeedsComponent? needy))
         {
-            shell.WriteError(Loc.GetString("cmd-nutrition-error-component", ("comp", nameof(HungerComponent))));
+            shell.WriteError(
+                Loc.GetString(
+                    "cmd-nutrition-error-component",
+                    ("comp", nameof(NeedsComponent))));
             return;
         }
 
-        var hungryThreshold = hunger.Thresholds[HungerThreshold.Starving];
-        EntityManager.System<HungerSystem>().SetHunger(playerEntity, hungryThreshold, hunger);
+        var lowestHunger = EntityManager.System<SharedNeedsSystem>()
+            .GetHungerMinThreshold(
+                playerEntity,
+                NeedThreshold.Critical,
+                needy);
+        if (lowestHunger == null)
+        {
+            shell.WriteError("BAD");
+            return;
+        }
+        EntityManager.System<SharedNeedsSystem>()
+            .SetHunger(
+                playerEntity,
+                lowestHunger.Value,
+                needy);
     }
 }

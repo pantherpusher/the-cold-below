@@ -7,9 +7,11 @@
   components:
     - type: HumanoidAppearance
       species: Resomi
-    - type: Hunger
+    - type: Needs
+      needs:
+      - NeedHungerDefault
+      - NeedThirstDefault
     - type: Puller
-    - type: Thirst
     - type: Icon
       sprite: Floof/Mobs/Species/Resomi/parts.rsi
       state: full

@@ -244,7 +244,6 @@
   - type: EggLayer
     eggSpawn:
     - id: FoodEggLaid # Frontier: FoodEgg<FoodEggLaid
-  - type: ExaminableHunger
   - type: ReplacementAccent
     accent: chicken
   - type: SentienceTarget
@@ -380,8 +379,10 @@
     - horrible
     - terrible
     - chewy
-  - type: Hunger
-    baseDecayRate: 0.25
+  - type: Needs
+    needs:
+    - NeedHungerTinyAnimal
+    - NeedThirstTinyAnimal
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager
@@ -697,7 +698,6 @@
   - type: EggLayer
     eggSpawn:
     - id: FoodEggLaid # Frontier: FoodEgg<FoodEggLaid
-  - type: ExaminableHunger
   - type: ReplacementAccent
     accent: duck
   - type: SentienceTarget
@@ -884,7 +884,6 @@
     reagentId: Milk
     quantityPerUpdate: 25
     growthDelay: 30
-  - type: ExaminableHunger
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -1045,7 +1044,6 @@
     reagentId: MilkGoat
     quantityPerUpdate: 25
     growthDelay: 20
-  - type: ExaminableHunger
   - type: Wooly
   - type: Food
     solution: wool
@@ -1764,23 +1762,10 @@
   - type: FlavorProfile
     flavors:
     - meaty
-  - type: Thirst
-    startingThirst: 25  # spawn with Okay thirst state
-    thresholds:
-      OverHydrated: 35
-      Okay: 25
-      Thirsty: 15
-      Parched: 10
-      Dead: 0
-    baseDecayRate: 0.04
-  - type: Hunger
-    thresholds:
-      Overfed: 35
-      Okay: 25
-      Peckish: 15
-      Starving: 10
-      Dead: 0
-    baseDecayRate: 0.5 # I'm very hungry! Give me. The cheese.
+  - type: Needs
+    needs:
+    - NeedHungerRat
+    - NeedThirstRat
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager
@@ -1873,11 +1858,10 @@
   # intended for swarms that eat pills so only temporary
   - type: TimedDespawn
     lifetime: 60
-  - type: Hunger
-    baseDecayRate: 10 # always hungry
-    starvingSlowdownModifier: 1
-  - type: Thirst
-    baseDecayRate: 10 # always thirsty
+  - type: Needs
+    needs:
+    - NeedHungerRatRavenous
+    - NeedThirstRatRavenous
 
 - type: entity
   parent: MobMouse
@@ -3418,8 +3402,10 @@
   - type: FlavorProfile
     flavors:
     - meaty
-  - type: Hunger
-    baseDecayRate: 0.3
+  - type: Needs
+    needs:
+    - NeedHungerRat
+    - NeedThirstRat
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager

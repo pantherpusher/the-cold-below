@@ -4,8 +4,10 @@ using Content.Server._NF.Bank;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Popups;
+using Content.Shared._Coyote.RolePlayIncentiveShared;
 using Content.Shared._NF.Bank.Components;
 using Content.Shared.Chat;
+using Content.Shared.Nutrition.Components;
 using Robust.Server.Player;
 using Robust.Shared.Timing;
 
@@ -51,6 +53,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         // get the component this thing is attached to            v- my code my formatting
         SubscribeLocalEvent<RoleplayIncentiveComponent,            ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<RoleplayIncentiveComponent,            RoleplayIncentiveEvent>(OnGotRoleplayIncentiveEvent);
+        SubscribeLocalEvent<CoolChefComponent,                     GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolPirateComponent,                   GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolStationRepComponent,               GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolStationTrafficControllerComponent, GetRoleplayIncentiveModifier>(AdjustRPI);
@@ -331,9 +334,13 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             int.MaxValue);
         var addedPay = (int)modifyEvent.Additive;
         var multiplier = modifyEvent.Multiplier;
+        // round multiplier the nearest 0.05f for display purposes
+        multiplier = (float)Math.Round(multiplier * 20f) / 20f;
         var hasMultiplier = Math.Abs(multiplier - 1f) > 0.01f;
         var hasAdditive = addedPay != 0;
         var hasModifier = hasMultiplier || hasAdditive;
+        // round UP to the nearest 10 cus it looks better
+        payAmount = (int)(Math.Ceiling(payAmount / 10.0) * 10);
         // pay the player
         if (!_bank.TryBankDeposit(uid, payAmount))
         {
@@ -519,6 +526,14 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         ref GetRoleplayIncentiveModifier args)
     {
         args.Modify(mult, 0f);
+    }
+
+    private void AdjustRPI(
+        EntityUid uid,
+        CoolChefComponent component,
+        ref GetRoleplayIncentiveModifier args)
+    {
+        AdjustRPI(component.Multiplier, ref args);
     }
 
     private void AdjustRPI(

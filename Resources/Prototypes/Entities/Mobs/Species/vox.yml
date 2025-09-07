@@ -3,8 +3,10 @@
   id: BaseMobVox
   abstract: true
   components:
-  - type: Hunger
-  - type: Thirst
+  - type: Needs
+    needs:
+    - NeedHungerDefault
+    - NeedThirstDefault
   - type: Icon
     sprite: Mobs/Species/Vox/parts.rsi
     state: vox_m

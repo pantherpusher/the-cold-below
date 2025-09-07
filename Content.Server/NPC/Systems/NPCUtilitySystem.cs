@@ -31,6 +31,7 @@ using Robust.Server.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Shared._Coyote.Needs;
 
 namespace Content.Server.NPC.Systems;
 
@@ -56,6 +57,7 @@ public sealed class NPCUtilitySystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly MobThresholdSystem _thresholdSystem = default!;
     [Dependency] private readonly TurretTargetSettingsSystem _turretTargetSettings = default!;
+    [Dependency] private readonly SharedNeedsSystem _needs = default!;
 
     private EntityQuery<PuddleComponent> _puddleQuery;
     private EntityQuery<TransformComponent> _xformQuery;
@@ -184,9 +186,19 @@ public sealed class NPCUtilitySystem : EntitySystem
 
                 var avoidBadFood = !HasComp<IgnoreBadFoodComponent>(owner);
 
-                // only eat when hungry or if it will eat anything
-                if (TryComp<HungerComponent>(owner, out var hunger) && hunger.CurrentThreshold > HungerThreshold.Okay && avoidBadFood)
-                    return 0f;
+                if (TryComp<NeedsComponent>(owner, out var needs)
+                    && _needs.UsesHunger(owner, needs))
+                {
+                    // if we have needs and use hunger, only eat food that will satiate hunger
+                    if (_needs.HungerIsBelowThreshold(
+                            owner,
+                            NeedThreshold.Satisfied,
+                            needs)
+                        && avoidBadFood)
+                    {
+                        return 0f;
+                    }
+                }
 
                 // no mouse don't eat the uranium-235
                 if (avoidBadFood && HasComp<BadFoodComponent>(targetUid))
@@ -203,9 +215,18 @@ public sealed class NPCUtilitySystem : EntitySystem
                 if (_openable.IsClosed(targetUid))
                     return 0f;
 
-                // only drink when thirsty
-                if (TryComp<ThirstComponent>(owner, out var thirst) && thirst.CurrentThirstThreshold > ThirstThreshold.Okay)
-                    return 0f;
+                if (TryComp<NeedsComponent>(owner, out var needs)
+                    && _needs.UsesHunger(owner, needs))
+                {
+                    // if we have needs and use hunger, only eat food that will satiate hunger
+                    if (_needs.HungerIsBelowThreshold(
+                            owner,
+                            NeedThreshold.Satisfied,
+                            needs))
+                    {
+                        return 0f;
+                    }
+                }
 
                 // no janicow don't drink the blood puddle
                 if (HasComp<BadDrinkComponent>(targetUid))

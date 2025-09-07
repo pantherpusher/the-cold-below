@@ -1,7 +1,7 @@
 using Content.Shared.Chat;
 using Content.Shared.Radio;
 
-namespace Content.Server._Coyote;
+namespace Content.Shared._Coyote.RolePlayIncentiveShared;
 
 /// <summary>
 /// This is the event raised when a roleplay incentive action is taken.

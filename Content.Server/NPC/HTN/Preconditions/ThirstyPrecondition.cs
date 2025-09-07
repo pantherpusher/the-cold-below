@@ -1,3 +1,4 @@
+using Content.Shared._Coyote.Needs;
 using Content.Shared.Hands.Components;
 using Content.Shared.Nutrition.Components;
 using Robust.Shared.Prototypes;
@@ -12,15 +13,32 @@ public sealed partial class ThirstyPrecondition : HTNPrecondition
     [Dependency] private readonly IEntityManager _entManager = default!;
 
     [DataField(required: true)]
-    public ThirstThreshold MinThirstState = ThirstThreshold.Parched;
+    public NeedThreshold MinThirstState = NeedThreshold.Satisfied;
 
     public override bool IsMet(NPCBlackboard blackboard)
     {
-        if (!blackboard.TryGetValue<EntityUid>(NPCBlackboard.Owner, out var owner, _entManager))
+        if (!blackboard.TryGetValue<EntityUid>(
+                NPCBlackboard.Owner,
+                out var owner,
+                _entManager))
         {
             return false;
         }
 
-        return _entManager.TryGetComponent<ThirstComponent>(owner, out var thirst) ? thirst.CurrentThirstThreshold <= MinThirstState : false;
+        if (!_entManager.TryGetComponent<NeedsComponent>(owner, out var needy))
+        {
+            return false;
+        }
+
+        var needs = _entManager.System<SharedNeedsSystem>();
+        if (!needs.UsesThirst(owner, needy))
+        {
+            return false;
+        }
+
+        return !needs.ThirstIsBelowThreshold(
+            owner,
+            MinThirstState,
+            needy);
     }
 }

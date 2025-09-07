@@ -1,4 +1,6 @@
+using Content.Server._Coyote.Needs;
 using Content.Server.Nutrition.Components;
+using Content.Shared._Coyote.Needs;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.EntityEffects;
 using Content.Shared.Nutrition.Components;
@@ -8,7 +10,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server.EntityEffects.Effects
 {
     /// <summary>
-    /// Attempts to find a HungerComponent on the target,
+    /// Attempts to find a NeedsComponent that supports Hunger on the target,
     /// and to update it's hunger values.
     /// </summary>
     public sealed partial class SatiateHunger : EntityEffect
@@ -21,19 +23,29 @@ namespace Content.Server.EntityEffects.Effects
         /// </summary>
         [DataField("factor")] public float NutritionFactor { get; set; } = DefaultNutritionFactor;
 
-        //Remove reagent at set rate, satiate hunger if a HungerComponent can be found
+        //Remove reagent at set rate, satiate hunger if a NeedsComponent that supports Hunger can be found
         public override void Effect(EntityEffectBaseArgs args)
         {
             var entman = args.EntityManager;
-            if (!entman.TryGetComponent(args.TargetEntity, out HungerComponent? hunger))
+            if (!entman.TryGetComponent(args.TargetEntity, out NeedsComponent? needy))
+                return;
+            if (!entman.System<SharedNeedsSystem>().UsesHunger(args.TargetEntity, needy))
                 return;
             if (args is EntityEffectReagentArgs reagentArgs)
             {
-                entman.System<HungerSystem>().ModifyHunger(reagentArgs.TargetEntity, NutritionFactor * (float) reagentArgs.Quantity, hunger);
+                entman.System<SharedNeedsSystem>()
+                    .ModifyHunger(
+                        reagentArgs.TargetEntity,
+                        NutritionFactor * (float)reagentArgs.Quantity,
+                        needy);
             }
             else
             {
-                entman.System<HungerSystem>().ModifyHunger(args.TargetEntity, NutritionFactor, hunger);
+                entman.System<SharedNeedsSystem>()
+                    .ModifyHunger(
+                        args.TargetEntity,
+                        NutritionFactor,
+                        needy);
             }
         }
 

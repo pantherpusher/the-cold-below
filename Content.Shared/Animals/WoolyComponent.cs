@@ -8,7 +8,7 @@ namespace Content.Shared.Animals;
 
 /// <summary>
 ///     Gives the ability to produce wool fibers;
-///     produces endlessly if the owner does not have a HungerComponent.
+///     produces endlessly if the owner does not have a NeedsComponent that supports Hunger.
 /// </summary>
 [RegisterComponent, AutoGenerateComponentState, AutoGenerateComponentPause, NetworkedComponent]
 public sealed partial class WoolyComponent : Component
