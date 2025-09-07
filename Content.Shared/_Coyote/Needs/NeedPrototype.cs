@@ -114,6 +114,12 @@ public sealed partial class NeedPrototype : IPrototype
     /// </summary>
     [DataField("extraSatisfiedIcon")]
     public string? ExtraSatisfiedIcon = null;
+
+    /// <summary>
+    /// The Random slowdown prototype to use when this need reaches the ExtraSatisfied threshold, if any.
+    /// </summary>
+    [DataField("extraSatisfiedDebuffSlowdown")]
+    public ProtoId<NeedSlowdownPrototype>? ExtraSatisfiedDebuffSlowdown = null;
     #endregion
 
     #region Threshold - Satisfied
@@ -146,6 +152,12 @@ public sealed partial class NeedPrototype : IPrototype
     /// </summary>
     [DataField("satisfiedIcon")]
     public string? SatisfiedIcon = null;
+
+    /// <summary>
+    /// The Random slowdown prototype to use when this need reaches the Satisfied threshold, if any.
+    /// </summary>
+    [DataField("satisfiedDebuffSlowdown")]
+    public ProtoId<NeedSlowdownPrototype>? SatisfiedDebuffSlowdown = null;
     #endregion
 
     #region Threshold - Neutral
@@ -210,6 +222,12 @@ public sealed partial class NeedPrototype : IPrototype
     /// </summary>
     [DataField("lowIcon")]
     public string? LowIcon = null;
+
+    /// <summary>
+    /// The Random slowdown prototype to use when this need reaches the Low threshold, if any.
+    /// </summary>
+    [DataField("lowDebuffSlowdown")]
+    public ProtoId<NeedSlowdownPrototype>? LowDebuffSlowdown = null;
     #endregion
 
     #region Threshold - Critical
@@ -243,6 +261,12 @@ public sealed partial class NeedPrototype : IPrototype
     /// </summary>
     [DataField("criticalIcon")]
     public string? CriticalIcon = null;
+
+    /// <summary>
+    /// The Random slowdown prototype to use when this need reaches the Critical threshold, if any.
+    /// </summary>
+    [DataField("criticalDebuffSlowdown")]
+    public ProtoId<NeedSlowdownPrototype>? CriticalDebuffSlowdown = null;
     #endregion
 
 }

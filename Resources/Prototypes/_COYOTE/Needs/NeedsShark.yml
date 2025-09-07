@@ -37,4 +37,5 @@
   criticalMultRPI: 0.10
   criticalAlert: Parched
   criticalIcon: ThirstIconParched
+  criticalDebuffSlowdown: NeedSlowdownThirst
 

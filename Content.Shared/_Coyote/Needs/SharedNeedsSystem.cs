@@ -2,12 +2,14 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared._Coyote.RolePlayIncentiveShared;
 using Content.Shared.Alert;
+using Content.Shared.Bed.Sleep;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
-using Content.Shared.Nutrition.Components;
 using Content.Shared.Overlays;
+using Content.Shared.Popups;
 using Content.Shared.Rejuvenate;
 using Content.Shared.StatusIcon;
 using Content.Shared.Verbs;
@@ -31,6 +33,11 @@ public abstract class SharedNeedsSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoid = default!;
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popupSystem = null!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+
+    private int _decayIterations = 1;
+    private TimeSpan _nextDecIterRoll = TimeSpan.Zero;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -74,7 +81,7 @@ public abstract class SharedNeedsSystem : EntitySystem
         LoadNeeds(uid, component);
         InitializeNextUpdate(uid, component);
         UpdateMovespeed(uid, component);
-        UpdateAlerts(uid, component);
+        UpdateAlerts(uid, component, true);
     }
 
     private void OnGetRoleplayIncentive(EntityUid uid, NeedsComponent component, ref GetRoleplayIncentiveModifier args)
@@ -181,21 +188,21 @@ public abstract class SharedNeedsSystem : EntitySystem
             stringOut += needChungus + "\n";
             stringOut += timeString + "\n";
 
-            var timeTillStarve = need.GetTimeToMinValue();
-            var timeStringStarve = need.Time2String(timeTillStarve);
-            if (isSelf)
-            {
-                needChungus = Loc.GetString(
-                    $"examinable-need-{need.NeedType.ToString().ToLower()}-timeleft-tillcritical-self");
-            }
-            else
-            {
-                needChungus = Loc.GetString(
-                    $"examinable-need-{need.NeedType.ToString().ToLower()}-timeleft-tillcritical",
-                    ("entity", Identity.Entity(examinee, IoCManager.Resolve<IEntityManager>())));
-            }
-            stringOut += needChungus + "\n";
-            stringOut += timeStringStarve + "\n";
+            // var timeTillStarve = need.GetTimeToMinValue();
+            // var timeStringStarve = need.Time2String(timeTillStarve);
+            // if (isSelf)
+            // {
+            //     needChungus = Loc.GetString(
+            //         $"examinable-need-{need.NeedType.ToString().ToLower()}-timeleft-tillcritical-self");
+            // }
+            // else
+            // {
+            //     needChungus = Loc.GetString(
+            //         $"examinable-need-{need.NeedType.ToString().ToLower()}-timeleft-tillcritical",
+            //         ("entity", Identity.Entity(examinee, IoCManager.Resolve<IEntityManager>())));
+            // }
+            // stringOut += needChungus + "\n";
+            // stringOut += timeStringStarve + "\n";
 
         }
         var needMods = need.GetBuffDebuffList(stringOut);
@@ -405,7 +412,7 @@ public abstract class SharedNeedsSystem : EntitySystem
         if (component.Needs.TryGetValue(needType, out var need))
         {
             need.ModifyCurrentValue(amount);
-            UpdateEverythingIfNeeded(uid, component);
+            UpdateEverything(uid, component);
             return true;
         }
         return false;
@@ -425,7 +432,7 @@ public abstract class SharedNeedsSystem : EntitySystem
         if (component.Needs.TryGetValue(needType, out var need))
         {
             need.SetCurrentValue(amount);
-            UpdateEverythingIfNeeded(uid, component);
+            UpdateEverything(uid, component);
             return true;
         }
         return false;
@@ -446,7 +453,7 @@ public abstract class SharedNeedsSystem : EntitySystem
         {
             var minValue = need.GetValueForThreshold(threshold);
             need.SetCurrentValue(minValue);
-            UpdateEverythingIfNeeded(uid, component);
+            UpdateEverything(uid, component);
             return true;
         }
         return false;
@@ -734,35 +741,70 @@ public abstract class SharedNeedsSystem : EntitySystem
             var deltaSeconds = (float) (curTime - (component.NextUpdateTime - component.MinUpdateTime)).TotalSeconds;
             component.NextUpdateTime = curTime + component.MinUpdateTime;
 
+            if (_mobState.IsDead(uid))
+                continue;
+            var sleeping = HasComp<SleepingComponent>(uid);
+
             foreach (var need in component.Needs.Values)
             {
-                need.Decay(deltaSeconds);
+                for (var i = 0; i < _decayIterations; i++)
+                {
+                    need.Decay(deltaSeconds, sleeping);
+                    need.TickDebuffSlows(curTime);
+                }
             }
-            UpdateEverythingIfNeeded(uid, component);
+            UpdateEverything(uid, component);
         }
+        RerollDecayIterations();
     }
 
     private void UpdateEverything(EntityUid uid, NeedsComponent component)
     {
-        UpdateMovespeed(uid, component);
-        UpdateAlerts(uid, component);
-    }
-
-    private void UpdateEverythingIfNeeded(EntityUid uid, NeedsComponent component)
-    {
-        if (component.Needs.Values.Any(need => need.UpdateCurrentThreshold().Changed))
+        var updated = false;
+        foreach (var need in component.Needs.Values)
         {
-            UpdateEverything(uid, component);
+            if (need.UpdateCurrentThreshold().Changed)
+                updated = true;
         }
+        UpdateAlerts(uid, component, updated);
+        UpdateMovespeed(uid, component);
     }
 
     private void UpdateMovespeed(EntityUid uid, NeedsComponent component)
     {
+        var hasMoveUpdate = false;
+        foreach (var need in component.Needs.Values)
+        {
+            if (need.HasQueuedMoveUpdate())
+            {
+                hasMoveUpdate = true;
+            }
+        }
+        if (!hasMoveUpdate)
+            return;
+        List<string> reports = new();
+        foreach (var need in component.Needs.Values)
+        {
+            var slowDebuffReport = need.GetDebuffSlowMessages();
+            if (slowDebuffReport.Count > 0)
+                reports.AddRange(slowDebuffReport);
+        }
+        if (reports.Count > 0)
+        {
+            var message = string.Join("\n", reports);
+            _popupSystem.PopupEntity(
+                message,
+                uid,
+                uid,
+                PopupType.MediumCaution);
+        }
         _movement.RefreshMovementSpeedModifiers(uid);
     }
 
-    private void UpdateAlerts(EntityUid uid, NeedsComponent component)
+    private void UpdateAlerts(EntityUid uid, NeedsComponent component, bool updated = false)
     {
+        if (!updated)
+            return;
         foreach (var need in component.Needs.Values)
         {
             var alertProto = need.GetCurrentAlert();
@@ -774,6 +816,47 @@ public abstract class SharedNeedsSystem : EntitySystem
             }
             _alerts.ShowAlert(uid, alertProto);
         }
+    }
+
+    private void RerollDecayIterations()
+    {
+        var curTime = _timing.CurTime;
+        if (curTime < _nextDecIterRoll)
+            return;
+        _nextDecIterRoll = curTime + TimeSpan.FromMinutes(5);
+        _decayIterations = 1;
+        var i = 0;
+        const int maxIters = 10;
+        while (_random.Prob(0.25f)
+               && i < maxIters)
+        {
+            _decayIterations++;
+            i++;
+        }
+        // produces this distribution:
+        // 1: 75%
+        // 2: 18.75%
+        // 3: 4.6875%
+        // 4: 1.171875%
+        // 5: 0.29296875%
+        // 6: 0.0732421875%
+        // 7: 0.018310546875%
+        // 8: 0.00457763671875%
+        // 9: 0.0011444091796875%
+        // 10: 0.000286102294921875%
+        // rolled every 5 minutes, so over the course of a 7 day long round, you'd expect:
+        // 7 days = 10080 minutes
+        // 10080 / 5 = 2016 rolls
+        // 1  - 1512 times
+        // 2  - 378 times
+        // 3  - 94 times
+        // 4  - 23 times
+        // 5  - 5 times
+        // 6  - 1 times
+        // 7  - 0 times
+        // 8  - 0 times
+        // 9  - 0 times
+        // 10 - 0 times
     }
     #endregion
 

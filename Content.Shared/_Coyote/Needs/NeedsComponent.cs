@@ -56,6 +56,11 @@ public sealed partial class NeedsComponent : Component
     };
 
     /// <summary>
+    /// Is set to the current global need multiplier for debug purposes
+    /// </summary>
+    public int DebugCurrentNeedMultiplier = 1;
+
+    /// <summary>
     /// COOL DEBUG STUFF
     /// Cus its impossible to edit the actual need datums through viewvariables
     /// So these vars are a workaround! They'll hold the values of the needs for easy editing
