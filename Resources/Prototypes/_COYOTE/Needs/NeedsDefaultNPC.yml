@@ -1,6 +1,6 @@
 #hunger
 - type: need
-  id: NeedHungerDefault
+  id: NeedHungerDefaultNPC
   needName: "Hunger"
   needKind: "Hunger"
   color: "Pink"
@@ -38,7 +38,7 @@
 
 #thirst
 - type: need
-  id: NeedThirstDefault
+  id: NeedThirstDefaultNPC
   needName: "Thirst"
   needKind: "Thirst"
   color: "Cyan"
