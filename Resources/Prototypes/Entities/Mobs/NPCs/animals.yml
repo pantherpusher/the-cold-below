@@ -3404,8 +3404,8 @@
     - meaty
   - type: Needs
     needs:
-    - NeedHungerRatt
-    - NeedThirstRa
+    - NeedHungerRat
+    - NeedThirstRat
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager
