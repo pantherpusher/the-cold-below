@@ -38,7 +38,7 @@
 
 #thirst
 - type: need
-  id: NeedThirstDefault
+  id: NeedThirstAnimal
   needName: "Thirst"
   needKind: "Thirst"
   color: "Cyan"
