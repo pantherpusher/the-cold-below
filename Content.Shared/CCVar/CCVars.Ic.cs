@@ -51,7 +51,7 @@ public sealed partial class CCVars
     ///     Forces SSD characters to sleep after ICSSDSleepTime seconds
     /// </summary>
     public static readonly CVarDef<bool> ICSSDSleep =
-        CVarDef.Create("ic.ssd_sleep", true, CVar.SERVER);
+        CVarDef.Create("ic.ssd_sleep", false, CVar.SERVER);
 
     /// <summary>
     ///     Time between character getting SSD status and falling asleep
@@ -59,4 +59,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> ICSSDSleepTime =
         CVarDef.Create("ic.ssd_sleep_time", 600f, CVar.SERVER);
+
+    /// <summary>
+    /// If youre in SSD, wait this many minutes before reopening your job
+    /// </summary>
+    public static readonly CVarDef<float> ICSSDJobReopenMinutes =
+        CVarDef.Create("ic.ssd_job_reopen_minutes", 60f, CVar.SERVER);
 }
