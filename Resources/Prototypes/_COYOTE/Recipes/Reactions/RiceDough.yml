@@ -1,0 +1,15 @@
+- type: reaction
+  id: CreateRiceDough
+  impact: Low
+  quantized: true
+  conserveEnergy: false
+  reactants:
+    Rice:
+      amount: 15
+    Egg:
+      amount: 2
+    Water:
+      amount: 10
+  effects:
+  - !type:CreateEntityReactionEffect
+    entity: FoodRiceDough
