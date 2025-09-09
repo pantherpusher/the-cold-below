@@ -59,7 +59,7 @@ namespace Content.Server._DV.Mail.Components
         /// mail lately to prevent entity bloat for the sake of performance.
         /// </remarks>
         [DataField]
-        public int MaximumUndeliveredParcels = 5;
+        public int MaximumUndeliveredParcels = 2;
 
         // /// <summary>
         // /// Any item that breaks or is destroyed in less than this amount of

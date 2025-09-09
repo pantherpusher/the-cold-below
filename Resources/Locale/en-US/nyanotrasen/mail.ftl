@@ -7,12 +7,15 @@ mail-desc-close = A parcel of mail addressed to {CAPITALIZE($name)}, {$job}. Las
 mail-desc-fragile = It has a [color=red]red fragile label[/color].
 mail-desc-priority = The anti-tamper lock's [color=yellow]yellow priority tape[/color] is active.
 mail-desc-priority-inactive = The anti-tamper lock's [color=#886600]yellow priority tape[/color] is inactive.
+mail-desc-trash-time = If unopened, this can be safely forced open or destroyed in [color=#886600]{$time}[/color].
+mail-desc-trash-imminent = This is considered [color=#886600]Dead Mail[/color] and can be forced open or destroyed for no penalty.
 mail-unlocked = Anti-tamper system unlocked.
 mail-unlocked-by-emag = Anti-tamper system *BZZT*.
 mail-unlocked-reward = Anti-tamper system unlocked. {$bounty} spesos have been added to Frontier account.
 mail-penalty-lock = ANTI-TAMPER LOCK BROKEN. STATION BANK ACCOUNT PENALIZED BY {$credits} SPESOS.
 mail-penalty-fragile = INTEGRITY COMPROMISED. STATION BANK ACCOUNT PENALIZED BY {$credits} SPESOS.
 mail-penalty-expired = DELIVERY PAST DUE. STATION BANK ACCOUNT PENALIZED BY {$credits} SPESOS.
+mail-penalty-trash = DEAD MAIL DISPOSED.
 mail-item-name-unaddressed = mail
 mail-item-name-addressed = mail ({$recipient})
 

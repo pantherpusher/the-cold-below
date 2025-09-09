@@ -10,10 +10,13 @@ namespace Content.Server._NF.Mail.Components;
 public sealed partial class SectorMailComponent : Component // Frontier: Station->Sector
 {
     [DataField]
-    public float Accumulator = 1995f;
+    public float Accumulator = 1000f;
 
     [DataField]
-    public TimeSpan TeleportInterval = TimeSpan.FromMinutes(35);
+    public TimeSpan TeleportInterval = TimeSpan.FromMinutes(5);
+
+    [DataField]
+    public TimeSpan TrashTime = TimeSpan.FromMinutes(60); // Frontier: Trash mail after 30 minutes
 
     /// <summary>
     /// The MailDeliveryPoolPrototype that's used to select what mail this
