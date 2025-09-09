@@ -69,6 +69,9 @@ public sealed class SolarFlareRule : StationEventSystem<SolarFlareRuleComponent>
             if (!flare.AllChannels && !flare.AffectedChannels.Contains(args.Channel.ID)) // Frontier: add flare.AllChannels
                 continue;
 
+            if (args.Channel.ID == "Medical")
+                continue; // Medical channel is protected from solar flares, cus of dying
+
             if (!flare.OnlyJamHeadsets || (HasComp<HeadsetComponent>(args.RadioReceiver) || HasComp<HeadsetComponent>(args.RadioSource)))
                 args.Cancelled = true;
         }
