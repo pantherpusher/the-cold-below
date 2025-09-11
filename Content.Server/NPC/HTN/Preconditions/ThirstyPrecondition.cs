@@ -36,7 +36,7 @@ public sealed partial class ThirstyPrecondition : HTNPrecondition
             return false;
         }
 
-        return !needs.ThirstIsBelowThreshold(
+        return needs.ThirstIsBelowThreshold(
             owner,
             MinThirstState,
             needy);

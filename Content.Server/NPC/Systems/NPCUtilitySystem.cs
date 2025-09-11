@@ -186,25 +186,23 @@ public sealed class NPCUtilitySystem : EntitySystem
 
                 var avoidBadFood = !HasComp<IgnoreBadFoodComponent>(owner);
 
+                // am hungry? go eat it!
                 if (TryComp<NeedsComponent>(owner, out var needs)
                     && _needs.UsesHunger(owner, needs))
                 {
                     // if we have needs and use hunger, only eat food that will satiate hunger
                     if (_needs.HungerIsBelowThreshold(
-                            owner,
-                            NeedThreshold.Satisfied,
-                            needs)
-                        && avoidBadFood)
+                        owner,
+                        NeedThreshold.ExtraSatisfied,
+                        needs))
                     {
-                        return 0f;
+                        // no mouse don't eat the uranium-235
+                        if (avoidBadFood && HasComp<BadFoodComponent>(targetUid))
+                            return 0f;
                     }
+                    return 1f;
                 }
-
-                // no mouse don't eat the uranium-235
-                if (avoidBadFood && HasComp<BadFoodComponent>(targetUid))
-                    return 0f;
-
-                return 1f;
+                return 0.5f; // not hungry, but might as well eat it if it's good food
             }
             case DrinkValueCon:
             {
@@ -221,23 +219,20 @@ public sealed class NPCUtilitySystem : EntitySystem
                     // if we have needs and use hunger, only eat food that will satiate hunger
                     if (_needs.HungerIsBelowThreshold(
                             owner,
-                            NeedThreshold.Satisfied,
+                            NeedThreshold.ExtraSatisfied,
                             needs))
                     {
-                        return 0f;
+                        if (HasComp<BadDrinkComponent>(targetUid))
+                            return 0f;
+                        // needs to have something that will satiate thirst, mice wont try to drink 100% pure mutagen.
+                        var hydration = _drink.TotalHydration(targetUid, drink);
+                        if (hydration <= 1.0f)
+                            return 0f;
+
                     }
+                    return 1f;
                 }
-
-                // no janicow don't drink the blood puddle
-                if (HasComp<BadDrinkComponent>(targetUid))
-                    return 0f;
-
-                // needs to have something that will satiate thirst, mice wont try to drink 100% pure mutagen.
-                var hydration = _drink.TotalHydration(targetUid, drink);
-                if (hydration <= 1.0f)
-                    return 0f;
-
-                return 1f;
+                return 0.5f;
             }
             case OrderedTargetCon:
             {

@@ -51,7 +51,7 @@
     - SimpleNeutral
   - type: HTN
     rootTask:
-      task: IdleCompound
+      task: MouseCompound
   - type: MeleeWeapon
     angle: 0
     animation: WeaponArcBite
