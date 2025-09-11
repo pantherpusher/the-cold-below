@@ -7,6 +7,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._Coyote.Needs;
 
@@ -17,7 +18,8 @@ namespace Content.Shared._Coyote.Needs;
 /// Starts life blank, and needs to be filled out by the NeedsComponent
 /// And it fills itself out using the NeedPrototype~
 /// </summary>
-public sealed class NeedDatum()
+[Serializable]
+public sealed class NeedDatum
 {
     /// <summary>
     /// The type of need this datum represents
@@ -42,46 +44,64 @@ public sealed class NeedDatum()
     /// <summary>
     /// The current value of the need
     /// </summary>
+    [DataField("temperature")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public float CurrentValue = 100.0f;
 
     /// <summary>
     /// The maximum value of the need
     /// </summary>
+    [DataField("temperature")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public float MaxValue = 100.0f;
 
     /// <summary>
     /// The minimum value of the need
     /// </summary>
+    [DataField("temperature")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public float MinValue = 0.0f;
 
     /// <summary>
     /// The rate at which the need decays over time (per second)
     /// </summary>
+    [DataField("temperature")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public float DecayRate = 0.0f;
 
     /// <summary>
     /// The thresholds for this need
     /// </summary>
+    [DataField("temperature")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<NeedThreshold, float> Thresholds = new();
 
     /// <summary>
     /// The alerts for this need
     /// </summary>
+    [DataField("temperature")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<NeedThreshold, ProtoId<AlertPrototype>?> Alerts = new();
 
     /// <summary>
     /// The hud icon... things for this need
     /// </summary>
+    [DataField("temperature")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<NeedThreshold, string> StatusIcons = new();
 
     /// <summary>
     /// The slowdown modifiers for this need
     /// </summary>
+    [DataField("temperature")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<NeedThreshold, float> SlowdownModifiers = new();
 
     /// <summary>
     /// The RPI modifiers for this need
     /// </summary>
+    [DataField("temperature")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<NeedThreshold, float> RpiModifiers = new();
 
     /// <summary>
@@ -97,11 +117,15 @@ public sealed class NeedDatum()
     /// <summary>
     /// Rate it updates in seconds.
     /// </summary>
+    [DataField("temperature")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan UpdateRateSeconds = TimeSpan.FromSeconds(1f);
 
     /// <summary>
     /// Next update time.
     /// </summary>
+    [DataField("temperature")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan NextUpdateTime = TimeSpan.Zero;
 
     /// <summary>
@@ -116,7 +140,7 @@ public sealed class NeedDatum()
     /// Constructor for the NeedDatum
     /// Takes in a NeedPrototype and fills out the datum
     /// </summary>
-    public NeedDatum(NeedPrototype proto) : this()
+    public NeedDatum(NeedPrototype proto)
     {
         if (proto is not { ID: not null or not "" })
             throw new ArgumentException("NeedPrototype must have a valid ID");
@@ -322,7 +346,7 @@ public sealed class NeedDatum()
     /// </summary>
     public void TickDebuffSlows(TimeSpan curTime)
     {
-        if (DebuffSlows.TryGetValue(CurrentThreshold, out var debuff)
+        if (DebuffSlows.TryGetValue(GetCurrentThreshold(), out var debuff)
             && debuff != null)
         {
             debuff.TickSlowdown(curTime);
@@ -409,10 +433,9 @@ public sealed class NeedDatum()
     {
         if (MovementUpdated)
         {
-            MovementUpdated = false;
             return true;
         }
-        if (DebuffSlows.TryGetValue(CurrentThreshold, out var debuff)
+        if (DebuffSlows.TryGetValue(GetCurrentThreshold(), out var debuff)
             && debuff != null
             && debuff.Updated)
         {
@@ -429,7 +452,7 @@ public sealed class NeedDatum()
     /// </summary>
     public void ModifyRpiEvent(ref GetRoleplayIncentiveModifier ev)
     {
-        if (RpiModifiers.TryGetValue(CurrentThreshold, out var modifier))
+        if (RpiModifiers.TryGetValue(GetCurrentThreshold(), out var modifier))
         {
             ev.Modify(modifier, 0.0f);
         }
@@ -440,14 +463,15 @@ public sealed class NeedDatum()
     /// </summary>
     public void ApplyMovementSpeedModifier(ref RefreshMovementSpeedModifiersEvent args)
     {
-        if (SlowdownModifiers.TryGetValue(CurrentThreshold, out var modifier))
+        if (SlowdownModifiers.TryGetValue(GetCurrentThreshold(), out var modifier))
         {
             args.ModifySpeed(modifier, modifier);
-            if (DebuffSlows.TryGetValue(CurrentThreshold, out var debuff)
+            if (DebuffSlows.TryGetValue(GetCurrentThreshold(), out var debuff)
                 && debuff != null)
             {
                 var speedMult = debuff.GetSlow();
                 args.ModifySpeed(speedMult, speedMult);
+                MovementUpdated = false;
             }
         }
     }
@@ -458,7 +482,7 @@ public sealed class NeedDatum()
     public List<string> GetDebuffSlowMessages()
     {
         var messages = new List<string>();
-        if (DebuffSlows.TryGetValue(CurrentThreshold, out var debuff)
+        if (DebuffSlows.TryGetValue(GetCurrentThreshold(), out var debuff)
             && debuff != null
             && !string.IsNullOrEmpty(debuff.QueuedMessage))
         {
@@ -474,7 +498,7 @@ public sealed class NeedDatum()
     /// </summary>
     public bool GetCurrentStatusIcon([NotNullWhen(true)] out string? icon)
     {
-        if (StatusIcons.TryGetValue(CurrentThreshold, out var iconId)
+        if (StatusIcons.TryGetValue(GetCurrentThreshold(), out var iconId)
             && !string.IsNullOrEmpty(iconId))
         {
             icon = iconId;
@@ -487,7 +511,7 @@ public sealed class NeedDatum()
 
     public ProtoId<AlertPrototype> GetCurrentAlert()
     {
-        if (!Alerts.TryGetValue(CurrentThreshold, out var alert))
+        if (!Alerts.TryGetValue(GetCurrentThreshold(), out var alert))
         {
             return default;
         }
@@ -513,53 +537,39 @@ public sealed class NeedDatum()
     /// Takes in a TimeSpan and returns a pretty string representing that time span
     /// Something like "2 hours, 3 minutes, and 5 seconds", or "5 minutes, and 1 second", or "1 hour, and 2 seconds"
     /// </summary>
-    public string Time2String(TimeSpan timeCool)
+    public string Time2String(TimeSpan timeCool, bool actualTime = false)
     {
-        var totSecs = (int)timeCool.TotalSeconds;
+        if (actualTime)
+        {
+            return timeCool.ToString(@"d\:hh\:mm\:ss");
+        }
+        var totMins = (int)timeCool.TotalMinutes;
         var hours = (int)timeCool.TotalHours;
         var minutes = timeCool.Minutes;
-        var seconds = timeCool.Seconds;
         string timeString;
-        // CYOA: a couple course this can take!
-        // if the time is 1hr or more, show only hours
-        // if less than 1hr...
-        // round to 15 minute increments, such as:
-        // 59 mintues: "45 minutes"
-        // 44 minutes: "30 minutes"
-        // 29 minutes: "15 minutes"
-        // 14 minutes: "15 minutes"
-        // if less than 15 minutes, "15 minutes"
-        // if less than 1 minute, "soon"
-        if (hours >= 1)
+        // Round to the nearest 15 minutes for anything over 10 minutes
+        // under 10 minutes, just say "soon"
+        if (totMins < 10)
         {
-            timeString = hours == 1 ? "1 hour" : $"{hours} hours";
+            return "[color=pink]soon[/color]!";
+        }
+        // okay round the minutes to the nearest 10
+        minutes = (int)(Math.Round(minutes / 10.0) * 10);
+        if (hours > 0)
+        {
+            if (minutes > 0)
+            {
+                timeString = $"{hours} hour{(hours == 1 ? "" : "s")}, and {minutes} minute{(minutes == 1 ? "" : "s")}";
+            }
+            else
+            {
+                timeString = $"{hours} hour{(hours == 1 ? "" : "s")}";
+            }
         }
         else
         {
-            switch (minutes)
-            {
-                case > 45:
-                case 45 when seconds > 0:
-                    timeString = "45 minutes";
-                    break;
-                case > 30:
-                case 30 when seconds > 0:
-                    timeString = "30 minutes";
-                    break;
-                case > 15:
-                case 15 when seconds > 0:
-                    timeString = "15 minutes";
-                    break;
-                case > 0:
-                case 0 when seconds > 0:
-                    timeString = "15 minutes";
-                    break;
-                default:
-                    timeString = "soon";
-                    break;
-            } // perfect
+            timeString = $"{minutes} minute{(minutes == 1 ? "" : "s")}";
         }
-
         return $"[color=yellow]{timeString}[/color]";
     }
 
@@ -585,13 +595,13 @@ public sealed class NeedDatum()
     /// <summary>
     /// Gets a pretty list of all the buffs and debuffs for this need
     /// </summary>
-    public string GetBuffDebuffList(string stringOut)
+    public void GetBuffDebuffList(ref string stringOut)
     {
         var speed = GetSpeedModText();
         var rpi = GetRpiModText();
-        if (stringOut != string.Empty)
+        if (speed == null && rpi == null)
         {
-            return stringOut;
+            return;
         }
         stringOut += Loc.GetString("examinable-need-effect-header") + "\n";
         if (speed != null)
@@ -604,7 +614,6 @@ public sealed class NeedDatum()
             stringOut += rpi + "\n";
 
         }
-        return stringOut;
     }
 
     public string? GetSpeedModText()
@@ -616,7 +625,7 @@ public sealed class NeedDatum()
 
         return GetModifierText(
             modifier,
-            false,
+            true,
             "Movement Speed",
             "examinable-need-effect-buff",
             "examinable-need-effect-debuff");
@@ -680,16 +689,23 @@ public sealed class NeedDatum()
         dict[$"{keyBase} Max Value"] = MaxValue.ToString("0.00");
         dict[$"{keyBase} Min Value"] = MinValue.ToString("0.00");
         dict[$"{keyBase} Decay Rate"] = DecayRate.ToString("0.0000") + " per second";
-        dict[$"{keyBase} Current Threshold"] = CurrentThreshold.ToString();
+        dict[$"{keyBase} Current Threshold"] = GetCurrentThreshold().ToString();
         dict[$"{keyBase} Next Update In"] = $"{(NextUpdateTime - TimeSpan.Zero).TotalSeconds:0.00} seconds";
-        dict[$"{keyBase} Current RPI Modifier"] = RpiModifiers[CurrentThreshold].ToString("0.00") + "x";
-        dict[$"{keyBase} Current Speed Modifier"] = SlowdownModifiers[CurrentThreshold].ToString("0.00") + "x";
+        dict[$"{keyBase} Current RPI Modifier"] = RpiModifiers[GetCurrentThreshold()].ToString("0.00") + "x";
+        dict[$"{keyBase} Current Speed Modifier"] = SlowdownModifiers[GetCurrentThreshold()].ToString("0.00") + "x";
         dict[$"{keyBase} Current Alert"] = GetCurrentAlert().ToString();
         dict[$"{keyBase} Current Status Icon"] = GetCurrentStatusIcon(out var icon) ? icon : "None";
         foreach (var (threshold, value) in Thresholds)
         {
-            var isCurr = threshold == CurrentThreshold ? " <-" : " ";
+            var currCurr = threshold ==  GetCurrentThreshold();
+            var isCurr = currCurr ? " <-" : " ";
             dict[$"{keyBase} Threshold {threshold} Value{isCurr}"] = value.ToString("0.00");
+            if (currCurr)
+            {
+                // time until we bottom out in this threshold
+                var timeToNext = GetDecayTime(CurrentValue, value);
+                dict[$"{keyBase} Threshold {threshold} Time To Next{isCurr}"] = Time2String(timeToNext, true);
+            }
             dict[$"{keyBase} Threshold {threshold} RPI Modifier{isCurr}"] =
                 RpiModifiers[threshold].ToString("0.00") + "x";
             dict[$"{keyBase} Threshold {threshold} Speed Modifier{isCurr}"] =
@@ -779,6 +795,7 @@ public struct NeedThresholdUpdateResult(NeedThreshold oldThreshold, NeedThreshol
 /// <summary>
 /// A data holder that'll handle the random slow debuff entitys
 /// </summary>
+[Serializable]
 public sealed class NeedSlowDebuff()
 {
     public ProtoId<NeedSlowdownPrototype> Pid;

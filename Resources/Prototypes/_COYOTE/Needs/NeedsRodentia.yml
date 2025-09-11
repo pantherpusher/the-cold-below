@@ -11,13 +11,13 @@
   secondsPerUpdate: 1
   alertCategory: "Hunger"
   # Extra Satisfied State
-  extraSatisfiedMinutesFromFull: 80
+  extraSatisfiedMinutesFromFull: 80 # 1 hour 20 minutes
   extraSatisfiedSpeedMult: 1.05
   extraSatisfiedMultRPI: 1.25
   extraSatisfiedAlert: null
   extraSatisfiedIcon: HungerIconOverfed
   # Satisfied State
-  satisfiedMinutesFromFull: 240 # 3 hours, minus 45 minutes of Extra Satisfied
+  satisfiedMinutesFromFull: 240 # 4 hours, minus 1 hour 20 minutes of Extra Satisfied
   satisfiedSpeedMult: 1.0
   satisfiedMultRPI: 1.0
   satisfiedAlert: null
@@ -29,12 +29,12 @@
   lowAlert: Peckish
   lowIcon: HungerIconPeckish
   # Critical State
-  criticalMinutesFromFull: 300 # 1.5 hours of starvation after Low
+  criticalMinutesFromFull: 300
   criticalSpeedMult: 0.50
   criticalMultRPI: 0.50
   criticalAlert: Starving
   criticalIcon: HungerIconStarving
-  criticalDebuffSlowdown: NeedSlowdownHunger
+#  criticalDebuffSlowdown: NeedSlowdownHunger
 
 #thirst
 - type: need
@@ -72,5 +72,5 @@
   criticalMultRPI: 0.50
   criticalAlert: Parched
   criticalIcon: ThirstIconParched
-  criticalDebuffSlowdown: NeedSlowdownThirst
+#  criticalDebuffSlowdown: NeedSlowdownThirst
 

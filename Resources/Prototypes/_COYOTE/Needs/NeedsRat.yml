@@ -34,7 +34,7 @@
   criticalMultRPI: 0.50
   criticalAlert: Starving
   criticalIcon: HungerIconStarving
-  criticalDebuffSlowdown: NeedSlowdownHunger
+#  criticalDebuffSlowdown: NeedSlowdownHunger
 
 #thirst
 - type: need
@@ -72,5 +72,5 @@
   criticalMultRPI: 0.50
   criticalAlert: Parched
   criticalIcon: ThirstIconParched
-  criticalDebuffSlowdown: NeedSlowdownThirst
+#  criticalDebuffSlowdown: NeedSlowdownThirst
 

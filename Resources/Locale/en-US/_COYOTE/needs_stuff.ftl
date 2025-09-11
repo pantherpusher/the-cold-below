@@ -64,8 +64,8 @@ examinable-need-thirst-timeleft-tillcritical-self = You will dehydrate in about.
 
 # Buffs and Debuffs
 examinable-need-effect-header = [bold][underline]Effects:[/underline][/bold]
-examinable-need-effect-buff = [color=green]({$amount})[/color] {$kind}
-examinable-need-effect-debuff = [color=red]({$amount})[/color] {$kind}
+examinable-need-effect-buff = [color=green]{$amount}[/color] {$kind}
+examinable-need-effect-debuff = [color=red]{$amount}[/color] {$kind}
 examinable-need-effect-buff-custom = [color=green]{$kind}[/color] {$text}
 examinable-need-effect-debuff-custom = [color=red]{$kind}[/color] {$text}
 

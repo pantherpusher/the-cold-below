@@ -31,7 +31,7 @@ public sealed partial class HungryPrecondition : HTNPrecondition
             return false;
         }
 
-        return !needs.HungerIsBelowThreshold(
+        return needs.HungerIsBelowThreshold(
             owner,
             MinHungerState,
             needy);

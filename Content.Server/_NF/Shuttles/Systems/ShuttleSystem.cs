@@ -351,7 +351,7 @@ public sealed partial class ShuttleSystem
             // Get the player entity
             if (!sesh.AttachedEntity.HasValue)
             {
-                Log.Debug($"Skipping for E-Brake: Player session {sesh.Name} ({sesh.UserId}) has no attached entity.");
+                // Log.Debug($"Skipping for E-Brake: Player session {sesh.Name} ({sesh.UserId}) has no attached entity.");
                 continue;
             }
             var attached = sesh.AttachedEntity.Value;
@@ -359,7 +359,7 @@ public sealed partial class ShuttleSystem
             if (!_mobState.IsAlive(attached)
                 || HasComp<GhostComponent>(attached))
             {
-                Log.Debug($"Skipping for E-Brake: Player session {sesh.Name} ({sesh.UserId}) is in crit or dead.");
+                // Log.Debug($"Skipping for E-Brake: Player session {sesh.Name} ({sesh.UserId}) is in crit or dead.");
                 continue;
             }
 
@@ -369,7 +369,7 @@ public sealed partial class ShuttleSystem
                 || !TryComp<ShuttleComponent>(transform.GridUid.Value, out var shuttle)
                 || !shuttle.PlayerShuttle)
             {
-                Log.Debug($"Skipping for E-Brake: Player session {sesh.Name} ({sesh.UserId}) is not on a player shuttle.");
+                // Log.Debug($"Skipping for E-Brake: Player session {sesh.Name} ({sesh.UserId}) is not on a player shuttle.");
                 continue;
             }
             whereDict.Add(shuttle);

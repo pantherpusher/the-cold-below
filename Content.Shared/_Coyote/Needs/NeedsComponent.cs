@@ -1,5 +1,6 @@
 using Content.Shared._Coyote;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._Coyote.Needs;
 
@@ -8,11 +9,14 @@ namespace Content.Shared._Coyote.Needs;
 /// holds a list of need 'datums' that, honestly, do most of the work. just dont call it needy
 /// </summary>
 [RegisterComponent]
+[AutoGenerateComponentState]
+[Serializable]
 public sealed partial class NeedsComponent : Component
 {
     /// <summary>
     /// The set of datums that this entity has for needs
     /// </summary>
+    [AutoNetworkedField]
     [ViewVariables(VVAccess.ReadWrite)]
     public Dictionary<NeedType, NeedDatum> Needs = new();
 
