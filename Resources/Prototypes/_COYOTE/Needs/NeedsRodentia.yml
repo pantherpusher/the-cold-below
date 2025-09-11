@@ -12,7 +12,7 @@
   alertCategory: "Hunger"
   # Extra Satisfied State
   extraSatisfiedMinutesFromFull: 80 # 1 hour 20 minutes
-  extraSatisfiedSpeedMult: 1.05
+  extraSatisfiedSpeedMult: 1.10
   extraSatisfiedMultRPI: 1.25
   extraSatisfiedAlert: null
   extraSatisfiedIcon: HungerIconOverfed
