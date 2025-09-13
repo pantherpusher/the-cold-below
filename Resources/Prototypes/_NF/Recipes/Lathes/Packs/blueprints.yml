@@ -129,7 +129,7 @@
   # AtmosphericDrilling
   - GasMiningDrillMachineCircuitboard
   - GaslockFrameMachineCircuitboard
-  - GaslockBigFrameMachineCircuitboard
+#  - GaslockBigFrameMachineCircuitboard
   # HardsuitsAdvanced
   - ClothingOuterHardsuitEngineeringWhite
   # PortableParticleEmission

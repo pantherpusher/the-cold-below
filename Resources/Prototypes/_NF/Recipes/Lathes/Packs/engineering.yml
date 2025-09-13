@@ -7,7 +7,7 @@
   - PortableGeneratorDKJrMachineCircuitboard
   - GasMiningDrillMachineCircuitboard
   - GaslockFrameMachineCircuitboard
-  - GaslockBigFrameMachineCircuitboard
+#  - GaslockBigFrameMachineCircuitboard
   - MaterialSiloMachineCircuitboard
   - SlowWeakThrusterMachineCircuitboard
   - SlowStrongThrusterMachineCircuitboard
