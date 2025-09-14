@@ -429,7 +429,6 @@ entities:
     - type: BecomesStation
       id: Skipper
     - type: SpreaderGrid
-    - type: ImplicitRoof
 - proto: AirAlarm
   entities:
   - uid: 2
