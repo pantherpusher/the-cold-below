@@ -707,6 +707,7 @@
   id: ContractorPDA
   name: loadout-group-contractor-pda
   loadouts:
+  - ContractorContractorPDA
   - ContractorClearNFPDA
   - ContractorSalvagePDA
   - ContractorResearchAssistantPDA
@@ -741,7 +742,7 @@
   - ContractorClownPDA
   - ContractorMimePDA
   fallbacks:
-  - ContractorClearNFPDA
+  - ContractorContractorPDA
 
 - type: loadoutGroup
   id: ContractorGlasses
