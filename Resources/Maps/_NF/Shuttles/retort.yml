@@ -4129,7 +4129,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -0.5,-14.5
       parent: 1
-- proto: ImpCoffeeMachine
+- proto: JerryCanWeldingFuel
   entities:
   - uid: 443
     components:
