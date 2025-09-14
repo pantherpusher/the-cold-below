@@ -45,9 +45,9 @@
     sprite: _NF/Objects/Tanks/Jetpacks/pirate.rsi
   - type: Clothing
     sprite: _NF/Objects/Tanks/Jetpacks/pirate.rsi
-  - type: Tag
-    tags:
-      - DemagImmune
+#  - type: Tag
+#    tags:
+#      - DemagImmune
   - type: Jetpack
     radarBlip: false
 
