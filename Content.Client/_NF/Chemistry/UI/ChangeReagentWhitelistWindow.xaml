@@ -1,11 +1,25 @@
 ﻿<DefaultWindow
-    SetSize="250 300"
-    Margin="4 0"
+    Margin="4,0"
+    SetSize="325 300"
     xmlns="https://spacestation14.io">
     <BoxContainer Orientation="Vertical">
-        <LineEdit Name="SearchBar" PlaceHolder="{Loc 'admin-add-reagent-window-search-placeholder'}" HorizontalExpand="True"  Margin ="0 4"/>
-        <ItemList Name="ReagentList" SelectMode="Single" VerticalExpand="True"  Margin ="0 4"/>
-        <Button Name="ApplyButton" HorizontalExpand="True" Margin ="0 4" />
-        <Button Name="ResetButton" HorizontalExpand="True" Margin ="0 4" />
+        <LineEdit
+            HorizontalExpand="True"
+            Margin="0,4"
+            Name="SearchBar"
+            PlaceHolder="{Loc 'admin-add-reagent-window-search-placeholder'}" />
+        <ItemList
+            Margin="0,4"
+            Name="ReagentList"
+            SelectMode="Single"
+            VerticalExpand="True" />
+        <Button
+            HorizontalExpand="True"
+            Margin="0,4"
+            Name="ApplyButton" />
+        <Button
+            HorizontalExpand="True"
+            Margin="0,4"
+            Name="ResetButton" />
     </BoxContainer>
 </DefaultWindow>
