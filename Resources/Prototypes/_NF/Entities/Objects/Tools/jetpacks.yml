@@ -49,7 +49,7 @@
 #    tags:
 #      - DemagImmune
   - type: Jetpack
-    radarBlip: false
+#    radarBlip: false
 
 #Filled pirate
 - type: entity
