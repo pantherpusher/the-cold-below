@@ -21,6 +21,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
+using Content.Shared.SSDIndicator;
 using Content.Shared.Verbs;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
@@ -69,6 +70,7 @@ public sealed partial class CryoSleepSystem : EntitySystem
         SubscribeLocalEvent<CryoSleepComponent, DestructionEventArgs>((e, c, _) => EjectBody(e, c));
         SubscribeLocalEvent<CryoSleepComponent, CryoStoreDoAfterEvent>(OnAutoCryoSleep);
         SubscribeLocalEvent<CryoSleepComponent, DragDropTargetEvent>(OnEntityDragDropped);
+        SubscribeLocalEvent<CryoSleepComponent, ForceCryoSleepEvent>(ForceCryoSleep);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
 
         InitReturning();
@@ -355,6 +357,17 @@ public sealed partial class CryoSleepSystem : EntitySystem
         }
 
         return true;
+    }
+
+    public void ForceCryoSleep(EntityUid uid, CryoSleepComponent component, ref ForceCryoSleepEvent args)
+    {
+        if (IsOccupied(component))
+            return;
+
+        var user = args.User;
+        var pod = args.Cryopod;
+
+        CryoStoreBody(user, pod);
     }
 
     private bool IsOccupied(CryoSleepComponent component)

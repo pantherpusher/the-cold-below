@@ -55,4 +55,20 @@ public sealed partial class SSDIndicatorComponent : Component
     /// Prevents reopening the job if they go SSD again within a certain time frame.
     /// </summary>
     public bool JobOpened = false;
+
+    /// <summary>
+    /// When they started being braindead on nash.
+    /// People dont like seeing a bunch of soulless husks sitting around the bar
+    /// so when it gets to idk like 3 hours, we find a cryopod and dump their dumb pu55y in it.
+    /// </summary>
+    [DataField]
+    [AutoNetworkedField]
+    public TimeSpan BraindeadNashTime = TimeSpan.Zero;
+
+    /// <summary>
+    /// if its been this long since they went SSD, we cryopod them.
+    /// </summary>
+    [DataField]
+    public TimeSpan CryoBraindeadTimeLimit = TimeSpan.FromSeconds(3);
+
 }
