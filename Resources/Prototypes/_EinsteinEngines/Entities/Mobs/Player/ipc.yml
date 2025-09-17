@@ -175,6 +175,19 @@
     cosmeticOnly: false
   - type: TallWhitelist
     scale: 1.2
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.2
+        Heat: 0.25
+  - type: ThermalRegulator
+    metabolismHeat: 0
+    radiatedHeat: 100
+    implicitHeatRegulation: 500
+    sweatHeatRegulation: 2000
+    shiveringHeatRegulation: 2000
+    normalBodyTemperature: 310.15
+    thermalRegulationTemperatureThreshold: 25
 
 - type: entity
   save: false
