@@ -138,32 +138,12 @@
           sprite: "Effects/creampie.rsi"
           state: "creampie_human"
           visible: false
-    #- type: Bloodstream This is left commented out because it's not necessary for a robot, but you may want it.
-    #  damageBleedModifiers: BloodlossIPC
-    #  bloodReagent: Oil
-    #  bleedReductionAmount: 0
-    #  bloodMaxVolume: 500
-    #  chemicalMaxVolume: 0
-    #  bleedPuddleThreshold: 3
-    #  bleedRefreshAmount: 0
-    #  bloodLossThreshold: 0
-    #  maxBleedAmount: 14
-    #  bloodlossDamage:
-    #    types:
-    #      Burn: 1.5
-    #  bloodlossHealDamage:
-    #    types:
-    #      Burn: 0
     - type: Flammable
       fireSpread: true
       canResistFire: true
       damage:
         types:
           Heat: 0.75 #per second, scales with number of fire 'stacks'
-    # - type: Barotrauma # Not particularly modifiable. In the future, some response to pressure changes would be nice.
-    #   damage:
-    #     types:
-    #       Blunt: 0.28 #per second, scales with pressure and other constants.
     - type: Identity
     #  soundHit:
     #    path: /Audio/Effects/metalbreak.ogg
