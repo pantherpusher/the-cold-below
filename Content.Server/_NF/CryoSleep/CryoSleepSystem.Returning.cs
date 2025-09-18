@@ -12,6 +12,7 @@ using Robust.Shared.Network;
 using Content.Shared._NF.CryoSleep.Events;
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Ghost;
+using Content.Shared._NF.CryoSleep;
 
 namespace Content.Server._NF.CryoSleep;
 

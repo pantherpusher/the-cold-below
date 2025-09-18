@@ -1,4 +1,5 @@
 ﻿using Content.Shared._Coyote;
+using Content.Shared._NF.CryoSleep;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.CCVar;
@@ -169,10 +170,10 @@ public sealed class SSDIndicatorSystem : EntitySystem
     /// </summary>
     private bool IsInNashStation(EntityUid uid)
     {
-        var station = _stationSystem.GetCurrentStation(uid);
-        if (station == null)
+        var myGrit = Transform(uid).GridUid;
+        if (myGrit == null)
             return false;
-        return HasComp<CryoBraindeadsComponent>(station.Value);
+        return HasComp<CryoBraindeadsComponent>(myGrit.Value);
     }
 
     private bool InCryoSleep(EntityUid uid)
@@ -226,7 +227,7 @@ public sealed class SSDIndicatorSystem : EntitySystem
         var grid = Transform(uid).GridUid;
         if (grid == null)
             return null;
-        var cryoQuery = EntityQueryEnumerator<CryoPodComponent>();
+        var cryoQuery = EntityQueryEnumerator<CryoSleepComponent>();
         while (cryoQuery.MoveNext(out var cryoUid, out var cryo))
         {
             if (Transform(cryoUid).GridUid == grid)

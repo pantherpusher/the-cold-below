@@ -3,7 +3,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 
-namespace Content.Server._NF.CryoSleep;
+namespace Content.Shared._NF.CryoSleep;
 
 [RegisterComponent]
 public sealed partial class CryoSleepComponent : Component

@@ -69,6 +69,6 @@ public sealed partial class SSDIndicatorComponent : Component
     /// if its been this long since they went SSD, we cryopod them.
     /// </summary>
     [DataField]
-    public TimeSpan CryoBraindeadTimeLimit = TimeSpan.FromSeconds(3);
+    public TimeSpan CryoBraindeadTimeLimit = TimeSpan.FromHours(3);
 
 }

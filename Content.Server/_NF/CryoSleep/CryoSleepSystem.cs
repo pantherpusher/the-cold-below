@@ -7,6 +7,7 @@ using Content.Server.Interaction;
 using Content.Server.Mind;
 using Content.Server.Popups;
 using Content.Shared._NF.CCVar;
+using Content.Shared._NF.CryoSleep;
 using Content.Shared._NF.CryoSleep.Events;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Destructible;
@@ -299,13 +300,14 @@ public sealed partial class CryoSleepSystem : EntitySystem
         }
 
         var storage = GetStorageMap();
-        _container.Remove(bodyId, cryo.BodyContainer, reparent: false, force: true);
+        if (_container.ContainsEntity(bodyId, storage))
+            _container.Remove(bodyId, cryo.BodyContainer, reparent: false, force: true);
         _transform.SetCoordinates(bodyId, new EntityCoordinates(storage, Vector2.Zero));
 
         RaiseLocalEvent(bodyId, new CryosleepEnterEvent(cryopod, mind?.UserId), true);
 
-        if (cryo.CryosleepDoAfter != null && _doAfter.GetStatus(cryo.CryosleepDoAfter) == DoAfterStatus.Running)
-            _doAfter.Cancel(cryo.CryosleepDoAfter);
+        // if (cryo.CryosleepDoAfter != null && _doAfter.GetStatus(cryo.CryosleepDoAfter) == DoAfterStatus.Running)
+        //     _doAfter.Cancel(cryo.CryosleepDoAfter);
 
         // set the mindcontainer's isInCryosleep to true
         if (TryComp<MindContainerComponent>(bodyId, out var mindContainer))

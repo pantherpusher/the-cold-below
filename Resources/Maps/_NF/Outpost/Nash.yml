@@ -277,6 +277,7 @@ entities:
       fixtures: {}
     - type: OccluderTree
     - type: SpreaderGrid
+    - type: CryoBraindeads
     - type: Shuttle
       dampingModifier: 0.25
     - type: GridPathfinding
