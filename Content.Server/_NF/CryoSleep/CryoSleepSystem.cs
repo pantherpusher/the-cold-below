@@ -7,6 +7,7 @@ using Content.Server.Interaction;
 using Content.Server.Mind;
 using Content.Server.Popups;
 using Content.Shared._NF.CCVar;
+using Content.Shared._NF.CryoSleep;
 using Content.Shared._NF.CryoSleep.Events;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Destructible;
@@ -21,6 +22,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
+using Content.Shared.SSDIndicator;
 using Content.Shared.Verbs;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
@@ -69,6 +71,7 @@ public sealed partial class CryoSleepSystem : EntitySystem
         SubscribeLocalEvent<CryoSleepComponent, DestructionEventArgs>((e, c, _) => EjectBody(e, c));
         SubscribeLocalEvent<CryoSleepComponent, CryoStoreDoAfterEvent>(OnAutoCryoSleep);
         SubscribeLocalEvent<CryoSleepComponent, DragDropTargetEvent>(OnEntityDragDropped);
+        SubscribeLocalEvent<CryoSleepComponent, ForceCryoSleepEvent>(ForceCryoSleep);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
 
         InitReturning();
@@ -297,13 +300,14 @@ public sealed partial class CryoSleepSystem : EntitySystem
         }
 
         var storage = GetStorageMap();
-        _container.Remove(bodyId, cryo.BodyContainer, reparent: false, force: true);
+        if (_container.ContainsEntity(bodyId, storage))
+            _container.Remove(bodyId, cryo.BodyContainer, reparent: false, force: true);
         _transform.SetCoordinates(bodyId, new EntityCoordinates(storage, Vector2.Zero));
 
         RaiseLocalEvent(bodyId, new CryosleepEnterEvent(cryopod, mind?.UserId), true);
 
-        if (cryo.CryosleepDoAfter != null && _doAfter.GetStatus(cryo.CryosleepDoAfter) == DoAfterStatus.Running)
-            _doAfter.Cancel(cryo.CryosleepDoAfter);
+        // if (cryo.CryosleepDoAfter != null && _doAfter.GetStatus(cryo.CryosleepDoAfter) == DoAfterStatus.Running)
+        //     _doAfter.Cancel(cryo.CryosleepDoAfter);
 
         // set the mindcontainer's isInCryosleep to true
         if (TryComp<MindContainerComponent>(bodyId, out var mindContainer))
@@ -355,6 +359,17 @@ public sealed partial class CryoSleepSystem : EntitySystem
         }
 
         return true;
+    }
+
+    public void ForceCryoSleep(EntityUid uid, CryoSleepComponent component, ref ForceCryoSleepEvent args)
+    {
+        if (IsOccupied(component))
+            return;
+
+        var user = args.User;
+        var pod = args.Cryopod;
+
+        CryoStoreBody(user, pod);
     }
 
     private bool IsOccupied(CryoSleepComponent component)

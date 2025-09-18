@@ -293,6 +293,7 @@ entities:
             125: -20,5
             126: -20,1
     - type: OccluderTree
+    - type: CryoBraindeads
     - type: Shuttle
       dampingModifier: 0.25
     - type: RadiationGridResistance

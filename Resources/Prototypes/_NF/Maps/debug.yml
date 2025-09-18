@@ -9,6 +9,7 @@
       components:
         - type: StationNameSetup
           mapNameTemplate: "NFDev"
+        - type: CryoBraindeads
         - type: StationJobs
           availableJobs:
             Contractor: [ -1, -1 ]
