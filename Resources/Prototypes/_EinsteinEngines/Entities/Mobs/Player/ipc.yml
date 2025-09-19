@@ -137,7 +137,7 @@
     critDamage:
       types:
         Blunt: 1
-        Heat: 0.5
+        Shock: 0.5
     batteryPowered: true
     drainPerSecond: 1.5
     chargeThresholdMid: 0.80
