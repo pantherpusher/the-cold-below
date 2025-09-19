@@ -28,9 +28,11 @@
   id: Silicon
   supportedGroups:
     - Brute
+    - Burn
   supportedTypes:
     - Heat
     - Shock
+    - Cold
     - Structural
 
 - type: damageContainer

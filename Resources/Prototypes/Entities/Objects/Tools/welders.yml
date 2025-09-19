@@ -114,7 +114,7 @@
         Blunt: -15
         Piercing: -15
         Slash: -15
-        Structural: -50
+        Structural: -15
 
 - type: entity
   name: industrial welding tool
