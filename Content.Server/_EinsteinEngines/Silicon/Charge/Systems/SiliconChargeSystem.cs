@@ -208,14 +208,12 @@ public sealed class SiliconChargeSystem : EntitySystem
     /// </summary>
     private void HandleCritDamage(EntityUid silicon, SiliconComponent siliconComp)
     {
-        if (siliconComp.ChargeState > 0.1f
-            && !_mobState.IsCritical(silicon))
+        if (!_mobState.IsCritical(silicon))
         {
             siliconComp.LastCritDamageTime = TimeSpan.Zero;
             return;
         }
 
-        // so now we know it's in crit, or at 10% charge or less
         if (_timing.CurTime - siliconComp.LastCritDamageTime < siliconComp.CritDamageInterval)
             return;
         siliconComp.LastCritDamageTime = _timing.CurTime;
