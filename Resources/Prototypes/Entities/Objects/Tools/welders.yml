@@ -115,6 +115,7 @@
         Piercing: -15
         Slash: -15
         Structural: -15
+        Cold: -1
 
 - type: entity
   name: industrial welding tool
