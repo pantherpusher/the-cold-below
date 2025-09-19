@@ -8,6 +8,7 @@ using Content.Shared._Coyote.RolePlayIncentiveShared;
 using Content.Shared._NF.Bank.Components;
 using Content.Shared.Chat;
 using Content.Shared.Nutrition.Components;
+using Content.Shared.SSDIndicator;
 using Robust.Server.Player;
 using Robust.Shared.Timing;
 
@@ -26,6 +27,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
     [Dependency] private readonly ChatSystem _chatsys = null!;
     [Dependency] private readonly IChatManager _chatManager = null!;
     [Dependency] private readonly IPlayerManager _playerManager = null!;
+    [Dependency] private readonly SSDIndicatorSystem _ssdThing = null!;
 
     private const float GoodlenSpeaking = 75;
     private const float GoodlenWhispering = 75;
@@ -53,6 +55,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         // get the component this thing is attached to            v- my code my formatting
         SubscribeLocalEvent<RoleplayIncentiveComponent,            ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<RoleplayIncentiveComponent,            RoleplayIncentiveEvent>(OnGotRoleplayIncentiveEvent);
+        SubscribeLocalEvent<RoleplayIncentiveComponent,            GetRoleplayIncentiveModifier>(OnSelfSucc);
         SubscribeLocalEvent<CoolChefComponent,                     GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolPirateComponent,                   GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolStationRepComponent,               GetRoleplayIncentiveModifier>(AdjustRPI);
@@ -519,6 +522,24 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             < TaxBracket3 => "TaxBracket3",
             _ => "TaxBracketRest",
         };
+    }
+
+    /// <summary>
+    /// Applies the self success multiplier to the payward
+    /// </summary>
+    /// <param name="uid"></param>
+    /// <param name="component"></param>
+    /// <param name="args"></param>
+    private void OnSelfSucc(
+        EntityUid uid,
+        RoleplayIncentiveComponent component,
+        ref GetRoleplayIncentiveModifier args)
+    {
+        if (TryComp<SSDIndicatorComponent>(uid, out var ssd)
+            && _ssdThing.IsInNashStation(uid))
+        {
+            args.Modify(1.5f, 0f); // double pay if youre in nash!
+        }
     }
 
     private void AdjustRPI(
