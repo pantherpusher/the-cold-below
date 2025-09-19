@@ -229,7 +229,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 8
+        Piercing: 24
     ignoreResistances: true
   - type: Tracer
     color: "#666666FF"
@@ -244,7 +244,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 30
+        Piercing: 90
         Structural: 200
     penetrationThreshold: 360
     penetrationDamageTypeRequirement:
@@ -261,9 +261,9 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 10
+        Blunt: 0
   - type: StaminaDamageOnCollide
-    damage: 60
+    damage: 180
   - type: Tracer
     color: "#00b0ffFF"
     length: 3
