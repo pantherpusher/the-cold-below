@@ -76,7 +76,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 30
+        damage: 90
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -96,7 +96,7 @@
     onlyCollideWhenShot: true
     damage:
       types:
-        Piercing: 25
+        Piercing: 75
 
 - type: entity
   parent: [ BaseBoltProjectile, BaseBoltEmbeddable, BaseBoltLiquidInjector, BaseC1Contraband ]
@@ -107,7 +107,7 @@
     attackRate: 1
     damage:
       types:
-        Piercing: 4
+        Piercing: 12
     angle: 0
     animation: WeaponArcThrust
     soundHit:
@@ -166,8 +166,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 5
-        Slash: 15
+        Piercing: 15
+        Slash: 45
 
 - type: entity
   parent: BaseCrossbowBolt
@@ -189,7 +189,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
+        Piercing: 60
     deleteOnCollide: true
   - type: SolutionContainerManager
     solutions:
@@ -239,7 +239,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
+        Piercing: 60
   - type: Construction
     graph: CraftCrossbowBoltGlassShard
     node: CraftCrossbowBoltGlassShard
@@ -270,7 +270,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
+        Piercing: 60
   - type: Construction
     graph: CraftCrossbowBoltPlasmaGlassShard
     node: CraftCrossbowBoltPlasmaGlassShard
@@ -302,8 +302,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 15
-        Radiation: 5
+        Piercing: 45
+        Radiation: 15
   - type: Construction
     graph: CraftCrossbowBoltUraniumGlassShard
     node: CraftCrossbowBoltUraniumGlassShard
@@ -337,7 +337,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 15
+        Piercing: 45
     deleteOnCollide: true
   - type: Construction
     graph: CraftCrossbowBoltSyringe
@@ -369,7 +369,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 18
+        Piercing: 54
     ignoreResistances: true
   - type: Construction
     graph: CraftCrossbowBoltPlasteel
@@ -403,7 +403,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 15
+        Piercing: 45
     deleteOnCollide: true
   - type: ExplodeOnTrigger
   - type: Explosive
@@ -452,8 +452,8 @@
   - type: Projectile
     damage:
       types:
-        Shock: 5
-        Blunt: 10
+        Shock: 15
+        Blunt: 30
     deleteOnCollide: true
   - type: StaminaDamageOnCollide
     damage: 20
@@ -501,7 +501,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 10
+        Piercing: 30
     deleteOnCollide: true
   - type: IgniteOnProjectileHit
     fireStacks: 0.5
@@ -541,7 +541,7 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 5
+        Blunt: 15
     deleteOnCollide: true
   - type: SpawnOnTrigger
     proto: CrossbowBoltShrapnelSpread
@@ -575,7 +575,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 6
+        Piercing: 18
   - type: TimedDespawn
     lifetime: 0.25
 
@@ -603,6 +603,6 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 5
-        Slash: 5
-        Bloodloss: 5
+        Piercing: 15
+        Slash: 15
+        Bloodloss: 15
