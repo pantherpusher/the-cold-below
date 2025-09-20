@@ -174,8 +174,8 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
             return;
         var curTime = _timing.CurTime;
         // if they died recently, dont punish them again
-        // if (curTime < rpic.LastDeathPunishment + DeathPunishmentCooldown)
-        //     return;
+        if (curTime < rpic.LastDeathPunishment + DeathPunishmentCooldown)
+            return;
         PunishPlayerForDeath(uid, rpic);
     }
     #endregion
