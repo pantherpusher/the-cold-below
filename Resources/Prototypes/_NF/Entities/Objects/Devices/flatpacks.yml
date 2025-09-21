@@ -122,7 +122,7 @@
     entity: GeneratorRTG
   - type: StaticPrice
     price: 10000
-    vendPrice: 100000
+    vendPrice: 75000
 
 - type: entity
   parent: BaseNFFlatpack
