@@ -7,7 +7,7 @@
   - type: Projectile
     damage:
       types:
-        Heat: 6
+        Heat: 2
   - type: Sprite
     noRot: false
     sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
@@ -27,8 +27,8 @@
   - type: Projectile
     damage:
       types:
-        Bloodloss: 9
-        Asphyxiation: 9
+        Bloodloss: 3
+        Asphyxiation: 3
   - type: Sprite
     noRot: false
     sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
@@ -46,8 +46,8 @@
   - type: Projectile
     damage:
       types:
-        Bloodloss: 6
-        Slash: 12
+        Bloodloss: 2
+        Slash: 4
   - type: Sprite
     noRot: false
     sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
@@ -61,7 +61,7 @@
   id: BloodCultLaser
   damage:
     types:
-      Slash: 24
+      Slash: 8
   muzzleFlash:
     sprite: _NF/Effects/bloodcultbeams.rsi
     state: red_lightning
@@ -79,7 +79,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StaminaDamageOnCollide
-    damage: 300
+    damage: 100
   - type: Projectile
     damage:
       types:
@@ -99,7 +99,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StaminaDamageOnCollide
-    damage: 300
+    damage: 100
   - type: Projectile
     damage:
       types:
@@ -125,6 +125,6 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 12
-        Cold: 12
-        Structural: 30
+        Piercing: 4
+        Cold: 4
+        Structural: 10
