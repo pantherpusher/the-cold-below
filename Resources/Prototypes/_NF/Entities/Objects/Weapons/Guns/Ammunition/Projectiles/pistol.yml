@@ -9,10 +9,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 4
-        Blunt: 4
+        Piercing: 11
+        Blunt: 11
   - type: StaminaDamageOnCollide
-    damage: 4 # 15 hits to slowdown
+    damage: 15 # 4 hits to slowdown | 5 shots to kill
 
 - type: entity
   id: NFBulletPistol35Overpressure
@@ -23,10 +23,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 4
-        Blunt: 5
+        Piercing: 11
+        Blunt: 14
   - type: StaminaDamageOnCollide
-    damage: 5 # 12 hits to slowdown
+    damage: 16 # 5 hits to slowdown | 4 shots to kill
 
 - type: entity
   id: NFBulletPistol35Incendiary
@@ -37,10 +37,10 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 4.8 # 0.6 * base total dmg
-        Heat: 3.2 # 0.4 * base total dmg
+        Blunt: 13 # 0.6 * base total dmg
+        Heat: 9 # 0.4 * base total dmg
   - type: StaminaDamageOnCollide
-    damage: 4 # 15 hits to slowdown
+    damage: 7.5 # 8 hits to slowdown | ~ 10 shots to kill
 
 - type: entity
   id: NFBulletPistol35Uranium
@@ -51,10 +51,10 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 6.6 # 0.6 * (1.4 * base total dmg)
-        Radiation: 4.4 # 0.4 * (1.4 * base total dmg)
+        Blunt: 18 # 0.6 * (1.4 * base total dmg)
+        Radiation: 12 # 0.4 * (1.4 * base total dmg)
   - type: StaminaDamageOnCollide
-    damage: 4 # 15 hits to slowdown
+    damage: 20 # 3 shots to slow | 4 shots to kill
 
 - type: entity
   id: NFBulletPistol35Practice
@@ -65,7 +65,7 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 0.5
+        Blunt: 0
 
 # Frontier
 # .35 pistol
@@ -78,10 +78,10 @@
   - type: Projectile
     damage:
       types:
-        Shock: 4
-        Blunt: 4
+        Shock: 11
+        Blunt: 11
   - type: StaminaDamageOnCollide
-    damage: 4 # 15 hits to slowdown
+    damage: 15 # 4 hits to slowdown | 5 shots to kill
 
 - type: entity
   id: NFBulletPistol35Rubber
@@ -92,9 +92,9 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 1
+        Blunt: 0
   - type: StaminaDamageOnCollide
-    damage: 13 # ~8 hits to stun sounds reasonable
+    damage: 22 # ~5 shots to stun, ~3 to slow
 
 #region .45 pistol
 - type: entity
