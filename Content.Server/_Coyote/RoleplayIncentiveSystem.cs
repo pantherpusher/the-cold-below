@@ -170,6 +170,8 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         RoleplayIncentiveComponent rpic,
         MobStateChangedEvent args)
     {
+        if (!rpic.PunishDeath)
+            return;
         if (args.NewMobState != MobState.Dead)
             return;
         var curTime = _timing.CurTime;

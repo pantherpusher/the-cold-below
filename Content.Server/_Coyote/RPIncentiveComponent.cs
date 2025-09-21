@@ -51,6 +51,18 @@ public sealed partial class RoleplayIncentiveComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan LastDeepFryerPunishment = TimeSpan.Zero;
 
+    /// <summary>
+    /// Punish dying?
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool PunishDeath = false;
+
+    /// <summary>
+    /// Punish deep frying?
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool PunishDeepFryer = false;
+
     [ViewVariables(VVAccess.ReadWrite)]
     public int TaxBracketPayoutOverride = -1; // -1 means no override, use the default payouts
     [ViewVariables(VVAccess.ReadWrite)]
