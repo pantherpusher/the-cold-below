@@ -120,6 +120,9 @@
   components:
   - type: Flatpack
     entity: GeneratorRTG
+  - type: StaticPrice
+    price: 10000
+    vendPrice: 75000
 
 - type: entity
   parent: BaseNFFlatpack
@@ -648,6 +651,7 @@
     entity: ComputerIFF
   - type: StaticPrice
     price: 400
+    vendPrice: 60000 # ehehehehee
   - type: Sprite
     layers:
     - state: supply_gun
