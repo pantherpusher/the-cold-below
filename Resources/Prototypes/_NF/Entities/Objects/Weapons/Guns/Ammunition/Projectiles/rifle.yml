@@ -9,7 +9,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 33
+        Piercing: 30
 
 - type: entity
   id: NFBulletRifle10Practice
@@ -20,7 +20,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 0.5
+        Piercing: 0
 
 - type: entity
   id: NFBulletRifle10Rubber
@@ -31,9 +31,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 0.5
+        Piercing: 0
   - type: StaminaDamageOnCollide
-    damage: 31.5 # ~10 hits to stun sounds reasonable, less effective than pistol because rifle round is smaller in size
+    damage: 30 # ~4 hits to stun
 
 #region .20 rifle
 - type: entity
@@ -45,7 +45,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 39
+        Piercing: 35
 
 - type: entity
   id: NFBulletRifle20Overpressure
@@ -56,7 +56,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 42
+        Piercing: 38
 
 - type: entity
   id: NFBulletRifle20Incendiary
@@ -67,8 +67,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 23.4 # 0.6 * base total dmg
-        Heat: 15.6 # 0.4 * base total dmg
+        Piercing: 21 # 0.6 * base total dmg
+        Heat: 14 # 0.4 * base total dmg
 
 - type: entity
   id: NFBulletRifle20Uranium
@@ -79,8 +79,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 32.4 # 0.6 * (1.4 * base total dmg)
-        Radiation: 21.6 # 0.4 * (1.4 * base total dmg)
+        Piercing: 29 # 0.6 * (1.4 * base total dmg)
+        Radiation: 19 # 0.4 * (1.4 * base total dmg)
 
 - type: entity
   id: NFBulletRifle20Practice
@@ -91,7 +91,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 0.5
+        Piercing: 0
 
 - type: entity
   id: NFBulletRifle20Rubber
@@ -104,7 +104,7 @@
       types:
         Piercing: 0
   - type: StaminaDamageOnCollide
-    damage: 36 # ~9 hits to stun sounds reasonable, less effective than pistol because rifle round is smaller in size
+    damage: 35 # ~3 hits to stun
 
 #region .25 rifle
 - type: entity
@@ -116,7 +116,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 42
+        Piercing: 38
 
 - type: entity
   id: NFBulletRifle25Overpressure
@@ -127,7 +127,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 48
+        Piercing: 43
 
 - type: entity
   id: NFBulletRifle25Incendiary
@@ -138,8 +138,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 25.2 # 0.6 * base total dmg
-        Heat: 16.8 # 0.4 * base total dmg
+        Piercing: 23 # 0.6 * base total dmg
+        Heat: 15 # 0.4 * base total dmg
 
 - type: entity
   id: NFBulletRifle25Uranium
@@ -150,8 +150,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 34.2 # 0.6 * (1.4 * base total dmg)
-        Radiation: 22.8 # 0.4 * (1.4 * base total dmg)
+        Piercing: 23 # 0.6 * (1.4 * base total dmg)
+        Radiation: 15 # 0.4 * (1.4 * base total dmg)
 
 - type: entity
   id: NFBulletRifle25Practice
@@ -162,7 +162,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 0.5
+        Piercing: 0
 
 - type: entity
   id: NFBulletRifle25Rubber
@@ -175,7 +175,7 @@
       types:
         Piercing: 0
   - type: StaminaDamageOnCollide
-    damage: 36 # ~9 hits to stun sounds reasonable, less effective than pistol because rifle round is smaller in size
+    damage: 38 # ~3 hits to stun
 
 #region .30 rifle
 - type: entity
@@ -187,7 +187,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 45
+        Piercing: 41
 
 - type: entity
   id: NFBulletRifle30Overpressure
@@ -198,7 +198,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 51
+        Piercing: 46
 
 - type: entity
   id: NFBulletRifle30Incendiary
@@ -209,8 +209,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 27
-        Heat: 18
+        Piercing: 25
+        Heat: 16
 
 - type: entity
   id: NFBulletRifle30Uranium
@@ -221,8 +221,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 37.8
-        Radiation: 25.2
+        Piercing: 25
+        Radiation: 16
 
 - type: entity
   id: NFBulletRifle30Practice
@@ -233,7 +233,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 0.5
+        Piercing: 0
 
 - type: entity
   id: NFBulletRifle30Rubber
@@ -246,7 +246,7 @@
       types:
         Piercing: 0
   - type: StaminaDamageOnCollide
-    damage: 39 # ~8 hits to stun sounds reasonable
+    damage: 41 # ~3 hits to stun
 
 #region .60 rifle
 - type: entity
@@ -258,7 +258,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 105
+        Piercing: 95
         Structural: 200
     penetrationThreshold: 360
     penetrationDamageTypeRequirement:
@@ -275,4 +275,4 @@
       types:
         Blunt: 0
   - type: StaminaDamageOnCollide
-    damage: 210 # one hit to stun LOL
+    damage: 95 # ~2 hits to stun
