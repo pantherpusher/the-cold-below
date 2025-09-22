@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server._Coyote.CoolIncentives;
 using Content.Server._NF.Bank;
@@ -7,9 +8,12 @@ using Content.Server.Popups;
 using Content.Shared._Coyote.RolePlayIncentiveShared;
 using Content.Shared._NF.Bank.Components;
 using Content.Shared.Chat;
+using Content.Shared.Mobs;
 using Content.Shared.Nutrition.Components;
+using Content.Shared.Popups;
 using Content.Shared.SSDIndicator;
 using Robust.Server.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 // ReSharper disable InconsistentNaming
@@ -28,26 +32,27 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
     [Dependency] private readonly IChatManager _chatManager = null!;
     [Dependency] private readonly IPlayerManager _playerManager = null!;
     [Dependency] private readonly SSDIndicatorSystem _ssdThing = null!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
 
-    private const float GoodlenSpeaking = 75;
-    private const float GoodlenWhispering = 75;
-    private const float GoodlenEmoting = 50;
-    // private const float GoodlenQuickEmoting = 0;
-    private const float GoodlenSubtling = 100;
-    private const float GoodlenRadio = 50; // idk
+    private List<ProtoId<RpiTaxBracketPrototype>> RpiDatumPrototypes = new()
+    {
+        "rpiTaxBracketBroke",
+        "rpiTaxBracketEstablished",
+        "rpiTaxBracketWealthy",
+    };
+    private ProtoId<RpiTaxBracketPrototype> TaxBracketDefault = "rpiTaxBracketDefault";
+    private Dictionary<RpiChatActionCategory, string> ChatActionLookup = new()
+    {
+        { RpiChatActionCategory.Speaking, "rpiChatActionSpeaking" },
+        { RpiChatActionCategory.Whispering, "rpiChatActionWhispering" },
+        { RpiChatActionCategory.Emoting, "rpiChatActionEmoting" },
+        { RpiChatActionCategory.QuickEmoting, "rpiChatActionQuickEmoting" },
+        { RpiChatActionCategory.Subtling, "rpiChatActionSubtling" },
+        { RpiChatActionCategory.Radio, "rpiChatActionRadio" },
+    };
 
-    private const bool ListenerMultSpeaking = true;
-    private const bool ListenerMultWhispering = true;
-    private const bool ListenerMultEmoting = true;
-    private const bool ListenerMultQuickEmoting = false;
-    private const bool ListenerMultSubtling = true;
-    private const bool ListenerMultRadio = false; // idk
-
-    private const int MaxListenerMult = 5;
-
-    private const int TaxBracket1 = 40000; // enough to get a decent ship
-    private const int TaxBracket2 = 75000; // enough for a good ship and some upgrades
-    private const int TaxBracket3 = 100000; // past this youre fiiiiine!
+    private TimeSpan DeathPunishmentCooldown = TimeSpan.FromMinutes(30);
+    private TimeSpan DeepFryerPunishmentCooldown = TimeSpan.FromMinutes(5); // please stop deep frying tesharis
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -56,39 +61,47 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         SubscribeLocalEvent<RoleplayIncentiveComponent,            ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<RoleplayIncentiveComponent,            RoleplayIncentiveEvent>(OnGotRoleplayIncentiveEvent);
         SubscribeLocalEvent<RoleplayIncentiveComponent,            GetRoleplayIncentiveModifier>(OnSelfSucc);
+        SubscribeLocalEvent<RoleplayIncentiveComponent,            MobStateChangedEvent>(OnGotMobStateChanged);
+        // v- these are awful
         SubscribeLocalEvent<CoolChefComponent,                     GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolPirateComponent,                   GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolStationRepComponent,               GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolStationTrafficControllerComponent, GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolStationDirectorOfCareComponent,    GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolSheriffComponent,                  GetRoleplayIncentiveModifier>(AdjustRPI);
+        SortTaxBrackets();
     }
 
+    /// <summary>
+    /// Sorts the tax brackets by cash threshold, lowest to highest.
+    /// This is done so that we can easily find the correct tax bracket for a player.
+    /// </summary>
+    private void SortTaxBrackets()
+    {
+        RpiDatumPrototypes.Sort(
+            (a, b) =>
+            {
+                if (!_prototype.TryIndex(a, out var protoA))
+                {
+                    Log.Warning($"RpiTaxBracketPrototype {a} not found!");
+                    return 0;
+                }
+
+                if (!_prototype.TryIndex(b, out var protoB))
+                {
+                    Log.Warning($"RpiTaxBracketPrototype {b} not found!");
+                    return 0;
+                }
+
+                return protoA.CashThreshold.CompareTo(protoB.CashThreshold);
+            });
+    }
+
+    #region Event Handlers
     private void OnComponentInit(EntityUid uid, RoleplayIncentiveComponent component, ComponentInit args)
     {
         // set the next payward time
         component.NextPayward = _timing.CurTime + component.PaywardInterval;
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        var query = EntityQueryEnumerator<RoleplayIncentiveComponent>();
-        while (query.MoveNext(out var uid, out var rpic))
-        {
-            if (_timing.CurTime < rpic.NextPayward)
-                continue;
-            rpic.NextPayward = _timing.CurTime + rpic.PaywardInterval;
-            // check if they have a bank account
-            if (!TryComp<BankAccountComponent>(uid, out _))
-            {
-                continue; // no bank account, no pramgle
-            }
-
-            // pay the player
-            UpdatePayward(uid, rpic);
-        }
     }
 
     /// <summary>
@@ -106,423 +119,30 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         RoleplayIncentiveComponent rpic,
         RoleplayIncentiveEvent args)
     {
-        // first, check if the uid has the component
-        if (!TryComp<RoleplayIncentiveComponent>(uid, out var incentive))
-        {
-            Log.Warning($"RoleplayIncentiveComponent not found on entity {uid}!");
-            return;
-        } // i guess?
-
-        // then, check if the channel in the args can be translated to a RoleplayAct
-        var actOut = GetRoleplayActFromChannel(args.Channel);
-        if (actOut == RoleplayActs.None)
-        {
-            return; // lot of stuff happens and it dont
-        }
-
-        // if its EmotingOrQuickEmoting, we need to doffgerentiate thewween the tween the two
-        if (actOut == RoleplayActs.EmotingOrQuickEmoting)
-        {
-            actOut = DoffgerentiateEmotingAndQuickEmoting(
-                args.Source,
-                args.Message);
-        }
-
-        // make the thing
-        var action = new RoleplayAction(
-            actOut,
-            _timing.CurTime,
-            args.Message,
-            args.PeoplePresent);
-        // add it to the actions taken
-        incentive.ActionsTaken.Add(action);
-        // and we're good
+        ProcessRoleplayIncentiveEvent(uid, args);
     }
 
     /*
      * None
-     * Local -> RoleplayActs.Speaking
-     * Whisper -> RoleplayActs.Whispering
+     * Local -> RpiChatActionCategory.Speaking
+     * Whisper -> RpiChatActionCategory.Whispering
      * Server
      * Damage
-     * Radio -> RoleplayActs.Radio
+     * Radio -> RpiChatActionCategory.Radio
      * LOOC
      * OOC
      * Visual
      * Notifications
-     * Emotes -> RoleplayActs.Emoting OR RoleplayActs.QuickEmoting
+     * Emotes -> RpiChatActionCategory.Emoting OR RpiChatActionCategory.QuickEmoting
      * Dead
      * Admin
      * AdminAlert
      * AdminChat
      * Unspecified
      * Telepathic
-     * Subtle -> RoleplayActs.Subtling
+     * Subtle -> RpiChatActionCategory.Subtling
      * rest are just null
      */
-    private static RoleplayActs GetRoleplayActFromChannel(ChatChannel channel)
-    {
-        // this is a bit of a hack, but it works
-        return channel switch
-        {
-            ChatChannel.Local => RoleplayActs.Speaking,
-            ChatChannel.Whisper => RoleplayActs.Whispering,
-            ChatChannel.Emotes => RoleplayActs.EmotingOrQuickEmoting, // we dont know yet
-            ChatChannel.Radio => RoleplayActs.Radio,
-            ChatChannel.Subtle => RoleplayActs.Subtling,
-            // the rest are not roleplay actions
-            _ => RoleplayActs.None,
-        };
-    }
-
-    private RoleplayActs DoffgerentiateEmotingAndQuickEmoting(
-        EntityUid source,
-        string message
-    )
-    {
-        return _chatsys.TryEmoteChatInput(
-            source,
-            message,
-            false)
-            ? RoleplayActs.QuickEmoting // if the message is a valid emote, then its a quick emote
-            : RoleplayActs.Emoting;
-
-        // well i cant figure out how the system does it, so im just gonnasay if theres
-        // no spaces, its a quick emote
-        // return !message.Contains(' ')
-        //     ? RoleplayActs.QuickEmoting
-        //     // otherwise, its a normal emote
-        //     : RoleplayActs.Emoting;
-    }
-
-    /// <summary>
-    /// Goes through all the relevant actions taken and stored, judges them,
-    /// And gives the player a payward if they did something good.
-    /// It also checks for things like duplicate actions, if theres people around, etc.
-    /// Basically if you do stuff, you get some pay for it!
-    /// </summary>
-    private void UpdatePayward(EntityUid uid, RoleplayIncentiveComponent rpic)
-    {
-        //first check if this rpic is actually on the uid
-        if (!TryComp<RoleplayIncentiveComponent>(uid, out var incentive))
-        {
-            Log.Warning($"RoleplayIncentiveComponent not found on entity {uid}!");
-            return;
-        }
-
-        // go through all the actions, and judge them into a cooler format
-        var bestSay = 0f;
-        var bestWhisper = 0f;
-        var bestEmote = 0f;
-        var bestQuickEmote = 0f;
-        var bestSubtle = 0f;
-        var bestRadio = 0f;
-        // go through all the actions taken, sort and judge them
-        var actionsToRemove = new List<RoleplayAction>();
-        foreach (var action in incentive.ActionsTaken.Where(action => !(action.Judgement > 0)))
-        {
-            JudgeAction(action, out var judgement);
-            // slot it into the best action for that type
-            switch (action.Action)
-            {
-                case RoleplayActs.Speaking:
-                    if (judgement > bestSay)
-                    {
-                        bestSay = judgement;
-                    }
-
-                    break;
-                case RoleplayActs.Whispering:
-                    if (judgement > bestWhisper)
-                    {
-                        bestWhisper = judgement;
-                    }
-
-                    break;
-                case RoleplayActs.Emoting:
-                    if (judgement > bestEmote)
-                    {
-                        bestEmote = judgement;
-                    }
-
-                    break;
-                case RoleplayActs.QuickEmoting:
-                    if (judgement > bestQuickEmote)
-                    {
-                        bestQuickEmote = judgement;
-                    }
-
-                    break;
-                case RoleplayActs.Subtling:
-                    if (judgement > bestSubtle)
-                    {
-                        bestSubtle = judgement;
-                    }
-
-                    break;
-                case RoleplayActs.Radio:
-                    if (judgement > bestRadio)
-                    {
-                        bestRadio = judgement;
-                    }
-
-                    break;
-                case RoleplayActs.EmotingOrQuickEmoting:
-                case RoleplayActs.None:
-                default:
-                    Log.Warning($"Unknown roleplay action {action.Action} on entity {uid}!");
-                    break;
-            }
-
-            action.Judgement = judgement; // set the judgement on the action
-            actionsToRemove.Add(action); // add the action to the removal list
-        }
-
-        foreach (var action in actionsToRemove)
-        {
-            incentive.ActionsTaken.Remove(action); // remove actions after iteration
-        }
-
-        var judgeAmount = (int)MathF.Ceiling(
-            bestSay
-            + bestWhisper
-            + bestEmote
-            + bestQuickEmote
-            + bestSubtle
-            + bestRadio);
-        _bank.TryGetBalance(uid, out var hasThisMuchMoney);
-        int payFlat;
-        // if the player has a payout override, use that
-        if (rpic.TaxBracketPayoutOverride > 0) // mainly for admemes
-            payFlat = rpic.TaxBracketPayoutOverride;
-        else
-        {
-            payFlat = hasThisMuchMoney switch
-            {
-                < TaxBracket1 => rpic.TaxBracket1Payout,
-                < TaxBracket2 => rpic.TaxBracket2Payout,
-                < TaxBracket3 => rpic.TaxBracket3Payout,
-                _ => rpic.TaxBracketRestPayout,
-            };
-        }
-
-        UpdateComponentTaxBracketIndicator(
-            ref rpic,
-            hasThisMuchMoney);
-
-        var payAmount = Math.Clamp(
-            judgeAmount * payFlat,
-            20,
-            int.MaxValue); // at least 20 bucks, bui
-        // poll for player's components for multiplier and additive
-        // create the event
-        var basePay = payAmount;
-        var modifyEvent = new GetRoleplayIncentiveModifier(
-            uid,
-            1f,
-            0f);
-        // raise the event
-        RaiseLocalEvent(
-            uid,
-            modifyEvent,
-            true);
-        // apply the add first
-        payAmount += (int)modifyEvent.Additive;
-        // then apply the multiplier
-        payAmount = (int)(payAmount * modifyEvent.Multiplier);
-        // clamp the pay amount to a minimum of 20 and a maximum of int.MaxValue
-        payAmount = Math.Clamp(
-            payAmount,
-            20,
-            int.MaxValue);
-        var addedPay = (int)modifyEvent.Additive;
-        var multiplier = modifyEvent.Multiplier;
-        // round multiplier the nearest 0.05f for display purposes
-        multiplier = (float)Math.Round(multiplier * 20f) / 20f;
-        var hasMultiplier = Math.Abs(multiplier - 1f) > 0.01f;
-        var hasAdditive = addedPay != 0;
-        var hasModifier = hasMultiplier || hasAdditive;
-        // round UP to the nearest 10 cus it looks better
-        payAmount = (int)(Math.Ceiling(payAmount / 10.0) * 10);
-        // pay the player
-        if (!_bank.TryBankDeposit(uid, payAmount))
-        {
-            Log.Warning($"Failed to deposit {payAmount} into bank account of entity {uid}!");
-            return;
-        }
-
-        // tell the player they got paid!
-        var message = "Hi mom~";
-        var messageOverhead = Loc.GetString(
-            "coyote-rp-incentive-payward-message",
-            ("amount", payAmount));
-        if (hasModifier)
-        {
-            // truncage the multiplier to 2 decimal places
-            // and format it to a string
-            var mult2show = String.Format("{0:0.00}", multiplier);
-            if (hasMultiplier && hasAdditive)
-            {
-                message = Loc.GetString(
-                    "coyote-rp-incentive-payward-message-multiplier-and-additive",
-                    ("amount", payAmount),
-                    ("basePay", basePay),
-                    ("multiplier", mult2show),
-                    ("additive", addedPay));
-            }
-            else if (hasMultiplier)
-            {
-                message = Loc.GetString(
-                    "coyote-rp-incentive-payward-message-multiplier",
-                    ("amount", payAmount),
-                    ("basePay", basePay),
-                    ("multiplier", mult2show));
-            }
-            else if (hasAdditive)
-            {
-                message = Loc.GetString(
-                    "coyote-rp-incentive-payward-message-additive",
-                    ("amount", payAmount),
-                    ("basePay", basePay),
-                    ("additive", addedPay));
-            }
-        }
-        else
-        {
-            message = Loc.GetString(
-                "coyote-rp-incentive-payward-message",
-                ("amount", payAmount));
-        }
-
-        _popupSystem.PopupEntity(
-            messageOverhead,
-            uid,
-            uid);
-        // cum it to chat
-        if (_playerManager.TryGetSessionByEntity(uid, out var session))
-        {
-            _chatManager.ChatMessageToOne(
-                ChatChannel.Notifications,
-                message,
-                message,
-                default,
-                false,
-                session.Channel);
-        }
-    }
-
-    /// <summary>
-    /// Passes judgement on the action
-    /// Based on a set of criteria, it will return a judgement value
-    /// It will be judged based on:
-    /// - How long the text was
-    /// - How many people were present
-    /// - and thats it for now lol
-    /// </summary>
-    private void JudgeAction(RoleplayAction action, out float judgement)
-    {
-        var lengthMult = GetMessageLengthMultiplier(action.Action, action.Message?.Length ?? 1);
-        var listenerMult = GetListenerMultiplier(action.Action, action.PeoplePresent);
-        // if the action is a quick emote, it gets no judgement
-        judgement = lengthMult + listenerMult + 1f;
-    }
-
-    /// <summary>
-    /// Gets the multiplier for the number of listeners present
-    /// </summary>
-    /// <param name="action">The action being performed</param>
-    /// <param name="listeners">The number of listeners present</param>
-    private static float GetListenerMultiplier(RoleplayActs action, int listeners)
-    {
-        // if there are no listeners, return 0
-        if (listeners <= 0)
-            return 1f;
-        var shouldMult = action switch
-        {
-            RoleplayActs.Speaking => ListenerMultSpeaking,
-            RoleplayActs.Whispering => ListenerMultWhispering,
-            RoleplayActs.Emoting => ListenerMultEmoting,
-            RoleplayActs.QuickEmoting => ListenerMultQuickEmoting,
-            RoleplayActs.Subtling => ListenerMultSubtling,
-            RoleplayActs.Radio => ListenerMultRadio,
-            _ => false,
-        };
-        // ReSharper disable once ConvertIfStatementToReturnStatement
-        if (!shouldMult)
-        {
-            // if the action does not have a multiplier, return 1
-            return 1f;
-        }
-
-        // clamp the multiplier to a maximum of MaxListenerMult
-        return Math.Clamp(
-            listeners * listeners,
-            0f,
-            MaxListenerMult);
-    }
-
-    /// <summary>
-    /// Gets the message length multiplier for the action
-    /// </summary>
-    /// <param name="action">The action being performed</param>
-    /// <param name="messageLength">The length of the message</param>
-    private static float GetMessageLengthMultiplier(RoleplayActs action, int messageLength)
-    {
-        // if the message length is 0, return 1
-        if (messageLength <= 0)
-            return 1f;
-
-        if (action == RoleplayActs.QuickEmoting)
-        {
-            // if the action is a quick emote, return 0
-            return 1f;
-        }
-
-        // get the good length for this action
-        var goodlen = action switch
-        {
-            RoleplayActs.Speaking => GoodlenSpeaking,
-            RoleplayActs.Whispering => GoodlenWhispering,
-            RoleplayActs.Emoting => GoodlenEmoting,
-            RoleplayActs.Subtling => GoodlenSubtling,
-            RoleplayActs.Radio => GoodlenRadio,
-            _ => 50,
-        };
-
-        // if the message length is less than the good length, return 1
-        // ReSharper disable once ConvertIfStatementToReturnStatement
-        if (messageLength < goodlen)
-            return 1f;
-
-        // otherwise, return the message length divided by the good length
-        return Math.Clamp(
-            messageLength / goodlen,
-            1f,
-            5f);
-    }
-
-    /// <summary>
-    /// Updates the tax bracket indicator on the component
-    /// Mainly for feedback in view variables
-    /// </summary>
-    private static void UpdateComponentTaxBracketIndicator(
-        ref RoleplayIncentiveComponent rpic,
-        int balance)
-    {
-        if (rpic.TaxBracketPayoutOverride > 0)
-        {
-            rpic.TaxZZZCurrentActiveBracket = "TaxBracketOverride";
-            return;
-        }
-
-        rpic.TaxZZZCurrentActiveBracket = balance switch
-        {
-            < TaxBracket1 => "TaxBracket1",
-            < TaxBracket2 => "TaxBracket2",
-            < TaxBracket3 => "TaxBracket3",
-            _ => "TaxBracketRest",
-        };
-    }
 
     /// <summary>
     /// Applies the self success multiplier to the payward
@@ -542,6 +162,525 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// If the mob dies, punish them for being awful
+    /// </summary>
+    private void OnGotMobStateChanged(
+        EntityUid uid,
+        RoleplayIncentiveComponent rpic,
+        MobStateChangedEvent args)
+    {
+        if (!rpic.PunishDeath)
+            return;
+        if (args.NewMobState != MobState.Dead)
+            return;
+        var curTime = _timing.CurTime;
+        // if they died recently, dont punish them again
+        if (curTime < rpic.LastDeathPunishment + DeathPunishmentCooldown)
+            return;
+        PunishPlayerForDeath(uid, rpic);
+    }
+    #endregion
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<RoleplayIncentiveComponent>();
+        while (query.MoveNext(out var uid, out var rpic))
+        {
+            if (_timing.CurTime < rpic.NextPayward)
+                continue;
+            rpic.NextPayward = _timing.CurTime + rpic.PaywardInterval;
+            // check if they have a bank account
+            if (!TryComp<BankAccountComponent>(uid, out _))
+            {
+                continue; // no bank account, no pramgle
+            }
+
+            // pay the player
+            PayoutPaywardToPlayer(uid, rpic);
+        }
+    }
+
+    #region Payward Action
+    /// <summary>
+    /// Goes through all the relevant actions taken and stored, judges them,
+    /// And gives the player a payward if they did something good.
+    /// It also checks for things like duplicate actions, if theres people around, etc.
+    /// Basically if you do stuff, you get some pay for it!
+    /// </summary>
+    private void PayoutPaywardToPlayer(EntityUid uid, RoleplayIncentiveComponent rpic)
+    {
+        if (!_bank.TryGetBalance(uid, out var hasThisMuchMoney))
+            return; // no bank account, no pramgle
+        //first check if this rpic is actually on the uid
+        if (!TryComp<RoleplayIncentiveComponent>(uid, out var incentive))
+        {
+            Log.Warning($"RoleplayIncentiveComponent not found on entity {uid}!");
+            return;
+        }
+
+        var chatJudgement = GetChatActionJudgement(rpic.ChatActionsTaken);
+        var taxBracket = GetTaxBracketData(rpic, hasThisMuchMoney);
+
+        var chatPay = chatJudgement * taxBracket.PayPerJudgement;
+
+        var modifyEvent = new GetRoleplayIncentiveModifier(uid);
+        RaiseLocalEvent(
+            uid,
+            modifyEvent,
+            true);
+        ProcessPaymentDetails(
+            chatPay,
+            modifyEvent,
+            out var payDetails);
+
+        // pay the player
+        if (!_bank.TryBankDeposit(uid, payDetails.FinalPay))
+        {
+            Log.Warning($"Failed to deposit {payDetails.FinalPay} into bank account of entity {uid}!");
+            return;
+        }
+        ShowPopup(uid, payDetails);
+        ShowChatMessage(uid, payDetails);
+        PruneOldActions(incentive);
+    }
+    #endregion
+
+    #region Punishment Actions
+
+    /// <summary>
+    /// Punishes the player for dying, based on their tax bracket.
+    /// This will take money from their bank account, based on their tax bracket.
+    /// </summary>
+    private void PunishPlayerForDeath(EntityUid uid, RoleplayIncentiveComponent rpic)
+    {
+        if (!_bank.TryGetBalance(uid, out var hasThisMuchMoney))
+            return; // no bank account, no pramgle
+        var taxBracket = GetTaxBracketData(rpic, hasThisMuchMoney);
+        var penalty = taxBracket.DeathPenalty;
+        if (penalty > hasThisMuchMoney)
+            penalty = hasThisMuchMoney; // cant take more than they have
+        if (penalty <= 0)
+            return; // no penalty, no punishment
+        if (!_bank.TryBankWithdraw(uid, (int)penalty))
+        {
+            Log.Warning($"Failed to withdraw {penalty} from bank account of entity {uid}!");
+            return;
+        }
+        rpic.LastDeathPunishment = _timing.CurTime;
+        // tell them they got punished
+        var message = Loc.GetString(
+            "coyote-rp-incentive-death-penalty-message",
+            ("amount", (int)penalty));
+        if (_playerManager.TryGetSessionByEntity(uid, out var session))
+        {
+            _chatManager.ChatMessageToOne(
+                ChatChannel.Notifications,
+                message,
+                message,
+                default,
+                false,
+                session.Channel);
+        }
+        // also show a popup
+        _popupSystem.PopupEntity(
+            message,
+            uid,
+            uid,
+            PopupType.LargeCaution);
+    }
+
+    #endregion
+
+    #region Helpers
+    private int GetChatActionJudgement(List<RpiChatRecord> actions)
+    {
+        var total = 0;
+        // go through all the actions, and compile the BEST ONES EVER
+        Dictionary<RpiChatActionCategory, float> bestActions = new();
+        foreach (var action in actions.Where(action => !(action.Judgement > 0)))
+        {
+            var judgement = JudgeChatAction(action);
+            // slot it into the best action for that type
+            if (bestActions.TryGetValue(action.Action, out var existing))
+            {
+                if (judgement > existing)
+                {
+                    bestActions[action.Action] = judgement;
+                }
+            }
+            else
+            {
+                bestActions[action.Action] = judgement;
+            }
+        }
+        // now, sum up the best actions
+        foreach (var kvp in bestActions)
+        {
+            total += (int)MathF.Ceiling(kvp.Value);
+            // also, mark the actions as judged
+            foreach (var action in actions.Where(a => a.Action == kvp.Key && a.Judgement == 0))
+            {
+                action.Judgement = kvp.Value;
+            }
+        }
+        return total;
+    }
+
+    private void PruneOldActions(RoleplayIncentiveComponent rpic)
+    {
+        rpic.ChatActionsTaken.Clear();
+    }
+
+    private TaxBracketResult GetTaxBracketData(
+        RoleplayIncentiveComponent rpic,
+        int hasThisMuchMoney)
+    {
+        var taxBracket = new TaxBracketResult(0, 0, 0); // default values
+        // go through the prototypes, and find the one that fits the player's money
+        // if none fit, use the default
+        if (!_prototype.TryIndex(TaxBracketDefault, out var defaultProto))
+        {
+            Log.Warning($"RpiTaxBracketPrototype {TaxBracketDefault} not found! ITS THE DEFAULT AOOOAOAOAOOA");
+            return taxBracket;
+        }
+        RpiTaxBracketPrototype? proto = null;
+        // go through the sorted list, and find the Lowest bracket that is higher than the player's money
+        List<RpiTaxBracketPrototype> protosHigherThanPlayer = new();
+        foreach (var protoId in RpiDatumPrototypes)
+        {
+            if (!_prototype.TryIndex(protoId, out var myProto))
+            {
+                Log.Warning($"RpiTaxBracketPrototype {protoId} not found!");
+                continue;
+            }
+            if (hasThisMuchMoney < myProto.CashThreshold)
+            {
+                protosHigherThanPlayer.Add(myProto);
+            }
+        }
+        // if we found any, use the lowest one
+        if (protosHigherThanPlayer.Count > 0)
+        {
+            proto = protosHigherThanPlayer.OrderBy(p => p.CashThreshold).First();
+        }
+        // if we didnt find any, use the default
+        proto ??= defaultProto;
+        taxBracket = new TaxBracketResult(
+            proto.JudgementPointPayout,
+            (int)(proto.DeathPenalty * hasThisMuchMoney),
+            (int)(proto.DeepFriedPenalty * hasThisMuchMoney));
+
+        // and now the overrides
+        if (rpic.TaxBracketPayoutOverride != -1)
+        {
+            taxBracket.PayPerJudgement = rpic.TaxBracketPayoutOverride;
+        }
+
+        if (rpic.TaxBracketDeathPenaltyOverride != -1)
+        {
+            taxBracket.DeathPenalty = rpic.TaxBracketDeathPenaltyOverride;
+        }
+
+        if (rpic.TaxBracketDeepFryerPenaltyOverride != -1)
+        {
+            taxBracket.DeepFryPenalty = rpic.TaxBracketDeepFryerPenaltyOverride;
+        }
+        return taxBracket;
+    }
+
+    private void ProcessPaymentDetails(
+        int basePay,
+        GetRoleplayIncentiveModifier modifyEvent,
+        out PayoutDetails details)
+    {
+        var finalPay = basePay;
+        // apply the add first
+        finalPay += (int)modifyEvent.Additive;
+        // then apply the multiplier
+        finalPay = (int)(finalPay * modifyEvent.Multiplier);
+        // clamp the pay amount to a minimum of 20 and a maximum of int.MaxValue
+        finalPay = Math.Clamp(
+            (int)(Math.Ceiling(finalPay / 10.0) * 10),
+            20,
+            int.MaxValue);
+
+        var addedPay = (int) modifyEvent.Additive;
+        // round the multiplier to 2 decimal places
+        var multiplier = (float) Math.Round(modifyEvent.Multiplier * 20f) / 20f;
+        var hasMultiplier = Math.Abs(multiplier - 1f) > 0.01f;
+        var hasAdditive = addedPay != 0;
+        var hasModifier = hasMultiplier || hasAdditive;
+        details = new PayoutDetails(
+            basePay,
+            finalPay,
+            addedPay,
+            multiplier,
+            modifyEvent.Multiplier,
+            hasModifier,
+            hasAdditive,
+            hasMultiplier);
+    }
+
+    private void ShowPopup(EntityUid uid, PayoutDetails payDetails)
+    {
+        if (payDetails.FinalPay <= 0)
+            return; // no pay, no popup
+        var messageOverhead = Loc.GetString(
+            "coyote-rp-incentive-payward-message",
+            ("amount", payDetails.FinalPay));
+        _popupSystem.PopupEntity(
+            messageOverhead,
+            uid,
+            uid);
+    }
+
+    private void ShowChatMessage(EntityUid uid, PayoutDetails payDetails)
+    {
+        if (payDetails.FinalPay <= 0)
+            return; // no pay, no popup
+        var message = "Hi mom~";
+        if (payDetails.HasModifier)
+        {
+            if (payDetails.HasMultiplier && payDetails.HasAdditive)
+            {
+                message = Loc.GetString(
+                    "coyote-rp-incentive-payward-message-multiplier-and-additive",
+                    ("amount", payDetails.FinalPay),
+                    ("basePay", payDetails.BasePay),
+                    ("multiplier", payDetails.Multiplier),
+                    ("additive", payDetails.AddedPay));
+            }
+            else if (payDetails.HasMultiplier)
+            {
+                message = Loc.GetString(
+                    "coyote-rp-incentive-payward-message-multiplier",
+                    ("amount", payDetails.FinalPay),
+                    ("basePay", payDetails.BasePay),
+                    ("multiplier", payDetails.Multiplier));
+            }
+            else if (payDetails.HasAdditive)
+            {
+                message = Loc.GetString(
+                    "coyote-rp-incentive-payward-message-additive",
+                    ("amount", payDetails.FinalPay),
+                    ("basePay", payDetails.BasePay),
+                    ("additive", payDetails.AddedPay));
+            }
+        }
+        else
+        {
+            message = Loc.GetString(
+                "coyote-rp-incentive-payward-message",
+                ("amount", payDetails.FinalPay));
+        }
+
+        // cum it to chat
+        if (_playerManager.TryGetSessionByEntity(uid, out var session))
+        {
+            _chatManager.ChatMessageToOne(
+                ChatChannel.Notifications,
+                message,
+                message,
+                default,
+                false,
+                session.Channel);
+        }
+    }
+
+    private void ProcessRoleplayIncentiveEvent(EntityUid uid, RoleplayIncentiveEvent args)
+    {
+        // first, check if the uid has the component
+        if (!TryComp<RoleplayIncentiveComponent>(uid, out var incentive))
+        {
+            Log.Warning($"RoleplayIncentiveComponent not found on entity {uid}!");
+            return;
+        } // i guess?
+
+        // then, check if the channel in the args can be translated to a RoleplayAct
+        var actOut = ChatChannel2RpiChatAction(args.Channel);
+        if (actOut == RpiChatActionCategory.None)
+        {
+            return; // lot of stuff happens and it dont
+        }
+
+        // if its EmotingOrQuickEmoting, we need to doffgerentiate thewween the tween the two
+        if (actOut == RpiChatActionCategory.EmotingOrQuickEmoting)
+        {
+            actOut = DoffgerentiateEmotingAndQuickEmoting(
+                args.Source,
+                args.Message);
+        }
+
+        // make the thing
+        var action = new RpiChatRecord(
+            actOut,
+            _timing.CurTime,
+            args.Message,
+            args.PeoplePresent);
+        // add it to the actions taken
+        incentive.ChatActionsTaken.Add(action);
+        // and we're good
+    }
+
+    private bool GetChatActionLookup(
+        RpiChatActionCategory action,
+        [NotNullWhen(true)] out RpiChatActionPrototype? proot)
+    {
+        if (!ChatActionLookup.TryGetValue(action, out var myPrototype))
+        {
+            proot = null;
+            return false;
+        }
+        if (!_prototype.TryIndex<RpiChatActionPrototype>(myPrototype, out var proto))
+        {
+            Log.Warning($"RpiChatActionPrototype {myPrototype} not found!");
+            proot = null;
+            return false;
+        }
+        proot = proto;
+        return true;
+    }
+
+    private static RpiChatActionCategory ChatChannel2RpiChatAction(ChatChannel channel)
+    {
+        // this is a bit of a hack, but it works
+        return channel switch
+        {
+            ChatChannel.Local => RpiChatActionCategory.Speaking,
+            ChatChannel.Whisper => RpiChatActionCategory.Whispering,
+            ChatChannel.Emotes => RpiChatActionCategory.EmotingOrQuickEmoting, // we dont know yet
+            ChatChannel.Radio => RpiChatActionCategory.Radio,
+            ChatChannel.Subtle => RpiChatActionCategory.Subtling,
+            // the rest are not roleplay actions
+            _ => RpiChatActionCategory.None,
+        };
+    }
+
+    private RpiChatActionCategory DoffgerentiateEmotingAndQuickEmoting(
+        EntityUid source,
+        string message
+    )
+    {
+        return _chatsys.TryEmoteChatInput(
+            source,
+            message,
+            false)
+            ? RpiChatActionCategory.QuickEmoting // if the message is a valid emote, then its a quick emote
+            : RpiChatActionCategory.Emoting;
+
+        // well i cant figure out how the system does it, so im just gonnasay if theres
+        // no spaces, its a quick emote
+        // return !message.Contains(' ')
+        //     ? RpiChatActionCategory.QuickEmoting
+        //     // otherwise, its a normal emote
+        //     : RpiChatActionCategory.Emoting;
+    }
+
+        /// <summary>
+    /// Passes judgement on the action
+    /// Based on a set of criteria, it will return a judgement value
+    /// It will be judged based on:
+    /// - How long the text was
+    /// - How many people were present
+    /// - and thats it for now lol
+    /// </summary>
+    private int JudgeChatAction(RpiChatRecord chatRecord)
+    {
+        var lengthMult = GetMessageLengthMultiplier(chatRecord.Action, chatRecord.Message?.Length ?? 1);
+        var listenerMult = GetListenerMultiplier(chatRecord.Action, chatRecord.PeoplePresent);
+        // if the action is a quick emote, it gets no judgement
+        var judgement = lengthMult + listenerMult + 1f;
+        return (int)Math.Floor(judgement);
+    }
+
+    /// <summary>
+    /// Gets the multiplier for the number of listeners present
+    /// </summary>
+    /// <param name="action">The action being performed</param>
+    /// <param name="listeners">The number of listeners present</param>
+    private int GetListenerMultiplier(RpiChatActionCategory action, int listeners)
+    {
+        // if there are no listeners, return 0
+        if (listeners <= 0)
+            return 1;
+        var numListeners = listeners;
+        if (!GetChatActionLookup(action, out var proto))
+            return 1;
+        if (!proto.MultiplyByPeoplePresent)
+            return 1;
+        // clamp the number of listeners to the max defined in the prototype
+        numListeners = Math.Clamp(
+            numListeners,
+            0,
+            proto.MaxPeoplePresent);
+        return numListeners;
+    }
+
+    /// <summary>
+    /// Gets the message length multiplier for the action
+    /// </summary>
+    /// <param name="action">The action being performed</param>
+    /// <param name="messageLength">The length of the message</param>
+    private int GetMessageLengthMultiplier(RpiChatActionCategory action, int messageLength)
+    {
+        // if the message length is 0, return 1
+        if (messageLength <= 0)
+            return 1;
+
+        // get the prototype for the action
+        if (!GetChatActionLookup(action, out var proto))
+            return 1;
+
+        if (proto.LengthPerPoint <= 0)
+        {
+            return 1; // thingy isnt using length based judgement, also dont divide by 0
+        }
+
+        var rawLengthMult = messageLength / (float)proto.LengthPerPoint;
+        // floor it to the nearest whole number, with a minimum of 1 and max of who cares
+        return Math.Clamp(
+            (int)Math.Floor(rawLengthMult),
+            1,
+            100);
+    }
+    #endregion
+
+    #region Data Holbies
+    public sealed class TaxBracketResult(
+        int payPerJudgement,
+        int deathPenalty,
+        int deepFryPenalty)
+    {
+        public int PayPerJudgement = payPerJudgement;
+        public int DeathPenalty = deathPenalty;
+        public int DeepFryPenalty = deepFryPenalty;
+    }
+
+    private struct PayoutDetails(
+        int basePay,
+        int finalPay,
+        int addedPay,
+        float multiplier,
+        float rawMultiplier,
+        bool hasModifier,
+        bool hasAdditive,
+        bool hasMultiplier)
+    {
+        public int BasePay = basePay;
+        public int FinalPay = finalPay;
+        public int AddedPay = addedPay;
+        public float Multiplier = multiplier;
+        public float RawMultiplier = rawMultiplier;
+        public bool HasModifier = hasModifier;
+        public bool HasAdditive = hasAdditive;
+        public bool HasMultiplier = hasMultiplier;
+    }
+    #endregion
+
+    #region Awgful Job RPI modifiers
     private void AdjustRPI(
         float mult,
         ref GetRoleplayIncentiveModifier args)
@@ -594,4 +733,5 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
     {
         AdjustRPI(component.Multiplier, ref args);
     }
+    #endregion
 }
