@@ -15,4 +15,4 @@
       graph: Pole
       node: pole
     - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-      price: 100 # Frontier
+      price: 300 # Frontier
