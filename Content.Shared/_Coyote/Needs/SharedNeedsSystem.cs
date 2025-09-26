@@ -136,8 +136,9 @@ public abstract class SharedNeedsSystem : EntitySystem
 
     #endregion
     #region Helpers
-    private void LoadNeeds(EntityUid uid, NeedsComponent component)
+    public void LoadNeeds(EntityUid uid, NeedsComponent component)
     {
+        component.Ready = false;
         component.Needs.Clear();
         foreach (var need in component.NeedPrototypes)
         {
@@ -345,6 +346,21 @@ public abstract class SharedNeedsSystem : EntitySystem
             return false;
         return component.Needs.ContainsKey(needType);
     }
+
+    /// <summary>
+    /// Compares two thresholds and returns the more severe one.
+    /// </summary>
+    public NeedThreshold? CompareThresholds(NeedThreshold? a, NeedThreshold? b)
+    {
+        if (a == null && b == null)
+            return null;
+        if (a == null)
+            return b;
+        if (b == null)
+            return a;
+        return (NeedThreshold)Math.Max((int)a, (int)b);
+    }
+
     #endregion
 
     #region Hunger Helpers
