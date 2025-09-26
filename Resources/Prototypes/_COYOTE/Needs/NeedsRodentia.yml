@@ -4,7 +4,7 @@
   needName: "Hunger"
   needKind: "Hunger"
   color: "Pink"
-  maxValue: 700
+  maxValue: 250
   minValue: 0
   minutesFromMaxToMin: 300 # 5 hours
   startingMinutesWorthOfDecay: 100
@@ -42,7 +42,7 @@
   needName: "Thirst"
   needKind: "Thirst"
   color: "Cyan"
-  maxValue: 700
+  maxValue: 250
   minValue: 0
   minutesFromMaxToMin: 300
   startingMinutesWorthOfDecay: 100
