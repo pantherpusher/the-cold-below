@@ -7,17 +7,17 @@
   maxValue: 1000
   minValue: 0
   minutesFromMaxToMin: 600 # 10 hours
-  startingMinutesWorthOfDecay: 400
+  startingMinutesWorthOfDecay: 330
   secondsPerUpdate: 1
   alertCategory: "Hunger"
   # Extra Satisfied State
   extraSatisfiedMinutesFromFull: 120
   extraSatisfiedSpeedMult: 0.85
-  extraSatisfiedMultRPI: 3.0
+  extraSatisfiedMultRPI: 2.0
   extraSatisfiedAlert: null
   extraSatisfiedIcon: HungerIconOverfed
   # Satisfied State
-  satisfiedMinutesFromFull: 240 # 4 hours, minus 2 hours of Extra Satisfied
+  satisfiedMinutesFromFull: 360 # 6 hours, minus 2 hours of Extra Satisfied
   satisfiedSpeedMult: 1.0
   satisfiedMultRPI: 1.25
   satisfiedAlert: null
@@ -45,17 +45,17 @@
   maxValue: 1000
   minValue: 0
   minutesFromMaxToMin: 600 # 10 hours
-  startingMinutesWorthOfDecay: 400
+  startingMinutesWorthOfDecay: 350
   secondsPerUpdate: 1
   alertCategory: "Thirst"
   # Extra Satisfied State
   extraSatisfiedMinutesFromFull: 120
   extraSatisfiedSpeedMult: 0.90
-  extraSatisfiedMultRPI: 2.0
+  extraSatisfiedMultRPI: 1.75
   extraSatisfiedAlert: null
   extraSatisfiedIcon: ThirstIconOverhydrated
   # Satisfied State
-  satisfiedMinutesFromFull: 240 # 4 hours, minus 2 hours of Extra Satisfied
+  satisfiedMinutesFromFull: 400 # 4 hours, minus 2 hours of Extra Satisfied
   satisfiedSpeedMult: 1.0
   satisfiedMultRPI: 1.25
   satisfiedAlert: null

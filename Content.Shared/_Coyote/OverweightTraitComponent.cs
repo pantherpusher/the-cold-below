@@ -6,5 +6,9 @@ namespace Content.Shared._Coyote;
 [RegisterComponent]
 public sealed partial class OverweightTraitComponent : Component
 {
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan NextCreak = TimeSpan.Zero;
 
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan CreakDelay = TimeSpan.FromSeconds(10);
 }
