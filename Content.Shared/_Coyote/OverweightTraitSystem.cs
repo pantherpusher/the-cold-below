@@ -29,10 +29,10 @@ public sealed class OverweightTraitSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
 
     private const float FatSpeedMod = 0.90f;
-    private const float ChanceToCreak = 1f; // 0.05f;
-    private const float ChanceToCreakMessage = 1f; // 0.50f;
+    private const float ChanceToCreak = 0.10f;
+    private const float ChanceToCreakMessage = 0.50f;
     private TimeSpan _nextCreakTick = TimeSpan.Zero;
-    private TimeSpan _creakDelay = TimeSpan.FromSeconds(1);
+    private TimeSpan _creakDelay = TimeSpan.FromSeconds(5);
 
     public HashSet<string> CreakMsgsFat = new()
     {
