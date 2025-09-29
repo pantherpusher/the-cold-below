@@ -28,24 +28,30 @@ public sealed partial class CoolPirateComponent : RoleplayIncentiveModifierCompo
 [RegisterComponent]
 public sealed partial class CoolStationRepComponent : RoleplayIncentiveModifierComponent
 {
-    public new float Multiplier = 2.5f;
+    public new float Multiplier = 5.5f;
 }
 
 [RegisterComponent]
 public sealed partial class CoolStationTrafficControllerComponent : RoleplayIncentiveModifierComponent
 {
-    public new float Multiplier = 2f;
+    public new float Multiplier = 5f;
 }
 
 [RegisterComponent]
 public sealed partial class CoolStationDirectorOfCareComponent : RoleplayIncentiveModifierComponent
 {
-    public new float Multiplier = 2f;
+    public new float Multiplier = 5f;
 }
 
 [RegisterComponent]
 public sealed partial class CoolSheriffComponent : RoleplayIncentiveModifierComponent
 {
-    public new float Multiplier = 2f;
+    public new float Multiplier = 6f;
+}
+
+[RegisterComponent]
+public sealed partial class CoolNfsdComponent : RoleplayIncentiveModifierComponent
+{
+    public new float Multiplier = 4.5f;
 }
 
