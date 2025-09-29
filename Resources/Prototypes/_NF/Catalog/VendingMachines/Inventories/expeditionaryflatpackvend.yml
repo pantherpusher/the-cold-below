@@ -7,7 +7,6 @@
     BorgChargerFlatpack: 4294967295 # Infinite
     MercenaryTechFabFlatpack: 4294967295 # Infinite
     NFHolopadShipFlatpack: 4294967295 # Infinite
-    ComputerIFFFlatpack: 4294967295 # Infinite
     GeneratorRTGFlatpack: 4294967295 # Infinite
     EngineeringTechFabFlatpack: 4294967295 # Infinite
     MedicalTechFabFlatpack: 4294967295 # Infinite
@@ -15,3 +14,5 @@
     AmmoTechFabFlatpack: 4294967295 # Infinite
     ProtolatheFlatpack: 4294967295 # Infinite
     SalvageTechfabNFFlatpack: 4294967295 # Infinite
+  contrabandInventory:
+    ComputerIFFFlatpack: 3

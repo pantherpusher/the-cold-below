@@ -655,7 +655,7 @@
     - state: medical_console
 
 - type: entity
-  parent: BaseNFFlatpack
+  parent: [BaseNFFlatpack, BaseC3SyndicateContraband]
   id: ComputerIFFFlatpack
   name: IFF computer flatpack
   description: A flatpack used for constructing a IFF computer.
