@@ -196,7 +196,7 @@
     layers:
     - state: grounding-rod
   - type: StaticPrice
-    vendprice: 14000
+    vendPrice: 14000
 
 - type: entity
   parent: BaseFlatpack
