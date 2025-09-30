@@ -70,6 +70,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         SubscribeLocalEvent<CoolStationTrafficControllerComponent, GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolStationDirectorOfCareComponent,    GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolSheriffComponent,                  GetRoleplayIncentiveModifier>(AdjustRPI);
+        SubscribeLocalEvent<CoolNfsdComponent,                     GetRoleplayIncentiveModifier>(AdjustRPI);
         SortTaxBrackets();
     }
 
@@ -740,5 +741,12 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
     {
         AdjustRPI(component.Multiplier, ref args);
     }
+    private void AdjustRPI(EntityUid uid,
+        CoolNfsdComponent component,
+        ref GetRoleplayIncentiveModifier args)
+    {
+        AdjustRPI(component.Multiplier, ref args);
+    }
+
     #endregion
 }
