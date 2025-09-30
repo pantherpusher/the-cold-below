@@ -323,7 +323,7 @@ public sealed class NeedDatum
     {
         if (sleeping)
         {
-            if (CurrentValue <= Thresholds[NeedThreshold.Low])
+            if (CurrentValue < Thresholds[NeedThreshold.Low])
             {
                 return; // dont decay if we're already low or worse
             }
