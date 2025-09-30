@@ -70,6 +70,7 @@ public sealed class RoleplayIncentiveSystem : EntitySystem
         SubscribeLocalEvent<CoolStationTrafficControllerComponent, GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolStationDirectorOfCareComponent,    GetRoleplayIncentiveModifier>(AdjustRPI);
         SubscribeLocalEvent<CoolSheriffComponent,                  GetRoleplayIncentiveModifier>(AdjustRPI);
+        SubscribeLocalEvent<CoolNfsdComponent,                     GetRoleplayIncentiveModifier>(AdjustRPI);
         SortTaxBrackets();
     }
 
