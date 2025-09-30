@@ -24,7 +24,7 @@
   satisfiedIcon: HungerIconOverfed
   # Low State
   lowMinutesFromFull: 480
-  lowSpeedMult: 0.70
+  lowSpeedMult: 0.85
   lowMultRPI: 0.50
   lowAlert: Peckish
   lowIcon: HungerIconPeckish
@@ -68,7 +68,7 @@
   lowIcon: ThirstIconThirsty
   # Critical State
   criticalMinutesFromFull: 600 # 1.5 hours of dehydration after Low
-  criticalSpeedMult: 0.50
+  criticalSpeedMult: 0.75
   criticalMultRPI: 0.10
   criticalAlert: Parched
   criticalIcon: ThirstIconParched
