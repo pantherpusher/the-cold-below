@@ -12,10 +12,8 @@
   # Coyote: Small enough to fit in a bag, maybe too small even
   minHeight: 0.7
   defaultHeight: 1
-  maxHeight: 1.1
   minWidth: 0.65
   defaultWidth: 1
-  maxWidth: 1.15
   # End Coyote
   skinColoration: Hues
   maleFirstNames: NamesResomiMale
