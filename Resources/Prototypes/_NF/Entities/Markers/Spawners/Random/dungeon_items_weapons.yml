@@ -264,7 +264,7 @@
   parent: MarkerBasePlaceFree
   suffix: "Dungeon, Gun, T4"
   categories: [ HideSpawnMenu ]
-  components:
+  components:1
   - type: Sprite
     layers:
     - state: green
@@ -282,6 +282,7 @@
     - WeaponCaseLongEnforcerExpedition
     - WeaponCaseShortAntiqueLaserExpedition
     - WeaponCaseShortAdvancedLaserExpedition
+    - WeaponCaseShortEnergyRevolverExpedition
     - WeaponCaseLongLaserCarbineExpedition
     - WeaponCaseLongXrayCannonExpedition
     - WeaponCaseLongTemperatureGunExpedition
