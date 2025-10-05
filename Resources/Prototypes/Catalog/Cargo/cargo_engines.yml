@@ -107,7 +107,7 @@
 
 - type: cargoProduct
   id: EngineTeslaCoil
-  abstract: true # Frontier
+  #abstract: true # Frontier - Coyote edit
   icon:
     sprite: Structures/Power/Generation/Tesla/coil.rsi
     state: coil
