@@ -25,7 +25,8 @@
   name: reagent-name-nat-lube
   group: NaturalSauce
   desc: reagent-desc-nat-lube
-  slippery: true
+  slipData:
+    requiredSlipSpeed: 3.5
   physicalDesc: reagent-physical-desc-shiny
   flavor: funny
   color: "#d6d6d6"
@@ -39,8 +40,4 @@
     collection: FootstepSticky
     params:
       volume: 4
-  tileReactions:
-  - !type:SpillTileReaction
-    paralyzeTime: 0.5
-    launchForwardsMultiplier: 1.2
-    requiredSlipSpeed: 1
+
