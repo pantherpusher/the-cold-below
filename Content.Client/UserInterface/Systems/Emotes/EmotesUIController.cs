@@ -149,10 +149,10 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
                 || whitelistSystem.IsBlacklistPass(emote.Blacklist, player.Value))
                 continue;
 
-            if (!emote.Available
-                && EntityManager.TryGetComponent<SpeechComponent>(player.Value, out var speech)
-                && !speech.AllowedEmotes.Contains(emote.ID))
-                continue;
+            // if (!emote.Available
+            //     && EntityManager.TryGetComponent<SpeechComponent>(player.Value, out var speech)
+            //     && !speech.AllowedEmotes.Contains(emote.ID))
+            //     continue;
 
             if (!emotesByCategory.TryGetValue(emote.Category, out var list))
             {
