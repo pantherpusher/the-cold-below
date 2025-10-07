@@ -65,11 +65,7 @@ public sealed class VocalSystem : EntitySystem
         }
 
         // just play regular sound based on emote proto
-        args.Handled = _chat.TryPlayEmoteSound(
-            uid,
-            component.EmoteSounds,
-            component.SupplementalSounds,
-            args.Emote);
+        args.Handled = _chat.TryPlayEmoteSound(uid, component.EmoteSounds, args.Emote);
     }
 
     private void OnScreamAction(EntityUid uid, VocalComponent component, ScreamActionEvent args)
@@ -89,11 +85,7 @@ public sealed class VocalSystem : EntitySystem
             return true;
         }
 
-        return _chat.TryPlayEmoteSound(
-            uid,
-            component.EmoteSounds,
-            component.SupplementalSounds,
-            component.ScreamId);
+        return _chat.TryPlayEmoteSound(uid, component.EmoteSounds, component.ScreamId);
     }
 
     private void LoadSounds(EntityUid uid, VocalComponent component, Sex? sex = null)
