@@ -1,0 +1,1023 @@
+- type: emote
+  id: HarpyScream
+  name: HarpyScream
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-scream"]
+  chatTriggers:
+  - harpyscream
+  - harpyscreams
+  - harpyscreaming
+  - harpyscreamed
+  - harpyshriek
+  - harpyshrieks
+  - harpyshrieking
+  - harpyshrieked
+  - harpyscreech
+  - harpyscreeches
+  - harpyscreeching
+  - harpyscreeched
+  - harpyyell
+  - harpyyells
+  - harpyyelled
+  - harpyyelling
+
+- type: emote
+  id: VulpScream
+  name: VulpScream
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-scream"]
+  chatTriggers:
+  - vulpscream
+  - vulpscreams
+  - vulpscreaming
+  - vulpscreamed
+  - vulpshriek
+  - vulpshrieks
+  - vulpshrieking
+  - vulpshrieked
+  - vulpscreech
+  - vulpscreeches
+  - vulpscreeching
+  - vulpscreeched
+  - vulpyell
+  - vulpyells
+  - vulpyelled
+  - vulpyelling
+
+- type: emote
+  id: RodentiaScream
+  name: RodentiaScream
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-scream"]
+  chatTriggers:
+  - ratscream
+  - ratscreams
+  - ratscreaming
+  - ratscreamed
+  - ratshriek
+  - ratshrieks
+  - ratshrieking
+  - ratshrieked
+  - ratscreech
+  - ratscreeches
+  - ratscreeching
+  - ratscreeched
+  - ratyell
+  - ratyells
+  - ratyelled
+  - ratyelling
+
+- type: emote
+  id: GoblinScream
+  name: GoblinScream
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-scream"]
+  chatTriggers:
+  - goblinscream
+  - goblinscreams
+  - goblinscreaming
+  - goblinscreamed
+  - goblinshriek
+  - goblinshrieks
+  - goblinshrieking
+  - goblinshrieked
+  - goblinscreech
+  - goblinscreeches
+  - goblinscreeching
+  - goblinscreeched
+  - goblinyell
+  - goblinyells
+  - goblinyelled
+  - goblinyelling
+
+- type: emote
+  id: ShelegScream
+  name: ShelegScream
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-scream"]
+  chatTriggers:
+  - shelegscream
+  - shelegscreams
+  - shelegscreaming
+  - shelegscreamed
+  - shelegshriek
+  - shelegshrieks
+  - shelegshrieking
+  - shelegshrieked
+  - shelegscreech
+  - shelegscreeches
+  - shelegscreeching
+  - shelegscreeched
+  - shelegyell
+  - shelegyells
+  - shelegyelled
+  - shelegyelling
+
+- type: emote
+  id: MaleScream
+  name: MaleScream
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-scream"]
+  chatTriggers:
+  - malescream
+  - malescreams
+  - malescreaming
+  - malescreamed
+  - maleshriek
+  - maleshrieks
+  - maleshrieking
+  - maleshrieked
+  - malescreech
+  - malescreeches
+  - malescreeching
+  - malescreeched
+  - maleyell
+  - maleyells
+  - maleyelled
+  - maleyelling
+
+- type: emote
+  id: FemaleScream
+  name: FemaleScream
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-scream"]
+  chatTriggers:
+  - femalescream
+  - femalescreams
+  - femalescreaming
+  - femalescreamed
+  - femaleshriek
+  - femaleshrieks
+  - femaleshrieking
+  - femaleshrieked
+  - femalescreech
+  - femalescreeches
+  - femalescreeching
+  - femalescreeched
+  - femaleyell
+  - femaleyells
+  - femaleyelled
+  - femaleyelling
+
+- type: emote
+  id: AvaliScream
+  name: AvaliScream
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-scream"]
+  chatTriggers:
+  - avaliscream
+  - avaliscreams
+  - avaliscreaming
+  - avaliscreamed
+  - avalishriek
+  - avalishrieks
+  - avalishrieking
+  - avalishrieked
+  - avaliscreech
+  - avaliscreeches
+  - avaliscreeching
+  - avaliscreeched
+  - avaliyell
+  - avaliyells
+  - avaliyelled
+  - avaliyelling
+
+- type: emote
+  id: FelinidScream
+  name: FelinidScream
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-scream"]
+  chatTriggers:
+  - catscream
+  - catscreams
+  - catscreaming
+  - catscreamed
+  - catshriek
+  - catshrieks
+  - catshrieking
+  - catshrieked
+  - catscreech
+  - catscreeches
+  - catscreeching
+  - catscreeched
+  - catyell
+  - catyells
+  - catyelled
+  - catyelling
+
+- type: emote
+  id: LizardScream
+  name: LizardScream
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-scream"]
+  chatTriggers:
+  - lizardscream
+  - lizardscreams
+  - lizardscreaming
+  - lizardscreamed
+  - lizardshriek
+  - lizardshrieks
+  - lizardshrieking
+  - lizardshrieked
+  - lizardscreech
+  - lizardscreeches
+  - lizardscreeching
+  - lizardscreeched
+  - lizardyell
+  - lizardyells
+  - lizardyelled
+  - lizardyelling
+
+- type: emote
+  id: VoxScream
+  name: VoxScream
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-scream"]
+  chatTriggers:
+  - voxscream
+  - voxscreams
+  - voxscreaming
+  - voxscreamed
+  - voxshriek
+  - voxshrieks
+  - voxshrieking
+  - voxshrieked
+  - voxscreech
+  - voxscreeches
+  - voxscreeching
+  - voxscreeched
+  - voxyell
+  - voxyells
+  - voxyelled
+  - voxyelling
+
+- type: emote
+  id: DionaScream
+  name: DionaScream
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-scream"]
+  chatTriggers:
+  - dionascream
+  - dionascreams
+  - dionascreaming
+  - dionascreamed
+  - dionashriek
+  - dionashrieks
+  - dionashrieking
+  - dionashrieked
+  - dionascreech
+  - dionascreeches
+  - dionascreeching
+  - dionascreeched
+  - dionayell
+  - dionayells
+  - dionayelled
+  - dionayelling
+
+- type: emote
+  id: MothScream
+  name: MothScream
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-scream"]
+  chatTriggers:
+  - mothscream
+  - mothscreams
+  - mothscreaming
+  - mothscreamed
+  - mothshriek
+  - mothshrieks
+  - mothshrieking
+  - mothshrieked
+  - mothscreech
+  - mothscreeches
+  - mothscreeching
+  - mothscreeched
+  - mothyell
+  - mothyells
+  - mothyelled
+  - mothyelling
+
+#####################################
+#####################################
+### LAUGHS ##########################
+#####################################
+#####################################
+
+- type: emote
+  id: MaleLaugh
+  name: MaleLaugh
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-laugh"]
+  chatTriggers:
+  - malelaugh
+  - malelaughs
+  - malelaughing
+  - malelaughed
+  - malechuckle
+  - malechuckles
+  - malechuckled
+  - malechuckling
+  - malegiggle
+  - malegiggles
+  - malegiggling
+  - malegiggled
+  - malechortle
+  - malechortles
+  - malechortling
+  - malechortled # Frontier
+
+- type: emote
+  id: FemaleLaugh
+  name: FemaleLaugh
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-laugh"]
+  chatTriggers:
+  - femalelaugh
+  - femalelaughs
+  - femalelaughing
+  - femalelaughed
+  - femalechuckle
+  - femalechuckles
+  - femalechuckled
+  - femalechuckling
+  - femalegiggle
+  - femalegiggles
+  - femalegiggling
+  - femalegiggled
+  - femalechortle
+  - femalechortles
+  - femalechortling
+  - femalechortled # Frontier
+
+- type: emote
+  id: LizardLaugh
+  name: LizardLaugh
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-laugh"]
+  chatTriggers:
+  - lizardlaugh
+  - lizardlaughs
+  - lizardlaughing
+  - lizardlaughed
+  - lizardchuckle
+  - lizardchuckles
+  - lizardchuckled
+  - lizardchuckling
+  - lizardgiggle
+  - lizardgiggles
+  - lizardgiggling
+  - lizardgiggled
+  - lizardchortle
+  - lizardchortles
+  - lizardchortling
+  - lizardchortled # Frontier
+
+- type: emote
+  id: VoxLaugh
+  name: VoxLaugh
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-laugh"]
+  chatTriggers:
+  - voxlaugh
+  - voxlaughs
+  - voxlaughing
+  - voxlaughed
+  - voxchuckle
+  - voxchuckles
+  - voxchuckled
+  - voxchuckling
+  - voxgiggle
+  - voxgiggles
+  - voxgiggling
+  - voxgiggled
+  - voxchortle
+  - voxchortles
+  - voxchortling
+  - voxchortled # Frontier
+
+- type: emote
+  id: DionaLaugh
+  name: DionaLaugh
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-laugh"]
+  chatTriggers:
+  - dionalaugh
+  - dionalaughs
+  - dionalaughing
+  - dionalaughed
+  - dionachuckle
+  - dionachuckles
+  - dionachuckled
+  - dionachuckling
+  - dionagiggle
+  - dionagiggles
+  - dionagiggling
+  - dionagiggled
+  - dionachortle
+  - dionachortles
+  - dionachortling
+  - dionachortled # Frontier
+
+- type: emote
+  id: MothLaugh
+  name: MothLaugh
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-laugh"]
+  chatTriggers:
+  - mothlaugh
+  - mothlaughs
+  - mothlaughing
+  - mothlaughed
+  - mothchuckle
+  - mothchuckles
+  - mothchuckled
+  - mothchuckling
+  - mothgiggle
+  - mothgiggles
+  - mothgiggling
+  - mothgiggled
+  - mothchortle
+  - mothchortles
+  - mothchortling
+  - mothchortled # Frontier
+
+- type: emote
+  id: SyndieborgLaugh
+  name: SyndieborgLaugh
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-laugh"]
+  chatTriggers:
+  - syndieborglaugh
+  - syndieborglaughs
+  - syndieborglaughing
+  - syndieborglaughed
+  - syndieborgchuckle
+  - syndieborgchuckles
+  - syndieborgchuckled
+  - syndieborgchuckling
+  - syndieborggiggle
+  - syndieborggiggles
+  - syndieborggiggling
+  - syndieborggiggled
+  - syndieborgchortle
+  - syndieborgchortles
+  - syndieborgchortling
+  - syndieborgchortled # Frontier
+
+- type: emote
+  id: HarpyLaugh
+  name: HarpyLaugh
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-laugh"]
+  chatTriggers:
+  - harpylaugh
+  - harpylaughs
+  - harpylaughing
+  - harpylaughed
+  - harpychuckle
+  - harpychuckles
+  - harpychuckled
+  - harpychuckling
+  - harpygiggle
+  - harpygiggles
+  - harpygiggling
+  - harpygiggled
+  - harpychortle
+  - harpychortles
+  - harpychortling
+  - harpychortled # Frontier
+
+- type: emote
+  id: GoblinLaugh
+  name: GoblinLaugh
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-laugh"]
+  chatTriggers:
+  - goblinlaugh
+  - goblinlaughs
+  - goblinlaughing
+  - goblinlaughed
+  - goblinchuckle
+  - goblinchuckles
+  - goblinchuckled
+  - goblinchuckling
+  - goblingiggle
+  - goblingiggles
+  - goblingiggling
+  - goblingiggled
+  - goblinchortle
+  - goblinchortles
+  - goblinchortling
+  - goblinchortled # Frontier
+
+- type: emote
+  id: ShelegLaugh
+  name: ShelegLaugh
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-laugh"]
+  chatTriggers:
+  - sheleglaugh
+  - sheleglaughs
+  - sheleglaughing
+  - sheleglaughed
+  - shelegchuckle
+  - shelegchuckles
+  - shelegchuckled
+  - shelegchuckling
+  - sheleggiggle
+  - sheleggiggles
+  - sheleggiggling
+  - sheleggiggled
+  - shelegchortle
+  - shelegchortles
+  - shelegchortling
+  - shelegchortled # Frontier
+
+#####################################
+#####################################
+### HISSES  #########################
+#####################################
+#####################################
+
+- type: emote
+  id: FelinidHiss
+  name: FelinidHiss
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [hisses.]
+  chatTriggers:
+  - cathiss
+  - cathisses
+  - cathiss.
+  - cathisses.
+  - cathisses!
+  - cathissing
+  - cathissed
+  - cathissing.
+  - cathissed.
+
+- type: emote
+  id: HarpyHiss
+  name: HarpyHiss
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [hisses.]
+  chatTriggers:
+  - harpyhiss
+  - harpyhisses
+  - harpyhiss.
+  - harpyhisses.
+  - harpyhisses!
+  - harpyhissing
+  - harpyhissed
+  - harpyhissing.
+  - harpyhissed.
+
+- type: emote
+  id: GoblinHiss
+  name: GoblinHiss
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [hisses.]
+  chatTriggers:
+  - goblinhiss
+  - goblinhisses
+  - goblinhiss.
+  - goblinhisses.
+  - goblinhisses!
+  - goblinhissing
+  - goblinhissed
+  - goblinhissing.
+  - goblinhissed.
+
+- type: emote
+  id: ShelegHiss
+  name: ShelegHiss
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [hisses.]
+  chatTriggers:
+  - sheleghiss
+  - sheleghisses
+  - sheleghiss.
+  - sheleghisses.
+  - sheleghisses!
+  - sheleghissing
+  - sheleghissed
+  - sheleghissing.
+  - sheleghissed.
+
+#####################################
+#####################################
+### SIGHS ###########################
+#####################################
+#####################################
+
+- type: emote
+  id: MaleSigh
+  name: MaleSigh
+  category: Vocal
+  icon: Interface/Emotes/sigh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-sigh"]
+  chatTriggers:
+  - malesigh
+  - malesighs
+  - malesighed
+  - malesighing # Frontier
+
+- type: emote
+  id: FemaleSigh
+  name: FemaleSigh
+  category: Vocal
+  icon: Interface/Emotes/sigh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-sigh"]
+  chatTriggers:
+  - femalesigh
+  - femalesighs
+  - femalesighed
+  - femalesighing # Frontier
+
+- type: emote
+  id: ShelegSigh
+  name: ShelegSigh
+  category: Vocal
+  icon: Interface/Emotes/sigh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-sigh"]
+  chatTriggers:
+  - shelegsigh
+  - shelegsighs
+  - shelegsighed
+  - shelegsighing # Frontier
+
+######################################
+######################################
+### CRYING ###########################
+######################################
+######################################
+
+- type: emote
+  id: MaleCrying
+  name: MaleCrying
+  category: Vocal
+  icon: Interface/Emotes/cry.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-crying"]
+  chatTriggers:
+  - malecry
+  - malecrying
+  - malecries
+  - malesob
+  - malesobs
+  - malesobbing
+  - malesobbed # Frontier
+  - malecried # Frontier
+
+- type: emote
+  id: FemaleCrying
+  name: FemaleCrying
+  category: Vocal
+  icon: Interface/Emotes/cry.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-crying"]
+  chatTriggers:
+  - femalecry
+  - femalecrying
+  - femalecries
+  - femalesob
+  - femalesobs
+  - femalesobbing
+  - femalesobbed # Frontier
+  - femalecried # Frontier
+
+- type: emote
+  id: HarpyCrying
+  name: HarpyCrying
+  category: Vocal
+  icon: Interface/Emotes/cry.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-crying"]
+  chatTriggers:
+  - harpycry
+  - harpycrying
+  - harpycries
+  - harpysob
+  - harpysobs
+  - harpysobbing
+  - harpysobbed # Frontier
+  - harpycried # Frontier
+
+- type: emote
+  id: GoblinCrying
+  name: GoblinCrying
+  category: Vocal
+  icon: Interface/Emotes/cry.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-crying"]
+  chatTriggers:
+  - goblincry
+  - goblincrying
+  - goblincries
+  - goblinsob
+  - goblinsobs
+  - goblinsobbing
+  - goblinsobbed # Frontier
+  - goblincried # Frontier
+
+- type: emote
+  id: ShelegCrying
+  name: ShelegCrying
+  category: Vocal
+  icon: Interface/Emotes/cry.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-crying"]
+  chatTriggers:
+  - shelegcry
+  - shelegcrying
+  - shelegcries
+  - shelegsob
+  - shelegsobs
+  - shelegsobbing
+  - shelegsobbed # Frontier
+  - shelegcried # Frontier
+
+######################################
+######################################
+### GASPING ##########################
+####### on my cokc ###################
+######################################
+
+- type: emote
+  id: MaleGasp
+  name: MaleGasp
+  whitelist:
+    components:
+    - Respirator
+  chatMessages: ["chat-emote-msg-gasp"]
+  chatTriggers:
+  - malegasp
+  - malegasps
+  - malegasped
+  - malegasping # Frontier
+
+- type: emote
+  id: FemaleGasp
+  name: FemaleGasp
+  whitelist:
+    components:
+    - Respirator
+  chatMessages: ["chat-emote-msg-gasp"]
+  chatTriggers:
+  - femalegasp
+  - femalegasps
+  - femalegasped
+  - femalegasping # Frontier
+
+- type: emote
+  id: GoblinGasp
+  name: GoblinGasp
+  whitelist:
+    components:
+    - Respirator
+  chatMessages: ["chat-emote-msg-gasp"]
+  chatTriggers:
+  - goblingasp
+  - goblingasps
+  - goblingasped
+  - goblingasping # Frontier
+
+
+
+
+

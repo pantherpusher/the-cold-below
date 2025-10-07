@@ -371,6 +371,11 @@
   category: Vocal
   icon: Interface/Emotes/weh.png
   chatMessages: ["chat-emote-msg-weh"]
+  chatTriggers:
+  - weh
+  - wehs
+  - wehed
+  - wehing
 
 - type: emote
   id: Hew
@@ -378,6 +383,11 @@
   category: Vocal
   icon: Interface/Emotes/hew.png
   chatMessages: ["chat-emote-msg-hew"]
+  chatTriggers:
+    - hew
+    - hews
+    - hewed
+    - hewing
 
 - type: emote
   id: Chirp
