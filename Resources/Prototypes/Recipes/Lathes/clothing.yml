@@ -972,13 +972,6 @@
     Durathread: 50
 
 - type: latheRecipe
-  id: ClothingNeckShockCollar
-  result: ClothingNeckShockCollar
-  completetime: 2
-  materials:
-    Durathread: 300
-
-- type: latheRecipe
   id: ClothingHandsBeeWarmers
   parent: NFBaseJumpsuitRecipe
   result: ClothingHandsBeeWarmers
