@@ -114,7 +114,7 @@
       collection: FelinidMews
     VulpGrowl:
       collection: VulpkaninGrowls
-    CatGrowl:
+    FelinidGrowl:
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_growl1.ogg
     Purr:
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_purr1.ogg
