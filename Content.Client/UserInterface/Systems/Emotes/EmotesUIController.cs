@@ -28,10 +28,24 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
     private static readonly Dictionary<EmoteCategory, (string Tooltip, SpriteSpecifier Sprite)> EmoteGroupingInfo
         = new Dictionary<EmoteCategory, (string Tooltip, SpriteSpecifier Sprite)>
         {
-            [EmoteCategory.Sex] = ("emote-menu-category-sex", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Emotes/lewdemotes.png"))),
-            [EmoteCategory.General] = ("emote-menu-category-general", new SpriteSpecifier.Texture(new ResPath("/Textures/Clothing/Head/Soft/mimesoft.rsi/icon.png"))),
-            [EmoteCategory.Hands] = ("emote-menu-category-hands", new SpriteSpecifier.Texture(new ResPath("/Textures/Clothing/Hands/Gloves/latex.rsi/icon.png"))),
-            [EmoteCategory.Vocal] = ("emote-menu-category-vocal", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Emotes/vocal.png"))),
+            [EmoteCategory.Sex]      = ("emote-menu-category-sex",      new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Emotes/lewdemotes.png"))),
+            [EmoteCategory.General]  = ("emote-menu-category-general",  new SpriteSpecifier.Texture(new ResPath("/Textures/Clothing/Head/Soft/mimesoft.rsi/icon.png"))),
+            [EmoteCategory.Hands]    = ("emote-menu-category-hands",    new SpriteSpecifier.Texture(new ResPath("/Textures/Clothing/Hands/Gloves/latex.rsi/icon.png"))),
+            [EmoteCategory.Vocal]    = ("emote-menu-category-vocal",    new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Emotes/vocal.png"))),
+            [EmoteCategory.Harpy]    = ("emote-menu-category-harpy",    new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/cock.png"))),
+            [EmoteCategory.Goblin]   = ("emote-menu-category-goblin",   new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/goblin.png"))),
+            [EmoteCategory.Vulp]     = ("emote-menu-category-vulp",     new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/fox.png"))),
+            [EmoteCategory.Rodentia] = ("emote-menu-category-rodentia", new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/rat.png"))),
+            [EmoteCategory.Diona]    = ("emote-menu-category-diona",    new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/plant.png"))),
+            [EmoteCategory.Sheleg]   = ("emote-menu-category-sheleg",   new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/icecream.png"))),
+            [EmoteCategory.Male]     = ("emote-menu-category-male",     new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/male.png"))),
+            [EmoteCategory.Female]   = ("emote-menu-category-female",   new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/female.png"))),
+            [EmoteCategory.Avali]    = ("emote-menu-category-avali",    new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/dodo.png"))),
+            [EmoteCategory.Lizard]   = ("emote-menu-category-lizard",   new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/trex.png"))),
+            [EmoteCategory.Vox]      = ("emote-menu-category-vox",      new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/goose.png"))),
+            [EmoteCategory.Moth]     = ("emote-menu-category-moth",     new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/butterfly.png"))),
+            [EmoteCategory.Borg]     = ("emote-menu-category-borg",     new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/plug.png"))),
+            [EmoteCategory.Felinid]  = ("emote-menu-category-borg",     new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/cat.png"))),
         };
 
     public void OnStateEntered(GameplayState state)
@@ -140,6 +154,9 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
         foreach (var emote in emotePrototypes)
         {
             if (emote.Category == EmoteCategory.Invalid)
+                continue;
+
+            if (!emote.ShowInWheel)
                 continue;
 
             // only valid emotes that have ways to be triggered by chat and player have access / no restriction on

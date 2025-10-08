@@ -1,7 +1,8 @@
 - type: emote
   id: HarpyScream
   name: HarpyScream
-  category: Vocal
+#  showInWheel: false
+  category: Harpy
   icon: Interface/Actions/scream.png
   whitelist:
     components:
@@ -31,7 +32,8 @@
 - type: emote
   id: VulpScream
   name: VulpScream
-  category: Vocal
+#  showInWheel: false
+  category: Vulp
   icon: Interface/Actions/scream.png
   whitelist:
     components:
@@ -61,7 +63,8 @@
 - type: emote
   id: RodentiaScream
   name: RodentiaScream
-  category: Vocal
+#  showInWheel: false
+  category: Rodentia
   icon: Interface/Actions/scream.png
   whitelist:
     components:
@@ -91,7 +94,8 @@
 - type: emote
   id: GoblinScream
   name: GoblinScream
-  category: Vocal
+#  showInWheel: false
+  category: Goblin
   icon: Interface/Actions/scream.png
   whitelist:
     components:
@@ -121,7 +125,8 @@
 - type: emote
   id: ShelegScream
   name: ShelegScream
-  category: Vocal
+#  showInWheel: false
+  category: Sheleg
   icon: Interface/Actions/scream.png
   whitelist:
     components:
@@ -151,7 +156,8 @@
 - type: emote
   id: MaleScream
   name: MaleScream
-  category: Vocal
+#  showInWheel: false
+  category: Male
   icon: Interface/Actions/scream.png
   whitelist:
     components:
@@ -181,7 +187,8 @@
 - type: emote
   id: FemaleScream
   name: FemaleScream
-  category: Vocal
+#  showInWheel: false
+  category: Female
   icon: Interface/Actions/scream.png
   whitelist:
     components:
@@ -211,7 +218,8 @@
 - type: emote
   id: AvaliScream
   name: AvaliScream
-  category: Vocal
+#  showInWheel: false
+  category: Avali
   icon: Interface/Actions/scream.png
   whitelist:
     components:
@@ -241,7 +249,8 @@
 - type: emote
   id: FelinidScream
   name: FelinidScream
-  category: Vocal
+#  showInWheel: false
+  category: Felinid
   icon: Interface/Actions/scream.png
   whitelist:
     components:
@@ -271,7 +280,8 @@
 - type: emote
   id: LizardScream
   name: LizardScream
-  category: Vocal
+#  showInWheel: false
+  category: Lizard
   icon: Interface/Actions/scream.png
   whitelist:
     components:
@@ -301,7 +311,8 @@
 - type: emote
   id: VoxScream
   name: VoxScream
-  category: Vocal
+#  showInWheel: false
+  category: Vox
   icon: Interface/Actions/scream.png
   whitelist:
     components:
@@ -331,7 +342,8 @@
 - type: emote
   id: DionaScream
   name: DionaScream
-  category: Vocal
+#  showInWheel: false
+  category: Diona
   icon: Interface/Actions/scream.png
   whitelist:
     components:
@@ -361,7 +373,8 @@
 - type: emote
   id: MothScream
   name: MothScream
-  category: Vocal
+#  showInWheel: false
+  category: Moth
   icon: Interface/Actions/scream.png
   whitelist:
     components:
@@ -397,7 +410,8 @@
 - type: emote
   id: MaleLaugh
   name: MaleLaugh
-  category: Vocal
+#  showInWheel: false
+  category: Male
   icon: Interface/Emotes/laugh.png
   whitelist:
     components:
@@ -427,7 +441,8 @@
 - type: emote
   id: FemaleLaugh
   name: FemaleLaugh
-  category: Vocal
+#  showInWheel: false
+  category: Female
   icon: Interface/Emotes/laugh.png
   whitelist:
     components:
@@ -457,7 +472,8 @@
 - type: emote
   id: LizardLaugh
   name: LizardLaugh
-  category: Vocal
+#  showInWheel: false
+  category: Lizard
   icon: Interface/Emotes/laugh.png
   whitelist:
     components:
@@ -487,7 +503,8 @@
 - type: emote
   id: VoxLaugh
   name: VoxLaugh
-  category: Vocal
+#  showInWheel: false
+  category: Vox
   icon: Interface/Emotes/laugh.png
   whitelist:
     components:
@@ -517,7 +534,8 @@
 - type: emote
   id: DionaLaugh
   name: DionaLaugh
-  category: Vocal
+#  showInWheel: false
+  category: Diona
   icon: Interface/Emotes/laugh.png
   whitelist:
     components:
@@ -547,7 +565,8 @@
 - type: emote
   id: MothLaugh
   name: MothLaugh
-  category: Vocal
+#  showInWheel: false
+  category: Moth
   icon: Interface/Emotes/laugh.png
   whitelist:
     components:
@@ -577,7 +596,8 @@
 - type: emote
   id: SyndieborgLaugh
   name: SyndieborgLaugh
-  category: Vocal
+#  showInWheel: false
+  category: Borg
   icon: Interface/Emotes/laugh.png
   whitelist:
     components:
@@ -607,7 +627,8 @@
 - type: emote
   id: HarpyLaugh
   name: HarpyLaugh
-  category: Vocal
+#  showInWheel: false
+  category: Harpy
   icon: Interface/Emotes/laugh.png
   whitelist:
     components:
@@ -637,7 +658,8 @@
 - type: emote
   id: GoblinLaugh
   name: GoblinLaugh
-  category: Vocal
+#  showInWheel: false
+  category: Goblin
   icon: Interface/Emotes/laugh.png
   whitelist:
     components:
@@ -667,7 +689,8 @@
 - type: emote
   id: ShelegLaugh
   name: ShelegLaugh
-  category: Vocal
+#  showInWheel: false
+  category: Sheleg
   icon: Interface/Emotes/laugh.png
   whitelist:
     components:
@@ -703,7 +726,8 @@
 - type: emote
   id: FelinidHiss
   name: FelinidHiss
-  category: Vocal
+#  showInWheel: false
+  category: Felinid
   icon: Interface/Actions/scream.png
   available: false
   whitelist:
@@ -727,7 +751,8 @@
 - type: emote
   id: HarpyHiss
   name: HarpyHiss
-  category: Vocal
+#  showInWheel: false
+  category: Harpy
   icon: Interface/Actions/scream.png
   available: false
   whitelist:
@@ -751,7 +776,8 @@
 - type: emote
   id: GoblinHiss
   name: GoblinHiss
-  category: Vocal
+#  showInWheel: false
+  category: Goblin
   icon: Interface/Actions/scream.png
   available: false
   whitelist:
@@ -775,7 +801,8 @@
 - type: emote
   id: ShelegHiss
   name: ShelegHiss
-  category: Vocal
+#  showInWheel: false
+  category: Sheleg
   icon: Interface/Actions/scream.png
   available: false
   whitelist:
@@ -805,7 +832,8 @@
 - type: emote
   id: MaleSigh
   name: MaleSigh
-  category: Vocal
+#  showInWheel: false
+  category: Male
   icon: Interface/Emotes/sigh.png
   whitelist:
     components:
@@ -823,7 +851,8 @@
 - type: emote
   id: FemaleSigh
   name: FemaleSigh
-  category: Vocal
+#  showInWheel: false
+  category: Female
   icon: Interface/Emotes/sigh.png
   whitelist:
     components:
@@ -841,7 +870,8 @@
 - type: emote
   id: ShelegSigh
   name: ShelegSigh
-  category: Vocal
+#  showInWheel: false
+  category: Sheleg
   icon: Interface/Emotes/sigh.png
   whitelist:
     components:
@@ -865,7 +895,8 @@
 - type: emote
   id: MaleCrying
   name: MaleCrying
-  category: Vocal
+#  showInWheel: false
+  category: Male
   icon: Interface/Emotes/cry.png
   whitelist:
     components:
@@ -887,7 +918,8 @@
 - type: emote
   id: FemaleCrying
   name: FemaleCrying
-  category: Vocal
+#  showInWheel: false
+  category: Female
   icon: Interface/Emotes/cry.png
   whitelist:
     components:
@@ -909,7 +941,8 @@
 - type: emote
   id: HarpyCrying
   name: HarpyCrying
-  category: Vocal
+#  showInWheel: false
+  category: Harpy
   icon: Interface/Emotes/cry.png
   whitelist:
     components:
@@ -931,7 +964,8 @@
 - type: emote
   id: GoblinCrying
   name: GoblinCrying
-  category: Vocal
+#  showInWheel: false
+  category: Goblin
   icon: Interface/Emotes/cry.png
   whitelist:
     components:
@@ -953,7 +987,8 @@
 - type: emote
   id: ShelegCrying
   name: ShelegCrying
-  category: Vocal
+#  showInWheel: false
+  category: Sheleg
   icon: Interface/Emotes/cry.png
   whitelist:
     components:
@@ -981,6 +1016,8 @@
 - type: emote
   id: MaleGasp
   name: MaleGasp
+#  showInWheel: false
+  category: Male
   whitelist:
     components:
     - Respirator
@@ -994,6 +1031,8 @@
 - type: emote
   id: FemaleGasp
   name: FemaleGasp
+#  showInWheel: false
+  category: Female
   whitelist:
     components:
     - Respirator
@@ -1007,6 +1046,8 @@
 - type: emote
   id: GoblinGasp
   name: GoblinGasp
+#  showInWheel: false
+  category: Goblin
   whitelist:
     components:
     - Respirator
@@ -1016,3 +1057,92 @@
   - goblingasps
   - goblingasped
   - goblingasping # Frontier
+
+######################################
+######################################
+### SQUEAKS ##########################
+####### on my cokc ###################
+######################################
+
+- type: emote
+  id: RodentiaSqueak
+  name: RodentiaSqueak
+  #  showInWheel: false
+  category: Rodentia
+  whitelist:
+    components:
+    - Respirator
+  chatMessages: ["chat-emote-msg-gasp"]
+  chatTriggers:
+  - squeak
+  - squeaks
+  - squeaked
+  - squeaking # Frontier
+
+- type: emote
+  id: MothSqueak
+  name: MothSqueak
+  #  showInWheel: false
+  category: Rodentia
+  whitelist:
+    components:
+    - Respirator
+  chatMessages: ["chat-emote-msg-gasp"]
+  chatTriggers:
+  - squack
+  - squacks
+  - squacked
+  - squacking # Frontier
+
+#######################################
+#######################################
+### GROWLS #############################
+#######################################
+#######################################
+
+- type: emote
+  id: VulpGrowl
+  name: VulpGrowl
+#  showInWheel: false
+  category: Vulp
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [growls.]
+  chatTriggers:
+  - vulpgrowl
+  - vulpgrowls
+  - vulpgrowling
+  - vulpgrowled
+
+- type: emote
+  id: FelinidGrowl
+  name: FelinidGrowl
+#  showInWheel: false
+  category: Felinid
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [growls.]
+  chatTriggers:
+  - catgrowl
+  - catgrowls
+  - catgrowling
+  - catgrowled
+
+
+
+
+
+
+
+
+
+
+
