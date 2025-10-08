@@ -1083,7 +1083,7 @@
   id: MothSqueak
   name: MothSqueak
   #  showInWheel: false
-  category: Rodentia
+  category: Moth
   whitelist:
     components:
     - Respirator
