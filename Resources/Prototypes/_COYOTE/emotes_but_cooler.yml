@@ -1,33 +1,33 @@
-- type: emote
-  id: HarpyScream
-  name: HarpyScream
-#  showInWheel: false
-  category: Harpy
-  icon: Interface/Actions/scream.png
-  whitelist:
-    components:
-    - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
-  chatMessages: ["chat-emote-msg-scream"]
-  chatTriggers:
-  - harpyscream
-  - harpyscreams
-  - harpyscreaming
-  - harpyscreamed
-  - harpyshriek
-  - harpyshrieks
-  - harpyshrieking
-  - harpyshrieked
-  - harpyscreech
-  - harpyscreeches
-  - harpyscreeching
-  - harpyscreeched
-  - harpyyell
-  - harpyyells
-  - harpyyelled
-  - harpyyelling
+#- type: emote
+#  id: HarpyScream
+#  name: HarpyScream
+##  showInWheel: false
+#  category: Harpy
+#  icon: Interface/Actions/scream.png
+#  whitelist:
+#    components:
+#    - Vocal
+#  blacklist:
+#    tags:
+#    - SiliconEmotes
+#  chatMessages: ["chat-emote-msg-scream"]
+#  chatTriggers:
+#  - harpyscream
+#  - harpyscreams
+#  - harpyscreaming
+#  - harpyscreamed
+#  - harpyshriek
+#  - harpyshrieks
+#  - harpyshrieking
+#  - harpyshrieked
+#  - harpyscreech
+#  - harpyscreeches
+#  - harpyscreeching
+#  - harpyscreeched
+#  - harpyyell
+#  - harpyyells
+#  - harpyyelled
+#  - harpyyelling
 
 - type: emote
   id: VulpScream
@@ -624,36 +624,36 @@
   - syndieborgchortling
   - syndieborgchortled # Frontier
 
-- type: emote
-  id: HarpyLaugh
-  name: HarpyLaugh
-#  showInWheel: false
-  category: Harpy
-  icon: Interface/Emotes/laugh.png
-  whitelist:
-    components:
-    - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
-  chatMessages: ["chat-emote-msg-laugh"]
-  chatTriggers:
-  - harpylaugh
-  - harpylaughs
-  - harpylaughing
-  - harpylaughed
-  - harpychuckle
-  - harpychuckles
-  - harpychuckled
-  - harpychuckling
-  - harpygiggle
-  - harpygiggles
-  - harpygiggling
-  - harpygiggled
-  - harpychortle
-  - harpychortles
-  - harpychortling
-  - harpychortled # Frontier
+#- type: emote
+#  id: HarpyLaugh
+#  name: HarpyLaugh
+##  showInWheel: false
+#  category: Harpy
+#  icon: Interface/Emotes/laugh.png
+#  whitelist:
+#    components:
+#    - Vocal
+#  blacklist:
+#    tags:
+#    - SiliconEmotes
+#  chatMessages: ["chat-emote-msg-laugh"]
+#  chatTriggers:
+#  - harpylaugh
+#  - harpylaughs
+#  - harpylaughing
+#  - harpylaughed
+#  - harpychuckle
+#  - harpychuckles
+#  - harpychuckled
+#  - harpychuckling
+#  - harpygiggle
+#  - harpygiggles
+#  - harpygiggling
+#  - harpygiggled
+#  - harpychortle
+#  - harpychortles
+#  - harpychortling
+#  - harpychortled # Frontier
 
 - type: emote
   id: GoblinLaugh
@@ -748,30 +748,30 @@
   - cathissing.
   - cathissed.
 
-- type: emote
-  id: HarpyHiss
-  name: HarpyHiss
-#  showInWheel: false
-  category: Harpy
-  icon: Interface/Actions/scream.png
-  available: false
-  whitelist:
-    components:
-    - Vocal
-  blacklist:
-    components:
-    - BorgChassis
-  chatMessages: [hisses.]
-  chatTriggers:
-  - harpyhiss
-  - harpyhisses
-  - harpyhiss.
-  - harpyhisses.
-  - harpyhisses!
-  - harpyhissing
-  - harpyhissed
-  - harpyhissing.
-  - harpyhissed.
+#- type: emote
+#  id: HarpyHiss
+#  name: HarpyHiss
+##  showInWheel: false
+#  category: Harpy
+#  icon: Interface/Actions/scream.png
+#  available: false
+#  whitelist:
+#    components:
+#    - Vocal
+#  blacklist:
+#    components:
+#    - BorgChassis
+#  chatMessages: [hisses.]
+#  chatTriggers:
+#  - harpyhiss
+#  - harpyhisses
+#  - harpyhiss.
+#  - harpyhisses.
+#  - harpyhisses!
+#  - harpyhissing
+#  - harpyhissed
+#  - harpyhissing.
+#  - harpyhissed.
 
 - type: emote
   id: GoblinHiss
@@ -938,28 +938,28 @@
   - femalesobbed # Frontier
   - femalecried # Frontier
 
-- type: emote
-  id: HarpyCrying
-  name: HarpyCrying
-#  showInWheel: false
-  category: Harpy
-  icon: Interface/Emotes/cry.png
-  whitelist:
-    components:
-    - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
-  chatMessages: ["chat-emote-msg-crying"]
-  chatTriggers:
-  - harpycry
-  - harpycrying
-  - harpycries
-  - harpysob
-  - harpysobs
-  - harpysobbing
-  - harpysobbed # Frontier
-  - harpycried # Frontier
+#- type: emote
+#  id: HarpyCrying
+#  name: HarpyCrying
+##  showInWheel: false
+#  category: Harpy
+#  icon: Interface/Emotes/cry.png
+#  whitelist:
+#    components:
+#    - Vocal
+#  blacklist:
+#    tags:
+#    - SiliconEmotes
+#  chatMessages: ["chat-emote-msg-crying"]
+#  chatTriggers:
+#  - harpycry
+#  - harpycrying
+#  - harpycries
+#  - harpysob
+#  - harpysobs
+#  - harpysobbing
+#  - harpysobbed # Frontier
+#  - harpycried # Frontier
 
 - type: emote
   id: GoblinCrying
@@ -1136,6 +1136,23 @@
   - catgrowling
   - catgrowled
 
+- type: emote
+  id: AvaliCaw
+  name: delta-chat-emote-name-caw
+  category: Avali
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [caws.]
+  chatTriggers:
+  - avalicaw
+  - avalicaws
+  - avalicawing
+  - avalicawed
 
 
 

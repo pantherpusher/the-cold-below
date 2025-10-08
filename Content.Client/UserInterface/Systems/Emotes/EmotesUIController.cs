@@ -4,6 +4,7 @@ using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Input;
 using Content.Shared.Speech;
+using Content.Shared.Speech.Components;
 using Content.Shared.Whitelist;
 using JetBrains.Annotations;
 using Robust.Client.Player;
@@ -166,10 +167,8 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
                 || whitelistSystem.IsBlacklistPass(emote.Blacklist, player.Value))
                 continue;
 
-            // if (!emote.Available
-            //     && EntityManager.TryGetComponent<SpeechComponent>(player.Value, out var speech)
-            //     && !speech.AllowedEmotes.Contains(emote.ID))
-            //     continue;
+            if (!CanHasUseEmote(emote, player.Value))
+                continue;
 
             if (!emotesByCategory.TryGetValue(emote.Category, out var list))
             {
@@ -200,6 +199,22 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
         }
 
         return models;
+    }
+
+    private bool CanHasUseEmote(EmotePrototype emote, EntityUid player)
+    {
+        if (emote.Available)
+            return true; // available emotes are always allowed
+        if (!EntityManager.TryGetComponent<SpeechComponent>(player, out var speech))
+            return false; // non-available emotes require speech component
+        if (speech.AllowedEmotes.Contains(emote.ID))
+            return true; // explicitly allowed emotes are allowed
+        // check the supplemental sounds for vocal emotes
+        if (!EntityManager.TryGetComponent<VocalComponent>(player, out var vocal))
+            return false; // no vocal component, no vocal emotes
+        if (!_prototypeManager.TryIndex<EmoteSoundsPrototype>(vocal.SupplementalSounds, out var esp))
+            return false; // no supplemental sounds, no vocal emotes
+        return esp.Sounds.ContainsKey(emote.ID); // only allow if we have sounds for them
     }
 
     private void HandleRadialButtonClick(EmotePrototype prototype)
