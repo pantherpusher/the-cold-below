@@ -46,7 +46,7 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
             [EmoteCategory.Vox]      = ("emote-menu-category-vox",      new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/goose.png"))),
             [EmoteCategory.Moth]     = ("emote-menu-category-moth",     new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/butterfly.png"))),
             [EmoteCategory.Borg]     = ("emote-menu-category-borg",     new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/plug.png"))),
-            [EmoteCategory.Felinid]  = ("emote-menu-category-borg",     new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/cat.png"))),
+            [EmoteCategory.Felinid]  = ("emote-menu-category-felinid",  new SpriteSpecifier.Texture(new ResPath("/Textures/_CS/emojis/cat.png"))),
         };
 
     public void OnStateEntered(GameplayState state)
