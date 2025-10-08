@@ -4,8 +4,8 @@
     variation: 0.125
   sounds:
     ## Screams
-    HarpyScream:
-      collection: HarpyScreams
+#    HarpyScream:
+#      collection: HarpyScreams
     VulpScream:
       collection: VulpkaninScreams
     RodentiaScream:
@@ -45,8 +45,8 @@
       path: /Audio/Voice/Moth/moth_laugh.ogg
     SyndieborgLaugh:
       path: /Audio/Voice/Silicon/syndieborg_laugh.ogg
-    HarpyLaugh:
-      collection: HarpyLaugh
+#    HarpyLaugh:
+#      collection: HarpyLaugh
     GoblinLaugh:
       collection: GoblinCackle
     ShelegLaugh:
@@ -54,8 +54,8 @@
     ## Hisses
     FelinidHiss:
       collection: FelinidHisses
-    HarpyHiss:
-      collection: HarpyHisses
+#    HarpyHiss:
+#      collection: HarpyHisses
     GoblinHiss:
       collection: GoblinHiss
     ShelegHiss:
@@ -72,8 +72,8 @@
       collection: MaleCry
     FemaleCrying:
       collection: FemaleCry
-    HarpyCrying:
-      collection: HarpyCry
+#    HarpyCrying:
+#      collection: HarpyCry
     GoblinCrying:
       collection: GoblinCry
     ShelegCrying:
@@ -107,43 +107,49 @@
     Pop: # Imp
       collection: Pops # Imp
     Hiss:
-      collection: HarpyHisses
+      collection: FelinidHisses
     Meow:
-      collection: HarpyMeows
+      collection: FelinidMeows
     Mew:
-      collection: HarpyMews
-    Growl:
-      collection: HarpyGrowls
+      collection: FelinidMews
+    VulpGrowl:
+      collection: VulpkaninGrowls
+    FelinidGrowl:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_growl1.ogg
     Purr:
-      collection: HarpyPurrs
-    HarpyRing:
-      collection: HarpyRings
-    HarpyHonk:
-      collection: HarpyHonks
-      params: # Frontier
-        volume: -5 # Frontier
-    HarpyPew:
-      collection: HarpyPews
-    HarpyBang:
-      collection: HarpyBangs
-      params: # Frontier
-        volume: -5 # Frontier
-    HarpyBeep:
-      collection: HarpyBeeps
-    HarpyRev:
-      collection: HarpyRevs
-      params: # Frontier
-        volume: -5 # Frontier
-    Click:
-      collection: HarpyClicks
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_purr1.ogg
+#    HarpyRing:
+#      collection: HarpyRings
+#    HarpyHonk:
+#      collection: HarpyHonks
+#      params: # Frontier
+#        volume: -5 # Frontier
+#    HarpyPew:
+#      collection: HarpyPews
+#    HarpyBang:
+#      collection: HarpyBangs
+#      params: # Frontier
+#        volume: -5 # Frontier
+#    HarpyBeep:
+#      collection: HarpyBeeps
+#    HarpyRev:
+#      collection: HarpyRevs
+#      params: # Frontier
+#        volume: -5 # Frontier
+#    Click:
+#      collection: HarpyClicks
     Chitter:
-      collection: HarpyChitter
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+    MothSqueak:
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+    RodentiaSqueak:
+      path: /Audio/Animals/mouse_squeak.ogg
     Squeak:
-      collection: HarpySqueak
-    HarpyCaw:
+      path: /Audio/Animals/mouse_squeak.ogg
+    AvaliCaw:
       collection: HarpyCaws
     Chirp:
-      collection: HarpyChirps
+      path: /Audio/_DV/Voice/Harpy/chirp1.ogg
     Snarl:
       collection: VulpkaninSnarls
     Bark:
