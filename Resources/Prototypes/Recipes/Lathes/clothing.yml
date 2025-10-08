@@ -979,11 +979,6 @@
     Durathread: 300
 
 - type: latheRecipe
-  id: ClothingUniformRandomPunkTanktop
-  parent: NFBaseJumpsuitRecipe
-  result: ClothingUniformRandomPunkTanktop
-
-- type: latheRecipe
   id: ClothingHandsBeeWarmers
   parent: NFBaseJumpsuitRecipe
   result: ClothingHandsBeeWarmers
