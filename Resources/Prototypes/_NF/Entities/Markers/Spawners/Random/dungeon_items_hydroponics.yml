@@ -282,6 +282,8 @@
     - PumpkinSeeds
     - CottonSeeds
     - MimanaSeeds
+    - PomegranateSeeds
+    - HumpShroomSeeds
     chance: 0.95
     offset: 0.0
     rarePrototypes:
@@ -292,4 +294,5 @@
     - BlueTomatoSeeds
     - BloodTomatoSeeds
     - GatfruitSeeds
+    - BreedShroomSeeds
     rareChance: 0.05
