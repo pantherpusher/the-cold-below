@@ -5,8 +5,8 @@
   description: Lets you message other people!
   components:
   - type: Sprite
-    sprite: DeltaV/Objects/Devices/cartridge.rsi
-    state: cart-chat
+    sprite: _DeltaV/Misc/program_icons.rsi
+    state: nanochat
   - type: UIFragment
     ui: !type:NanoChatUi
   - type: NanoChatCartridge

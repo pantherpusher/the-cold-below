@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._DeltaV.CartridgeLoader.Cartridges;
 using Content.Server.Administration.Logs;
 using Content.Server.CartridgeLoader;
 using Content.Server.Power.Components;
@@ -37,6 +38,20 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
 
         SubscribeLocalEvent<NanoChatCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         SubscribeLocalEvent<NanoChatCartridgeComponent, CartridgeMessageEvent>(OnMessage);
+    }
+
+    private void UpdateClosed(Entity<NanoChatCartridgeComponent> ent)
+    {
+        if (!TryComp<CartridgeComponent>(ent, out var cartridge) ||
+            cartridge.LoaderUid is not { } pda ||
+            !TryComp<CartridgeLoaderComponent>(pda, out var loader) ||
+            !GetCardEntity(pda, out var card))
+        {
+            return;
+        }
+
+        // if you switch to another program or close the pda UI, allow notifications for the selected chat
+        _nanoChat.SetClosed((card, card.Comp), loader.ActiveProgram != ent.Owner || !_ui.IsUiOpen(pda, PdaUiKey.Key));
     }
 
     public override void Update(float frameTime)
@@ -99,6 +114,9 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
                 break;
             case NanoChatUiMessageType.SendMessage:
                 HandleSendMessage(ent, card, msg);
+                break;
+            case NanoChatUiMessageType.ToggleListNumber:
+                HandleToggleListNumber(card);
                 break;
         }
 
@@ -223,6 +241,12 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
     {
         _nanoChat.SetNotificationsMuted((card, card.Comp), !_nanoChat.GetNotificationsMuted((card, card.Comp)));
         UpdateUIForCard(card);
+    }
+
+    private void HandleToggleListNumber(Entity<NanoChatCardComponent> card)
+    {
+        _nanoChat.SetListNumber((card, card.Comp), !_nanoChat.GetListNumber((card, card.Comp)));
+        UpdateUIForAllCards();
     }
 
     /// <summary>
@@ -406,7 +430,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
 
         _nanoChat.AddMessage((recipient, recipient.Comp), senderNumber.Value, message with { DeliveryFailed = false });
 
-
+        // if (recipient.Comp.IsClosed || _nanoChat.GetCurrentChat((recipient, recipient.Comp)) != senderNumber)
         HandleUnreadNotification(recipient, message, (uint) senderNumber);
 
         var msgEv = new NanoChatMessageReceivedEvent(recipient);
@@ -436,11 +460,12 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
 
         if (recipient.Comp.NotificationsMuted ||
             recipient.Comp.PdaUid is not {} pdaUid ||
-            !TryComp<CartridgeLoaderComponent>(pdaUid, out var loader) ||
+            !TryComp<CartridgeLoaderComponent>(pdaUid, out var loader) /* || // FLOOF CHANGE - just make it always beep
             // Don't notify if the recipient has the NanoChat program open with this chat selected.
             (hasSelectedCurrentChat &&
                 _ui.IsUiOpen(pdaUid, PdaUiKey.Key) &&
-                HasComp<NanoChatCartridgeComponent>(loader.ActiveProgram)))
+                HasComp<NanoChatCartridgeComponent>(loader.ActiveProgram)) */
+           )
             return;
 
         _cartridge.SendNotification(pdaUid,
@@ -462,6 +487,20 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
                 continue;
 
             UpdateUI((uid, comp), cartridge.LoaderUid.Value);
+        }
+    }
+
+    /// <summary>
+    ///     Updates the UI for all PDAs containing a NanoChat cartridge.
+    /// </summary>
+    private void UpdateUIForAllCards()
+    {
+        // Find any PDA containing this card and update its UI
+        var query = EntityQueryEnumerator<NanoChatCartridgeComponent, CartridgeComponent>();
+        while (query.MoveNext(out var uid, out var comp, out var cartridge))
+        {
+            if (cartridge.LoaderUid is { } loader)
+                UpdateUI((uid, comp), loader);
         }
     }
 
@@ -510,8 +549,27 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
 
     private void UpdateUI(Entity<NanoChatCartridgeComponent> ent, EntityUid loader)
     {
+        List<NanoChatRecipient>? contacts;
         if (_station.GetOwningStation(loader) is { } station)
+        {
             ent.Comp.Station = station;
+
+            contacts = [];
+
+            var query = AllEntityQuery<NanoChatCardComponent, IdCardComponent>();
+            while (query.MoveNext(out var entityId, out var nanoChatCard, out var idCardComponent))
+            {
+                if (nanoChatCard.ListNumber && nanoChatCard.Number is uint nanoChatNumber && idCardComponent.FullName is string fullName && _station.GetOwningStation(entityId) == station)
+                {
+                    contacts.Add(new NanoChatRecipient(nanoChatNumber, fullName));
+                }
+            }
+            contacts.Sort((contactA, contactB) => string.CompareOrdinal(contactA.Name, contactB.Name));
+        }
+        else
+        {
+            contacts = null;
+        }
 
         var recipients = new Dictionary<uint, NanoChatRecipient>();
         var messages = new Dictionary<uint, List<NanoChatMessage>>();
@@ -519,6 +577,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         uint ownNumber = 0;
         var maxRecipients = 50;
         var notificationsMuted = false;
+        var listNumber = false;
 
         if (ent.Comp.Card != null && TryComp<NanoChatCardComponent>(ent.Comp.Card, out var card))
         {
@@ -528,14 +587,17 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
             ownNumber = card.Number ?? 0;
             maxRecipients = card.MaxRecipients;
             notificationsMuted = card.NotificationsMuted;
+            listNumber = card.ListNumber;
         }
 
         var state = new NanoChatUiState(recipients,
             messages,
+            contacts,
             currentChat,
             ownNumber,
             maxRecipients,
-            notificationsMuted);
+            notificationsMuted,
+            listNumber);
         _cartridge.UpdateCartridgeUiState(loader, state);
     }
 }
