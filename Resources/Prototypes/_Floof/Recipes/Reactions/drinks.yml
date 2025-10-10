@@ -53,7 +53,7 @@
       amount: 1
     BlueCuracao:
       amount: 1
-    Cum:
+    Milk:
       amount: 1
   products:
     BandE: 3
@@ -63,7 +63,7 @@
   requiredMixerCategories:
   - Shake
   reactants:
-    Cum:
+    Milk:
       amount: 4
     Pomelustine:
       amount: 3
@@ -187,7 +187,7 @@
   reactants:
     Blood:
       amount: 2
-    Cum:
+    Milk:
       amount: 1
     Pomelustine:
       amount: 2
@@ -215,7 +215,7 @@
   reactants:
     Cream:
       amount: 1
-    Cum:
+    Milk:
       amount: 1
     RootBeer:
       amount: 1
@@ -257,7 +257,7 @@
   reactants:
     CapsaicinOil:
       amount: 1
-    Cum:
+    Milk:
       amount: 1
     JuiceOrange:
       amount: 1
@@ -367,7 +367,7 @@
   requiredMixerCategories:
   - Shake
   reactants:
-    Cum:
+    Milk:
       amount: 1
     JuiceOrange:
       amount: 1
@@ -439,7 +439,7 @@
   requiredMixerCategories:
   - Shake
   reactants:
-    Cum:
+    Milk:
       amount: 1
     HotCocoa:
       amount: 1
@@ -495,7 +495,7 @@
   requiredMixerCategories:
   - Shake
   reactants:
-    Cum:
+    Milk:
       amount: 1
     JuiceOrange:
       amount: 2
@@ -587,11 +587,11 @@
   reactants:
     Cream:
       amount: 1
-    Cum:
+    Milk:
       amount: 1
     IceCream:
       amount: 1
-    Milk:
+    TableSalt:
       amount: 1
   products:
     QuadrupleCreamChalice: 4
@@ -647,7 +647,7 @@
   reactants:
     Ale:
       amount: 2
-    Cum:
+    Milk:
       amount: 1
   products:
     SemenBomb: 3
@@ -657,7 +657,7 @@
   requiredMixerCategories:
   - Shake
   reactants:
-    Cum:
+    Milk:
       amount: 1
     Grenadine:
       amount: 1
@@ -673,7 +673,7 @@
   reactants:
     Coffee:
       amount: 1
-    Cum:
+    Milk:
       amount: 1
     SodaWater:
       amount: 1
@@ -700,7 +700,7 @@
   requiredMixerCategories:
   - Shake
   reactants:
-    Cum:
+    Milk:
       amount: 1
     Ice:
       amount: 2
@@ -714,7 +714,7 @@
   requiredMixerCategories:
   - Shake
   reactants:
-    Cum:
+    Milk:
       amount: 1
     IceCream:
       amount: 1
@@ -802,7 +802,7 @@
   requiredMixerCategories:
   - Shake
   reactants:
-    Cum:
+    Milk:
       amount: 1
     JuiceWatermelon:
       amount: 2
@@ -820,7 +820,7 @@
   reactants:
     Beer:
       amount: 1
-    Cum:
+    Milk:
       amount: 1
     Water:
       amount: 1
