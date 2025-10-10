@@ -27,7 +27,7 @@
     solutions:
       drink:
         reagents:
-        - ReagentId: Cum
+        -
           Quantity: 100
   - type: Label
     currentLabel: bottle'o'cum
