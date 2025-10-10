@@ -362,20 +362,20 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
                     continue;
 
                 // Check if devices are on same station/map
-                var recipientStation = _station.GetOwningStation(receiverUid);
-                var senderStation = _station.GetOwningStation(sender);
-
-                // Both entities must be on a station
-                if (recipientStation == null || senderStation == null)
-                    continue;
-
-                // Must be on same map/station unless long range allowed
-                if (!channel.LongRange && recipientStation != senderStation)
-                    continue;
-
-                // Needs telecomms
-                if (!HasActiveServer(senderStation.Value) || !HasActiveServer(recipientStation.Value))
-                    continue;
+                // var recipientStation = _station.GetOwningStation(receiverUid);
+                // var senderStation = _station.GetOwningStation(sender);
+                //
+                // // Both entities must be on a station
+                // if (recipientStation == null || senderStation == null)
+                //     continue;
+                //
+                // // Must be on same map/station unless long range allowed
+                // if (!channel.LongRange && recipientStation != senderStation)
+                //     continue;
+                //
+                // // Needs telecomms
+                // if (!HasActiveServer(senderStation.Value) || !HasActiveServer(recipientStation.Value))
+                //     continue;
 
                 // Check if recipient can receive
                 var receiveAttemptEv = new RadioReceiveAttemptEvent(channel, sender, receiverUid);
@@ -550,26 +550,23 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
     private void UpdateUI(Entity<NanoChatCartridgeComponent> ent, EntityUid loader)
     {
         List<NanoChatRecipient>? contacts;
-        if (_station.GetOwningStation(loader) is { } station)
+
+        contacts = [];
+
+        var query = AllEntityQuery<NanoChatCardComponent, IdCardComponent>();
+        while (query.MoveNext(
+                   out var entityId,
+                   out var nanoChatCard,
+                   out var idCardComponent))
         {
-            ent.Comp.Station = station;
-
-            contacts = [];
-
-            var query = AllEntityQuery<NanoChatCardComponent, IdCardComponent>();
-            while (query.MoveNext(out var entityId, out var nanoChatCard, out var idCardComponent))
+            if (nanoChatCard.ListNumber
+                && nanoChatCard.Number is uint nanoChatNumber
+                && idCardComponent.FullName is string fullName)
             {
-                if (nanoChatCard.ListNumber && nanoChatCard.Number is uint nanoChatNumber && idCardComponent.FullName is string fullName && _station.GetOwningStation(entityId) == station)
-                {
-                    contacts.Add(new NanoChatRecipient(nanoChatNumber, fullName));
-                }
+                contacts.Add(new NanoChatRecipient(nanoChatNumber, fullName));
             }
-            contacts.Sort((contactA, contactB) => string.CompareOrdinal(contactA.Name, contactB.Name));
         }
-        else
-        {
-            contacts = null;
-        }
+        contacts.Sort((contactA, contactB) => string.CompareOrdinal(contactA.Name, contactB.Name));
 
         var recipients = new Dictionary<uint, NanoChatRecipient>();
         var messages = new Dictionary<uint, List<NanoChatMessage>>();
