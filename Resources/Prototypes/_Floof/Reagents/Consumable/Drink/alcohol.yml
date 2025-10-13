@@ -1592,3 +1592,17 @@
       effects:
       - !type:SatiateThirst
         factor: 2
+
+- type: reagent
+  id: SuperheavyCream
+  name: reagent-name-superheavycream
+  parent: BaseDrink
+  desc: reagent-desc-superheavycream
+  physicalDesc: reagent-physical-desc-very-creamy
+  flavor: superheavycream
+  color: "#ffffff"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
