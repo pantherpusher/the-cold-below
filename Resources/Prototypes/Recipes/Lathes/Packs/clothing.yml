@@ -299,3 +299,18 @@
   - ClothingNeckCollarSyndi
   - ClothingNeckShockCollar
   - ClothingNeckBellCollar
+
+- type: latheRecipePack
+  id: ClothingBags
+  recipes:
+  - ClothingBackpackDuffelTrauma
+  - NFClothingBackpackDuffelColorBlack
+  - NFClothingBackpackDuffelColorBlue
+  - NFClothingBackpackDuffelColorGreen
+  - NFClothingBackpackDuffelColorOrange
+  - NFClothingBackpackDuffelColorRed
+  - NFClothingBackpackDuffelColorPurple
+  - NFClothingBackpackDuffelColorBrownLight
+  - NFClothingBackpackDuffelColorBrown
+  - NFClothingBackpackDuffelColorWhite
+  
