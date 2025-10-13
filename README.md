@@ -1,13 +1,9 @@
-<div class="header" align="center">
-<img alt="Frontier Station" height="308" src="https://github.com/ARF-SS13/coyote-frontier/blob/master/Resources/Textures/_CS/Logo/logo.png?raw=true" />
-</div>
-
-Coyote Sector is a fork of [Frontier Station](https://github.com/new-frontiers-14/frontier-station-14), which itself is a fork of [Space Station 14](https://github.com/space-wizards/space-station-14) that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox) engine written in C#.
+The Cold Below is a fork of [Coyote Sector](https://github.com/ARF-SS13/coyote-frontier) which is a fork of [Frontier Station](https://github.com/new-frontiers-14/frontier-station-14), which itself is a fork of [Space Station 14](https://github.com/space-wizards/space-station-14) that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox) engine written in C#.
 
 
-This is the primary repo for Coyote Sector.
+This is the primary repo for The Cold Below.
 
-If you want to host or create content for Coyote Sector, this is the repo you need. It contains both RobustToolbox and the content pack for development of new content packs.
+If you want to host or create content for The Cold Below, this is the repo you need. It contains both RobustToolbox and the content pack for development of new content packs.
 
 ## Links
 
@@ -23,7 +19,7 @@ Our [wiki](https://frontierstation.wiki.gg/) has documentation on Frontier Stati
 
 ## Contributing
 
-We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of ideas]TBA that can be done and anybody can pick them up. Don't be afraid to ask for help either!
+We are happy to accept contributions from anybody. Get in Discord if you want to help.
 
 We are not currently accepting translations of the game on our main repository. If you would like to translate the game into another language, consider creating a fork or contributing to a fork.
 
