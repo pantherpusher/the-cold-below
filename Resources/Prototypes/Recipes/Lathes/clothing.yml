@@ -1218,7 +1218,7 @@
 
 - type: latheRecipe
   id: ClothingBackpackDuffelTrauma
-  parent: NFBaseJumpsuitRecipe //For simplicity lets assume a duffelbag has the same amount of fabric as a jumpsuit
+  parent: NFBaseJumpsuitRecipe # For simplicity lets assume a duffelbag has the same amount of fabric as a jumpsuit
   result: ClothingBackpackDuffelTrauma
 
 - type: latheRecipe
