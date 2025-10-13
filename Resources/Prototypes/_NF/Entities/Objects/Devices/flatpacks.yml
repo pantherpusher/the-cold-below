@@ -937,11 +937,11 @@
 - type: entity
   parent: BaseNFFlatpack
   id: WheelchairFlatpack
-  name: hoverchair flatpack
+  name: wheelchair flatpack
   description: A folded up wheelchair to allow accessibility.
   components:
   - type: Flatpack
-    entity: VehicleHoverchair
+    entity: VehicleWheelchair
   - type: StaticPrice
     price: 1000 //lets not be cruel for people that loose the roundstart wheelchair
   - type: Sprite
