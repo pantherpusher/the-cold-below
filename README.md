@@ -9,7 +9,7 @@ If you want to host or create content for The Cold Below, this is the repo you n
 
 <div class="header" align="center">
 
-[Discord]TBA | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Patreon]TBA | [Wiki](https://frontierstation.wiki.gg/)
+[Discord](https://discord.gg/WhAVb36MQT) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Patreon]TBA | [Wiki](https://frontierstation.wiki.gg/)
 
 </div>
 
