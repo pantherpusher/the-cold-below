@@ -1421,3 +1421,123 @@
   parent: NFBaseJumpsuitRecipe 
   result: ClothingBackpackSatchelSalvage
   
+- type: latheRecipe # Please shoot the messenger bag
+  id: ClothingBackpackMessenger
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessenger
+
+- type: latheRecipe 
+  id: ClothingBackpackMessengerCaptain
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerCaptain
+
+- type: latheRecipe 
+  id: ClothingBackpackMessengerSalvage
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerSalvage
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerCargo
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerCargo
+
+- type: latheRecipe 
+  id: ClothingBackpackMessengerHydroponics
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerHydroponics  
+
+- type: latheRecipe 
+  id: ClothingBackpackMessengerScience
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerScience
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerMedical
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerMedical
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerChemistry
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerChemistry
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerGenetics
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerGenetics
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerVirology
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerVirology
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerEngineering
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerEngineering
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerChiefEngineer
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerChiefEngineer
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerChaplain
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerChaplain
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerColorBlack
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerColorBlack
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerColorWhite
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerColorWhite
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerColorBlue
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerColorBlue
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerColorGreen
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerColorGreen
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerColorOrange
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerColorOrange
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerColorRed
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerColorRed
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerColorPurple
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerColorPurple
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerColorBrownLight
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerColorBrownLight
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerColorBrown
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerColorBrown
+ 
+- type: latheRecipe 
+  id: ClothingBackpackMessengerClown
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerClown
+ 
+- type: latheRecipe # If there only was a massager bag
+  id: ClothingBackpackMessengerMime
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMessengerMime
+  
