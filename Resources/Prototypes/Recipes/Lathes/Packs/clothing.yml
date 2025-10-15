@@ -313,3 +313,34 @@
   - NFClothingBackpackDuffelColorBrownLight
   - NFClothingBackpackDuffelColorBrown
   - NFClothingBackpackDuffelColorWhite
+  - ClothingBackpack # 18 total
+  - ClothingBackpackClown
+  - ClothingBackpackIan
+  - ClothingBackpackSecurity
+  - ClothingBackpackBrigmedic
+  - ClothingBackpackEngineering
+  - ClothingBackpackAtmospherics
+  - ClothingBackpackMedical
+  - ClothingBackpackCaptain
+  - ClothingBackpackMime
+  - ClothingBackpackChemistry
+  - ClothingBackpackHydroponics
+  - ClothingBackpackScience
+  - ClothingBackpackVirology
+  - ClothingBackpackGenetics
+  - ClothingBackpackCargo
+  - ClothingBackpackSalvage
+  - ClothingBackpackMercenary
+  - ClothingBackpackSatchel # Satchels begin here
+  - ClothingBackpackSatchelEngineering
+  - ClothingBackpackSatchelAtmospherics
+  - ClothingBackpackSatchelMedical
+  - ClothingBackpackSatchelCaptain
+  - ClothingBackpackSatchelMime
+  - ClothingBackpackSatchelChemistry
+  - ClothingBackpackSatchelHydroponics
+  - ClothingBackpackSatchelScience
+  - ClothingBackpackSatchelVirology
+  - ClothingBackpackSatchelGenetics
+  - ClothingBackpackSatchelCargo
+  - ClothingBackpackSatchelSalvage # 13 total
