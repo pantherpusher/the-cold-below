@@ -200,17 +200,17 @@
   fallbacks:
   - NFPirateFirstMateNFPirateFirstMatePDA
  
-- type: loadoutGroup # Coyote Edit - Adds encryption key selection to pirates
-  id: NFPirateEncryptionKey
-  name: loadout-group-pirate-encryption-key
+- type: loadoutGroup # Coyote Edit
+  id: PirateEncryptionKey
+  name: loadout-group-contractor-encryption-key
   minLimit: 0
-  maxLimit: 6
+  maxLimit: 6 
   loadouts:
-  - PirateEncryptionKeyTraffic
-  - PirateEncryptionKeyMedical
-  - PirateEncryptionKeyCargo
-  - PirateEncryptionKeyEngineering
-  - PirateEncryptionKeyScience
-  - PirateEncryptionKeyCommon
+  - ContractorEncryptionKeyTraffic
+  - ContractorEncryptionKeyMedical
+  - ContractorEncryptionKeyCargo
+  - ContractorEncryptionKeyEngineering
+  - ContractorEncryptionKeyScience
+  - ContractorEncryptionKeyCommon 
   fallbacks:
-  - PirateEncryptionKeyCommon
+  - ContractorEncryptionKeyTraffic
