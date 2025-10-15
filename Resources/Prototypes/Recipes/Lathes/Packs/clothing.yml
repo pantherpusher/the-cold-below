@@ -367,5 +367,19 @@
   - ClothingBackpackMessengerColorBrownLight
   - ClothingBackpackMessengerColorBrown
   - ClothingBackpackMessengerClown
-  - ClothingBackpackMessengerMime #24 messengers #54 total
+  - ClothingBackpackMessengerMime #24 messengers 54 total
+  - ClothingBackpackDuffel # Department Duffels here
+  - ClothingBackpackDuffelCaptain 
+  - ClothingBackpackDuffelSalvage
+  - ClothingBackpackDuffelCargo
+  - ClothingBackpackDuffelHydroponics
+  - ClothingBackpackDuffelScience
+  - ClothingBackpackDuffelMedical
+  - ClothingBackpackDuffelTrauma
+  - ClothingBackpackDuffelChemistry
+  - ClothingBackpackDuffelGenetics
+  - ClothingBackpackDuffelVirology
+  - ClothingBackpackDuffelEngineering
+  - ClothingBackpackDuffelAtmospherics
+  - NFClothingBackpackDuffelChaplain #14 department duffels 68 total
   
