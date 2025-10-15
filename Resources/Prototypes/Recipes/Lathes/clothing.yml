@@ -1266,3 +1266,158 @@
   parent: NFBaseJumpsuitRecipe
   result: NFClothingBackpackDuffelColorWhite 
   
+- type: latheRecipe # Lets begin
+  id: ClothingBackpack
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpack
+   
+- type: latheRecipe 
+  id:  ClothingBackpackClown
+  parent: NFBaseJumpsuitRecipe 
+  result:  ClothingBackpackClown 
+    
+- type: latheRecipe 
+  id: ClothingBackpackIan
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackIan 
+   
+- type: latheRecipe 
+  id: ClothingBackpackSecurity
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSecurity
+     
+- type: latheRecipe 
+  id: ClothingBackpackBrigmedic
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackBrigmedic
+     
+- type: latheRecipe 
+  id: ClothingBackpackEngineering
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackEngineering 
+     
+- type: latheRecipe 
+  id: ClothingBackpackAtmospherics
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackAtmospherics
+     
+- type: latheRecipe 
+  id: ClothingBackpackMedical
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMedical  
+     
+- type: latheRecipe 
+  id: ClothingBackpackCaptain
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackCaptain  
+     
+- type: latheRecipe 
+  id: ClothingBackpackMime
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMime  
+     
+- type: latheRecipe 
+  id: ClothingBackpackChemistry
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackChemistry
+     
+- type: latheRecipe 
+  id: ClothingBackpackHydroponics
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackHydroponics  
+     
+- type: latheRecipe 
+  id: ClothingBackpackScience
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackScience 
+     
+- type: latheRecipe 
+  id: ClothingBackpackVirology
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackVirology 
+     
+- type: latheRecipe 
+  id: ClothingBackpackGenetics
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackGenetics
+     
+- type: latheRecipe 
+  id: ClothingBackpackCargo 
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackCargo 
+     
+- type: latheRecipe 
+  id: ClothingBackpackSalvage
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSalvage  
+     
+- type: latheRecipe 
+  id: ClothingBackpackMercenary
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackMercenary  
+     
+- type: latheRecipe 
+  id: ClothingBackpackSatchel
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSatchel  
+     
+- type: latheRecipe 
+  id: ClothingBackpackSatchelEngineering
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSatchelEngineering
+     
+- type: latheRecipe 
+  id: ClothingBackpackSatchelAtmospherics
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSatchelAtmospherics
+     
+- type: latheRecipe 
+  id: ClothingBackpackSatchelMedical
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSatchelMedical 
+     
+- type: latheRecipe 
+  id: ClothingBackpackSatchelCaptain
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSatchelCaptain
+     
+- type: latheRecipe 
+  id: ClothingBackpackSatchelMime
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSatchelMime
+     
+- type: latheRecipe 
+  id: ClothingBackpackSatchelChemistry
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSatchelChemistry  
+     
+- type: latheRecipe 
+  id: ClothingBackpackSatchelHydroponics
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSatchelHydroponics
+     
+- type: latheRecipe 
+  id: ClothingBackpackSatchelScience
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSatchelScience 
+     
+- type: latheRecipe 
+  id: ClothingBackpackSatchelVirology
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSatchelVirology
+     
+- type: latheRecipe 
+  id: ClothingBackpackSatchelGenetics
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSatchelGenetics
+     
+- type: latheRecipe 
+  id: ClothingBackpackSatchelCargo
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSatchelCargo
+     
+- type: latheRecipe 
+  id: ClothingBackpackSatchelSalvage
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackSatchelSalvage
+  
