@@ -1215,3 +1215,54 @@
   id: ClothingNeckBellCollar
   parent: NFBaseJumpsuitRecipe
   result: ClothingNeckBellCollar
+
+- type: latheRecipe
+  id: ClothingBackpackDuffelTrauma
+  parent: NFBaseJumpsuitRecipe # For simplicity lets assume a duffelbag has the same amount of fabric as a jumpsuit
+  result: ClothingBackpackDuffelTrauma
+
+- type: latheRecipe
+  id: NFClothingBackpackDuffelColorBlack
+  parent: NFBaseJumpsuitRecipe
+  result: NFClothingBackpackDuffelColorBlack
+
+- type: latheRecipe
+  id: NFClothingBackpackDuffelColorBlue
+  parent: NFBaseJumpsuitRecipe
+  result: NFClothingBackpackDuffelColorBlue
+
+- type: latheRecipe
+  id: NFClothingBackpackDuffelColorGreen
+  parent: NFBaseJumpsuitRecipe
+  result: NFClothingBackpackDuffelColorGreen
+
+- type: latheRecipe
+  id: NFClothingBackpackDuffelColorOrange
+  parent: NFBaseJumpsuitRecipe
+  result: NFClothingBackpackDuffelColorOrange
+
+- type: latheRecipe
+  id: NFClothingBackpackDuffelColorRed
+  parent: NFBaseJumpsuitRecipe
+  result: NFClothingBackpackDuffelColorRed
+  
+- type: latheRecipe
+  id: NFClothingBackpackDuffelColorPurple
+  parent: NFBaseJumpsuitRecipe
+  result: NFClothingBackpackDuffelColorPurple
+
+- type: latheRecipe
+  id: NFClothingBackpackDuffelColorBrownLight
+  parent: NFBaseJumpsuitRecipe
+  result: NFClothingBackpackDuffelColorBrownLight   
+  
+- type: latheRecipe
+  id: NFClothingBackpackDuffelColorBrown
+  parent: NFBaseJumpsuitRecipe
+  result: NFClothingBackpackDuffelColorBrown
+  
+- type: latheRecipe
+  id: NFClothingBackpackDuffelColorWhite
+  parent: NFBaseJumpsuitRecipe
+  result: NFClothingBackpackDuffelColorWhite 
+  
