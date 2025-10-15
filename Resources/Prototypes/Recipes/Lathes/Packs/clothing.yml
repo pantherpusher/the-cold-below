@@ -340,7 +340,32 @@
   - ClothingBackpackSatchelChemistry
   - ClothingBackpackSatchelHydroponics
   - ClothingBackpackSatchelScience
-  - ClothingBackpackSatchelVirology
+  - ClothingBackpackSatchelVirology 
   - ClothingBackpackSatchelGenetics
   - ClothingBackpackSatchelCargo
-  - ClothingBackpackSatchelSalvage # 13 total
+  - ClothingBackpackSatchelSalvage # 13 satchels 31 total
+  - ClothingBackpackMessenger # Messenger Bags begin here
+  - ClothingBackpackMessengerCaptain
+  - ClothingBackpackMessengerSalvage
+  - ClothingBackpackMessengerCargo
+  - ClothingBackpackMessengerHydroponics
+  - ClothingBackpackMessengerScience
+  - ClothingBackpackMessengerMedical
+  - ClothingBackpackMessengerChemistry
+  - ClothingBackpackMessengerGenetics
+  - ClothingBackpackMessengerVirology
+  - ClothingBackpackMessengerEngineering
+  - ClothingBackpackMessengerChiefEngineer # Why is there no CE backpack or satchel - What
+  - ClothingBackpackMessengerChaplain
+  - ClothingBackpackMessengerColorBlack
+  - ClothingBackpackMessengerColorWhite
+  - ClothingBackpackMessengerColorBlue
+  - ClothingBackpackMessengerColorGreen
+  - ClothingBackpackMessengerColorOrange
+  - ClothingBackpackMessengerColorRed
+  - ClothingBackpackMessengerColorPurple
+  - ClothingBackpackMessengerColorBrownLight
+  - ClothingBackpackMessengerColorBrown
+  - ClothingBackpackMessengerClown
+  - ClothingBackpackMessengerMime #24 messengers #54 total
+  
