@@ -1540,4 +1540,68 @@
   id: ClothingBackpackMessengerMime
   parent: NFBaseJumpsuitRecipe 
   result: ClothingBackpackMessengerMime
+
+- type: latheRecipe # Department Duffels here
+  id: ClothingBackpackDuffel
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackDuffel
   
+- type: latheRecipe 
+  id: ClothingBackpackDuffelCaptain
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackDuffelCaptain
+  
+- type: latheRecipe 
+  id: ClothingBackpackDuffelSalvage
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackDuffelSalvage
+  
+- type: latheRecipe
+  id: ClothingBackpackDuffelCargo
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackDuffelCargo  
+  
+- type: latheRecipe 
+  id: ClothingBackpackDuffelHydroponics
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackDuffelHydroponics
+
+- type: latheRecipe 
+  id: ClothingBackpackDuffelScience
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackDuffelScience
+  
+- type: latheRecipe 
+  id: ClothingBackpackDuffelMedical
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackDuffelMedical
+  
+- type: latheRecipe 
+  id: ClothingBackpackDuffelChemistry
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackDuffelChemistry
+
+- type: latheRecipe 
+  id: ClothingBackpackDuffelGenetics
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackDuffelGenetics 
+  
+- type: latheRecipe 
+  id: ClothingBackpackDuffelVirology
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackDuffelVirology
+  
+- type: latheRecipe 
+  id: ClothingBackpackDuffelEngineering
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackDuffelEngineering  
+  
+- type: latheRecipe 
+  id: ClothingBackpackDuffelAtmospherics
+  parent: NFBaseJumpsuitRecipe 
+  result: ClothingBackpackDuffelAtmospherics
+  
+- type: latheRecipe 
+  id: NFClothingBackpackDuffelChaplain
+  parent: NFBaseJumpsuitRecipe 
+  result: NFClothingBackpackDuffelChaplain  
