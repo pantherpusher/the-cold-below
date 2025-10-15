@@ -1223,7 +1223,7 @@
 
 - type: latheRecipe
   id: NFClothingBackpackDuffelColorBlack
-  parent: NFBaseJumpsuitRecip
+  parent: NFBaseJumpsuitRecipe
   result: NFClothingBackpackDuffelColorBlack
 
 - type: latheRecipe
