@@ -38,5 +38,5 @@
 - type: loadout
   id: PirateEncryptionKeyCommon
   price: 20
-  enctrpytionKeys:
+  encryptionKeys:
   - EncryptionKeyCommon
