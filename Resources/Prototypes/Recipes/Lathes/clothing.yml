@@ -1246,17 +1246,17 @@
   parent: NFBaseJumpsuitRecipe
   result: NFClothingBackpackDuffelColorPurple
 
- - type: latheRecipe
+- type: latheRecipe
   id: NFClothingBackpackDuffelColorBrownLight
   parent: NFBaseJumpsuitRecipe
   result: NFClothingBackpackDuffelColorBrownLight   
   
- - type: latheRecipe
+- type: latheRecipe
   id: NFClothingBackpackDuffelColorBrown
   parent: NFBaseJumpsuitRecipe
   result: NFClothingBackpackDuffelColorBrown
   
-  - type: latheRecipe
+- type: latheRecipe
   id: NFClothingBackpackDuffelColorWhite
   parent: NFBaseJumpsuitRecipe
   result: NFClothingBackpackDuffelColorWhite 
