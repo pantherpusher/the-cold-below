@@ -69,7 +69,7 @@
     sprite: Structures/Power/Generation/Singularity/collector.rsi
     state: ca_on
   product: CrateEngineeringSingularityCollector
-  cost: 10000 # Coyote Edit - smallish money sink as those essentially require a setup to generate power from various radiation sources - Requires more setup and occassional refill with plasma
+  cost: 24000 # Coyote Edit - smallish money sink as those essentially require a setup to generate power from various radiation sources - Requires more setup and occassional refill with plasma
   category: cargoproduct-category-name-engineering
   group: market
 
