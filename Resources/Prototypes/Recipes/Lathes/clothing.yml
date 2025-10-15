@@ -1222,6 +1222,11 @@
   result: ClothingBackpackDuffelTrauma
 
 - type: latheRecipe
+  id: NFClothingBackpackDuffelColorBlack
+  parent: NFBaseJumpsuitRecip
+  result: NFClothingBackpackDuffelColorBlack
+
+- type: latheRecipe
   id: NFClothingBackpackDuffelColorBlue
   parent: NFBaseJumpsuitRecipe
   result: NFClothingBackpackDuffelColorBlue
