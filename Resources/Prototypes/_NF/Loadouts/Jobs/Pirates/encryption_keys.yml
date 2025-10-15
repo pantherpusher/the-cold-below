@@ -1,0 +1,42 @@
+#T0
+# Coyote Addition Defines what encryption keys pirates can get 
+- type: loadout
+  id: PirateEncryptionKeyTraffic
+  encryptionKeys:
+  - EncryptionKeyTraffic
+
+- type: loadout
+  id: PirateEncryptionKeyMedical
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotDoc
+  price: 20
+  encryptionKeys:
+  - EncryptionKeyMedical
+
+- type: loadout
+  id: PiraterEncryptionKeyCargo
+  price: 20
+  encryptionKeys:
+  - EncryptionKeyCargo
+
+- type: loadout
+  id: PirateEncryptionKeyEngineering
+  price: 20
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFNotEngineering
+  encryptionKeys:
+  - EncryptionKeyEngineering
+
+- type: loadout
+  id: PirateEncryptionKeyScience
+  price: 20
+  encryptionKeys:
+  - EncryptionKeyScience
+
+- type: loadout
+  id: PirateEncryptionKeyCommon
+  price: 20
+  enctrpytionKeys:
+  - EncryptionKeyCommon
