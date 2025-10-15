@@ -907,14 +907,14 @@
   id: ContractorEncryptionKey
   name: loadout-group-contractor-encryption-key
   minLimit: 0
-  maxLimit: 6
+  maxLimit: 6 # Coyote Edit
   loadouts:
   - ContractorEncryptionKeyTraffic
   - ContractorEncryptionKeyMedical
   - ContractorEncryptionKeyCargo
   - ContractorEncryptionKeyEngineering
   - ContractorEncryptionKeyScience
-  - ContractorEncryptionKeyCommon
+  - ContractorEncryptionKeyCommon # Coyote Edit
   fallbacks:
   - ContractorEncryptionKeyTraffic
 
