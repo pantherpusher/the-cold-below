@@ -332,7 +332,6 @@
       solution: tank
       reagents:
         WeldingFuel: 1
-        Oil: 5
     - type: SolutionContainerManager
       solutions:
         tank:
