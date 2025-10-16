@@ -59,7 +59,7 @@
   - PortableGeneratorSuperPacman
   - BaseC1Contraband
   id: PortableGeneratorDK
-  suffix: Bananium, Rad+, 80 kW
+  suffix: Bananium, Rad+, 40-140(80) kW
   components:
     - type: Sprite
       sprite: _NF/Structures/Power/Generation/portable_generator.rsi
@@ -142,7 +142,7 @@
   - PortableGeneratorDK
   - BaseC1Contraband
   id: PortableGeneratorDKJr
-  suffix: Bananium, Rad-, 60 kW
+  suffix: Bananium, Rad-, 20-90(60) kW
   components:
     - type: Sprite
       sprite: Structures/Power/Generation/portable_generator.rsi
@@ -170,7 +170,7 @@
       targetPower: 60000
       optimalPower: 60000
       clockstepConstant: 20000
-      radiationIntensity: 0.00004 # 4 rad/s at full output, 2.4 at optimal settings
+      radiationIntensity: 0.00004 # 3.6 rad/s at full output, 2.4 at optimal settings
     - type: PowerMonitoringDevice
       sprite: Structures/Power/Generation/portable_generator.rsi
       state: portgen2
