@@ -86,16 +86,11 @@
   id: TwistTies
   parent: Zipties
   components:
-  - type: Item
-    size: Tiny
-    storedRotation: 0
   - type: Handcuff
     breakoutTime: 1
     cuffTime: 5.5
     stunBonus: 1.5
     breakOnRemove: false
-    cuffedRSI: _CS/Objects/Misc/twistties.rsi
-    bodyIconState: body-overlay
 
 #region Strtjckt Bodysuit
 - type: entity
