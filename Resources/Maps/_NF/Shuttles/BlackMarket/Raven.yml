@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 10/18/2025 00:44:23
-  entityCount: 983
+  time: 10/18/2025 05:13:26
+  entityCount: 982
 maps: []
 grids:
 - 1
@@ -711,13 +711,6 @@ entities:
       - 484
       - 580
       - 582
-- proto: AirlockEngineering
-  entities:
-  - uid: 30
-    components:
-    - type: Transform
-      pos: 1.5,4.5
-      parent: 1
 - proto: AirlockExternal
   entities:
   - uid: 140
@@ -768,7 +761,7 @@ entities:
       pos: 1.5,-7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -1544.2859
+      secondsUntilStateChange: -1609.7028
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -790,7 +783,7 @@ entities:
       pos: -2.5,11.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -3913.1836
+      secondsUntilStateChange: -3978.6003
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -877,6 +870,11 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 6.5,5.5
+      parent: 1
+  - uid: 30
+    components:
+    - type: Transform
+      pos: 1.5,4.5
       parent: 1
   - uid: 969
     components:
@@ -3423,14 +3421,6 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: FloorTileItemDark
-  entities:
-  - uid: 109
-    components:
-    - type: Transform
-      rot: 1.8619198601150122 rad
-      pos: -3.4631076,2.4997506
-      parent: 1
 - proto: GasMixerOn
   entities:
   - uid: 875
