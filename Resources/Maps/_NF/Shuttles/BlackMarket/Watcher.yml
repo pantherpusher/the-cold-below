@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 10/18/2025 02:36:23
-  entityCount: 303
+  time: 10/18/2025 02:55:48
+  entityCount: 291
 maps: []
 grids:
 - 1
@@ -2165,79 +2165,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,-5.5
-      parent: 1
-- proto: WallReinforcedDiagonal
-  entities:
-  - uid: 19
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,-1.5
-      parent: 1
-  - uid: 32
-    components:
-    - type: Transform
-      pos: -2.5,2.5
-      parent: 1
-  - uid: 38
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 5.5,5.5
-      parent: 1
-  - uid: 207
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 7.5,-1.5
-      parent: 1
-  - uid: 224
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 7.5,2.5
-      parent: 1
-  - uid: 226
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 6.5,3.5
-      parent: 1
-  - uid: 253
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,-6.5
-      parent: 1
-  - uid: 254
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,-6.5
-      parent: 1
-  - uid: 255
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,-5.5
-      parent: 1
-  - uid: 256
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 3.5,-6.5
-      parent: 1
-  - uid: 261
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 5.5,-6.5
-      parent: 1
-  - uid: 262
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 6.5,-5.5
       parent: 1
 - proto: WarningN2
   entities:
