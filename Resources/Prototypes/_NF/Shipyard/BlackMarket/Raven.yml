@@ -8,7 +8,7 @@
   parent: BaseVesselAntag
   name: Raven
   description: Modified Dove designed to steal or smuggle cargo crates, fits between 3-4 crew.
-  price: 77000 #29313 1.25 65954.25
+  price: 82000 #29313 1.25 65954.25
   category: Medium
   group: BlackMarket
   shuttlePath: /Maps/_NF/Shuttles/BlackMarket/Raven.yml
