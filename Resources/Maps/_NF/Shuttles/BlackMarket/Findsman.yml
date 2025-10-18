@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 10/18/2025 04:18:30
-  entityCount: 448
+  time: 10/18/2025 04:27:02
+  entityCount: 472
 maps: []
 grids:
 - 1
@@ -1290,13 +1290,6 @@ entities:
     - type: Transform
       pos: 6.5,-2.5
       parent: 1
-- proto: CrateSecure
-  entities:
-  - uid: 318
-    components:
-    - type: Transform
-      pos: 6.5,-7.5
-      parent: 1
 - proto: CurtainsBlackOpen
   entities:
   - uid: 195
@@ -1305,12 +1298,53 @@ entities:
       rot: 3.141592653589793 rad
       pos: -3.5,0.5
       parent: 1
+- proto: DiceBag
+  entities:
+  - uid: 467
+    components:
+    - type: Transform
+      pos: 2.8413246,-5.6136327
+      parent: 1
 - proto: Dresser
   entities:
   - uid: 80
     components:
     - type: Transform
       pos: -3.5,-0.5
+      parent: 1
+- proto: DrinkGlass
+  entities:
+  - uid: 455
+    components:
+    - type: Transform
+      pos: 2.5809078,-5.5510893
+      parent: 1
+  - uid: 456
+    components:
+    - type: Transform
+      pos: 2.4142413,-5.269644
+      parent: 1
+  - uid: 457
+    components:
+    - type: Transform
+      pos: 2.8725746,-5.2904916
+      parent: 1
+- proto: DrinkKegWood
+  entities:
+  - uid: 452
+    components:
+    - type: Transform
+      pos: -4.3301506,-7.738983
+      parent: 1
+  - uid: 453
+    components:
+    - type: Transform
+      pos: -4.6530676,-7.707711
+      parent: 1
+  - uid: 454
+    components:
+    - type: Transform
+      pos: -4.5280676,-7.3949947
       parent: 1
 - proto: DrinkMugMetal
   entities:
@@ -2309,6 +2343,28 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 10.5,-4.5
       parent: 1
+- proto: IngotGold1
+  entities:
+  - uid: 462
+    components:
+    - type: Transform
+      pos: 3.2684078,-5.5302415
+      parent: 1
+  - uid: 463
+    components:
+    - type: Transform
+      pos: 3.3829913,-5.4364266
+      parent: 1
+  - uid: 464
+    components:
+    - type: Transform
+      pos: 3.3413246,-5.280068
+      parent: 1
+  - uid: 466
+    components:
+    - type: Transform
+      pos: 3.5913246,-5.519818
+      parent: 1
 - proto: LockerSteel
   entities:
   - uid: 92
@@ -2381,19 +2437,61 @@ entities:
       parent: 1
     - type: Physics
       bodyType: Static
-- proto: PenCap
+- proto: Paper
   entities:
-  - uid: 292
+  - uid: 318
     components:
     - type: Transform
-      pos: -0.6451739,0.59699804
+      pos: -0.6891595,0.43531013
       parent: 1
-    - type: Stamp
-      stampedName: Unknown
+  - uid: 469
+    components:
+    - type: Transform
+      pos: -0.2724929,0.43531013
+      parent: 1
+  - uid: 470
+    components:
+    - type: Transform
+      pos: -0.5849929,0.6542125
+      parent: 1
+- proto: PenCap
+  entities:
   - uid: 326
     components:
     - type: Transform
-      pos: -0.34649205,0.692205
+      pos: -0.3245762,0.90438604
+      parent: 1
+- proto: PirateFlag
+  entities:
+  - uid: 446
+    components:
+    - type: Transform
+      pos: 9.5,-7.5
+      parent: 1
+  - uid: 447
+    components:
+    - type: Transform
+      pos: -7.5,-3.5
+      parent: 1
+  - uid: 448
+    components:
+    - type: Transform
+      pos: 2.5,-3.5
+      parent: 1
+  - uid: 449
+    components:
+    - type: Transform
+      pos: 5.5,-5.5
+      parent: 1
+  - uid: 450
+    components:
+    - type: Transform
+      pos: -3.5,-8.5
+      parent: 1
+  - uid: 451
+    components:
+    - type: Transform
+      pos: -9.5,-7.5
       parent: 1
 - proto: PortableGeneratorSuperPacmanShuttle
   entities:
@@ -2401,6 +2499,13 @@ entities:
     components:
     - type: Transform
       pos: 3.5,-2.5
+      parent: 1
+- proto: PottedPlantRandom
+  entities:
+  - uid: 468
+    components:
+    - type: Transform
+      pos: -0.5,-0.5
       parent: 1
 - proto: PoweredSmallLight
   entities:
@@ -2725,6 +2830,28 @@ entities:
     components:
     - type: Transform
       pos: 4.5,-2.5
+      parent: 1
+- proto: SpaceCash
+  entities:
+  - uid: 458
+    components:
+    - type: Transform
+      pos: 3.4454913,-5.592785
+      parent: 1
+  - uid: 459
+    components:
+    - type: Transform
+      pos: 3.6329913,-5.384307
+      parent: 1
+  - uid: 460
+    components:
+    - type: Transform
+      pos: 3.4454913,-5.25922
+      parent: 1
+  - uid: 461
+    components:
+    - type: Transform
+      pos: 3.2892413,-5.3530354
       parent: 1
 - proto: SpawnPointLatejoin
   entities:
@@ -3306,5 +3433,13 @@ entities:
     components:
     - type: Transform
       pos: 0.5,-6.5
+      parent: 1
+- proto: WoodenKegBeer
+  entities:
+  - uid: 292
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 6.5,-7.5
       parent: 1
 ...
