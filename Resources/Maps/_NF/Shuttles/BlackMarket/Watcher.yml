@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 10/18/2025 01:58:45
-  entityCount: 304
+  time: 10/18/2025 02:36:23
+  entityCount: 303
 maps: []
 grids:
 - 1
@@ -267,8 +267,8 @@ entities:
       - 303
       - 151
       - 247
-      - 80
-      - 180
+      - 17
+      - 88
   - uid: 218
     components:
     - type: Transform
@@ -277,19 +277,14 @@ entities:
       parent: 1
     - type: DeviceList
       devices:
-      - 162
       - 159
-      - 88
+      - 162
       - 247
   - uid: 304
     components:
     - type: Transform
       pos: -0.5,-1.5
       parent: 1
-    - type: DeviceList
-      devices:
-      - 88
-      - 147
 - proto: AirlockGlassShuttleSyndicatePirateLocked
   entities:
   - uid: 8
@@ -901,17 +896,6 @@ entities:
       parent: 1
 - proto: FirelockGlass
   entities:
-  - uid: 88
-    components:
-    - type: Transform
-      pos: 0.5,-1.5
-      parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 218
-      - 304
   - uid: 151
     components:
     - type: Transform
@@ -927,11 +911,9 @@ entities:
       pos: 2.5,0.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
-      - 218
       - 11
+      - 218
   - uid: 303
     components:
     - type: Transform
@@ -1258,15 +1240,13 @@ entities:
       color: '#990000FF'
 - proto: GasVentPump
   entities:
-  - uid: 80
+  - uid: 17
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,-2.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 11
     - type: AtmosPipeColor
@@ -1290,17 +1270,23 @@ entities:
       color: '#0055CCFF'
 - proto: GasVentScrubber
   entities:
-  - uid: 147
+  - uid: 80
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,-4.5
       parent: 1
+    - type: AtmosPipeColor
+      color: '#990000FF'
+  - uid: 88
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 3.5,-3.5
+      parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
-      - 304
+      - 11
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 160
@@ -1318,19 +1304,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 218
-    - type: AtmosPipeColor
-      color: '#990000FF'
-  - uid: 180
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 3.5,-3.5
-      parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 11
     - type: AtmosPipeColor
       color: '#990000FF'
 - proto: GravityGeneratorMini
@@ -1683,46 +1656,43 @@ entities:
       parent: 1
 - proto: ShuttersNormalOpen
   entities:
-  - uid: 17
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -2.5,1.5
-      parent: 1
   - uid: 145
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 1.5707963267948966 rad
+      pos: -2.5,1.5
+      parent: 1
+  - uid: 147
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
       pos: -2.5,-0.5
+      parent: 1
+  - uid: 180
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -1.5,3.5
       parent: 1
   - uid: 225
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -1.5,3.5
+      pos: -0.5,4.5
       parent: 1
   - uid: 245
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -0.5,4.5
+      pos: 0.5,5.5
       parent: 1
   - uid: 246
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,5.5
+      pos: 1.5,5.5
       parent: 1
   - uid: 250
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,5.5
-      parent: 1
-  - uid: 259
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 1.5707963267948966 rad
       pos: -2.5,0.5
       parent: 1
 - proto: ShuttersWindow
@@ -1759,19 +1729,16 @@ entities:
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 6.5,-1.5
+      pos: 2.4976254,3.2499037
       parent: 1
     - type: DeviceLinkSource
       linkedPorts:
-        179:
+        9:
         - - Pressed
-          - Toggle
-        68:
+          - DoorBolt
+        8:
         - - Pressed
-          - Toggle
-        182:
-        - - Pressed
-          - Toggle
+          - DoorBolt
   - uid: 197
     components:
     - type: Transform
@@ -1786,68 +1753,53 @@ entities:
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 2.5,3.25
+      pos: 6.5,-1.5
       parent: 1
-    - type: SignalSwitch
-      state: True
     - type: DeviceLinkSource
       linkedPorts:
-        221:
+        179:
         - - Pressed
-          - Off
-        222:
+          - Toggle
+        68:
         - - Pressed
-          - Off
-        9:
+          - Toggle
+        182:
         - - Pressed
-          - DoorBolt
-        8:
-        - - Pressed
-          - DoorBolt
-  - uid: 252
+          - Toggle
+  - uid: 216
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 2.5,3.75
+      pos: 2.508042,3.7502513
       parent: 1
     - type: DeviceLinkSource
       linkedPorts:
         250:
         - - Pressed
           - Toggle
-        246:
-        - - Pressed
-          - Toggle
-        245:
-        - - Pressed
-          - Toggle
-        17:
-        - - Pressed
-          - Toggle
-        259:
-        - - Pressed
-          - Toggle
         145:
+        - - Pressed
+          - Toggle
+        147:
+        - - Pressed
+          - Toggle
+        180:
         - - Pressed
           - Toggle
         225:
         - - Pressed
           - Toggle
-- proto: SignalButtonDirectional
-  entities:
-  - uid: 216
+        245:
+        - - Pressed
+          - Toggle
+        246:
+        - - Pressed
+          - Toggle
+  - uid: 252
     components:
     - type: Transform
-      pos: 5.25,3.5
+      pos: 5.2476254,3.5105016
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        9:
-        - - Pressed
-          - DoorBolt
-        8:
-        - - Pressed
-          - DoorBolt
 - proto: SignCargoDock
   entities:
   - uid: 94
