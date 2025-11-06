@@ -51,8 +51,8 @@
     weight: 1
     duration: 35
     earliestStart: 90
-    minimumPlayers: 20
-    reoccurrenceDelay: 480 # 8 hours
+    minimumPlayers: 1
+    reoccurrenceDelay: 360 # 6 hours TCB change
   - type: BluespaceCargoRule
     spawnerPrototype: CrateSyndicateSurplusBundle
     maximumSpawns: 1
@@ -65,7 +65,7 @@
     weight: 8 # Fairly common.
     duration: 35
     earliestStart: 50
-    minimumPlayers: 20
+    minimumPlayers: 1 # TCB Change
     reoccurrenceDelay: 50
   - type: RandomFaxRule
     minFaxes: 1
@@ -86,7 +86,7 @@
   components:
   - type: StationEvent
     weight: 100 # Fairly common.
-    minimumPlayers: 10
+    minimumPlayers: 1 # TCB change
     duration: 35
   - type: RandomFaxRule
     minFaxes: 3
