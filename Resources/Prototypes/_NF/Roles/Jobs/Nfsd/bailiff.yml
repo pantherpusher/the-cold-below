@@ -41,9 +41,10 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift
-  - !type:AddComponentSpecial
-    components:
-    - type: CoolNfsd
+  - !type:AddRpiJobModifierSpecial
+    modifiersToAdd:
+    - rpiJobModifierBailiff
+
 
 - type: startingGear
   id: BailiffGear
@@ -56,5 +57,20 @@
     - NFMagazineHighCapacityPistol35Overpressure
     - NFMagazineHighCapacityPistol35Rubber
     - BaseSecurityUplinkRadioOfficer
+    - FrontierUplinkCoin5 # Coyote added 5 starting FUCs to Bailiff
     - ShipVoucherNfsdBailiff
     - RubberStampBailiff
+
+- type: chameleonOutfit
+  id: BailiffChameleonOutfit
+  job: Bailiff
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatNfsdBeretBrown
+    mask: ClothingMaskGasNfsd
+    eyes: ClothingEyesGlassesNfsd
+    outerClothing: ClothingOuterCoatNfsdFormal
+    neck: ClothingNeckNfsdBadgeWarden
+    belt: ClothingBeltNfsdFilled
+    gloves: ClothingHandsGlovesCombatNfsdCream
+    shoes: ClothingShoesBootsNfsdCreamFilled
